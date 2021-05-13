@@ -1,0 +1,603 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="../images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="宁理大神1996" href="https://nitgod1996.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="宁理大神1996" href="https://nitgod1996.com/atom.xml" />
+<link rel="alternate" type="application/json" title="宁理大神1996" href="https://nitgod1996.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="../css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="https://nitgod1996.com/2021/05/08/note/software/maven%E5%A4%8D%E4%B9%A0/">
+
+
+
+  <title>
+maven 复习 - 笔记 |
+nitgod1996 = 宁理大神 1996</title>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">maven 复习
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-05-08 15:55:45">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-05-08T15:55:45+08:00">2021-05-08</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>2.1k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>2 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">nitgod1996</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="../../../../../../2021/05/08/note/software/maven%E5%A4%8D%E4%B9%A0/cover.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="../../../../../../index.html">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="../../../../../../categories/note/" itemprop="item" rel="index" title="分类于 笔记"><span itemprop="name">笔记</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://nitgod1996.com/2021/05/08/note/software/maven%E5%A4%8D%E4%B9%A0/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="../../../../../../images/avatar.jpg">
+    <meta itemprop="name" content="宁理大神1996">
+    <meta itemprop="description" content=", 宁理大神的个人博客">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="宁理大神 1996">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <blockquote>
+<p>时过境迁，距第一次使用 maven 已经将近一年了，最近发现 maven 还有许多地方没搞明白，所以再继续学习一下，也当是复习巩固了。</p>
+</blockquote>
+<h2><span id="1-maven-的作用"> 1. maven 的作用</span></h2>
+<ul>
+<li><strong>依赖管理：</strong>
+<ul>
+<li>在<strong> pom.xml</strong> 中对项目需要的各种依赖（jar 包等）统一管理。</li>
+<li>如，当项目比较大时，依赖管理会变得非常臃肿。<strong>通过 maven 进行依赖管理</strong></li>
+</ul>
+</li>
+<li><strong>项目构建：</strong>
+<ul>
+<li>对项目进行<em>编译、测试、打包、部署、上传到私服</em>等。</li>
+<li>如，项目比较大时，需要分多个 module。如订单模块、支付模块、商品模块...。一般情况多个模块无法独立运行，需要借助<strong> maven 的一键打包</strong></li>
+</ul>
+</li>
+<li><strong>Gradle</strong> 也是和<strong> maven</strong> 一样的项目管理工具。</li>
+</ul>
+<h2><span id="2-maven-安装"> 2. maven 安装</span></h2>
+<ol>
+<li>
+<p>maven 是 Java 项目，必须先安装 jdk。</p>
+</li>
+<li>
+<p>下载 maven。官网<span class="exturl" data-url="aHR0cHM6Ly9tYXZlbi5hcGFjaGUub3JnL2Rvd25sb2FkLmNnaQ=="> https://maven.apache.org/download.cgi</span>。也可以去 csdn 下载，<span class="exturl" data-url="aHR0cHM6Ly9tcC5jc2RuLm5ldC9jb25zb2xlL3VwRGV0YWlsZWQlRTMlODAlODI=">https://mp.csdn.net/console/upDetailed。</span></p>
+</li>
+<li>
+<p>解压并配置环境变量。</p>
+<p><img data-src="/2021/05/08/note/software/maven%E5%A4%8D%E4%B9%A0/image-20210508143238021.png" alt="image-20210508143238021"></p>
+<p>在 path 中添加上<strong> D:\Java\apache-maven-3.6.2\bin</strong>。也可以设置 MAVEN_HOME。</p>
+<p><strong><img data-src="/2021/05/08/note/software/maven%E5%A4%8D%E4%B9%A0/image-20210508143612681.png" alt="image-20210508143612681"></strong></p>
+</li>
+<li>
+<p>检验。cmd 打开控制台，输入 <code>mvn -v</code></p>
+</li>
+</ol>
+<h2><span id="3-maven-配置"> 3. maven 配置</span></h2>
+<p>​		在 IDEA 中有默认的 maven 配置，本地仓库默认是在当前用户名.m2\repository。自定义配置可以与 IDEA<strong> 解耦</strong>，如果同时使用 eclipse 则将 maven 分离出来管理比较方便。</p>
+<p>​		maven 仓库分为本地仓库、私服仓库和中央仓库，如下</p>
+<table>
+<thead>
+<tr>
+<th>仓库类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>本地仓库</td>
+<td>在自己电脑上存放用于项目的 jar 包。本地项目优先去本地仓库寻找依赖 jar 包</td>
+</tr>
+<tr>
+<td>私服仓库</td>
+<td>公司内部搭建的 maven 私服。一般存放公司项目所需 jar 和自己开发的 jar。</td>
+</tr>
+<tr>
+<td>中央仓库</td>
+<td>由 Apache 团队维护，包含了大部分的 jar，本地仓库没有的依赖一般有限都是去中央仓库下载。我们一般用国内镜像替代中央仓库。</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="31-配置本地仓库"> 3.1 - 配置本地仓库</span></h3>
+<ol>
+<li>
+<p>在指定位置新建一个本地仓库文件夹，如 <code>F:\serverCK\MavenRepository</code></p>
+</li>
+<li>
+<p>在 conf\setting.xml 配置该目录</p>
+<figure class="highlight xml"><figcaption data-lang="XML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>localRepository</span><span class="token punctuation">></span></span>F:\serverCK\MavenRepository<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>localRepository</span><span class="token punctuation">></span></span></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="32-镜像配置"> 3.2 - 镜像配置</span></h3>
+<p>​		默认的中央仓库下载依赖比较慢，一般配置阿里的镜像。也是在 conf\setting.xml 配置</p>
+<figure class="highlight xml"><figcaption data-lang="XML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirrors</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre>	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirror</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>alimaven<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>aliyun maven<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="5"></td><td><pre>  　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>http://maven.aliyun.com/nexus/content/groups/public/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="6"></td><td><pre>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirrorOf</span><span class="token punctuation">></span></span>central<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirrorOf</span><span class="token punctuation">></span></span>        </pre></td></tr><tr><td data-num="7"></td><td><pre>	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirror</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="8"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirrors</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><h2><span id="4-使用-idea-构建-maven-项目"> 4. 使用 IDEA 构建 maven 项目</span></h2>
+<p>​		使用 IDEA 创建 maven 项目的方法有很多，既可以直接创建一个空的 maven project，也可以创建 springboot 项目时勾选 maven，就不一一赘述了。</p>
+<p>​		maven 项目创建好后，最主要的就是主目录下的 pom.xml 和右侧的 maven 导航。</p>
+<p><img data-src="/2021/05/08/note/software/maven%E5%A4%8D%E4%B9%A0/image-20210508150004233.png?lastModify=1620717825" alt="image-20210508150004233"></p>
+<ul>
+<li>
+<p>pom.xml 是 maven 的主要配置文件，其中定义了该项目的所有配置，主要包括</p>
+<ul>
+<li>
+<p><code>&lt;dependencies&gt;</code> ：项目所需的外部依赖。 <code>dependency</code>  也称坐标</p>
+</li>
+<li>
+<p><code>&lt;packaging&gt;jar&lt;/packaging&gt;</code> ：打包方式。springboot 打成 jar 包即可。普通的 web 项目需要打包 war 包。</p>
+</li>
+<li>
+<p><code>&lt;groupId&gt;、&lt;artifactId&gt;、&lt;version&gt;</code> ：项目信息，版本等</p>
+<ul>
+<li>groupId：组织 ID</li>
+<li>artifactId：项目在组织中的 ID</li>
+<li>version：项目版本</li>
+<li>scope：依赖范围。 <code>test</code>  表示仅测试有效。 <code>runtime</code>  是编译时不生效，运行时生效，如 jdbc 驱动。 <code>complie</code>  全部有效</li>
+</ul>
+</li>
+<li>
+<p><code>&lt;parent&gt;</code> ：项目继承的父依赖，如</p>
+<figure class="highlight xml"><figcaption data-lang="XML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre>		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre>		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-parent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.4.4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="5"></td><td><pre>		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>relativePath</span><span class="token punctuation">/></span></span> <span class="token comment">&lt;!-- lookup parent from repository --></span></pre></td></tr><tr><td data-num="6"></td><td><pre>	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parent</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p>该项目继承了 <code>org.springframework.boot</code>  的所有依赖。</p>
+</li>
+<li>
+<p><code>&lt;build&gt;&lt;plugins&gt;</code> ：maven 构建项目所需插件</p>
+</li>
+<li>
+<p><code>&lt;properties&gt;</code> ：编码及各依赖版本信息</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>install 项目打包</strong>：双击右侧的 install，将该项目打成 jar/war 包放在本地仓库，其他项目即可导入该项目的 jar（通过 groupId 等信息）。<em>install 包含了 package 功能</em>。</p>
+</li>
+</ul>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2021-05-13 18:27:29" itemprop="dateModified" datetime="2021-05-13T18:27:29+08:00">2021-05-13</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="../images/wechatpay.png" alt="宁理大神1996 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="../images/alipay.png" alt="宁理大神1996 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="../images/paypal.png" alt="宁理大神1996 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>宁理大神1996 <i class="ic i-at"><em>@</em></i>宁理大神 1996
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="../../../../../../https:/nitgod1996.com/2021/05/08/note/software/maven%E5%A4%8D%E4%B9%A0/" title="maven 复习">https://nitgod1996.com/2021/05/08/note/software/maven复习/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="../../../my-hexo/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicliwyw55j20zk0m8hdt.jpg" title="my hexo">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>my hexo</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="../../hexo/Hexo%E6%90%AD%E5%BB%BAGitHub%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicivghyooj20zk0m8dir.jpg" title="Hexo搭建GitHub静态博客">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 笔记</span>
+  <h3>Hexo搭建GitHub静态博客</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text"> 1. maven 的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text"> 2. maven 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text"> 3. maven 配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.1.</span> <span class="toc-text"> 3.1 - 配置本地仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.2.</span> <span class="toc-text"> 3.2 - 镜像配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text"> 4. 使用 IDEA 构建 maven 项目</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="" rel="bookmark" title="maven复习">maven复习</a></li><li><a href="../../hexo/Hexo%E6%90%AD%E5%BB%BAGitHub%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" rel="bookmark" title="Hexo搭建GitHub静态博客">Hexo搭建GitHub静态博客</a></li><li><a href="../../../../12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" rel="bookmark" title="VMware安装中标麒麟">VMware安装中标麒麟</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="宁理大神1996"
+      data-src="../images/avatar.jpg">
+  <p class="name" itemprop="name">宁理大神1996</p>
+  <div class="description" itemprop="description">宁理大神的个人博客</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="../archives/">
+        <span class="count">5</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="../categories/">
+        <span class="count">5</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="../tags/">
+        <span class="count">3</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3lvdXJuYW1l" title="https:&#x2F;&#x2F;github.com&#x2F;yourname"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPXlvdXJpZA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;yourid"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="../index.html" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../archives/" rel="section"><i class="ic i-archive"></i>归档</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="../../../my-hexo/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="../../hexo/Hexo%E6%90%AD%E5%BB%BAGitHub%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../my-hexo/" title="my hexo">my hexo</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="../../../../12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" title="VMware安装中标麒麟">VMware安装中标麒麟</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+</div>
+
+    <span><a href="" title="maven复习">maven复习</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/computer-science/java/" title="分类于 Java">Java</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/computer-science/java/course-1/" title="分类于 零基础学 Java 语言 - 浙江大学 - 翁恺">零基础学 Java 语言 - 浙江大学 - 翁恺</a>
+</div>
+
+    <span><a href="../../../../09/test/" title="my hexo">my hexo</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+</div>
+
+    <span><a href="../../hexo/Hexo%E6%90%AD%E5%BB%BAGitHub%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" title="Hexo搭建GitHub静态博客">Hexo搭建GitHub静态博客</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">宁理大神1996 @ nitgod1996</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">32k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">29 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/05/08/note/software/maven复习/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="../../../../../../js/app.js?v=0.2.5"></script>
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
