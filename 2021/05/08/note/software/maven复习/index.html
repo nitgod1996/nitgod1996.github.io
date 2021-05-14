@@ -19,7 +19,7 @@
 <link rel="alternate" type="application/atom+xml" title="宁理大神1996" href="https://nitgod1996.com/atom.xml" />
 <link rel="alternate" type="application/json" title="宁理大神1996" href="https://nitgod1996.com/feed.json" />
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
 
 <link rel="stylesheet" href="../css/app.css?v=0.2.5">
 
@@ -162,7 +162,7 @@ nitgod1996 = 宁理大神 1996</title>
     <blockquote>
 <p>时过境迁，距第一次使用 maven 已经将近一年了，最近发现 maven 还有许多地方没搞明白，所以再继续学习一下，也当是复习巩固了。</p>
 </blockquote>
-<h2><span id="1-maven-的作用"> 1. maven 的作用</span></h2>
+<h2 id="1-maven-的作用"><a class="anchor" href="#1-maven的作用">#</a> 1. maven 的作用</h2>
 <ul>
 <li><strong>依赖管理：</strong>
 <ul>
@@ -178,7 +178,7 @@ nitgod1996 = 宁理大神 1996</title>
 </li>
 <li><strong>Gradle</strong> 也是和<strong> maven</strong> 一样的项目管理工具。</li>
 </ul>
-<h2><span id="2-maven-安装"> 2. maven 安装</span></h2>
+<h2 id="2-maven-安装"><a class="anchor" href="#2-maven安装">#</a> 2. maven 安装</h2>
 <ol>
 <li>
 <p>maven 是 Java 项目，必须先安装 jdk。</p>
@@ -196,7 +196,7 @@ nitgod1996 = 宁理大神 1996</title>
 <p>检验。cmd 打开控制台，输入 <code>mvn -v</code></p>
 </li>
 </ol>
-<h2><span id="3-maven-配置"> 3. maven 配置</span></h2>
+<h2 id="3-maven-配置"><a class="anchor" href="#3-maven配置">#</a> 3. maven 配置</h2>
 <p>​		在 IDEA 中有默认的 maven 配置，本地仓库默认是在当前用户名.m2\repository。自定义配置可以与 IDEA<strong> 解耦</strong>，如果同时使用 eclipse 则将 maven 分离出来管理比较方便。</p>
 <p>​		maven 仓库分为本地仓库、私服仓库和中央仓库，如下</p>
 <table>
@@ -221,7 +221,7 @@ nitgod1996 = 宁理大神 1996</title>
 </tr>
 </tbody>
 </table>
-<h3><span id="31-配置本地仓库"> 3.1 - 配置本地仓库</span></h3>
+<h3 id="31-配置本地仓库"><a class="anchor" href="#31-配置本地仓库">#</a> 3.1 - 配置本地仓库</h3>
 <ol>
 <li>
 <p>在指定位置新建一个本地仓库文件夹，如 <code>F:\serverCK\MavenRepository</code></p>
@@ -230,9 +230,9 @@ nitgod1996 = 宁理大神 1996</title>
 <p>在 conf\setting.xml 配置该目录</p>
 <figure class="highlight xml"><figcaption data-lang="XML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>localRepository</span><span class="token punctuation">></span></span>F:\serverCK\MavenRepository<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>localRepository</span><span class="token punctuation">></span></span></pre></td></tr></table></figure></li>
 </ol>
-<h3><span id="32-镜像配置"> 3.2 - 镜像配置</span></h3>
+<h3 id="32-镜像配置"><a class="anchor" href="#32-镜像配置">#</a> 3.2 - 镜像配置</h3>
 <p>​		默认的中央仓库下载依赖比较慢，一般配置阿里的镜像。也是在 conf\setting.xml 配置</p>
-<figure class="highlight xml"><figcaption data-lang="XML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirrors</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre>	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirror</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>alimaven<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>aliyun maven<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="5"></td><td><pre>  　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>http://maven.aliyun.com/nexus/content/groups/public/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="6"></td><td><pre>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirrorOf</span><span class="token punctuation">></span></span>central<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirrorOf</span><span class="token punctuation">></span></span>        </pre></td></tr><tr><td data-num="7"></td><td><pre>	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirror</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="8"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirrors</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><h2><span id="4-使用-idea-构建-maven-项目"> 4. 使用 IDEA 构建 maven 项目</span></h2>
+<figure class="highlight xml"><figcaption data-lang="XML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirrors</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre>	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirror</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>alimaven<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>aliyun maven<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="5"></td><td><pre>  　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>http://maven.aliyun.com/nexus/content/groups/public/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="6"></td><td><pre>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirrorOf</span><span class="token punctuation">></span></span>central<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirrorOf</span><span class="token punctuation">></span></span>        </pre></td></tr><tr><td data-num="7"></td><td><pre>	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirror</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="8"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirrors</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><h2 id="4-使用-idea-构建-maven-项目"><a class="anchor" href="#4-使用idea构建maven项目">#</a> 4. 使用 IDEA 构建 maven 项目</h2>
 <p>​		使用 IDEA 创建 maven 项目的方法有很多，既可以直接创建一个空的 maven project，也可以创建 springboot 项目时勾选 maven，就不一一赘述了。</p>
 <p>​		maven 项目创建好后，最主要的就是主目录下的 pom.xml 和右侧的 maven 导航。</p>
 <p><img data-src="/2021/05/08/note/software/maven%E5%A4%8D%E4%B9%A0/image-20210508150004233.png?lastModify=1620717825" alt="image-20210508150004233"></p>
@@ -337,7 +337,7 @@ nitgod1996 = 宁理大神 1996</title>
     <div class="item left">
       
 
-  <a href="../../../my-hexo/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicliwyw55j20zk0m8hdt.jpg" title="my hexo">
+  <a href="../../../my-hexo/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giph4baakhj20zk0m8h5q.jpg" title="my hexo">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>my hexo</h3>
@@ -347,7 +347,7 @@ nitgod1996 = 宁理大神 1996</title>
     <div class="item right">
       
 
-  <a href="../../hexo/Hexo%E6%90%AD%E5%BB%BAGitHub%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicivghyooj20zk0m8dir.jpg" title="Hexo搭建GitHub静态博客">
+  <a href="../../hexo/Hexo%E6%90%AD%E5%BB%BAGitHub%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipetfk5zwj20zk0m8e81.jpg" title="Hexo搭建GitHub静态博客">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> 笔记</span>
   <h3>Hexo搭建GitHub静态博客</h3>
@@ -369,7 +369,7 @@ nitgod1996 = 宁理大神 1996</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text"> 1. maven 的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text"> 2. maven 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text"> 3. maven 配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.1.</span> <span class="toc-text"> 3.1 - 配置本地仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.2.</span> <span class="toc-text"> 3.2 - 镜像配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text"> 4. 使用 IDEA 构建 maven 项目</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-maven-%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text"> 1. maven 的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-maven-%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text"> 2. maven 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-maven-%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text"> 3. maven 配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E9%85%8D%E7%BD%AE%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="toc-number">3.1.</span> <span class="toc-text"> 3.1 - 配置本地仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-%E9%95%9C%E5%83%8F%E9%85%8D%E7%BD%AE"><span class="toc-number">3.2.</span> <span class="toc-text"> 3.2 - 镜像配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BD%BF%E7%94%A8-idea-%E6%9E%84%E5%BB%BA-maven-%E9%A1%B9%E7%9B%AE"><span class="toc-number">4.</span> <span class="toc-text"> 4. 使用 IDEA 构建 maven 项目</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -387,7 +387,7 @@ nitgod1996 = 宁理大神 1996</title>
 <nav class="state">
     <div class="item posts">
       <a href="../archives/">
-        <span class="count">5</span>
+        <span class="count">6</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -399,7 +399,7 @@ nitgod1996 = 宁理大神 1996</title>
     </div>
     <div class="item tags">
       <a href="../tags/">
-        <span class="count">3</span>
+        <span class="count">4</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -477,31 +477,19 @@ nitgod1996 = 宁理大神 1996</title>
   <li class="item">
     
 <div class="breadcrumb">
-</div>
-
-    <span><a href="../../../my-hexo/" title="my hexo">my hexo</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/Linux/" title="分类于 Linux">Linux</a>
-</div>
-
-    <span><a href="../../../../12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" title="VMware安装中标麒麟">VMware安装中标麒麟</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
 </div>
 
     <span><a href="" title="maven复习">maven复习</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../my-hexo/" title="my hexo">my hexo</a></span>
   </li>
 
       
@@ -522,10 +510,31 @@ nitgod1996 = 宁理大神 1996</title>
   <li class="item">
     
 <div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../14/%E9%99%88%E5%BA%B7%E4%B8%9C%E5%92%8C%E7%8E%8B%E5%86%B0%E5%86%B0%E7%9A%84%E5%BF%AB%E4%B9%90%E5%B0%8F%E5%B1%8B/" title="陈康东和王冰冰的快乐小屋">陈康东和王冰冰的快乐小屋</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
 </div>
 
     <span><a href="../../hexo/Hexo%E6%90%AD%E5%BB%BAGitHub%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" title="Hexo搭建GitHub静态博客">Hexo搭建GitHub静态博客</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="../../../../12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" title="VMware安装中标麒麟">VMware安装中标麒麟</a></span>
   </li>
 
   </ul>
@@ -550,13 +559,13 @@ nitgod1996 = 宁理大神 1996</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">32k 字</span>
+    <span title="站点总字数">33k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">29 分钟</span>
+    <span title="站点阅读时长">30 分钟</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
