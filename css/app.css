@@ -2639,7 +2639,7 @@ main >.inner {
   display: none;
 }
 .contents .toc-child {
-  display: block;
+  display: none;
 }
 .contents .active>.toc-child {
   display: block;
