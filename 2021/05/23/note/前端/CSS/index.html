@@ -1,0 +1,1053 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="../images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="宁理大神1996" href="https://nitgod1996.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="宁理大神1996" href="https://nitgod1996.com/atom.xml" />
+<link rel="alternate" type="application/json" title="宁理大神1996" href="https://nitgod1996.com/feed.json" />
+
+
+
+<link rel="stylesheet" href="../css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="前端,CSS" />
+
+
+<link rel="canonical" href="https://nitgod1996.com/2021/05/23/note/%E5%89%8D%E7%AB%AF/CSS/">
+
+
+
+  <title>
+CSS 笔记及参考手册 - 前端 - 笔记 |
+nitgod1996 = 宁理大神 1996</title>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">CSS 笔记及参考手册
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-05-23 15:26:38">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-05-23T15:26:38+08:00">2021-05-23</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>6.9k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>6 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">nitgod1996</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giph4baakhj20zk0m8h5q.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeyhsblkj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipew28b65j20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclhfehz7j20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclffsa1cj20zk0m811l.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="../../../../../../index.html">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="../../../../../../categories/note/" itemprop="item" rel="index" title="分类于 笔记"><span itemprop="name">笔记</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" itemprop="item" rel="index" title="分类于 前端"><span itemprop="name">前端</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://nitgod1996.com/2021/05/23/note/%E5%89%8D%E7%AB%AF/CSS/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="../../../../../../images/avatar.jpg">
+    <meta itemprop="name" content="宁理大神1996">
+    <meta itemprop="description" content=", 宁理大神的个人博客">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="宁理大神 1996">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="一-基本信息"><a class="anchor" href="#一-基本信息">#</a> 一、 基本信息</h1>
+<h2 id="1-语法"><a class="anchor" href="#1-语法">#</a> 1. 语法</h2>
+<figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token selector">选择器</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>	<span class="token property">属性名</span><span class="token punctuation">:</span>属性值<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>	<span class="token property">属性名2</span><span class="token punctuation">:</span>属性值<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token comment">/* 注释 */</span></pre></td></tr></table></figure><h2 id="2-定义"><a class="anchor" href="#2-定义">#</a> 2. 定义</h2>
+<ul>
+<li>在 <code>html</code>  中以 <code>style</code>  标签定义</li>
+</ul>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token selector">div</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>            <span class="token property">color</span><span class="token punctuation">:</span>blue<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><ul>
+<li>在标签体内通过属性 <code>style</code>  对单个标签定义</li>
+</ul>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sty<span class="token punctuation">"</span></span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">width</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span><span class="token property">height</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span><span class="token property">background</span><span class="token punctuation">:</span> red</span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>CSS<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><ul>
+<li>在外部.CSS 文件定义，在 <code>html</code>  中通过 <code>link</code>  标签引入</li>
+</ul>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>css/data.css<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span></pre></td></tr></table></figure><h1 id="二-选择器"><a class="anchor" href="#二-选择器">#</a> 二、 选择器</h1>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>示例</th>
+<th>示例说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-class.html">.<em>class</em></a></td>
+<td>.intro</td>
+<td>选择所有 class=&quot;intro&quot; 的元素</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-id.html">#<em>id</em></a></td>
+<td>#firstname</td>
+<td>选择所有 id=&quot;firstname&quot; 的元素</td>
+</tr>
+<tr>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvc2VsLWFsbC5odG1s">*</span></td>
+<td>*</td>
+<td>选择所有元素</td>
+</tr>
+<tr>
+<td><em><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvc2VsLWVsZW1lbnQuaHRtbA==">element</span></em></td>
+<td>p</td>
+<td>选择所有 &lt;p&gt; 元素</td>
+</tr>
+<tr>
+<td><em><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvc2VsLWVsZW1lbnQtY29tbWEuaHRtbA==">element,element</span></em></td>
+<td>div,p</td>
+<td>选择所有 &lt;div&gt; 元素和 &lt; p &gt; 元素</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-element-element.html"><em>element</em> <em>element</em></a></td>
+<td>div p</td>
+<td>选择 &lt;div&gt; 元素内的所有 &lt; p &gt; 元素</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-element-gt.html"><em>element</em>&gt;<em>element</em></a></td>
+<td>div&gt;p</td>
+<td>选择所有父级是 &lt;div&gt; 元素的 &lt;p&gt; 元素</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-element-pluss.html"><em>element</em>+<em>element</em></a></td>
+<td>div+p</td>
+<td>选择所有紧接着 &lt;div&gt; 元素之后的 &lt; p &gt; 元素</td>
+</tr>
+<tr>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvc2VsLWJlZm9yZS5odG1s">:before</span></td>
+<td>p:before</td>
+<td>在每个 &lt;p&gt; 元素之前插入内容</td>
+</tr>
+<tr>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvc2VsLWFmdGVyLmh0bWw=">:after</span></td>
+<td>p:after</td>
+<td>在每个 &lt;p&gt; 元素之后插入内容</td>
+</tr>
+<tr>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvc2VsLWZpcnN0Y2hpbGQuaHRtbA==">:first-child</span></td>
+<td>p:first-child</td>
+<td>指定只有当 &lt;p&gt; 元素是其父级的第一个子级的样式。</td>
+</tr>
+<tr>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvc2VsLWxhc3QtY2hpbGQuaHRtbA==">:last-child</span></td>
+<td>p:last-child</td>
+<td>选择每个 p 元素是其父级的最后一个子级。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-nth-child.html">:nth-child(<em>n</em>)</a></td>
+<td>p:nth-child(2)</td>
+<td>选择每个 p 元素是其父级的第二个子元素</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-nth-last-child.html">:nth-last-child(<em>n</em>)</a></td>
+<td>p:nth-last-child(2)</td>
+<td>选择每个 p 元素的是其父级的第二个子元素，从最后一个子项计数</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>id 选择器  ：通过 id 属性定位容器。语法是 #idName</li>
+</ul>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>id1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>id选择器1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token selector">#id1</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token property">color</span><span class="token punctuation">:</span> deepskyblue<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><ul>
+<li>类选择器：通过 class 属性定位容器。语法是.className</li>
+</ul>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>center<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>标题居中<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token selector">.center</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>	<span class="token property">text-align</span><span class="token punctuation">:</span>center<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token punctuation">&#125;</span><span class="token comment">/* 定位说有 class="center" 的标签 */</span></pre></td></tr></table></figure><p>&lt;font color=red&gt; 注：类选择器以 &lt;/font&gt;&lt;font size=20 color=red&gt;<strong> 空格</strong> &lt;/font&gt;&lt;font color=red &gt; 为结束符，即第一个单词匹配成功即可。&lt;/font&gt;</p>
+<p>如 <code>class=&quot;intro demo&quot;</code>  亦可被 <code>.intro</code>  选择到。但 <code>class=&quot;intro-demo&quot;</code>  就不行</p>
+<ul>
+<li>element 选择器：通过标签定位容器。语法是直接 label {}</li>
+</ul>
+<figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token selector">div</span><span class="token punctuation">&#123;</span><span class="token comment">/* 所有 div*/</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token property">color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token selector">p</span><span class="token punctuation">&#123;</span><span class="token comment">/* 所有 p 标签 */</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token property">color</span><span class="token punctuation">:</span>white<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><ul>
+<li>
+<p>* 选择器：对所有容器进行 <code>CSS</code>  设置，通常用于初始化</p>
+</li>
+<li>
+<p><code>:before/:after</code>  选择器：在容器前 / 后插入内容，相当于在该位置创建一个新的容器并插入</p>
+</li>
+<li>
+<p>并列选择器：同时选中多个选择器，用 <code>,</code>  隔开</p>
+</li>
+<li>
+<p>子选择器：选择指定<strong>父标签</strong>的指定<strong>子标签</strong>，用 <code>空格</code> 隔开。</p>
+<ul>
+<li>父子选择器可以不同，如 <code>div .center #id1</code> ，表示 <code>div</code>  子元素中 <code>class=center</code>  的子元素中 <code>id=id1</code>  的元素</li>
+</ul>
+</li>
+<li>
+<p>位数选择器：匹配所有的指定特征的第 n 个标签。选择器：位数选择器</p>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>p1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>p2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>p3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="7"></td><td><pre>	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>p1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>p2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>p3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token comment">&lt;!-- 如上，同一个父标签下相同类型标识（同一标签、id、class 都可）的元素，称为一个组。此例中有 2 个 p 组 --></span></pre></td></tr></table></figure><ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvc2VsLWZpcnN0Y2hpbGQuaHRtbA==">:first-child</span>：各组下的第 1 个标签。如 <code>.box:first-child</code>  表示每个 <code>class='box'</code>  组下的第一个标签</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvc2VsLWxhc3QtY2hpbGQuaHRtbA==">:last-child</span>：最后一个标签</li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-nth-child.html">:nth-child(<em>n</em>)</a>：各组第 n 个标签</li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-nth-last-child.html">:nth-last-child(<em>n</em>)</a>：各组倒数第 n 个标签</li>
+</ul>
+</li>
+</ul>
+<h1 id="三-属性"><a class="anchor" href="#三-属性">#</a> 三、 属性</h1>
+<p>在选择器内通过属性定义样式</p>
+<figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token selector">#id1</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token property">color</span><span class="token punctuation">:</span> deepskyblue<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span> <span class="token comment">/*color 便是属性 */</span></pre></td></tr></table></figure><h2 id="1-常见属性"><a class="anchor" href="#1-常见属性">#</a> 1. 常见属性</h2>
+<h3 id="11-background-背景"><a class="anchor" href="#11-background背景">#</a> 1.1 background 背景：</h3>
+<p>设置容器背景（简写模式），直接在后面填写各类型参数。也可分别设置每个背景值。一般都是简写</p>
+<p><code>background:bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;</code></p>
+<ul>
+<li><em><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItYmFja2dyb3VuZC1jb2xvci5odG1s">background-color</span></em>：背景颜色。
+<ul>
+<li><code>yellow</code></li>
+<li><code>#00ff00</code></li>
+<li><code>rgb(255,0,255)</code></li>
+</ul>
+</li>
+<li><em><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItYmFja2dyb3VuZC1wb3NpdGlvbi5odG1s">background-position</span></em>：背景图像的位置。以左上点定位，横轴 / 纵轴分别定位。
+<ul>
+<li><code>left top</code> ：第一个是水平位置， <code>left</code>   <code>right</code>   <code>center</code> 。第二个是垂直位置 <code>top</code>   <code>bottom</code>   <code>center</code></li>
+<li><code>x% y%</code> ：水平百分比，垂直百分比。<em><strong>相对于父容器的尺寸百分比</strong></em></li>
+<li><code>xpos ypos</code> ： <code>pos</code>  是单位，可以是 <code>px</code>  像素，也可以是 <code>rem</code>  等其他单位</li>
+<li><code>inherit</code> ：继承自父元素</li>
+</ul>
+</li>
+<li><em><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvY3NzMy1wci1iYWNrZ3JvdW5kLXNpemUuaHRtbA==">background-size</span></em>：背景图片的大小。也是可以 <code>像素值</code> 或 <code>百分比</code></li>
+<li><em><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItYmFja2dyb3VuZC1yZXBlYXQuaHRtbA==">background-repeat</span></em>：当背景图较小时如何重复，一般设 <code>no-repeat</code>  不重复</li>
+<li><em><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItYmFja2dyb3VuZC1pbWFnZS5odG1s">background-image</span></em>	指定要使用的<strong>一个或多个</strong>背景图像。 <code>url(图片的路径)</code></li>
+<li><em><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvY3NzMy1wci1iYWNrZ3JvdW5kLW9yaWdpbi5odG1s">background-origin</span></em>：</li>
+<li><em><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvY3NzMy1wci1iYWNrZ3JvdW5kLWNsaXAuaHRtbA==">background-clip</span></em></li>
+<li><em><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItYmFja2dyb3VuZC1hdHRhY2htZW50Lmh0bWw=">background-attachment</span></em> 设置背景图像是否固定或者随着页面的其余部分滚动。</li>
+</ul>
+<h3 id="12-text-文本"><a class="anchor" href="#12-text文本">#</a> 1.2 text 文本：</h3>
+<p>文本属性，主要用于设置段落信息。如对齐方式、行高等</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItdGV4dC1kaXJlY3Rpb24uaHRtbA==">direction</span>：文本方向
+<ul>
+<li><code>ltr</code> 	默认。文本方向从左到右。</li>
+<li><code>rtl</code> 	文本方向从右到左。</li>
+</ul>
+</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItdGV4dC1jb2xvci5odG1s">color</span>：文本颜色</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItZGltLWxpbmUtaGVpZ2h0Lmh0bWw=">line-height</span>：行高
+<ul>
+<li><code>number</code> ：设置数字，此数字会与当前的字体尺寸相乘来设置行间距。</li>
+<li><code>length</code> ：设置固定的行间距。</li>
+<li><code>%</code> ：基于当前字体尺寸的百分比行间距。</li>
+</ul>
+</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItdGV4dC10ZXh0LWFsaWduLmh0bWw=">text-align</span>：对齐方式。 <code>left</code> 、 <code>right</code> 、 <code>center</code> 、 <code>justify</code> （两端对齐）</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItcG9zLXZlcnRpY2FsLWFsaWduLmh0bWw=">vertical-align</span>：垂直对齐方式</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItdGV4dC13b3JkLXNwYWNpbmcuaHRtbA==">word-spacing</span>：字间距</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3MvY3NzLXRleHQuaHRtbA==">其他</span></li>
+</ul>
+<h3 id="13-font-字体"><a class="anchor" href="#13-font字体">#</a> 1.3 font 字体：</h3>
+<p>设置字体。字体样式、大小、颜色等。简写如 <code> font:15px arial,sans-serif;</code> ，亦可单独设置</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItZm9udC1mb250LXNpemUuaHRtbA==">font-size</span>：字体大小</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItZm9udC1mb250LXN0eWxlLmh0bWw=">font-style</span>：字体样式。
+<ul>
+<li><code>italic</code> 	斜体，表示使用文字的斜体。</li>
+<li><code>oblique</code> 	倾斜，表示让没有斜体属性的文字倾斜。</li>
+</ul>
+</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItZm9udC13ZWlnaHQuaHRtbA==">font-weight</span>：字体粗细
+<ul>
+<li><code>bold</code> 	定义粗体字符。</li>
+<li><code>bolder</code> 	定义更粗的字符。</li>
+<li><code>lighter</code> 	定义更细的字符。</li>
+<li>直接数字定义</li>
+</ul>
+</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItZm9udC1mb250LWZhbWlseS5odG1s">font-family</span>：字体类型，如 <code>Times New Roman</code> ，也可导入外部字体，需要先用 <code>@font-face </code> 定义</li>
+</ul>
+<blockquote>
+<p>自定义字体，一般在网上下载好字体文件，引入即可。如下：</p>
+</blockquote>
+<figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token property">font-family</span><span class="token punctuation">:</span> electronicFont<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token property">src</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>/font/DS-DIGIT.TTF<span class="token punctuation">)</span></span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h3 id="14-列表-ul-lo-li-属性"><a class="anchor" href="#14-列表ul-lo-li属性">#</a> 1.4 列表 <code>ul</code> 、 <code>lo</code> 、 <code>li</code>  属性：</h3>
+<p>用于设置列表的属性，一般是列表项标志 <code>● 1.</code>  这种</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItbGlzdC1zdHlsZS5odG1s">list-style</span>：简写</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItbGlzdC1zdHlsZS10eXBlLmh0bWw=">list-style-type</span>：列表项标志类型
+<ul>
+<li><code>none</code> ：没有标志</li>
+<li><code>disc</code> 	默认。标记是实心圆</li>
+<li><code>circle</code> 	标记是空心圆。</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItbGlzdC1zdHlsZS10eXBlLmh0bWw=">更多</span></li>
+</ul>
+</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItbGlzdC1zdHlsZS1pbWFnZS5odG1s">list-style-image</span>：用图像作列表项标志 <code>url('sqpurple.gif')</code></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItbGlzdC1zdHlsZS1wb3NpdGlvbi5odG1s">list-style-position</span>：列表项标志的位置
+<ul>
+<li><code>inside</code> 	列表项目标记放在文本内。</li>
+<li><code>outside</code> 	默认值。位于文本外（左侧）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="15-border-边框"><a class="anchor" href="#15-border边框">#</a> 1.5 border 边框：</h3>
+<p>用于设置容器的边框线</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItYm9yZGVyLmh0bWw=">border</span>：简写属性，用于把针对四个边的属性设置在一个声明。如 <code>border:5px solid red;</code></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItYm9yZGVyLXN0eWxlLmh0bWw=">border-style</span>：设置线的样式，此属性可以有一到四个值。分别按↑、→、↓、←的顺序
+<ul>
+<li><code>dotted</code> 	定义点状</li>
+<li><code>dashed</code> 	定义虚线</li>
+<li><code>solid</code> 	定义实线。</li>
+<li><code>double</code> 	定义双线
+<ul>
+<li><strong>border-style:dotted solid double dashed;</strong>
+<ul>
+<li>上边框是点状</li>
+<li>右边框是实线</li>
+<li>下边框是双线</li>
+<li>左边框是虚线</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItYm9yZGVyLXdpZHRoLmh0bWw=">border-width</span>：边框线宽</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItYm9yZGVyLWNvbG9yLmh0bWw=">border-color</span>：颜色</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItYm9yZGVyLWJvdHRvbS5odG1s">border-bottom</span>：单独设置下边框的简写</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItYm9yZGVyLWJvdHRvbS1jb2xvci5odG1s">border-bottom-color</span>：下边框颜色...</li>
+<li>各边框都可各自定义</li>
+</ul>
+<h3 id="16-margin-外边距-padding-内边距"><a class="anchor" href="#16-margin外边距padding内边距">#</a> 1.6 margin 外边距 /padding 内边距：</h3>
+<p>​	margin 也称页边距，与父元素的间距。padding 是与子元素的间距</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2013/08/VlwVi.png" alt="img"></p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItbWFyZ2luLmh0bWw=">margin</span>：同时设置四个间距
+<ul>
+<li><code>auto</code> 	浏览器计算下外边距。</li>
+<li><code>length</code> 	比如像素、厘米等。默认值是 0px。</li>
+<li><code>%</code> 	基于父元素的宽度的百分比</li>
+<li><code>inherit</code> 	继承父元素</li>
+</ul>
+</li>
+<li>margin-bottom	设置元素的下外边距。</li>
+<li>margin-left	设置元素的左外边距。</li>
+<li>margin-right	设置元素的右外边距。</li>
+<li>margin-top	设置元素的上外边距。</li>
+<li>padding：同上</li>
+</ul>
+<h3 id="17-display-显示"><a class="anchor" href="#17-display显示">#</a> 1.7 display 显示：</h3>
+<ul>
+<li><code>display</code>  通常用于隐藏 / 按行显示 / 按列显示
+<ul>
+<li><code>none</code> ：隐藏所有组件。</li>
+<li><code>inline</code> ：显示为内联元素，元素前后没有换行符。<strong>不识别宽高设置</strong></li>
+<li><code>block</code> ：显示为块级元素，此元素前后会带有换行符。</li>
+<li><code>inline-block</code> ：显示为行内块元素</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>注意：当把父元素设置为 <code>inline</code> ，不会对子元素产生影响。所以如果父元素是 <code>inline</code>  而子元素是 <code>block</code> ，那么仍会换行。</p>
+</blockquote>
+<ul>
+<li><code>visibility</code>  也有隐藏功能
+<ul>
+<li><code>hidden</code> ：隐藏组件，但该隐藏仅仅隐藏显示，空间布局是不变的（即隐藏后仍有一块空白）</li>
+</ul>
+</li>
+</ul>
+<p>此处首先先明确一下内联元素（inline element）和块元素（block element）的概念。（一条标签如 &lt;div&gt; 即是一个元素）</p>
+<h4 id="171-内联元素"><a class="anchor" href="#171-内联元素">#</a> 1.7.1 内联元素</h4>
+<p>​		内联元素又名行内元素，和其对应的是块元素 (block element)，都是 html 规范中的概念。内联元素的显示，为了帮助理解，可以形象的称为 “文本模式”，即<strong>一个挨着一个，都在同一行按从左至右的顺序显示，不单独占一行</strong>。</p>
+<blockquote>
+<p>任何不是块级元素的可见元素都是内联元素。其表现的特性是 “行布局” 形式，这里的 “行布局” 的意思就是说其表现形式始终以行进行显示。</p>
+</blockquote>
+<p>内联元素有以下特点：</p>
+<ol>
+<li>和其他元素都在一行上，遇到父级元素边界会自动换行</li>
+<li>高、行高以及内外边距都<strong>不可以改变</strong></li>
+<li>宽度与内容一样宽，且<strong>不可改变</strong></li>
+<li>行内元素只能容纳文本或者其他行内元素</li>
+<li>对于行内元素，需要注意的是：设置宽度 width 无效，设置高度无效，可以通过设置 line-height 来设置，设置 margin 只有左右有效，上下无效，设置 padding 只有左右有效，上下无效</li>
+</ol>
+<p>常见的内联元素有：</p>
+<ul>
+<li>a – 锚点</li>
+<li>abbr – 缩写</li>
+<li>acronym – 首字</li>
+<li>b – 粗体 (不推荐)</li>
+<li>bdo – bidi override</li>
+<li>big – 大字体</li>
+<li>br – 换行</li>
+<li>cite – 引用</li>
+<li>code – 计算机代码 (在引用源码的时候需要)</li>
+<li>dfn – 定义字段</li>
+<li>em – 强调</li>
+<li>font – 字体设定 (不推荐)</li>
+<li>i – 斜体</li>
+<li>img – 图片</li>
+<li>input – 输入框</li>
+<li>kbd – 定义键盘文本</li>
+<li>label – 表格标签</li>
+<li>q – 短引用</li>
+<li>s – 中划线 (不推荐)</li>
+<li>samp – 定义范例计算机代码</li>
+<li>select – 项目选择</li>
+<li>small – 小字体文本</li>
+<li>span – 常用内联容器，定义文本内区块</li>
+<li>strike – 中划线</li>
+<li>strong – 粗体强调</li>
+<li>sub – 下标</li>
+<li>sup – 上标</li>
+<li>textarea – 多行文本输入框</li>
+<li>tt – 电传文本</li>
+<li>u – 下划线</li>
+</ul>
+<h4 id="172-块元素"><a class="anchor" href="#172-块元素">#</a> 1.7.2 块元素</h4>
+<p>块元素和内联元素的基本差异是块元素一般都从新行开始，相邻的块级元素将会在不同行显示。</p>
+<p>块级元素的特点：</p>
+<ol>
+<li>独霸一行，总是在新行上开始</li>
+<li>宽度缺省是它父级元素的 100%，除非设定一个宽度</li>
+<li>高度、行高、外边距、内边距都可以设置</li>
+<li>可以容纳其他内联元素或者其他块元素</li>
+</ol>
+<p>以下是常见的块级元素：</p>
+<ul>
+<li>address – 地址</li>
+<li>blockquote – 块引用</li>
+<li>center – 举中对齐块</li>
+<li>dir – 目录列表</li>
+<li>div – 常用块级容易，也是 CSS layout 的主要标签</li>
+<li>dl – 定义列表</li>
+<li>fieldset – form 控制组</li>
+<li>form – 交互表单</li>
+<li>h1~h6 – 标题</li>
+<li>hr – 水平分隔线</li>
+<li>isindex – input prompt</li>
+<li>menu – 菜单列表</li>
+<li>noframes – frames 可选内容，（对于不支持 frame 的浏览器显示此区块内容</li>
+<li>noscript – 可选脚本内容（对于不支持 script 的浏览器显示此内容）</li>
+<li>ol – 有序表单</li>
+<li>p – 段落</li>
+<li>pre – 格式化文本</li>
+<li>table – 表格</li>
+<li>ul – 无序列表</li>
+</ul>
+<h4 id="173-行内块元素"><a class="anchor" href="#173-行内块元素">#</a> 1.7.3 行内块元素</h4>
+<p>inline-block。整合了块元素和内联元素的优点，有以下特点：</p>
+<ol>
+<li>元素排列在一行</li>
+<li>宽度默认由内容决定</li>
+<li>元素间默认有间距</li>
+<li>支持宽高、外边距、内边距的所有样式的设置</li>
+</ol>
+<h3 id="18-position-定位"><a class="anchor" href="#18-position定位">#</a> 1.8 position 定位：</h3>
+<p>​		指定了元素的定位类型。通常与 <code>left</code>  等定位属性配合使用</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItY2xhc3MtcG9zaXRpb24uaHRtbA==">position</span>
+<ul>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3MvY3NzLXBvc2l0aW9uaW5nLmh0bWwjcG9zaXRpb24tc3RhdGlj">static</span>：无特殊定位，遵循正常文档流，<strong>忽略 left、top、right、bottom 和 z-index 属性</strong></p>
+</li>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3MvY3NzLXBvc2l0aW9uaW5nLmh0bWwjcG9zaXRpb24tcmVsYXRpdmU=">relative</span>：相对于正常位置 (static) 移动， <code>left</code>  等属性设置的是<strong>移动值</strong>。</p>
+</li>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3MvY3NzLXBvc2l0aW9uaW5nLmh0bWwjcG9zaXRpb24tZml4ZWQ=">fixed</span>：相对浏览器窗口固定，即使窗口滚动也不会动。<strong>适用于做浮窗</strong></p>
+</li>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3MvY3NzLXBvc2l0aW9uaW5nLmh0bWwjcG9zaXRpb24tYWJzb2x1dGU=">absolute</span>：绝对定位，其实是相对于<strong>父元素</strong>的坐标， <code>left</code>  等属性设置的是<strong>坐标值</strong>。</p>
+<ol>
+<li>
+<p>设置了 absolute 的元素如果存在有祖先元素设置了 position 属性为 relative 或者 absolute，则这时元素的定位对象为此已设置 position 属性的祖先元素。</p>
+</li>
+<li>
+<p>如果并没有设置了 position 属性的祖先元素，则此时相对于 body 进行定位。</p>
+</li>
+</ol>
+</li>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3MvY3NzLXBvc2l0aW9uaW5nLmh0bWwjcG9zaXRpb24tc3RpY2t5">sticky</span>：粘性定位，设置一个阈值，相对于浏览器窗口不会超出此阈值。可见<span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3MvY3NzLXBvc2l0aW9uaW5nLmh0bWwjcG9zaXRpb24tc3RpY2t5">示例</span></p>
+</li>
+</ul>
+</li>
+<li><code>left</code> 、 <code>right</code> 、 <code>bottom</code> 、 <code>top</code> ：设置距左、右、下、上的距离
+<ul>
+<li><code>auto</code></li>
+<li><code>length</code> ： <code>px</code>  或 <code>rem</code>  或其他</li>
+<li><code>%</code></li>
+<li><code>inherit</code></li>
+</ul>
+</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvcHItcG9zLXotaW5kZXguaHRtbA==">z-index</span>：堆叠顺序。最大的在最上面</li>
+</ul>
+<h3 id="19-overflow-溢出设置"><a class="anchor" href="#19-overflow溢出设置">#</a> 1.9 overflow 溢出设置：</h3>
+<p>​	定义了当元素溢出容器时如何显示，如</p>
+<p><img data-src="/2021/05/23/note/%E5%89%8D%E7%AB%AF/CSS/C:%5CUsers%5CAdministrator.DESKTOP-R00PN9V%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210429162249569.png" alt="image-20210429162249569"></p>
+<ul>
+<li><code>overflow</code>
+<ul>
+<li><code>visible</code> 	默认值。内容不会被修剪，会呈现在<strong>元素框之外</strong>。</li>
+<li><code>hidden</code> 	内容会被修剪，并且其余内容是<strong>不可见</strong>的。</li>
+<li><code>scroll</code> 	内容会被修剪，但是浏览器会显示<strong>滚动条</strong>以便查看其余的内容。</li>
+<li><code>auto</code> 	如果内容被修剪，则浏览器会显示<strong>滚动条</strong>以便查看其余的内容。</li>
+<li><code>inherit</code> 	继承</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-不常见属性"><a class="anchor" href="#2-不常见属性">#</a> 2. 不常见属性</h2>
+<h5 id="动画"><a class="anchor" href="#动画">#</a> 动画：</h5>
+<p>​	用于设置元素动画。需要先定义动画规则 <code>@keyframes</code> （关键帧）</p>
+<ul>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvY3NzMy1wci1hbmltYXRpb24uaHRtbA==">animation</span>：简写，语法如下</p>
+<blockquote>
+<p>animation: name duration timing-function delay iteration-count direction fill-mode play-state;。</p>
+</blockquote>
+<p>示例： <code>animation:mymove 5s infinite;</code></p>
+</li>
+<li>
+<p><em><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvY3NzMy1wci1hbmltYXRpb24tbmFtZS5odG1s">animation-name</span></em>：指定要绑定到选择器的动画名称</p>
+</li>
+<li>
+<p><em><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvY3NzMy1wci1hbmltYXRpb24tZHVyYXRpb24uaHRtbA==">animation-duration</span></em>：动画指定需要多少秒或毫秒完成。即一轮动画多少秒，0 表示不执行动画</p>
+</li>
+<li>
+<p><em><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvY3NzMy1wci1hbmltYXRpb24tdGltaW5nLWZ1bmN0aW9uLmh0bWw=">animation-timing-function</span></em>：设置动画将如何完成一个周期</p>
+<ul>
+<li><code>linear</code> 	动画从头到尾的速度是相同的。</li>
+<li><code>ease</code> 	默认。动画以低速开始，然后加快，在结束前变慢。</li>
+<li><code>ease-in</code> 	动画以低速开始。</li>
+<li><code>ease-out</code> 	动画以低速结束。</li>
+<li><code>ease-in-out</code> 	动画以低速开始和结束。</li>
+<li><code>cubic-bezier(n,n,n,n)</code> 	自定义。在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值。</li>
+</ul>
+</li>
+<li>
+<p><em><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvY3NzMy1wci1hbmltYXRpb24tZGVsYXkuaHRtbA==">animation-delay</span></em>：设置动画在启动前的延迟间隔。</p>
+</li>
+<li>
+<p><em><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvY3NzMy1wci1hbmltYXRpb24taXRlcmF0aW9uLWNvdW50Lmh0bWw=">animation-iteration-count</span></em>：播放次数</p>
+<ul>
+<li><code>n</code> 	一个数字，定义应该播放多少次动画</li>
+<li><code>infinite</code> 	无限循环</li>
+</ul>
+</li>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jc3NyZWYvY3NzMy1wci1hbmltYXRpb24uaHRtbA==">更多</span></p>
+</li>
+</ul>
+<blockquote>
+<p>定义动画规则 <code>@keyframes</code> （关键帧）</p>
+</blockquote>
+<p>如下</p>
+<figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token atrule"><span class="token rule">@keyframes</span> mymove</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token selector">from</span> <span class="token punctuation">&#123;</span><span class="token property">top</span><span class="token punctuation">:</span>0px<span class="token punctuation">;</span><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token selector">to</span> <span class="token punctuation">&#123;</span><span class="token property">top</span><span class="token punctuation">:</span>200px<span class="token punctuation">;</span><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>@-webkit-keyframes mymove <span class="token comment">/* Safari and Chrome */</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token selector">from</span> <span class="token punctuation">&#123;</span><span class="token property">top</span><span class="token punctuation">:</span>0px<span class="token punctuation">;</span><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token selector">to</span> <span class="token punctuation">&#123;</span><span class="token property">top</span><span class="token punctuation">:</span>200px<span class="token punctuation">;</span><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure>
+      <div class="tags">
+          <a href="../../../../../../tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="ic i-tag"></i> 前端</a>
+          <a href="../../../../../../tags/CSS/" rel="tag"><i class="ic i-tag"></i> CSS</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2021-06-03 16:25:09" itemprop="dateModified" datetime="2021-06-03T16:25:09+08:00">2021-06-03</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="../images/wechatpay.png" alt="宁理大神1996 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="../images/alipay.png" alt="宁理大神1996 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="../images/paypal.png" alt="宁理大神1996 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>宁理大神1996 <i class="ic i-at"><em>@</em></i>宁理大神 1996
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="../../../../../../https:/nitgod1996.com/2021/05/23/note/%E5%89%8D%E7%AB%AF/CSS/" title="CSS 笔记及参考手册">https://nitgod1996.com/2021/05/23/note/前端/CSS/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="../../../../20/note/%E9%9A%8F%E7%AC%94/%E5%87%86%E5%A4%87%E5%AD%A6%E4%B9%A0docker/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclga70tsj20zk0m84mr.jpg" title="docker随手记">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 随笔</span>
+  <h3>docker随手记</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="../../../../26/note/%E5%89%8D%E7%AB%AF/html/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclwrdwyaj20zk0m8are.jpg" title="html常用功能手册">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 前端</span>
+  <h3>html常用功能手册</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-number">1.</span> <span class="toc-text"> 一、 基本信息</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%AF%AD%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. 语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%9A%E4%B9%89"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. 定义</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text"> 二、 选择器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E5%B1%9E%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text"> 三、 属性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%B8%B8%E8%A7%81%E5%B1%9E%E6%80%A7"><span class="toc-number">3.1.</span> <span class="toc-text"> 1. 常见属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-background-%E8%83%8C%E6%99%AF"><span class="toc-number">3.1.1.</span> <span class="toc-text"> 1.1 background 背景：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-text-%E6%96%87%E6%9C%AC"><span class="toc-number">3.1.2.</span> <span class="toc-text"> 1.2 text 文本：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-font-%E5%AD%97%E4%BD%93"><span class="toc-number">3.1.3.</span> <span class="toc-text"> 1.3 font 字体：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-%E5%88%97%E8%A1%A8-ul-lo-li-%E5%B1%9E%E6%80%A7"><span class="toc-number">3.1.4.</span> <span class="toc-text"> 1.4 列表 ul 、 lo 、 li  属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-border-%E8%BE%B9%E6%A1%86"><span class="toc-number">3.1.5.</span> <span class="toc-text"> 1.5 border 边框：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-margin-%E5%A4%96%E8%BE%B9%E8%B7%9D-padding-%E5%86%85%E8%BE%B9%E8%B7%9D"><span class="toc-number">3.1.6.</span> <span class="toc-text"> 1.6 margin 外边距 &#x2F;padding 内边距：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-display-%E6%98%BE%E7%A4%BA"><span class="toc-number">3.1.7.</span> <span class="toc-text"> 1.7 display 显示：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#171-%E5%86%85%E8%81%94%E5%85%83%E7%B4%A0"><span class="toc-number">3.1.7.1.</span> <span class="toc-text"> 1.7.1 内联元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#172-%E5%9D%97%E5%85%83%E7%B4%A0"><span class="toc-number">3.1.7.2.</span> <span class="toc-text"> 1.7.2 块元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#173-%E8%A1%8C%E5%86%85%E5%9D%97%E5%85%83%E7%B4%A0"><span class="toc-number">3.1.7.3.</span> <span class="toc-text"> 1.7.3 行内块元素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-position-%E5%AE%9A%E4%BD%8D"><span class="toc-number">3.1.8.</span> <span class="toc-text"> 1.8 position 定位：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-overflow-%E6%BA%A2%E5%87%BA%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.1.9.</span> <span class="toc-text"> 1.9 overflow 溢出设置：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B8%8D%E5%B8%B8%E8%A7%81%E5%B1%9E%E6%80%A7"><span class="toc-number">3.2.</span> <span class="toc-text"> 2. 不常见属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB"><span class="toc-number">3.2.0.0.1.</span> <span class="toc-text"> 动画：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="../../../../../04/23/note/%E5%89%8D%E7%AB%AF/echarts/" rel="bookmark" title="echarts用法简单记录">echarts用法简单记录</a></li><li class="active"><a href="" rel="bookmark" title="CSS笔记及参考手册">CSS笔记及参考手册</a></li><li><a href="../../../../26/note/%E5%89%8D%E7%AB%AF/html/" rel="bookmark" title="html常用功能手册">html常用功能手册</a></li><li><a href="../../../../27/note/%E5%89%8D%E7%AB%AF/JavaScript/" rel="bookmark" title="JavaScript基础语法">JavaScript基础语法</a></li><li><a href="../../../../27/note/%E5%89%8D%E7%AB%AF/jQuery/" rel="bookmark" title="jQuery笔记">jQuery笔记</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="宁理大神1996"
+      data-src="../images/avatar.jpg">
+  <p class="name" itemprop="name">宁理大神1996</p>
+  <div class="description" itemprop="description">宁理大神的个人博客</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="../archives/">
+        <span class="count">19</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="../categories/">
+        <span class="count">13</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="../tags/">
+        <span class="count">19</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3lvdXJuYW1l" title="https:&#x2F;&#x2F;github.com&#x2F;yourname"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPXlvdXJpZA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;yourid"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="../index.html" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../archives/" rel="section"><i class="ic i-archive"></i>归档</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="../../../../20/note/%E9%9A%8F%E7%AC%94/%E5%87%86%E5%A4%87%E5%AD%A6%E4%B9%A0docker/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="../../../../26/note/%E5%89%8D%E7%AB%AF/html/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../14/%E9%99%88%E5%BA%B7%E4%B8%9C%E5%92%8C%E7%8E%8B%E5%86%B0%E5%86%B0%E7%9A%84%E5%BF%AB%E4%B9%90%E5%B0%8F%E5%B1%8B/" title="陈康东和王冰冰的快乐小屋">陈康东和王冰冰的快乐小屋</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="../../../../12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" title="VMware安装中标麒麟">VMware安装中标麒麟</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/computer-science/java/" title="分类于 Java">Java</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/computer-science/java/course-1/" title="分类于 零基础学 Java 语言 - 浙江大学 - 翁恺">零基础学 Java 语言 - 浙江大学 - 翁恺</a>
+</div>
+
+    <span><a href="../../../../09/test/" title="my hexo">my hexo</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="../../../../../04/23/note/%E5%89%8D%E7%AB%AF/echarts/" title="echarts用法简单记录">echarts用法简单记录</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../08/my-hexo/" title="my hexo">my hexo</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%AC%94/" title="分类于 每日一笔">每日一笔</a>
+</div>
+
+    <span><a href="../../../../../06/02/note/%E9%9A%8F%E7%AC%94/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%AC%94/%E5%9F%BA%E4%BA%8EPython%E5%92%8Cecharts%E7%9A%84%E5%8A%A8%E6%80%81%E5%9B%BE/" title="每日一笔-基于Python和echarts的动态图">每日一笔-基于Python和echarts的动态图</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="../../../../26/note/%E5%89%8D%E7%AB%AF/html/" title="html常用功能手册">html常用功能手册</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="../../../../18/note/Java/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%8F%8A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="java基础语法及特性">java基础语法及特性</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/Python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="../../../../29/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E5%A4%84%E7%90%86json/" title="随笔-利用Python处理json">随笔-利用Python处理json</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/Python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="../../../../13/note/Python/pandas/" title="pandas分析数据及格式">pandas分析数据及格式</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">宁理大神1996 @ nitgod1996</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">126k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:54</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/05/23/note/前端/CSS/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="../../../../../../js/app.js?v=0.2.5"></script>
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
