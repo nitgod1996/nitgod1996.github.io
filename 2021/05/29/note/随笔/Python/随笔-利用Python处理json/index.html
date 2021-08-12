@@ -76,7 +76,7 @@ nitgod1996 = 宁理大神 1996</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>810</span>
+    <span>887</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -117,12 +117,12 @@ nitgod1996 = 宁理大神 1996</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipet4bz0yj20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipey0a334j20zk0m8qpt.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipexj2jgzj20zk0m8b09.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclga70tsj20zk0m84mr.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicitzannuj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclflwv2aj20zk0m84qp.jpg"></li>
           <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclffsa1cj20zk0m811l.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeuv80yoj20zk0m8kjl.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciub8ja1j20zk0m81ky.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclx6phq6j20zk0m8e36.jpg"></li>
         </ul>
       </div>
     </header>
@@ -174,55 +174,50 @@ nitgod1996 = 宁理大神 1996</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="0-json-类"><a class="anchor" href="#0-json类">#</a> 0. json 类</h1>
-<p>​		在 Python 的 json 库中，共有四个方法。分别是：</p>
-<pre class=" language-language-python"><code class="language-language-python">json.load() # json文件输入流转为dict
-json.loads() # 将字符串类型的json转为dict
-json.dump() # 将dict类型的json写到文件输出流
-json.dumps() # 将dict类型的json转为
+    <h1 id="0-json类"><a href="#0-json类" class="headerlink" title="0. json类"></a>0. json类</h1><p>​        在Python 的 json库中，共有四个方法。分别是：</p>
+<pre class=" language-python"><code class="language-python">json<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># json文件输入流转为dict</span>
+json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 将字符串类型的json转为dict</span>
+json<span class="token punctuation">.</span>dump<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 将dict类型的json写到文件输出流</span>
+json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 将dict类型的json转为</span>
 </code></pre>
-<h1 id="1-通过-pandas-读写-json"><a class="anchor" href="#1-通过pandas读写json">#</a> 1. 通过 pandas 读写 json</h1>
-<p><code>pandas</code>  是 Python 数据处理的库，一般把数据转成 <code>DATAFrame</code>  或 <code>Series</code>  进行处理，但这样可能会破坏原有的 <code>json</code>  格式</p>
+<h1 id="1-通过pandas读写json"><a href="#1-通过pandas读写json" class="headerlink" title="1. 通过pandas读写json"></a>1. 通过pandas读写json</h1><p><code>pandas</code>是Python数据处理的库，一般把数据转成<code>DATAFrame</code>或<code>Series</code>进行处理，但这样可能会破坏原有的<code>json</code>格式</p>
 <p>前提：</p>
 <ol>
 <li>引入外部库</li>
 </ol>
-<pre class=" language-language-python"><code class="language-language-python">import json
-import pandas as pd
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> json
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 </code></pre>
 <ol start="2">
-<li>
-<p>读取数据，保存为 <code>Dataframe</code> 。以 <code>.csv</code>  文件为例</p>
-<pre class=" language-language-python"><code class="language-language-python">df = pd.read_csv('DataA09/demo.csv')
+<li><p>读取数据，保存为<code>Dataframe</code>。以<code>.csv</code>文件为例</p>
+<pre class=" language-python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'DataA09/demo.csv'</span><span class="token punctuation">)</span>
 </code></pre>
-<p>输出如下：第 1 行和第 1 列均为索引，不视作数据内容</p>
+<p>输出如下：第1行和第1列均为索引，不视作数据内容</p>
 <p><img data-src="/2021/05/29/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E5%A4%84%E7%90%86json/image-20210530200815008.png" alt="image-20210530200815008"></p>
 </li>
-<li>
-<p>利用 <code>DataFrame.to_json</code>  转成 <code>json</code>  字符串</p>
-<pre class=" language-language-python"><code class="language-language-python">df.to_json('path',orient='index')#返回str类型
-#或者
-json.loads(df.to_json('path',orient='table'))["data"]#返回map
-#就能转成比较常见的json格式文件
+<li><p>利用<code>DataFrame.to_json</code>转成<code>json</code>字符串</p>
+<pre class=" language-python"><code class="language-python">df<span class="token punctuation">.</span>to_json<span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">,</span>orient<span class="token operator">=</span><span class="token string">'index'</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#返回str类型</span>
+<span class="token comment" spellcheck="true">#或者</span>
+json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>df<span class="token punctuation">.</span>to_json<span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">,</span>orient<span class="token operator">=</span><span class="token string">'table'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">"data"</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true">#返回map</span>
+<span class="token comment" spellcheck="true">#就能转成比较常见的json格式文件</span>
 </code></pre>
-<p><code>orient = 'index'</code>  有时候中文乱码，可以和下方例子一样，用 <code>json.loads()</code>  包裹，再 <code>str()</code>  转回字符串，就可以显示中文了。<strong>但是仅仅是 str 是中文，json 文件还是乱码的</strong></p>
-<p>2 种格式分别如下：</p>
+<p><code>orient = &#39;index&#39;</code>有时候中文乱码，可以和下方例子一样，用<code>json.loads()</code>包裹，再<code>str()</code>转回字符串，就可以显示中文了。<strong>但是仅仅是str是中文，json文件还是乱码的</strong></p>
+<p>2种格式分别如下：</p>
 <p><img data-src="/2021/05/29/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E5%A4%84%E7%90%86json/image-20210530205052077.png" alt="image-20210530205052077"></p>
 <p><img data-src="/2021/05/29/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E5%A4%84%E7%90%86json/image-20210530205138024.png" alt="image-20210530205138024"></p>
 </li>
 </ol>
-<h1 id="2-以-dict-格式读取-json"><a class="anchor" href="#2-以dict格式读取json">#</a> 2. 以 dict 格式读取 json</h1>
-<p>字典（map 表）格式是最适合保存 json 文件的</p>
-<p>以 Python 自带的文件输入输出流读取：</p>
-<pre class=" language-language-python"><code class="language-language-python"># 读取数据
-with open('../dataYe/od_map.json','r') as f:
-    djson = json.load(f)
+<h1 id="2-以dict格式读取json"><a href="#2-以dict格式读取json" class="headerlink" title="2. 以dict格式读取json"></a>2. 以dict格式读取json</h1><p>字典（map表）格式是最适合保存json文件的</p>
+<p>以Python自带的文件输入输出流读取：</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 读取数据</span>
+<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'../dataYe/od_map.json'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    djson <span class="token operator">=</span> json<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
     
-# 写入 JSON 数据
-with open('data.json', 'w') as f:
-    json.dump(data, f)
+<span class="token comment" spellcheck="true"># 写入 JSON 数据</span>
+<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'data.json'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    json<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>data<span class="token punctuation">,</span> f<span class="token punctuation">)</span>
 </code></pre>
-<p>这其中 <code>djson</code> 、 <code>data</code>  都是 <code>dict</code>  类型</p>
+<p>这其中<code>djson</code>、<code>data</code>都是<code>dict</code>类型</p>
 
       <div class="tags">
           <a href="../../../../../../../tags/Python/" rel="tag"><i class="ic i-tag"></i> Python</a>
@@ -293,7 +288,7 @@ with open('data.json', 'w') as f:
     <div class="item left">
       
 
-  <a href="../../../../../28/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclgrvbd6j20zk0m8qv5.jpg" title="随笔-利用Python批量处理文件">
+  <a href="../../../../../28/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciuv0socj20zk0m8qes.jpg" title="随笔-利用Python批量处理文件">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> Python</span>
   <h3>随笔-利用Python批量处理文件</h3>
@@ -303,7 +298,7 @@ with open('data.json', 'w') as f:
     <div class="item right">
       
 
-  <a href="../../../../../../06/02/note/%E9%9A%8F%E7%AC%94/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%AC%94/%E5%9F%BA%E4%BA%8EPython%E5%92%8Cecharts%E7%9A%84%E5%8A%A8%E6%80%81%E5%9B%BE/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicm0n457cj20zk0m8e81.jpg" title="每日一笔-基于Python和echarts的动态图">
+  <a href="../../../../../../06/02/note/%E9%9A%8F%E7%AC%94/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%AC%94/%E5%9F%BA%E4%BA%8EPython%E5%92%8Cecharts%E7%9A%84%E5%8A%A8%E6%80%81%E5%9B%BE/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipey84bjtj20zk0m8hdt.jpg" title="每日一笔-基于Python和echarts的动态图">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> 每日一笔</span>
   <h3>每日一笔-基于Python和echarts的动态图</h3>
@@ -325,7 +320,7 @@ with open('data.json', 'w') as f:
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-json-%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text"> 0. json 类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E9%80%9A%E8%BF%87-pandas-%E8%AF%BB%E5%86%99-json"><span class="toc-number">2.</span> <span class="toc-text"> 1. 通过 pandas 读写 json</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BB%A5-dict-%E6%A0%BC%E5%BC%8F%E8%AF%BB%E5%8F%96-json"><span class="toc-number">3.</span> <span class="toc-text"> 2. 以 dict 格式读取 json</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-json%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">0. json类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E9%80%9A%E8%BF%87pandas%E8%AF%BB%E5%86%99json"><span class="toc-number">2.</span> <span class="toc-text">1. 通过pandas读写json</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BB%A5dict%E6%A0%BC%E5%BC%8F%E8%AF%BB%E5%8F%96json"><span class="toc-number">3.</span> <span class="toc-text">2. 以dict格式读取json</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -343,19 +338,19 @@ with open('data.json', 'w') as f:
 <nav class="state">
     <div class="item posts">
       <a href="../archives/">
-        <span class="count">19</span>
+        <span class="count">28</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item categories">
       <a href="../categories/">
-        <span class="count">13</span>
+        <span class="count">14</span>
         <span class="name">分类</span>
       </a>
     </div>
     <div class="item tags">
       <a href="../tags/">
-        <span class="count">19</span>
+        <span class="count">22</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -438,28 +433,7 @@ with open('data.json', 'w') as f:
 <a href="../../../../../../../categories/note/Python/" title="分类于 Python">Python</a>
 </div>
 
-    <span><a href="../../../../../13/note/Python/pandas/" title="pandas分析数据及格式">pandas分析数据及格式</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="../../../../../08/my-hexo/" title="my hexo">my hexo</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../../categories/note/Linux/" title="分类于 Linux">Linux</a>
-</div>
-
-    <span><a href="../../../../../12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" title="VMware安装中标麒麟">VMware安装中标麒麟</a></span>
+    <span><a href="../../../../../../06/04/note/Python/Python%E8%AF%AD%E6%B3%95%E5%A4%8D%E4%B9%A0/" title="Python语法复习">Python语法复习</a></span>
   </li>
 
       
@@ -484,50 +458,10 @@ with open('data.json', 'w') as f:
 <div class="breadcrumb">
 <a href="../../../../../../../categories/note/" title="分类于 笔记">笔记</a>
 <i class="ic i-angle-right"></i>
-<a href="../../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../../categories/note/%E9%9A%8F%E7%AC%94/Python/" title="分类于 Python">Python</a>
+<a href="../../../../../../../categories/note/Linux/" title="分类于 Linux">Linux</a>
 </div>
 
-    <span><a href="../../../../../28/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/" title="随笔-利用Python批量处理文件">随笔-利用Python批量处理文件</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../../categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../../categories/computer-science/java/" title="分类于 Java">Java</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../../categories/computer-science/java/course-1/" title="分类于 零基础学 Java 语言 - 浙江大学 - 翁恺">零基础学 Java 语言 - 浙江大学 - 翁恺</a>
-</div>
-
-    <span><a href="../../../../../09/test/" title="my hexo">my hexo</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
-</div>
-
-    <span><a href="../../../../../../04/23/note/%E5%89%8D%E7%AB%AF/echarts/" title="echarts用法简单记录">echarts用法简单记录</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
-</div>
-
-    <span><a href="../../../../../20/note/%E9%9A%8F%E7%AC%94/%E5%87%86%E5%A4%87%E5%AD%A6%E4%B9%A0docker/" title="docker随手记">docker随手记</a></span>
+    <span><a href="../../../../../12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" title="VMware安装中标麒麟">VMware安装中标麒麟</a></span>
   </li>
 
       
@@ -543,12 +477,60 @@ with open('data.json', 'w') as f:
   <li class="item">
     
 <div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../06/25/note/Python/numpy/" title="numpy常用函数">numpy常用函数</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="../../../../../../../categories/note/" title="分类于 笔记">笔记</a>
 <i class="ic i-angle-right"></i>
 <a href="../../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
 </div>
 
-    <span><a href="../../../../../27/note/%E5%89%8D%E7%AB%AF/jQuery/" title="jQuery笔记">jQuery笔记</a></span>
+    <span><a href="../../../../../23/note/%E5%89%8D%E7%AB%AF/CSS/" title="CSS笔记及参考手册">CSS笔记及参考手册</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../06/21/note/Python/jupyter/" title="jupty使用方法">jupty使用方法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../08/10/note/%E5%89%8D%E7%AB%AF/ps%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" title="ps学习之路">ps学习之路</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../07/27/note/Python/pytorch/" title="pytorch">pytorch</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="../../../../../../04/23/note/%E5%89%8D%E7%AB%AF/echarts/" title="echarts用法简单记录">echarts用法简单记录</a></span>
   </li>
 
   </ul>
@@ -573,13 +555,13 @@ with open('data.json', 'w') as f:
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">126k 字</span>
+    <span title="站点总字数">199k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:54</span>
+    <span title="站点阅读时长">3:01</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

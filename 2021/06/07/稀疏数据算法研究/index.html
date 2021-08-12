@@ -1,0 +1,827 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="../images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="宁理大神1996" href="https://nitgod1996.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="宁理大神1996" href="https://nitgod1996.com/atom.xml" />
+<link rel="alternate" type="application/json" title="宁理大神1996" href="https://nitgod1996.com/feed.json" />
+
+
+
+<link rel="stylesheet" href="../css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="https://nitgod1996.com/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/">
+
+
+
+  <title>
+降低数据稀疏度的算法研究 |
+nitgod1996 = 宁理大神 1996</title>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">降低数据稀疏度的算法研究
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-06-07 17:51:11">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-06-07T17:51:11+08:00">2021-06-07</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>5.4k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>5 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">nitgod1996</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicitf0kl1j20zk0m87fe.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclhfehz7j20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipexw3o58j20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicitzannuj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicljitigmj20zk0m87fp.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="../../../../index.html">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://nitgod1996.com/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="../../../../images/avatar.jpg">
+    <meta itemprop="name" content="宁理大神1996">
+    <meta itemprop="description" content=", 宁理大神的个人博客">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="宁理大神 1996">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="个人见解"><a href="#个人见解" class="headerlink" title="个人见解"></a>个人见解</h1><ol>
+<li><p>目前主要的填充算法是通过机器学习，像预测结果一样预测缺失值</p>
+<p>缺点：是预测出的缺失值一定程序上算是<strong>噪声</strong>，通过该缺失值又去预测结果可能会对结果产生干扰</p>
+</li>
+<li><p>填充主要是根据其他参数关联出缺失值。（通过其他样本学习出模型，输入缺失样本的参数预测缺失值）。</p>
+<p>也就是意味着：缺失值需要和其他属性有一定的关联，即样本属性最好有一定的<strong>冗余度</strong>（多采集一些特征，也就是常说的高维。通过降维去降低稀疏度）</p>
+</li>
+<li><p>但高维和稀疏往往是互相嵌结的，高维易容易产生数据样本稀疏，距离计算困难；而稀疏数据又需要通过高维来填充。<strong>高维数据降维→低维子空间，子空间样本密度大幅提高，距离计算也更容易</strong>。这是因为观测/收集的数据往往是冗余的，学习任务仅与某个低维分布密切相关。即高维空间的一个低维“嵌入”</p>
+</li>
+<li></li>
+</ol>
+<h1 id="一-初窥"><a href="#一、-初窥" class="headerlink" title="一、 初窥"></a>一、 初窥</h1><h2 id="1-一些概念"><a href="#1-一些概念" class="headerlink" title="1. 一些概念"></a>1. 一些概念</h2><ul>
+<li><p><strong>最小二乘</strong>：最小二乘法是一种数学优化技术，它通过<strong>最小化误差的平方和</strong>找到一组数据的<strong>最佳函数</strong>匹配。</p>
+<ul>
+<li>几何意义：求一条线使得所有点到该线的<strong>距离平方和</strong>最小</li>
+</ul>
+</li>
+<li><p><strong>数据降维</strong>：用于预处理，提高算法效率</p>
+<ul>
+<li>在原始的高维空间中，包含有冗余信息以及噪音信息</li>
+<li>而通过降维,减少冗余信息所造成的误差,提高识别（或其他应用）的精度和效率</li>
+</ul>
+</li>
+<li><p><strong>稀疏数据</strong>：稀疏数据不同于一般数据，它的维度常常极其巨大，并且由于大量的缺失值的存在，使得数据信息极端不完整，常见的降维方法例如主成分、因子分析等无法在此上应用</p>
+</li>
+<li><p><strong>稀疏表示：</strong>X为M*N的数据集，每行表示一个样本，每列表示一个属性。</p>
+<p>寻找一个<strong>系数矩阵A</strong>（K*N）以及一个<strong>字典矩阵B</strong>（M*K），使得B*A尽可能的还原X，且A尽可能的稀疏。A便是X的<strong>稀疏表示</strong>。</p>
+<blockquote>
+<p><strong>将一个大矩阵变成两个小矩阵，而达到压缩</strong></p>
+</blockquote>
+</li>
+<li><p><strong>字典学习：</strong>通过一个字典将原数据转化为稀疏表示，字典学习和稀疏表示互为<strong>逆过程</strong></p>
+</li>
+<li><p><strong>低秩</strong>：秩可以形象地理解为信息冗余程度，<strong>秩越低</strong>意味着冗余信息越少</p>
+</li>
+<li><p><strong>奇异值</strong>：往往对应着矩阵中隐含的<strong>重要信息</strong>，且重要性和奇异值大小正相关。每个矩阵<img data-src="https://www.zhihu.com/equation?tex=A" alt="[公式]">都可以表示为一系列秩为1的”小矩阵”之和，而奇异值则衡量了这些“小矩阵”对于<img data-src="https://www.zhihu.com/equation?tex=A" alt="[公式]">的权重。</p>
+</li>
+<li><p><strong>正交映射</strong>：作用就是保留我们已知的元素，将我们不知道的元素变为0。</p>
+</li>
+<li><p><strong>核范数</strong>：<img data-src="/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/image-20210610151254748.png" alt="image-20210610151254748"></p>
+<ul>
+<li><strong>核范数是奇异值的和</strong>；rank（秩）是非0奇异值的个数。∴核范数能凸近似矩阵的秩</li>
+</ul>
+</li>
+<li><p><strong>稀疏性</strong>：若信号在某个域中<strong>只有少量非零值</strong>，那么它在该域稀疏，该域也被称为信号的<strong>稀疏域</strong>。（0很多）</p>
+</li>
+<li><p><strong>稀疏矩阵</strong>：在<strong>矩阵</strong>中，若数值为0的元素数目远远多于非0元素的数目，并且非0元素分布没有规律时，则称该矩阵为稀疏矩阵</p>
+</li>
+</ul>
+<h2 id="2-可能可以的一些方法"><a href="#2-可能可以的一些方法" class="headerlink" title="2. 可能可以的一些方法"></a>2. 可能可以的一些方法</h2><ul>
+<li><p><strong>最简单的方法：</strong>取众数、中位数、平均值、均方差等。<strong>效果一般，因为等于人为增加了噪声。</strong></p>
+<p>或者缺失严重的直接删除</p>
+<ul>
+<li>特征删除：删除该特征（删除一列）</li>
+<li>数据删除：删除缺失严重的数据（删除n行）.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>机器学习预测：</strong>用其他变量做预测模型来算出缺失变量，如<strong>KNN</strong>，<strong>K-means</strong>，<strong>决策树</strong>，<strong>回归算法</strong>等。</p>
+<p>效果比方法1略好。有一个根本缺陷，如果其他变量和缺失变量无关，则预测的结果无意义。如果预测结果相当准确，则又说明这个变量是没必要加入建模的。一般情况下，介于两者之间。</p>
+</li>
+<li><p><strong>期望值最大化（EM算法）：</strong>对未知参数进行<strong>极大似然估计</strong>，计算完全数据对应的对数似然函数的<strong>条件期望</strong></p>
+<p>但是这种方法可能会陷入局部极值，收敛速度也不是很快，并且计算很复杂。</p>
+</li>
+<li><p><strong>把变量映射到高维空间。</strong>如<strong>矩阵补全</strong></p>
+<ul>
+<li>比如性别，有男、女、缺失三种情况，则映射成3个变量：是否男、是否女、是否缺失。连续型变量也可以这样处理。</li>
+<li>比如Google、百度的CTR预估模型，预处理时会把所有变量都这样处理，达到几亿维。</li>
+<li>这样做的<strong>好处</strong>是完整保留了原始数据的全部信息、不用考虑缺失值、不用考虑线性不可分之类的问题。</li>
+<li>缺点是计算量大大提升。</li>
+<li>只有在样本量非常大的时候效果才好，否则会因为过于稀疏，效果很差。</li>
+</ul>
+</li>
+<li><p>GAN数据增强：图像补全</p>
+</li>
+<li><p>需要恢复的数据具有某种<strong>稀疏结构</strong>， 如目标函数的<strong>可分性</strong>、向量的<strong>稀疏性</strong>、矩阵的<strong>低秩性</strong>等。 </p>
+<ul>
+<li><p>矩阵补全：低秩矩阵补全。推荐系统</p>
+</li>
+<li><p>压缩感知：稀疏信号补全。图像修复</p>
+</li>
+<li><p>全变差正则化 (Total-Variation based Regularization) 的图像恢复</p>
+</li>
+</ul>
+</li>
+<li><p>深度补全：图像补全</p>
+</li>
+<li><p>使用sklearn库：<span class="exturl" data-url="aHR0cHM6Ly9zY2lraXQtbGVhcm4ub3JnL3N0YWJsZS9tb2R1bGVzL2NsYXNzZXMuaHRtbCNtb2R1bGUtc2tsZWFybi5pbXB1dGU=">https://scikit-learn.org/stable/modules/classes.html#module-sklearn.impute</span></p>
+</li>
+</ul>
+<h2 id="3-随手记"><a href="#3-随手记" class="headerlink" title="3. 随手记"></a>3. 随手记</h2><ol>
+<li>一般的步骤是：降噪→降维→补全</li>
+<li></li>
+</ol>
+<h2 id="2-gan数据增强"><a href="#2-GAN数据增强" class="headerlink" title="2. GAN数据增强"></a>2. GAN数据增强</h2><p>用GAN生成的图像来做数据增强，如图。主要解决的问题是</p>
+<ol>
+<li>对于小数据集，数据量不足， 如果能生成一些就好了。</li>
+<li>如果GAN生成了图片？怎么给这些数据label呢？因为他们相比原始数据也不属于预定义的类别。</li>
+</ol>
+<p>在<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vcmVmZXJlbmNlLzIyMTgxOTA1LzE4ODE3amlFOWJBTE1EcDJVZmhBVmwwLXhza21lRTFPZXFYMENYN2tZUl9rcDUyOEctYV9RanhONERTOHpUREZMMmFWYVl6YUdSWW8xNnpDRXc=">Unlabeled Samples Generated by GAN Improve the Person Re-identification Baseline in vitro </span>  中，做了一些尝试。</p>
+<p>实验想法也特别简单，先用原始数据（即使只有2000张图）训练一个GAN，然后生成图片，加入到训练集中。 总结一下就是：</p>
+<ol>
+<li>GAN 生成数据是可以用在实际的图像问题上的（不仅仅是像mnist 这种toy dataset上work）作者在两个行人重识别数据集 和 一个细粒度识别 鸟识别数据集上都有提升。</li>
+<li>GAN 数据有三种给pseudo label的方式， 假设我们做五分类</li>
+</ol>
+<ul>
+<li>把生成的数据都当成新的一类, 六分类，那么生成图像的 label 就可以是 （0, 0, 0, 0, 0, 1） 这样给。</li>
+<li>按照置信度最高的 动态去分配，那个概率高就给谁 比如第三类概率高（0, 0, 1, 0, 0）</li>
+<li>既然所有类都不是，那么可以参考inceptionv3，搞label smooth，每一类置信度相同（0.2, 0.2, 0.2, 0.2, 0.2） 注：作者16年12月写的代码，当时GAN效果没有那么好，用这个效果好也是可能的， 因为生成样本都不是很“真”，所以起到了正则作用。</li>
+</ul>
+<h2 id="22-当缺少的数据是标记时"><a href="#2-2-当缺少的数据是标记时" class="headerlink" title="2.2 当缺少的数据是标记时"></a>2.2 当缺少的数据是标记时</h2><p>​    使用半监督学习，一般的思路是：在全部数据上去学习数据表示，在有标签的样本上去学习<strong>模型</strong>，用所有数据去加正则。</p>
+<h2 id="3-矩阵补全matrix-completion"><a href="#3-矩阵补全Matrix-Completion" class="headerlink" title="3. 矩阵补全Matrix Completion"></a>3. 矩阵补全Matrix Completion</h2><ul>
+<li>通过<strong>矩阵分解</strong>（matrix factorization）将一个含缺失值的矩阵 X 分解为两个（或多个）矩阵，然后这些分解后的矩阵相乘就可以得到原矩阵的近似 X’，我们用这个近似矩阵 X’ 的值来填补原矩阵 X 的缺失部分。</li>
+</ul>
+<p>一般用于推荐系统算法</p>
+<h2 id="4-深度补全"><a href="#4-深度补全" class="headerlink" title="4. 深度补全"></a>4. 深度补全</h2><p>一般用于计算机视觉，图形补全（深度图补全）</p>
+<h2 id="5-压缩感知compressed-sensing"><a href="#5-压缩感知Compressed-Sensing" class="headerlink" title="5. 压缩感知Compressed Sensing"></a>5. 压缩感知Compressed Sensing</h2><ul>
+<li>主要是<strong>信号采样</strong>方法。压缩感知主要涉及到<strong>如何采样</strong>和<strong>如何恢复</strong>的问题。</li>
+<li>主要作用：修复图片/恢复信号</li>
+<li>矩阵补全是基于压缩感知的</li>
+<li>基本前提：信号的<strong>稀疏性</strong>和<strong>不相关性</strong>。（自己理解：稀疏性意味着信号的主要信息在于少数几个（不为零）数据上，而不相关性意味着获得的这几条数据线性无关，可以推出数据包含的信息）</li>
+</ul>
+<p>这套compressed sensing框架和配套理论证明了，在采样率低于critical sampling rate的时候，本来ill-posed的信号恢复和重建问题，可以在通过额外的sparisty prior的帮助下，达到巧妙的<strong>信号完美恢复</strong>。</p>
+<p>不仅如此，Tao他们还推导了<span class="exturl" data-url="aHR0cHM6Ly9saW5rLnpoaWh1LmNvbS8/dGFyZ2V0PWh0dHBzOi8vZW4ud2lraXBlZGlhLm9yZy93aWtpL1Jlc3RyaWN0ZWRfaXNvbWV0cnlfcHJvcGVydHk=">Restricted Isotropic Property (RIP)</span> 等一系列理论，证明了为了达到完美恢复，采样矩阵和信号稀疏度需要满足的条件和相互之间的关系。这为之后Compressed Sensing的发展和应用奠定了理论基础。</p>
+<h1 id="二-前置知识"><a href="#二、-前置知识" class="headerlink" title="二、 前置知识"></a>二、 前置知识</h1><h2 id="1-数学符号的认识"><a href="#1-数学符号的认识" class="headerlink" title="1. 数学符号的认识"></a>1. 数学符号的认识</h2><ul>
+<li><p><strong>s.t.</strong>  “使得…满足…”，是subject to 的缩写，表示约束条件。如<img data-src="/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/image-20210622202820584.png" alt="image-20210622202820584">，表示满足<code>Ax=y</code>的最小的<code>x</code>的L1范数。其中，x是向量</p>
+<ul>
+<li>其实s.t.也相当于一个括号。</li>
+</ul>
+</li>
+<li><p><img data-src="/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/image-20210622201802564.png" alt="image-20210622201802564">：Lp范数，当p缺省时，默认为2。其中，x-向量，X-矩阵</p>
+</li>
+<li><p><img data-src="/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/image-20210622202213487.png" alt="image-20210622202213487">：全体n维实的列向量构成的集合。同理，<img data-src="/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/image-20210622202229879.png" alt="image-20210622202229879">则是全体n1*n2矩阵的集合</p>
+</li>
+<li><p><img data-src="/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/image-20210622202410553.png" alt="image-20210622202410553">：正交投影算子</p>
+</li>
+</ul>
+<h2 id="1-lp范数"><a href="#1-lp范数" class="headerlink" title="1. lp范数"></a>1. lp范数</h2><p>以||||符号表示</p>
+<p><img data-src="/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/image-20210609201414597.png" alt="image-20210609201414597"><br>$$<br>l_{p}=\left | x \right |<em>{p}=\sqrt[p]{\sum</em>{i}\left | x_{i} \right |^{p}}<br>$$<br><strong>当<code>x=x1-x2</code>时，这表示的就是欧几里得度量（距离）</strong><br>$$<br>\sqrt[p]{\sum_{i}\left | x_{1}-x_{2} \right |^{p}}<br>$$<br><strong>可以表示2个样本间的距离</strong></p>
+<p>其中：</p>
+<ul>
+<li><img data-src="/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/image-20210609201606973.png" alt="image-20210609201606973">：表示x中非0元素的个数，<img data-src="/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/image-20210609201628831.png" alt="image-20210609201628831"></li>
+<li><img data-src="/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/image-20210609201651197.png" alt="image-20210609201651197">：表示向量的大小，<img data-src="/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/image-20210609201708621.png" alt="image-20210609201708621"></li>
+<li><img data-src="/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/image-20210609201724917.png" alt="image-20210609201724917">：<img data-src="/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/image-20210609201732341.png" alt="image-20210609201732341">，</li>
+</ul>
+<h2 id="2-p-np-npc-np-hard问题"><a href="#2-P、NP、NPC、NP-hard问题" class="headerlink" title="2. P、NP、NPC、NP-hard问题"></a>2. P、NP、NPC、NP-hard问题</h2><p>前置知识点：</p>
+<blockquote>
+<ul>
+<li>多项式时间：<code>O(n^k)</code>。其中，k是常数</li>
+<li>多项式时间算法：时间复杂度为多项式时间<code>O(n^k)</code>的算法，如<strong>冒泡排序</strong>（复杂度为<code>O(n^2)</code>）</li>
+</ul>
+</blockquote>
+<p>以下开始介绍：</p>
+<ul>
+<li><p><strong>P类问题：</strong>存在多项式时间算法的问题。</p>
+<ul>
+<li>解释：可以找到时间复杂度为<code>O(n^k)</code>的算法解决的问题</li>
+</ul>
+</li>
+<li><p><strong>NP类问题：</strong>能在多项式时间内验证得出一个正确解的问题。</p>
+<ul>
+<li><p>解释：已知时间复杂度<code>o(1)&lt;o(n)&lt;o(lgn)&lt;o(n^2)&lt;o(n^k)&lt;o(e^n)</code></p>
+<p>可以找到一种算法时间复杂度<strong>小于</strong><code>O(n^k)</code>的算法解决的问题</p>
+<p>或者，可以找到<strong>优于</strong>时间复杂度为<code>O(n^k)</code>的方法，但不一定能求出时间复杂度</p>
+</li>
+<li><p>P类问题是NP类问题的<strong>子集</strong></p>
+</li>
+</ul>
+</li>
+<li><p><strong>NPC类问题（Nondeterminism Polynomial complete）：</strong>也可以写做<strong>NP=P？问题</strong></p>
+<ol>
+<li>属于NP类问题</li>
+<li><strong>所有</strong>的NP问题都可以约化成它</li>
+</ol>
+<ul>
+<li><p><strong>约化：</strong>问题B的算法来解决A ，我们就说问题A可以约化成问题B。</p>
+<blockquote>
+<p>如一元一次方程可以约化为一元二次方程，以一元二次方程的算法求解。</p>
+</blockquote>
+</li>
+<li><p>也就是说，解决了NPC问题就能解决所有NP类问题。NPC问题的复杂度&gt;NP类问题</p>
+</li>
+</ul>
+</li>
+<li><p><strong>NPH类问题：</strong>满足NPC的2，但不一定满足1。</p>
+<ul>
+<li>即，<strong>所有</strong>的NP问题都可以约化成NP-Hard问题</li>
+</ul>
+</li>
+</ul>
+<p><img data-src="/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/20150727214918014" alt="这里写图片描述"></p>
+<h2 id="2-knn算法"><a href="#2-KNN算法" class="headerlink" title="2. KNN算法"></a>2. KNN算法</h2><blockquote>
+<p>所谓K最近邻，就是K个最近的邻居的意思，说的是每个样本都可以用它最接近的K个邻近值来代表。</p>
+</blockquote>
+<ul>
+<li>优：简单</li>
+<li>缺：计算量大，对每一个待分类的文本都要计算它到全体已知样本的距离。<ul>
+<li>剪辑：事先去除对分类作用不大的样本</li>
+</ul>
+</li>
+</ul>
+<h3 id="21-步骤"><a href="#2-1-步骤" class="headerlink" title="2.1 步骤"></a>2.1 步骤</h3><ol>
+<li><p><strong>距离</strong>度量：常用<strong>欧几里得距离</strong>。<br>$$<br>\sqrt[p]{\sum_{i}\left | x_{1}-x_{2} \right |^{p}}<br>$$</p>
+<ol>
+<li>当p=1时，就是曼哈顿距离（对应<code>l1</code>范数）</li>
+<li>当p=2时，就是欧氏距离（对应L2范数）</li>
+<li>当p→∞时，就是切比雪夫距离</li>
+</ol>
+</li>
+<li><p><strong>K值</strong>选择：距离最近的K个样本。通常采用<strong>交叉验证法</strong>来选取最优的K值。</p>
+<ul>
+<li>K值较小：训练误差↓，测试误差↑。容易<strong>过拟合</strong></li>
+<li>K值较大：训练误差↑，测试误差↓。容易<strong>训练不到位</strong></li>
+</ul>
+</li>
+</ol>
+<h3 id="22-代码实现"><a href="#2-2-代码实现" class="headerlink" title="2.2 代码实现"></a>2.2 代码实现</h3><h1 id="三-填充评估"><a href="#三、-填充评估" class="headerlink" title="三、 填充评估"></a>三、 填充评估</h1><h1 id="四-矩阵补全"><a href="#四、-矩阵补全" class="headerlink" title="四、 矩阵补全"></a>四、 矩阵补全</h1><h2 id="1-综述"><a href="#1-综述" class="headerlink" title="1. 综述"></a>1. 综述</h2><h3 id="11-溯源"><a href="#1-1-溯源" class="headerlink" title="1.1 溯源"></a>1.1 溯源</h3><ul>
+<li>由<strong>压缩感知</strong>衍生而来：将矩阵的<strong>低秩性</strong>视为矩阵<strong>稀疏性</strong>，那么<strong>向量空间</strong>的压缩感知便自然拓展为<strong>矩阵空间</strong>的矩阵补全</li>
+<li>压缩感知：基于信号的可压缩性或稀疏性,通过低分辨率、欠 Nyquist 采样数据的非相关观测来实现高维信号的感知.<ul>
+<li>压缩感知理论突破了<strong>香农定理</strong>对信号采样频率的限制，能够以较少的采样资源、较高的采样速度和较低的软硬件复杂度获得原始型号的测量值</li>
+<li>压缩感知主要研究对于以向量 <img data-src="/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/image-20210622190407802.png" alt="image-20210622190407802">表示的稀疏信号,如何在 m&lt;&lt;n的情形下仅通过测量较少的采样 ym并能从中恢复出原始信号 x.</li>
+<li>压缩感知理论得以成功应用的一个重要前提是信号<strong>向量</strong>的稀疏性。但在很多实际问题中,我们面临的数据，并不是向量空间中的一维数据,而是矩阵空间中的<strong>二维数据</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="12-介绍"><a href="#1-2-介绍" class="headerlink" title="1.2 介绍"></a>1.2 介绍</h3><ul>
+<li>矩阵补全：主要研究如何在数据不完整的情况下，将矩阵空间的缺失数据进行填补</li>
+<li>原理：通过矩阵分解将一个含缺失值的矩阵 X 分解为两个（或多个）矩阵，然后这些分解后的矩阵相乘就可以得到原矩阵的近似 X’，我们用这个近似矩阵 X’ 的值来填补原矩阵 X 的缺失部分。</li>
+</ul>
+<h2 id="2-矩阵分解"><a href="#2-矩阵分解" class="headerlink" title="2. 矩阵分解"></a>2. 矩阵分解</h2><p>References：</p>
+<ol>
+<li><span class="exturl" data-url="aHR0cDovL3d3dy5xdXV4bGFicy5jb20vYmxvZy8yMDEwLzA5L21hdHJpeC1mYWN0b3JpemF0aW9uLWEtc2ltcGxlLXR1dG9yaWFsLWFuZC1pbXBsZW1lbnRhdGlvbi1pbi1weXRob24v">Matrix Factorization: A Simple Tutorial and Implementation in Python</span></li>
+<li></li>
+</ol>
+<blockquote>
+<p>使用矩阵分解来解决这个问题背后的直觉是应该有一些<strong>潜在的特征</strong>来决定用户如何评价一个项目。</p>
+</blockquote>
+<p>例如，如果两个用户都喜欢这部电影的演员，或者如果电影是动作片，这是两个用户都喜欢的类型，那么两个用户会对某部电影给予高评分。</p>
+<p>因此，如果我们能够发现这些<strong>潜在特征</strong>，我们应该能够预测关于某个用户和某个项目的评分，因为与用户相关的特征应该与与项目相关的特征相匹配。</p>
+<p><strong>项目描述：</strong></p>
+<ul>
+<li><p>一组用户和一组项目（电影）。用户为行，项目为列    </p>
+<p><img data-src="/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/image-20210710154544821.png" alt="image-20210710154544821"></p>
+</li>
+<li><p>每个<strong>项目</strong>有对应特征：</p>
+<ol>
+<li>类型：动作片、喜剧片…</li>
+<li>主演/导演</li>
+<li>…</li>
+</ol>
+</li>
+</ul>
+<p>将矩阵<strong>R(U*D)<strong>分解为矩阵</strong>P(U*K)<strong>和矩阵</strong>Q(D*K)</strong><br>$$<br>R\approx P\times Q^T=\widehat{R}\tag{4.1}<br>$$</p>
+<blockquote>
+<p>其中：</p>
+<p>​        P—每行代表<strong>用户</strong>与特征之间关联的强度</p>
+<p>​        Q—每行代表<strong>项目</strong>和特征之间关联的强度</p>
+<p>​        ^—估计值</p>
+</blockquote>
+<p>对应的，<br>$$<br>\widehat{r}<em>{ij}=p^T_iq_i=\sum^k</em>{k=1}p_{ik}q_{kj}\tag{4.2}<br>$$</p>
+<blockquote>
+<p>其中：<code>r_ij</code>是矩阵<code>R</code>在<code>i</code>行<code>J</code>列的元素</p>
+</blockquote>
+<p><strong>使用梯度下降法对矩阵进行分解：</strong></p>
+<p>对<code>p</code>、<code>q</code>不断迭代，找到局部差异最小值，使用<strong>均方误差</strong><br>$$<br>e^2_{ij}=(r_{ij}-\widehat{r}<em>{ij})^2=(r</em>{ij}-\sum^k_{k=1}p_{ik}q_{kj})^2\tag{4.3}<br>$$<br>均方差<code>e^2</code>越小越好</p>
+<p>最小值求法，一般是将式4.3求偏导，使偏导=0，则可能为极小值点。在梯度下降法中，是算出<code>e^2</code>的梯度grad（梯度体现了各自变量在该点的偏导）。沿着梯度<strong>反方向</strong>更新，每次更新一个<strong>step</strong>，逐步降到0</p>
+<blockquote>
+<ul>
+<li>梯度&gt;0时，反方向是</li>
+</ul>
+</blockquote>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2021-07-12 19:48:23" itemprop="dateModified" datetime="2021-07-12T19:48:23+08:00">2021-07-12</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="../images/wechatpay.png" alt="宁理大神1996 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="../images/alipay.png" alt="宁理大神1996 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="../images/paypal.png" alt="宁理大神1996 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>宁理大神1996 <i class="ic i-at"><em>@</em></i>宁理大神 1996
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="../../../../https:/nitgod1996.com/2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/" title="降低数据稀疏度的算法研究">https://nitgod1996.com/2021/06/07/稀疏数据算法研究/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="../../04/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%8F%E4%B9%A6/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicitzannuj20zk0m8b29.jpg" title="算法公式书">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 经验总结</span>
+  <h3>算法公式书</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="../../10/%E8%A5%BF%E7%93%9C%E4%B9%A6%E5%A4%8D%E4%B9%A0%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicli9lfebj20zk0m84qp.jpg" title="西瓜书复习及其部分代码实现">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 笔记</span>
+  <h3>西瓜书复习及其部分代码实现</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E8%A7%81%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">个人见解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E5%88%9D%E7%AA%A5"><span class="toc-number">2.</span> <span class="toc-text">一、 初窥</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text">1. 一些概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%8F%AF%E8%83%BD%E5%8F%AF%E4%BB%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E6%96%B9%E6%B3%95"><span class="toc-number">2.2.</span> <span class="toc-text">2. 可能可以的一些方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%9A%8F%E6%89%8B%E8%AE%B0"><span class="toc-number">2.3.</span> <span class="toc-text">3. 随手记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-gan%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA"><span class="toc-number">2.4.</span> <span class="toc-text">2. GAN数据增强</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E5%BD%93%E7%BC%BA%E5%B0%91%E7%9A%84%E6%95%B0%E6%8D%AE%E6%98%AF%E6%A0%87%E8%AE%B0%E6%97%B6"><span class="toc-number">2.5.</span> <span class="toc-text">2.2 当缺少的数据是标记时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%9F%A9%E9%98%B5%E8%A1%A5%E5%85%A8matrix-completion"><span class="toc-number">2.6.</span> <span class="toc-text">3. 矩阵补全Matrix Completion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%B7%B1%E5%BA%A6%E8%A1%A5%E5%85%A8"><span class="toc-number">2.7.</span> <span class="toc-text">4. 深度补全</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%8E%8B%E7%BC%A9%E6%84%9F%E7%9F%A5compressed-sensing"><span class="toc-number">2.8.</span> <span class="toc-text">5. 压缩感知Compressed Sensing</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-number">3.</span> <span class="toc-text">二、 前置知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%B0%E5%AD%A6%E7%AC%A6%E5%8F%B7%E7%9A%84%E8%AE%A4%E8%AF%86"><span class="toc-number">3.1.</span> <span class="toc-text">1. 数学符号的认识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-lp%E8%8C%83%E6%95%B0"><span class="toc-number">3.2.</span> <span class="toc-text">1. lp范数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-p-np-npc-np-hard%E9%97%AE%E9%A2%98"><span class="toc-number">3.3.</span> <span class="toc-text">2. P、NP、NPC、NP-hard问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-knn%E7%AE%97%E6%B3%95"><span class="toc-number">3.4.</span> <span class="toc-text">2. KNN算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E6%AD%A5%E9%AA%A4"><span class="toc-number">3.4.1.</span> <span class="toc-text">2.1 步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">3.4.2.</span> <span class="toc-text">2.2 代码实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E5%A1%AB%E5%85%85%E8%AF%84%E4%BC%B0"><span class="toc-number">4.</span> <span class="toc-text">三、 填充评估</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-%E7%9F%A9%E9%98%B5%E8%A1%A5%E5%85%A8"><span class="toc-number">5.</span> <span class="toc-text">四、 矩阵补全</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BB%BC%E8%BF%B0"><span class="toc-number">5.1.</span> <span class="toc-text">1. 综述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E6%BA%AF%E6%BA%90"><span class="toc-number">5.1.1.</span> <span class="toc-text">1.1 溯源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E4%BB%8B%E7%BB%8D"><span class="toc-number">5.1.2.</span> <span class="toc-text">1.2 介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3"><span class="toc-number">5.2.</span> <span class="toc-text">2. 矩阵分解</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="宁理大神1996"
+      data-src="../images/avatar.jpg">
+  <p class="name" itemprop="name">宁理大神1996</p>
+  <div class="description" itemprop="description">宁理大神的个人博客</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="../archives/">
+        <span class="count">28</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="../categories/">
+        <span class="count">14</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="../tags/">
+        <span class="count">22</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3lvdXJuYW1l" title="https:&#x2F;&#x2F;github.com&#x2F;yourname"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPXlvdXJpZA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;yourid"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="../index.html" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../archives/" rel="section"><i class="ic i-archive"></i>归档</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="../../04/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%8F%E4%B9%A6/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="../../10/%E8%A5%BF%E7%93%9C%E4%B9%A6%E5%A4%8D%E4%B9%A0%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../07/27/note/Python/pytorch/" title="pytorch">pytorch</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
+</div>
+
+    <span><a href="../../../05/27/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E8%B0%83%E5%8F%96Python%E6%95%B0%E6%8D%AE/" title="前端调用Python数据">前端调用Python数据</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../categories/note/%E9%9A%8F%E7%AC%94/Python/" title="分类于 Python">Python</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../categories/note/%E9%9A%8F%E7%AC%94/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="../../../05/17/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-Java%E8%B0%83%E7%94%A8Python%E8%84%9A%E6%9C%AC/" title="随笔-Java调用Python脚本">随笔-Java调用Python脚本</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../05/14/%E9%99%88%E5%BA%B7%E4%B8%9C%E5%92%8C%E7%8E%8B%E5%86%B0%E5%86%B0%E7%9A%84%E5%BF%AB%E4%B9%90%E5%B0%8F%E5%B1%8B/" title="陈康东和王冰冰的快乐小屋">陈康东和王冰冰的快乐小屋</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../categories/note/%E9%9A%8F%E7%AC%94/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%AC%94/" title="分类于 每日一笔">每日一笔</a>
+</div>
+
+    <span><a href="../../02/note/%E9%9A%8F%E7%AC%94/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%AC%94/%E5%9F%BA%E4%BA%8EPython%E5%92%8Cecharts%E7%9A%84%E5%8A%A8%E6%80%81%E5%9B%BE/" title="每日一笔-基于Python和echarts的动态图">每日一笔-基于Python和echarts的动态图</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
+</div>
+
+    <span><a href="../../../05/20/note/%E9%9A%8F%E7%AC%94/%E5%87%86%E5%A4%87%E5%AD%A6%E4%B9%A0docker/" title="docker随手记">docker随手记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../07/27/note/Python/python%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" title="python使用技巧">python使用技巧</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../categories/note/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="../../../05/18/note/Java/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%8F%8A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="java基础语法及特性">java基础语法及特性</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../categories/note/" title="分类于 笔记">笔记</a>
+</div>
+
+    <span><a href="../../../05/10/note/hexo/Hexo%E6%90%AD%E5%BB%BAGitHub%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" title="Hexo搭建GitHub静态博客">Hexo搭建GitHub静态博客</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="../../../04/23/note/%E5%89%8D%E7%AB%AF/echarts/" title="echarts用法简单记录">echarts用法简单记录</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">宁理大神1996 @ nitgod1996</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">199k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:01</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/06/07/稀疏数据算法研究/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="../../../../js/app.js?v=0.2.5"></script>
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

@@ -32,7 +32,7 @@
 
 
   <title>
-pandas 分析数据及格式 - Python - 笔记 |
+Python 机器学习库 - Python - 笔记 |
 nitgod1996 = 宁理大神 1996</title>
 <meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,7 +60,7 @@ nitgod1996 = 宁理大神 1996</title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">pandas 分析数据及格式
+  <h1 itemprop="name headline">Python 机器学习库
   </h1>
   
 <div class="meta">
@@ -76,7 +76,7 @@ nitgod1996 = 宁理大神 1996</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>3.2k</span>
+    <span>15k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -84,7 +84,7 @@ nitgod1996 = 宁理大神 1996</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">阅读时长</span>
-    <span>3 分钟</span>
+    <span>14 分钟</span>
   </span>
 </div>
 
@@ -117,12 +117,12 @@ nitgod1996 = 宁理大神 1996</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipexj2jgzj20zk0m8b09.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclga70tsj20zk0m84mr.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipey84bjtj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeu7txpzj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclj9410cj20zk0m8h12.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclflwv2aj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipetlbztpj20zk0m84qp.jpg"></li>
           <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipesrnqv3j20zk0m8ava.jpg"></li>
         </ul>
       </div>
     </header>
@@ -171,175 +171,671 @@ nitgod1996 = 宁理大神 1996</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="一-简介"><a class="anchor" href="#一-简介">#</a> 一、 简介</h1>
-<h2 id="1-pandas-作用"><a class="anchor" href="#1-pandas作用">#</a> 1. pandas 作用</h2>
-<p>​	pandas 是 Python 用于数据分析的库。常见的用法：</p>
+    <h1 id="一-pandas"><a href="#一、-pandas" class="headerlink" title="一、 pandas"></a>一、 pandas</h1><h2 id="1-pandas作用"><a href="#1-pandas作用" class="headerlink" title="1. pandas作用"></a>1. pandas作用</h2><p>​    pandas是Python用于数据分析的库。常见的用法：</p>
 <ol>
-<li>以 <code>DataFrame</code>  读入、输出各种<strong>格式</strong>的数据文件。</li>
-<li>处理二维数组，如删掉一行，类似 Excel 的功能</li>
+<li>以<code>DataFrame</code>读入、输出各种<strong>格式</strong>的数据文件。</li>
+<li>处理二维数组，如删掉一行，类似Excel的功能</li>
 </ol>
-<h2 id="2-pandas-安装及引入"><a class="anchor" href="#2-pandas安装及引入">#</a> 2. pandas 安装及引入</h2>
-<ol>
-<li>
-<p>安装 pandas</p>
-<pre class=" language-language-bash"><code class="language-language-bash">pip install Pandas
+<h2 id="2-pandas安装及引入"><a href="#2-pandas安装及引入" class="headerlink" title="2. pandas安装及引入"></a>2. pandas安装及引入</h2><ol>
+<li><p>安装pandas</p>
+<pre class=" language-bash"><code class="language-bash">pip <span class="token function">install</span> Pandas
 </code></pre>
 </li>
-<li>
-<p>导入 pandas 库</p>
-<pre class=" language-language-python"><code class="language-language-python">import pandas as pd
+<li><p>导入pandas库</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 </code></pre>
 </li>
 </ol>
-<h2 id="3-pandas-主要数据类型dataframe-和-series"><a class="anchor" href="#3-pandas主要数据类型dataframe和series">#</a> 3. pandas 主要数据类型：DataFrame 和 Series</h2>
-<p>在 pandas 中，dataframe 和 series 的<strong>主要区别</strong>是：</p>
+<h2 id="3-pandas主要数据类型dataframe和series"><a href="#3-pandas主要数据类型：DataFrame和Series" class="headerlink" title="3. pandas主要数据类型：DataFrame和Series"></a>3. pandas主要数据类型：DataFrame和Series</h2><p>在pandas中，dataframe和series的<strong>主要区别</strong>是：</p>
 <blockquote>
-<p>dataframe 保存的是<strong>多维数组</strong>，而 series 保存的是<strong>一维数组</strong></p>
+<p>dataframe保存的是<strong>多维数组</strong>，而series保存的是<strong>一维数组</strong></p>
 </blockquote>
 <p>其他包括性质、用法等都基本差不多。</p>
-<pre class=" language-language-python"><code class="language-language-python">df=pd.DataFrame([[1,2],[2,3]])
-print(type(df[0]))#<class 'pandas.core.series.series'>
-</class></code></pre>
-<h1 id="二-dataframe"><a class="anchor" href="#二-dataframe">#</a> 二、 DataFrame</h1>
-<p>pandas 读入数据后一般以 <code>DataFrame</code>  类型存储。 <code>DataFrame</code>  是类似二维数组的格式</p>
-<h2 id="1-导出数据"><a class="anchor" href="#1-导出数据">#</a> 1. 导出数据</h2>
-<p>以 <code>DataFrame</code>  导出到数据文件，设 <code>df</code>  是 <code>DataFrame</code>  类型，如下所示</p>
+<pre class=" language-python"><code class="language-python">df<span class="token operator">=</span>pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#&lt;class 'pandas.core.series.Series'></span>
+</code></pre>
+<h1 id="二-dataframe"><a href="#二、-DataFrame" class="headerlink" title="二、 DataFrame"></a>二、 DataFrame</h1><p>pandas读入数据后一般以<code>DataFrame</code>类型存储。<code>DataFrame</code>是类似二维数组的格式</p>
+<h2 id="1-导出数据"><a href="#1-导出数据" class="headerlink" title="1. 导出数据"></a>1. 导出数据</h2><p>以<code>DataFrame</code>导出到数据文件,设<code>df</code>是<code>DataFrame</code>类型，如下所示</p>
 <p><img data-src="/2021/05/13/note/Python/pandas/image-20210530200815008.png" alt="image-20210530200815008"></p>
-<p>第 1 行和第 1 列分别是行索引和列索引，<strong>不视作数据内容</strong></p>
+<p>第1行和第1列分别是行索引和列索引，<strong>不视作数据内容</strong></p>
 <ul>
-<li>
-<p><strong>导出 json</strong></p>
-<pre class=" language-language-python"><code class="language-language-python">df.to_json('path',orient='index')
-#`orient`：导出的json格式，有以下取值
+<li><p><strong>导出json</strong></p>
+<pre class=" language-python"><code class="language-python">df<span class="token punctuation">.</span>to_json<span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">,</span>orient<span class="token operator">=</span><span class="token string">'index'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#`orient`：导出的json格式，有以下取值</span>
 </code></pre>
 <ul>
-<li>
-<p><strong> <code>'index'</code> ：最常用的就是这个</strong>，导出格式为</p>
-<pre class=" language-language-json"><code class="language-language-json">&#123;
-  "0":&#123;"name":"zhan","age":16,"height":120&#125;,
-  "1":&#123;"name":"li","age":17,"height":170&#125;,
-  "2":&#123;"name":"wang","age":20,"height":160&#125;
-&#125;
+<li><p><strong><code>&#39;index&#39;</code>：最常用的就是这个</strong>，导出格式为</p>
+<pre class=" language-json"><code class="language-json">&amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token property">"0"</span><span class="token operator">:</span>&amp;#<span class="token number">123</span><span class="token punctuation">;</span><span class="token property">"name"</span><span class="token operator">:</span><span class="token string">"zhan"</span><span class="token punctuation">,</span><span class="token property">"age"</span><span class="token operator">:</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token property">"height"</span><span class="token operator">:</span><span class="token number">120</span>&amp;#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+  <span class="token property">"1"</span><span class="token operator">:</span>&amp;#<span class="token number">123</span><span class="token punctuation">;</span><span class="token property">"name"</span><span class="token operator">:</span><span class="token string">"li"</span><span class="token punctuation">,</span><span class="token property">"age"</span><span class="token operator">:</span><span class="token number">17</span><span class="token punctuation">,</span><span class="token property">"height"</span><span class="token operator">:</span><span class="token number">170</span>&amp;#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+  <span class="token property">"2"</span><span class="token operator">:</span>&amp;#<span class="token number">123</span><span class="token punctuation">;</span><span class="token property">"name"</span><span class="token operator">:</span><span class="token string">"wang"</span><span class="token punctuation">,</span><span class="token property">"age"</span><span class="token operator">:</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token property">"height"</span><span class="token operator">:</span><span class="token number">160</span>&amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+&amp;#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
 </li>
-<li>
-<p><code>'split'</code> ：</p>
-<pre class=" language-language-python"><code class="language-language-python">&#123;
-  "columns":["name","age","height"],
-  "index":[0,1,2],
-  "data":[["zhan",16,120],["li",17,170],["wang",20,160]]
-&#125;
+<li><p><code>&#39;split&#39;</code>：</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+  <span class="token string">"columns"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">,</span><span class="token string">"age"</span><span class="token punctuation">,</span><span class="token string">"height"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">"index"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">"data"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"zhan"</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">120</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"li"</span><span class="token punctuation">,</span><span class="token number">17</span><span class="token punctuation">,</span><span class="token number">170</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"wang"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">160</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
 </code></pre>
 </li>
-<li>
-<p><code>'table'</code> ： <code>data</code>  部分和 <code>'index'</code>  差不多</p>
-<pre class=" language-language-python"><code class="language-language-python">&#123;
-  "schema":&#123;
-    "fields":[
-      &#123;"name":"index","type":"integer"&#125;,
-      &#123;"name":"name","type":"string"&#125;,
-      &#123;"name":"age","type":"integer"&#125;,
-      &#123;"name":"height","type":"integer"&#125;
-    ], 
-    "primaryKey":["index"], 
-    "pandas_version":"0.20.0"
-  &#125;,
-  "data":[
-    &#123;"index":0,"name":"zhan","age":16,"height":120&#125;,
-    &#123;"index":1,"name":"li","age":17,"height":170&#125;,
-    &#123;"index":2,"name":"wang","age":20,"height":160&#125;
-  ]
-&#125;
+<li><p><code>&#39;table&#39;</code>：<code>data</code>部分和<code>&#39;index&#39;</code>差不多</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+  <span class="token string">"schema"</span><span class="token punctuation">:</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    <span class="token string">"fields"</span><span class="token punctuation">:</span><span class="token punctuation">[</span>
+      <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"name":"index","type":"integer"&amp;#125;,</span>
+      <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"name":"name","type":"string"&amp;#125;,</span>
+      <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"name":"age","type":"integer"&amp;#125;,</span>
+      <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"name":"height","type":"integer"&amp;#125;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span> 
+    <span class="token string">"primaryKey"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">"index"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+    <span class="token string">"pandas_version"</span><span class="token punctuation">:</span><span class="token string">"0.20.0"</span>
+  <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
+  <span class="token string">"data"</span><span class="token punctuation">:</span><span class="token punctuation">[</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"index":0,"name":"zhan","age":16,"height":120&amp;#125;,</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"index":1,"name":"li","age":17,"height":170&amp;#125;,</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"index":2,"name":"wang","age":20,"height":160&amp;#125;</span>
+  <span class="token punctuation">]</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
 </code></pre>
 </li>
-<li>
-<p>不写的话是以下格式：和 <code>'split'</code>  略微有些相似</p>
-<pre class=" language-language-python"><code class="language-language-python">&#123;
-  "name":&#123;"0":"zhan","1":"li","2":"wang"&#125;,
-  "age":&#123;"0":16,"1":17,"2":20&#125;,
-  "height":&#123;"0":120,"1":170,"2":160&#125;
-&#125;
+<li><p>不写的话是以下格式：和<code>&#39;split&#39;</code>略微有些相似</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+  <span class="token string">"name"</span><span class="token punctuation">:</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"0":"zhan","1":"li","2":"wang"&amp;#125;,</span>
+  <span class="token string">"age"</span><span class="token punctuation">:</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"0":16,"1":17,"2":20&amp;#125;,</span>
+  <span class="token string">"height"</span><span class="token punctuation">:</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"0":120,"1":170,"2":160&amp;#125;</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
 </code></pre>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>导出 csv</strong>：</p>
-<pre class=" language-language-python"><code class="language-language-python">df.to_csv('path',index='False')
-#index:是否把索引写进csv。默认是true
+<li><p><strong>导出csv</strong>：</p>
+<pre class=" language-python"><code class="language-python">df<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token string">'False'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#index:是否把索引写进csv。默认是true</span>
 </code></pre>
 </li>
 </ul>
-<h2 id="2-导入数据"><a class="anchor" href="#2-导入数据">#</a> 2. 导入数据</h2>
-<p>以 <code>pandas.to_**</code>  导入，导入后是 <code>DataFrame</code>  的类型存放</p>
+<h2 id="2-导入数据"><a href="#2-导入数据" class="headerlink" title="2. 导入数据"></a>2. 导入数据</h2><p>以<code>pandas.read_**</code>导入，导入后是<code>DataFrame</code>的类型存放</p>
 <ul>
-<li>
-<p><strong>导入 CSV</strong>， <code>df</code>  是 <code>DataFrame</code>  类型</p>
-<pre class=" language-language-python"><code class="language-language-python">df=pd.to_csv('path',header=0,index_col=0)
-#`header`:列名。header=0表示首行作为列名（默认）；header=[1,2]表示1,2行作为列名
-#`index_col`:行索引。index_col=0表示首列作为行索引。
+<li><p><strong>导入CSV</strong>，<code>df</code>是<code>DataFrame</code>类型</p>
+<pre class=" language-python"><code class="language-python">df<span class="token operator">=</span>pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">,</span>header<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>index_col<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#`header`:列名。header=0表示首行作为列名（默认）；header=[1,2]表示1,2行作为列名</span>
+<span class="token comment" spellcheck="true">#`index_col`:行索引。index_col=0表示首列作为行索引。</span>
 </code></pre>
-<p>索引是不能以 <code>df.loc[0]</code>  访问到的，索引被认为不是数组<strong>内容</strong></p>
+<p>索引是不能以<code>df.loc[0]</code>访问到的，索引被认为不是数组<strong>内容</strong></p>
 </li>
-<li>
-<p><strong>导入 json</strong></p>
-<pre class=" language-language-python"><code class="language-language-python">df = pd.read_json('path', orient='table')
-#`orient`：json格式，如何导出就如何导入
+<li><p><strong>导入json</strong></p>
+<pre class=" language-python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_json<span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">,</span> orient<span class="token operator">=</span><span class="token string">'table'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#`orient`：json格式，如何导出就如何导入</span>
 </code></pre>
 </li>
 </ul>
-<h2 id="3-类型转换"><a class="anchor" href="#3-类型转换">#</a> 3. 类型转换</h2>
-<ol>
-<li>其他类型转 <code>DataFrame</code></li>
+<h2 id="3-类型转换"><a href="#3-类型转换" class="headerlink" title="3. 类型转换"></a>3. 类型转换</h2><ol>
+<li>其他类型转<code>DataFrame</code></li>
 </ol>
-<pre class=" language-language-python"><code class="language-language-python">df=pd.DataFrame(***)#***是被转换的对象
+<pre class=" language-python"><code class="language-python">df<span class="token operator">=</span>pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token operator">**</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#***是被转换的对象</span>
 </code></pre>
 <ol start="2">
-<li>
-<p><code>DataFrame</code>  转 <code>numpy.ndarray</code> （numpy 也是类似数组的数据类型）</p>
-<pre class=" language-language-python"><code class="language-language-python">array=df.values
+<li><p><code>DataFrame</code>转<code>numpy.ndarray</code>（numpy也是类似数组的数据类型）</p>
+<pre class=" language-python"><code class="language-python">array<span class="token operator">=</span>df<span class="token punctuation">.</span>values
 </code></pre>
 </li>
 </ol>
-<h2 id="4-查询检索"><a class="anchor" href="#4-查询检索">#</a> 4. 查询检索</h2>
-<p><img data-src="/2021/05/13/note/Python/pandas/image-20210531123835896.png" alt="image-20210531123835896"></p>
+<h2 id="4-查询检索"><a href="#4-查询检索" class="headerlink" title="4. 查询检索"></a>4. 查询检索</h2><p><img data-src="/2021/05/13/note/Python/pandas/image-20210531123835896.png" alt="image-20210531123835896"></p>
 <ol>
-<li>
-<p>按<strong>索引号</strong>查询， <code>.iloc[]</code></p>
-<pre class=" language-language-python"><code class="language-language-python">data=df.iloc[]#里面填index号，从0开始
-df.iloc[0] #返回0 1 2 3
-df.iloc[:,0] #返回0 4 8 12
-df.iloc[0,0] #返回0
+<li><p>按<strong>索引号</strong>查询，<code>.iloc[]</code></p>
+<pre class=" language-python"><code class="language-python">data<span class="token operator">=</span>df<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true">#里面填index号，从0开始</span>
+df<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#返回0 1 2 3</span>
+df<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#返回0 4 8 12</span>
+df<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#返回0</span>
 </code></pre>
 </li>
-<li>
-<p>按<strong>索引名</strong>查询， <code>.loc[]</code></p>
-<pre class=" language-language-python"><code class="language-language-python">data=df.loc[]#里面填index_name
-df.loc['a'] #返回0 1 2 3
-df.loc[:,'A'] #返回0 4 8 12
+<li><p>按<strong>索引名</strong>查询，<code>.loc[]</code></p>
+<pre class=" language-python"><code class="language-python">data<span class="token operator">=</span>df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true">#里面填index_name</span>
+df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#返回0 1 2 3</span>
+df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token string">'A'</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#返回0 4 8 12</span>
+df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span><span class="token string">'B'</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#返回多列</span>
 </code></pre>
-<p>注：索引名如果是 <code>str</code> ，则需要加上 <code>''</code> 。如果是 <code>integer</code> ，则不能加 <code>''</code></p>
+<p>注：索引名如果是<code>str</code>，则需要加上<code>&#39;&#39;</code>。如果是<code>integer</code>，则不能加<code>&#39;&#39;</code></p>
 </li>
-<li>
-<p><code>[]</code> ，二维：按<strong>索引名</strong>返回一维序列。一维：按<strong>索引号</strong>或<strong>索引号</strong>返回对应元素</p>
-<pre class=" language-language-python"><code class="language-language-python">df['A']#返回0 4 8 12
-df['A'][0] #返回0
-df['A']['a']#返回0
-</code></pre>
-</li>
-</ol>
-<h2 id="5-计数"><a class="anchor" href="#5-计数">#</a> 5. 计数</h2>
-<ol>
-<li>
-<p><code>.value_counts()</code> ：归类计数。记录每个相同元素的数量，<strong>也可以得出队列中共有多少不同值 / 重复值</strong></p>
-<pre class=" language-language-python"><code class="language-language-python">pd.DataFrame([0,1,0,2]).value_counts()
-#输出 series类型
-0 2
-2 1
-1 1
+<li><p><code>[]</code>，二维：按<strong>索引名</strong>返回一维序列。一维：按<strong>索引号</strong>或<strong>索引号</strong>返回对应元素</p>
+<pre class=" language-python"><code class="language-python">df<span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true">#返回0 4 8 12</span>
+df<span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#返回0</span>
+df<span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true">#返回0</span>
 </code></pre>
 </li>
 </ol>
+<h2 id="5-计数"><a href="#5-计数" class="headerlink" title="5. 计数"></a>5. 计数</h2><ol>
+<li><p><code>.value_counts()</code>：归类计数。记录每个相同元素的数量，<strong>也可以得出队列中共有多少不同值/重复值</strong></p>
+<pre class=" language-python"><code class="language-python">pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#输出 series类型</span>
+<span class="token number">0</span> <span class="token number">2</span>
+<span class="token number">2</span> <span class="token number">1</span>
+<span class="token number">1</span> <span class="token number">1</span>
+</code></pre>
+</li>
+</ol>
+<h1 id="三-numpy向量运算"><a href="#三、-numpy（向量运算）" class="headerlink" title="三、 numpy（向量运算）"></a>三、 numpy（向量运算）</h1><blockquote>
+<p>注意：文本以array代表np.array类型的<strong>对象</strong></p>
+</blockquote>
+<h2 id="1-创建"><a href="#1-创建" class="headerlink" title="1. 创建"></a>1. 创建</h2><h3 id="11-自定义创建"><a href="#1-1-自定义创建" class="headerlink" title="1.1 自定义创建"></a>1.1 自定义创建</h3><pre class=" language-python"><code class="language-python">x <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+array<span class="token operator">=</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#定义一个numpy类型矩阵</span>
+np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>x<span class="token punctuation">,</span>dtype<span class="token operator">=</span>np<span class="token punctuation">.</span>int<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#括号里直接放数组，则是把list类型转换成numpy</span>
+np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>x<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">,</span>dtype<span class="token operator">=</span>np<span class="token punctuation">.</span>int<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#也可以放表达式，输出结果是bool型的numpy，x是数组</span>
+</code></pre>
+<p><strong>指定形状创建</strong></p>
+<pre class=" language-python"><code class="language-python">np<span class="token punctuation">.</span>zeros_like<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#返回形状和x一致的矩阵，元素全部为0</span>
+np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#输出形状为shape(1,2)的全是0的矩阵</span>
+</code></pre>
+<p><strong>循环形式创建</strong></p>
+<pre class=" language-python"><code class="language-python"> x<span class="token operator">=</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">5.0</span><span class="token punctuation">,</span><span class="token number">5.0</span><span class="token punctuation">,</span><span class="token number">0.1</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#在-5.0到5.0以0.1为单位(左闭右开)生成numpy数组[-5.0，-4.9....。4.9]</span>
+</code></pre>
+<h3 id="12-随机创建"><a href="#1-2-随机创建" class="headerlink" title="1.2 随机创建"></a>1.2 随机创建</h3><p><strong>随机抽取数创建：</strong></p>
+<pre class=" language-python"><code class="language-python">np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span>list<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#从list中随机抽取n个元素组成array</span>
+np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#从[0,a)中随机抽取b个元素组成array</span>
+</code></pre>
+<p><strong>生成随机数创建：</strong></p>
+<pre class=" language-python"><code class="language-python">a<span class="token operator">=</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">100000</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">#随机创建一个长10000的向量</span>
+a2<span class="token operator">=</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">#随机创建一个100*100的向量</span>
+</code></pre>
+<blockquote>
+<p>rand生成的随机数是&lt;1的</p>
+</blockquote>
+<h2 id="2-nparray的性质"><a href="#2-np-array的性质" class="headerlink" title="2. np.array的性质"></a>2. np.array的性质</h2><blockquote>
+<p>np.array是n维向量（矩阵），在Python中，多维向量类型常用的主要有3个：list、DataFrame和np.array。后两者显然更适合科研数据处理，其中，dataframe主要倾向于<strong>数据类型</strong>、<strong>数据格式</strong>等处理；np.array主要倾向于<strong>矩阵运算</strong></p>
+</blockquote>
+<h2 id="3-矩阵运算"><a href="#3-矩阵运算" class="headerlink" title="3. 矩阵运算"></a>3. 矩阵运算</h2><p><strong>乘法：</strong></p>
+<ul>
+<li><code>np.dot(x,y)</code>：矩阵乘法（行X列），<code>x</code>和<code>y</code>不一定是<code>np.array</code>类型</li>
+<li><code>x*y</code>：对应位置相乘。1. <code>x</code>必须是<code>np.array</code>类型。2. <code>x</code>和<code>y</code>必须形状相同</li>
+</ul>
+<p><strong>加减法：</strong></p>
+<ul>
+<li><code>x+y</code>/<code>x-y</code>：对应位置相加/键、减</li>
+</ul>
+<p><strong>逻辑运算：</strong></p>
+<ul>
+<li><p><code>x&lt;2</code>：每个元素和2比较，返回一个bool类型矩阵</p>
+<pre class=" language-python"><code class="language-python">x <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token operator">></span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+[[False False]
+ [False  True]
+ [ True  True]]
+"""</span>
+</code></pre>
+</li>
+</ul>
+<p><strong>求和：</strong></p>
+<ul>
+<li><code>np.sum(x)</code>：<strong>所有</strong>元素相加</li>
+</ul>
+<h2 id="4-增删改查"><a href="#4-增删改查" class="headerlink" title="4. 增删改查"></a>4. 增删改查</h2><pre class=" language-python"><code class="language-python">x <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="41-增"><a href="#4-1-增" class="headerlink" title="4.1 增"></a>4.1 增</h3><pre class=" language-python"><code class="language-python">b<span class="token operator">=</span>np<span class="token punctuation">.</span>insert<span class="token punctuation">(</span>b<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>a<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+ <span class="token comment" spellcheck="true">#b是被插数组（二维）,a是插入数组（一维），第一个0是插入的位置，第二个0表示插入的是一位数组</span>
+</code></pre>
+<h3 id="42-删"><a href="#4-2-删" class="headerlink" title="4.2 删"></a>4.2 删</h3><h3 id="43-改"><a href="#4-3-改" class="headerlink" title="4.3 改"></a>4.3 改</h3><ul>
+<li><strong>类型转换：</strong><ul>
+<li><code>array.astype(np.float32) </code>：转换成固定的数据类型float32并返回</li>
+</ul>
+</li>
+</ul>
+<h3 id="44-查"><a href="#4-4-查" class="headerlink" title="4.4 查"></a>4.4 查</h3><p>和dataframe的<code>.iloc[]</code>用法差不多</p>
+<ul>
+<li><p><strong>取单个元素：</strong><code>x[1,1]</code>：#矩阵第2行第2列的元素</p>
+</li>
+<li><p><strong>取行向量：</strong></p>
+<ul>
+<li><code>x[1]</code>：第<strong>2</strong>行的向量</li>
+<li><code>x[1,...]</code>：第<strong>2</strong>的向量</li>
+<li><code>x[[1,2]]</code>：第<strong>2,3</strong>行的向量</li>
+</ul>
+</li>
+<li><p><strong>取列向量：</strong></p>
+<ul>
+<li><code>x[:,1]</code>  ：矩阵第<strong>2</strong>列的向量（从0开始）</li>
+<li><code>x[...,1]</code>：第<strong>2</strong>列向量</li>
+<li><code>y[:,[1,2]]</code>：矩阵第<strong>2,3</strong>列的向量</li>
+</ul>
+</li>
+<li><p><strong>获取矩阵形状：</strong></p>
+<ul>
+<li><p><code>array.shape[n]</code>：返回矩阵第<strong>n+1</strong>维的长度</p>
+<p>如：<code>x[0]</code>返回<strong>3</strong>，<code>x[1]</code>返回<strong>2</strong>。</p>
+<p>​    最外面那层<code>[]</code>包裹的就是第1维（行）</p>
+<p>​    里面一层<code>[]</code>是第2维（列）</p>
+<p>​    再里面是第3维</p>
+</li>
+<li><p><code>np.shape(x)</code>：返回矩阵<code>x</code>的各维度长度，此例返回**(3, 2)**</p>
+</li>
+<li><p><code>np.ndim(x)</code>：返回矩阵的<strong>维数</strong>，此例返回<strong>2</strong></p>
+</li>
+</ul>
+</li>
+<li><p><strong>获取特殊值的索引：</strong></p>
+<ul>
+<li><code>array.argmax()</code>：返回向量最大值的索引</li>
+<li><code>np.argmax(array,axis=n)</code>：返回向量在<strong>第n+1维</strong>最大值的索引，可不写</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h2 id="5-其他函数"><a href="#5-其他函数" class="headerlink" title="5. 其他函数"></a>5. 其他函数</h2><pre class=" language-python"><code class="language-python"><span class="token number">9</span><span class="token punctuation">.</span> numpy<span class="token punctuation">.</span>frombuffer<span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> dtype<span class="token operator">=</span>float<span class="token punctuation">,</span> count<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> offset<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">#通过使用指定的缓冲区来创建数组</span>
+</code></pre>
+<p>参数</p>
+<p>  缓冲区：它表示暴露缓冲区接口的对象。</p>
+<p>  dtype：代表返回的数据类型数组的数据类型。</p>
+<p>  count：代表返回的ndarray的长度。默认值为-1。</p>
+<p>  偏移量：代表读取的起始位置。默认值为0。</p>
+<h3 id="23-迭代nditer"><a href="#2-3-迭代nditer" class="headerlink" title="2.3 迭代nditer"></a>2.3 迭代nditer</h3><p>it=np.nditer(a, flags=[<strong>‘multi_index’</strong>], op_flags=[<strong>‘readwrite’</strong>])</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>flags</th>
+<th>op_flags</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>迭代的数组</td>
+<td><strong>‘multi_index’*<em><strong>：正常迭代（</strong>每次迭代可以跟踪一种索引类型</em>*）</strong></td>
+<td>设置对原数组的权限  默认read_only</td>
+</tr>
+</tbody></table>
+<p>while not it.finished:<br>   print(it[0],it.multi_index)<br>   it.iternext()</p>
+<p>/</p>
+<p>for x in it:</p>
+<p>·it.finished:迭代器是否到最后</p>
+<p>·it.iternext()：迭代器往后迭代一个位置</p>
+<p>·it.multi_index:迭代器所指元素在原数组的位置（行列…）</p>
+<h1 id="四-matplotlibpyplot图形可视化"><a href="#四、-matplotlib-pyplot（图形可视化）" class="headerlink" title="四、 matplotlib.pyplot（图形可视化）"></a>四、 matplotlib.pyplot（图形可视化）</h1><blockquote>
+<p>import matplotlib.pyplot as plt</p>
+</blockquote>
+<h2 id="1-画图"><a href="#1-画图" class="headerlink" title="1. 画图"></a>1. 画图</h2><ul>
+<li><p><strong>描点：</strong></p>
+<pre class=" language-python"><code class="language-python">plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>X<span class="token punctuation">,</span>Y<span class="token punctuation">,</span>marker<span class="token operator">=</span><span class="token string">'o'</span><span class="token punctuation">,</span>color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span>s<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">'bad'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#在图像上显示样本点，s是点的大小，label表示样本标签，一般显示在图像右上角</span>
+</code></pre>
+</li>
+<li><p><strong>连线：</strong></p>
+<pre class=" language-python"><code class="language-python">plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>X_pred<span class="token punctuation">,</span> Y_pred<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#根据X,Y画出描点图，其实主要作用是连线。X_pred和Y_pred一般为数组</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="2-图表属性标题-标签-颜色等"><a href="#2-图表属性（标题、标签、颜色等）" class="headerlink" title="2. 图表属性（标题、标签、颜色等）"></a>2. 图表属性（标题、标签、颜色等）</h2><pre class=" language-python"><code class="language-python">f1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#创建一个编号为1的图像</span>
+plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'watermelon_3a'</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#图像标题</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'density'</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#x轴名称</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'radio_sugar'</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#y轴名称</span>
+plt<span class="token punctuation">.</span>xlim<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#x轴范围</span>
+plt<span class="token punctuation">.</span>ylim<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#y轴范围</span>
+
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span>loc<span class="token operator">=</span><span class="token string">'upper right'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#显示图像标签，如样本点标签，线标签</span>
+
+plot<span class="token punctuation">(</span><span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token punctuation">[</span>fmt<span class="token punctuation">]</span><span class="token punctuation">,</span> data<span class="token operator">=</span>None<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#单条线：</span>
+plot<span class="token punctuation">(</span><span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token punctuation">[</span>fmt<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>x2<span class="token punctuation">]</span><span class="token punctuation">,</span> y2<span class="token punctuation">,</span> <span class="token punctuation">[</span>fmt2<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#多条线一起画</span>
+<span class="token comment" spellcheck="true">#可选参数[fmt] 是一个字符串来定义图的基本属性如：颜色（color），点型（marker），线型（linestyle），</span>
+</code></pre>
+<p><img data-src="/2021/05/13/note/Python/pandas/image-20210625221949754.png" alt="image-20210625221949754">legend</p>
+<p>具体形式 fmt = ‘[color][marker][line]’</p>
+<pre><code>plot(x, y, &#39;bo-&#39;)  # 蓝色圆点实线
+    =============    ===============================
+    character        color
+    =============    ===============================
+    ``&#39;b&#39;``          blue 蓝
+    ``&#39;g&#39;``          green 绿
+    ``&#39;r&#39;``          red 红
+    ``&#39;c&#39;``          cyan 蓝绿
+    ``&#39;m&#39;``          magenta 洋红
+    ``&#39;y&#39;``          yellow 黄
+    ``&#39;k&#39;``          black 黑
+    ``&#39;w&#39;``          white 白
+    =============    ===============================
+    ``&#39;.&#39;``          point marker
+    ``&#39;,&#39;``          pixel marker
+    ``&#39;o&#39;``          circle marker
+    ``&#39;v&#39;``          triangle_down marker
+    ``&#39;^&#39;``          triangle_up marker
+    ``&#39;&lt;&#39;``          triangle_left marker
+    ``&#39;&gt;&#39;``          triangle_right marker
+    ``&#39;1&#39;``          tri_down marker
+    ``&#39;2&#39;``          tri_up marker
+    ``&#39;3&#39;``          tri_left marker
+    ``&#39;4&#39;``          tri_right marker
+    ``&#39;s&#39;``          square marker
+    ``&#39;p&#39;``          pentagon marker
+    ``&#39;*&#39;``          star marker
+    ``&#39;h&#39;``          hexagon1 marker
+    ``&#39;H&#39;``          hexagon2 marker
+    ``&#39;+&#39;``          plus marker
+    ``&#39;x&#39;``          x marker
+    ``&#39;D&#39;``          diamond marker
+    ``&#39;d&#39;``          thin_diamond marker
+    ``&#39;|&#39;``          vline marker
+    ``&#39;_&#39;``          hline marker
+    =============    ===============================
+    ``&#39;-&#39;``          solid line style 实线
+    ``&#39;--&#39;``         dashed line style 虚线
+    ``&#39;-.&#39;``         dash-dot line style 点画线
+    ``&#39;:&#39;``          dotted line style 点线
+    =============    ===============================
+</code></pre>
+<pre class=" language-python"><code class="language-python">plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#显示函数图</span>
+plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>numbRow<span class="token punctuation">,</span>numbCol<span class="token punctuation">,</span>plotNum<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#分子图（一般在循环中定义子图）</span>
+numbRow：行数 ， numbCol：列数 ，plotNum：图总数
+代码：
+<span class="token keyword">for</span> i<span class="token punctuation">,</span>a <span class="token keyword">in</span> activations<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>activations<span class="token punctuation">)</span><span class="token punctuation">,</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span>str<span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'-layer'</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>a<span class="token punctuation">.</span>flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span>range<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#a是矩阵，np.flatten作用是把多维数组横向展开为一维，并返回一个副本</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ 
+plt<span class="token punctuation">.</span>hist<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#直方图，即柱状图</span>
+</code></pre>
+<pre class=" language-python"><code class="language-python">matplotlib<span class="token punctuation">.</span>pyplot<span class="token punctuation">.</span>hist<span class="token punctuation">(</span> x<span class="token punctuation">,</span> bins<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">,</span> range<span class="token operator">=</span>None<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#后面还有很多参数，暂时不讲</span>
+<span class="token triple-quoted-string string">"""
+x:一维数组，代表各柱的分布数据
+bins:柱的数量
+range:分布范围（x轴）
+"""</span>
+</code></pre>
+<h3 id="rcparams"><a href="#rcParams" class="headerlink" title=".rcParams[]"></a>.rcParams[]</h3><p>*#<strong>设置</strong>rc<strong>参数显示中文标题，</strong>run configuration*</p>
+<p>*<br> #<strong>设置字体为</strong>SimHei<strong>显示中文<br>* plt.rcParams[</strong>‘font.sans-serif’<strong>]=[</strong>‘SimHei’**]<br> *#<strong>设置正常显示负号<br>* plt.rcParams[</strong>‘axes.unicode_minus’**]=False</p>
+<p>*#<strong>设置线条样式<br>* plt.rcParams[</strong>‘lines.linestyle’**] = **’-.’<br>** *#<strong>设置线条宽度<br>* plt.rcParams[</strong>‘lines.linewidth’**] = 3</p>
+<p>plt.text(coordinate[0], coordinate[1], now_A, size=15,<br>     ha=<strong>“center”</strong>, va=<strong>“center”</strong>,<br>     bbox=dict(boxstyle=<strong>“circle”</strong>,<br>          ec=(0.5, 0.8, 0.5),<br>          fc=(0.5, 0.9, 0.5),<br>          )<br>     )</p>
+<p>#plt.text(x, y, s, fontsize=12),前3个分别是坐标和文本</p>
+<table>
+<thead>
+<tr>
+<th><strong>param</strong></th>
+<th><strong>type</strong></th>
+<th><strong>explain</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span class="exturl" data-url="aHR0cHM6Ly9tYXRwbG90bGliLm9yZy9hcGkvdGV4dF9hcGkuaHRtbCNtYXRwbG90bGliLnRleHQuVGV4dC5zZXRfZm9udHNpemU=">fontsize</span> or size</td>
+<td>int</td>
+<td>字体大小</td>
+</tr>
+<tr>
+<td><span class="exturl" data-url="aHR0cHM6Ly9tYXRwbG90bGliLm9yZy9hcGkvdGV4dF9hcGkuaHRtbCNtYXRwbG90bGliLnRleHQuVGV4dC5zZXRfaG9yaXpvbnRhbGFsaWdubWVudA==">horizontalalignment</span>/ha</td>
+<td>{‘center’, ‘right’, ‘left’}</td>
+<td>水平对齐方式</td>
+</tr>
+<tr>
+<td><span class="exturl" data-url="aHR0cHM6Ly9tYXRwbG90bGliLm9yZy9hcGkvdGV4dF9hcGkuaHRtbCNtYXRwbG90bGliLnRleHQuVGV4dC5zZXRfdmVydGljYWxhbGlnbm1lbnQ=">verticalalignment</span>/va</td>
+<td>{‘center’, ‘top’, ‘bottom’, ‘baseline’,  ‘center_baseline’}</td>
+<td>垂直对齐方式</td>
+</tr>
+<tr>
+<td><span class="exturl" data-url="aHR0cHM6Ly9tYXRwbG90bGliLm9yZy9hcGkvdGV4dF9hcGkuaHRtbCNtYXRwbG90bGliLnRleHQuVGV4dC5zZXRfYmJveA==">bbox</span></td>
+<td>dict</td>
+<td>描述文本外框的参数  boxstyle：方框外形  facecolor：(简写fc)背景颜色  edgecolor：(简写ec)边框线条颜色  edgewidth：边框线条大小</td>
+</tr>
+</tbody></table>
+<h1 id="五-sklearn机器学习"><a href="#五、-sklearn（机器学习）" class="headerlink" title="五、 sklearn（机器学习）"></a>五、 sklearn（机器学习）</h1><p>scikit-learn 是基于 Python 语言的机器学习工具</p>
+<ul>
+<li>简单高效的数据挖掘和数据分析工具</li>
+<li>可供大家在各种环境中重复使用</li>
+<li>建立在 NumPy ，SciPy 和 matplotlib 上</li>
+<li>开源，可商业使用 - BSD许可证</li>
+</ul>
+<h2 id="1-学习-预测模型"><a href="#1-学习-预测模型" class="headerlink" title="1. 学习-预测模型"></a>1. 学习-预测模型</h2><h3 id="11-linearregression线性回归"><a href="#1-1-LinearRegression（线性回归）" class="headerlink" title="1.1 LinearRegression（线性回归）"></a>1.1 LinearRegression（线性回归）</h3><blockquote>
+<p>回归指的是预测连续的值，线性回归是求一条直线y=w1x1+w2x2+…+b，使其尽可能拟合更多的点</p>
+</blockquote>
+<h4 id="111-linearregression类介绍"><a href="#1-1-1-LinearRegression类介绍" class="headerlink" title="1.1.1 LinearRegression类介绍"></a>1.1.1 LinearRegression类介绍</h4><p><strong>关于sklearn.linear_model.LinearRegression</strong></p>
+<p>已知线性模型是<br>$$<br>f(\boldsymbol{x})=\boldsymbol{w}^T\boldsymbol{x}+b<br>$$<br>其中：</p>
+<p>​    -<code>w</code>是权重，表示特征的重要程度。一维向量</p>
+<p>​    -<code>b</code>是偏置，模型的偏移量。单个数值</p>
+<p>​    -<code>x</code>是样本，一组特征值。一维向量</p>
+<pre class=" language-python"><code class="language-python">LinearRegression<span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">,</span> fit_intercept<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> normalize<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> copy_X<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> n_jobs<span class="token operator">=</span>None<span class="token punctuation">,</span> positive<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    <span class="token triple-quoted-string string">"""
+       创建线性回归模型，以下参数均为可选，一般来说都选默认值
+    :param fit_intercept: bool, default=True.是否计算此模型的截距b。如果设置为False，则在计算中不使用截距（即数据应居中）。
+    :param normalize: bool, default=False。如果为真，回归系数X将在回归前通过减去平均值并除以l2范数进行归一化。
+    :param copy_X: bool, default=True。如果为True，则复制X；否则，它可能会被覆盖。
+    :param n_jobs: int, default=None。用于计算的作业数。
+    :param positive: bool, default=False。设置为True时，强制系数为正。只有密集阵列才支持此选项。
+    :return: sklearn.linear_model._logistic.LogisticRegression
+    """</span>
+</code></pre>
+<p>函数<code>LinearRegression()</code>返回一个<code>LogisticRegression</code>对象。</p>
+<p><strong>常用属性（成员变量）：</strong></p>
+<ul>
+<li><code>coef_</code>：<strong>array</strong>。（系数），指的是权重<code>w</code></li>
+<li><code>intercept_ </code>：<strong>float</strong>。模型的偏置<code>b</code></li>
+</ul>
+<p><strong>常用函数：</strong></p>
+<ul>
+<li><code>fit(X, y, sample_weight=None)</code>：拟合线性模型（以最小二乘法，即求最小均方差）。<ul>
+<li><code>X</code>：训练样本特征值。二维数组（行-样本，列-特征）</li>
+<li><code>y</code>：靶值。一维数组，样本的结果值</li>
+<li><code>sample_weight</code>：每个样品的单独重量（暂时不清楚，可能是属性的权重2？）</li>
+<li><strong>return：</strong>self。返回拟合后的线性模型，这种不需要去接收，属于修改型的函数</li>
+</ul>
+</li>
+<li><code>predict(X)</code>：预测<ul>
+<li><code>X</code>：用于预测的样本</li>
+<li><strong>return：</strong>array。样本的预测值 </li>
+</ul>
+</li>
+<li><code>get_params(deep=True)</code>：以字典形式返回模型参数，包括但不限于<code>fit_intercept</code><ul>
+<li><code>deep</code>：如果为True，则将返回此估计器的参数以及作为估计器的包含子对象。</li>
+<li><strong>return：</strong>dict</li>
+</ul>
+</li>
+<li><code>set_params(**params)</code>：设置参数<ul>
+<li><code>**params</code>：dict</li>
+</ul>
+</li>
+</ul>
+<h4 id="112-示例"><a href="#1-1-2-示例" class="headerlink" title="1.1.2 示例"></a>1.1.2 示例</h4><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#1. 读取数据</span>
+dataset <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'F:\project\watermelon\melon_data1.csv'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#2. 定义样本属性和训练目标，此例是用密度预测含糖率</span>
+X <span class="token operator">=</span> dataset<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'密度'</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#其中属性值是二维向量：n个样本;n个属性/样本</span>
+Y <span class="token operator">=</span> dataset<span class="token punctuation">[</span><span class="token string">'含糖率'</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#3. 切分训练集和验证集</span>
+X_train<span class="token punctuation">,</span>X_test<span class="token punctuation">,</span>Y_train<span class="token punctuation">,</span>Y_test <span class="token operator">=</span> model_selection<span class="token punctuation">.</span>train_test_split<span class="token punctuation">(</span>X<span class="token punctuation">,</span>Y<span class="token punctuation">,</span>test_size<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span>random_state<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#4. 建立模型</span>
+log_model <span class="token operator">=</span> LinearRegression<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#5. 训练</span>
+log_model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_train<span class="token punctuation">,</span>Y_train<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#6. 预测</span>
+Y_pred <span class="token operator">=</span> log_model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#7. 评估（此处用均方差）</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>Y_pred<span class="token operator">-</span>Y_test<span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="12-logisticregression逻辑回归"><a href="#1-2-LogisticRegression（逻辑回归）" class="headerlink" title="1.2 LogisticRegression（逻辑回归）"></a>1.2 LogisticRegression（逻辑回归）</h3><blockquote>
+<p>虽然逻辑回归叫回归，但他是分类任务。可以是多分类</p>
+</blockquote>
+<h4 id="121-logisticregression类介绍"><a href="#1-2-1-LogisticRegression类介绍" class="headerlink" title="1.2.1 LogisticRegression类介绍"></a>1.2.1 LogisticRegression类介绍</h4><p><strong>关于sklearn.linear_model.LogisticRegression</strong></p>
+<p>已知逻辑回归模型<img data-src="/2021/05/13/note/Python/pandas/image-20210621163134066-1624788388733.png" alt="image-20210621163134066"></p>
+<p>其中：</p>
+<p>​    -<code>w</code>是权重，表示特征的重要程度。一维向量</p>
+<p>​    -<code>b</code>是偏置，模型的偏移量。单个数值</p>
+<p>​    -<code>x</code>是样本，一组特征值。一维向量</p>
+<pre class=" language-python"><code class="language-python">LogisticRegression<span class="token punctuation">(</span>penalty<span class="token operator">=</span><span class="token string">'l2'</span><span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">,</span> dual<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> tol<span class="token operator">=</span><span class="token number">0.0001</span><span class="token punctuation">,</span> C<span class="token operator">=</span><span class="token number">1.0</span><span class="token punctuation">,</span> fit_intercept<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> intercept_scaling<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> class_weight<span class="token operator">=</span>None<span class="token punctuation">,</span> random_state<span class="token operator">=</span>None<span class="token punctuation">,</span> solver<span class="token operator">=</span><span class="token string">'lbfgs'</span><span class="token punctuation">,</span> max_iter<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span> multi_class<span class="token operator">=</span><span class="token string">'auto'</span><span class="token punctuation">,</span> verbose<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> warm_start<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> n_jobs<span class="token operator">=</span>None<span class="token punctuation">,</span> l1_ratio<span class="token operator">=</span>None<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#虽然有这么多的参数，但一般默认就行</span>
+log_model <span class="token operator">=</span> LogisticRegression<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#直接这样就行</span>
+</code></pre>
+<p>函数<code>LogisticRegression()</code>返回一个<code>LogisticRegression</code>对象。</p>
+<p><strong>常用属性（成员变量）：</strong></p>
+<ul>
+<li><code>coef_</code>：<strong>array</strong>。（系数），指的是权重<code>w</code></li>
+<li><code>intercept_ </code>：<strong>float</strong>。模型的偏置<code>b</code></li>
+<li><code>classes_ </code>：<strong>ndarray</strong>。分类器已知的类标签列表（逻辑回归可以是多分类）</li>
+<li><code>n_iter_</code>：<strong>ndarray</strong> 。各分类的实际<strong>迭代次数</strong>。</li>
+</ul>
+<p><strong>常用函数：</strong></p>
+<ul>
+<li><code>fit(X, y, sample_weight=None)</code>：拟合模型。</li>
+<li><code>predict(X)</code>：预测</li>
+<li><code>get_params(deep=True)</code>：以字典形式返回模型参数，包括但不限于<code>fit_intercept</code></li>
+<li><code>set_params(**params)</code>：设置参数</li>
+<li><code>decision_function(X)</code>：预测样本的置信度。样本的置信度与样本到超平面的有符号距离成正比。</li>
+</ul>
+<h4 id="122-示例"><a href="#1-2-2-示例" class="headerlink" title="1.2.2 示例"></a>1.2.2 示例</h4><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#1. 读取数据</span>
+dataset <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'F:\project\watermelon\melon_data1.csv'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#2. 定义样本属性和训练目标，此例是用密度预测含糖率</span>
+X <span class="token operator">=</span> dataset<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'密度'</span><span class="token punctuation">,</span><span class="token string">'含糖率'</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#其中属性值是二维向量：n个样本;n个属性/样本</span>
+Y <span class="token operator">=</span> dataset<span class="token punctuation">[</span><span class="token string">'含糖率'</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#3. 切分训练集和验证集</span>
+X_train<span class="token punctuation">,</span>X_test<span class="token punctuation">,</span>Y_train<span class="token punctuation">,</span>Y_test <span class="token operator">=</span> model_selection<span class="token punctuation">.</span>train_test_split<span class="token punctuation">(</span>X<span class="token punctuation">,</span>Y<span class="token punctuation">,</span>test_size<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span>random_state<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#4. 建立模型</span>
+log_model <span class="token operator">=</span> LogisticRegression<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#逻辑回归，就是对数线性回归，离散分类</span>
+<span class="token comment" spellcheck="true">#5. 训练</span>
+log_model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_train<span class="token punctuation">,</span>Y_train<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#6. 预测</span>
+Y_pred <span class="token operator">=</span> log_model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#7. 评估（此处用精确度，即预测到到的/没预测到的）</span>
+<span class="token number">1</span><span class="token operator">-</span>sum<span class="token punctuation">(</span>Y_pred<span class="token operator">-</span>Y_test<span class="token punctuation">)</span><span class="token operator">/</span>len<span class="token punctuation">(</span>Y_test<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="13-kneighborsregressork近邻回归"><a href="#1-3-KNeighborsRegressor（K近邻回归）" class="headerlink" title="1.3. KNeighborsRegressor（K近邻回归）"></a>1.3. KNeighborsRegressor（K近邻回归）</h3><blockquote>
+<p>KNN算法一般用sklearn.neighbors.KNeighborsRegressor，也有NearestNeighbors的，不过后者是无监督学习</p>
+</blockquote>
+<h4 id="131-kneighborsregressor类介绍"><a href="#1-3-1-KNeighborsRegressor类介绍" class="headerlink" title="1.3.1 KNeighborsRegressor类介绍"></a>1.3.1 KNeighborsRegressor类介绍</h4><p><strong>关于sklearn.neighbors.KNeighborsRegressor</strong></p>
+<p>KNN的模型应该是一张<strong>距离表</strong></p>
+<pre class=" language-python"><code class="language-python">KNeighborsRegressor<span class="token punctuation">(</span>n_neighbors<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">,</span> weights<span class="token operator">=</span><span class="token string">'uniform'</span><span class="token punctuation">,</span> algorithm<span class="token operator">=</span><span class="token string">'auto'</span><span class="token punctuation">,</span> leaf_size<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">,</span> p<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> metric<span class="token operator">=</span><span class="token string">'minkowski'</span><span class="token punctuation">,</span> metric_params<span class="token operator">=</span>None<span class="token punctuation">,</span> n_jobs<span class="token operator">=</span>None<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+    <span class="token triple-quoted-string string">"""
+    最近邻回归，用于预测连续数值
+    :param n_neighbors: int, default=5。k值，最近的k个邻居
+    :param weights: 
+    :param algorithm: 寻找最近邻的算法
+        ball_tree：will use BallTree。
+        kd_tree： will use KDTree
+        brute： 暴力穷举
+        auto： 自动选择
+    :param leaf_size: int, default=30。传递给BallTree或KDTree的叶大小。这会影响构造和查询的速度，以及存储树所需的内存。
+    :param p: int, default=2。当p=1时，使用曼哈顿距离（l1）；对p=2时，欧几里德距离（l2）。对于任意p，使用minkowski距离（lp）。
+    :param metric: str or callable, default=’minkowski’。要用于树的距离度量。默认的度量是minkowski，p=2等于标准的欧几里德度量。有关可用度量的列表
+    :param metric_params: 
+    :param n_jobs: int, default=None。为邻居搜索运行的并行作业数。
+    :param kwargs: 
+    :return: KNN模型
+    """</span>
+</code></pre>
+<blockquote>
+<p>一般指定一个k就可以了</p>
+</blockquote>
+<pre class=" language-python"><code class="language-python">neigh <span class="token operator">=</span> KNeighborsRegressor<span class="token punctuation">(</span>n_neighbors<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+</code></pre>
+<p><strong>此外，关于近邻的遍历算法：</strong></p>
+<ul>
+<li><strong>KDTree：</strong>对于<strong>低维度</strong> (<img data-src="/2021/05/13/note/Python/pandas/7fb5b8aaa79d55e35332a1f02a5aee04.jpg" alt="D &lt; 20">) 近邻搜索非常快, 当 <img data-src="/2021/05/13/note/Python/pandas/../%25E8%25A5%25BF%25E7%2593%259C%25E4%25B9%25A6%25E5%25A4%258D%25E4%25B9%25A0%25E5%258F%258A%25E4%25BB%25A3%25E7%25A0%2581%25E5%25AE%259E%25E7%258E%25B0/e03066df748abd9273db055cb79f0f01.jpg" alt="D"> 增长到很大时, 效率变低。这就是所谓的 “维度灾难” 的一种体现。</li>
+<li><strong>BallTree：</strong>比 KD 树消耗更多的时间, 但是这种数据结构对于高结构化的数据是非常有效的, 即使在<strong>高维度</strong>上也是一样.</li>
+</ul>
+<p>函数<code>KNeighborsRegressor()</code>返回一个<code>KNeighborsRegressor</code>对象。</p>
+<p><strong>常用属性（成员变量）：</strong></p>
+<ul>
+<li><code>effective_metric_</code>：<strong>str or callable</strong>。距离度量。如<code>metric=&#39;minkowski&#39;</code>并且<code>p=2</code>时，返回<code>euclidean-欧几里得</code></li>
+<li><code>effective_metric_params_</code>：<strong>dict</strong>。度量函数的其他参数</li>
+<li><code>n_samples_fit_</code>：<strong>int</strong>。用于训练的样本数</li>
+</ul>
+<p><strong>常用函数：</strong></p>
+<ul>
+<li><p><code>fit(X, y)</code>：拟合（训练）模型。</p>
+</li>
+<li><p><code>predict(X)</code>：预测</p>
+</li>
+<li><p><code>get_params(deep=True)</code>：以字典形式返回模型参数，包括但不限于<code>fit_intercept</code></p>
+</li>
+<li><p><code>set_params(**params)</code>：设置参数</p>
+</li>
+<li><p><code>kneighbors(X=None, n_neighbors=None, return_distance=True)</code>：返回指定样本的最近的k个邻居</p>
+<ul>
+<li><code>X</code>：<strong>array</strong>。样本数组</li>
+<li><code>n_neighbors</code>：<strong>int</strong>。邻居数，默认是一开始传入的k值</li>
+<li><code>return_distance</code>：<strong>bool</strong>。是否返回距离。</li>
+<li><strong>return</strong>：<ul>
+<li><code>neigh_dist</code>：<strong>ndarray</strong>。各邻居的距离（需要return_distance为true）。二维数组（一维-样本；二维-每个样本的邻居们）</li>
+<li><code>neigh_ind </code>：<strong>ndarray</strong>。邻居的索引。二维数组（一维-样本；二维-每个样本的邻居们）</li>
+</ul>
+</li>
+</ul>
+<p>例：</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> samples <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> neigh <span class="token operator">=</span> NearestNeighbors<span class="token punctuation">(</span>n_neighbors<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#NearestNeighbors是无监督的最近邻</span>
+<span class="token operator">>></span><span class="token operator">></span> neigh<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>samples<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> neigh<span class="token punctuation">.</span>kneighbors<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0.5</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#表示最近的1个邻居距离为0.5，index=2</span>
+<span class="token comment" spellcheck="true">#或者这样接收也可</span>
+distances<span class="token punctuation">,</span> indices <span class="token operator">=</span> neigh<span class="token punctuation">.</span>kneighbors<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> distances
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0.5</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#行-样本，列-样本的每个邻居的距离</span>
+<span class="token operator">>></span><span class="token operator">></span> indices
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#最近的1个邻居是index=2的点</span>
+</code></pre>
+</li>
+<li><p><code>kneighbors_graph(X=None, n_neighbors=None,mode=&#39;connectivity&#39;)</code>：返回邻居<strong>连接图</strong>，1-相邻；0-不相邻</p>
+<ul>
+<li><code>X</code>：<strong>array</strong>。样本数组</li>
+<li><code>n_neighbors</code>：<strong>int</strong>。邻居数，默认是一开始传入的k值</li>
+<li><code>mode</code>：返回矩阵的类型</li>
+<li><strong>return</strong>：返回一个距离矩阵，可通过<code>toArray()</code>转为<strong>array</strong>。</li>
+</ul>
+<p>例：</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> X <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> neigh <span class="token operator">=</span> NearestNeighbors<span class="token punctuation">(</span>n_neighbors<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> A <span class="token operator">=</span> neigh<span class="token punctuation">.</span>kneighbors_graph<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> A<span class="token punctuation">.</span>toarray<span class="token punctuation">(</span><span class="token punctuation">)</span>
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">#行-被测样本，这行是[0]。这行表示：对[0]来说，[0]和[1]是最近的2个邻居</span>
+       <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">#列-每个邻居（包括自身）</span>
+       <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ul>
+<h4 id="132-示例"><a href="#1-3-2-示例" class="headerlink" title="1.3.2 示例"></a>1.3.2 示例</h4><p><strong>导入</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>neighbors <span class="token keyword">import</span> KNeighborsRegressor
+</code></pre>
+<p><strong>生成训练数据</strong>：以sin函数测试</p>
+<pre class=" language-python"><code class="language-python">np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 随机生成40个(0, 1)之前的数，乘以5，再进行升序</span>
+X <span class="token operator">=</span> np<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token number">5</span> <span class="token operator">*</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 使用sin函数得到y值，并拉伸到一维</span>
+y <span class="token operator">=</span> np<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># y值增加噪声</span>
+y<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">1</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">0.5</span> <span class="token operator">-</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#在图像上显示样本点，s是点的大小，label表示样本标签，一般显示在图像右上角</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>X<span class="token punctuation">,</span>y<span class="token punctuation">,</span>marker<span class="token operator">=</span><span class="token string">'o'</span><span class="token punctuation">,</span>color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span>s<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">'bad'</span><span class="token punctuation">)</span> 
+</code></pre>
+<p>显示如下：</p>
+<p> <img data-src="/2021/05/13/note/Python/pandas/1654135.png" alt="img"></p>
+<p><strong>KNN学习-预测</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#建立模型，k近邻数=3，L2欧几里得距离</span>
+clf <span class="token operator">=</span> KNeighborsRegressor<span class="token punctuation">(</span>n_neighbors<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> p<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 拟合</span>
+clf<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 预测</span>
+<span class="token comment" spellcheck="true"># 创建[0, 5]之间的500个数的等差数列, 作为测试数据</span>
+T <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>newaxis<span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#y_是预测值，y_real是数据的实际值</span>
+y_ <span class="token operator">=</span> clf<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>T<span class="token punctuation">)</span>
+y_real<span class="token operator">=</span>np<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>T<span class="token punctuation">,</span>y_real<span class="token punctuation">,</span>marker<span class="token operator">=</span><span class="token string">'o'</span><span class="token punctuation">,</span>color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span>s<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">'bad'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#在图像上显示样本点，s是点的大小，label表示样本标签，一般显示在图像右上角</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>T<span class="token punctuation">,</span> y_<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#根据X,Y画出描点图，其实主要作用是连线。X_pred和Y_pred一般为数组</span>
+</code></pre>
+<p>如下图：<font color="red">红点是真实值</font>。<font color="blue">蓝线是预测值</font></p>
+<p> <img data-src="/2021/05/13/note/Python/pandas/156465.png" alt="img"></p>
+<h2 id="2-metrics度量模块"><a href="#2-metrics度量模块" class="headerlink" title="2. metrics度量模块"></a>2. metrics度量模块</h2><p><strong>关于sklearn.metrics</strong></p>
+<h3 id="21-pairwise-metrics"><a href="#2-1-Pairwise-metrics" class="headerlink" title="2.1 Pairwise metrics"></a>2.1 Pairwise metrics</h3><blockquote>
+<p>成对度量，计算样本间的范数、欧式距离、均方差等。</p>
+<p>输入：2组长度相同的数组：样本集A和样本集B</p>
+<p>输出：nXn的矩阵C，C[i,j]表示A[i]→B[j]是距离度量</p>
+</blockquote>
+<p><strong>关于sklearn.metrics.pairwise</strong></p>
+<p>重要的有以下函数：</p>
 
       <div class="tags">
           <a href="../../../../../../tags/Python/" rel="tag"><i class="ic i-tag"></i> Python</a>
@@ -355,7 +851,7 @@ df['A']['a']#返回0
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2021-06-03 16:22:57" itemprop="dateModified" datetime="2021-06-03T16:22:57+08:00">2021-06-03</time>
+    <time title="修改时间：2021-08-10 16:12:22" itemprop="dateModified" datetime="2021-08-10T16:12:22+08:00">2021-08-10</time>
   </span>
 </div>
 
@@ -391,7 +887,7 @@ df['A']['a']#返回0
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="../../../../../../https:/nitgod1996.com/2021/05/13/note/Python/pandas/" title="pandas 分析数据及格式">https://nitgod1996.com/2021/05/13/note/Python/pandas/</a>
+    <a href="../../../../../../https:/nitgod1996.com/2021/05/13/note/Python/pandas/" title="Python 机器学习库">https://nitgod1996.com/2021/05/13/note/Python/pandas/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -442,11 +938,11 @@ df['A']['a']#返回0
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text"> 一、 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-pandas-%E4%BD%9C%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. pandas 作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-pandas-%E5%AE%89%E8%A3%85%E5%8F%8A%E5%BC%95%E5%85%A5"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. pandas 安装及引入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-pandas-%E4%B8%BB%E8%A6%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8Bdataframe-%E5%92%8C-series"><span class="toc-number">1.3.</span> <span class="toc-text"> 3. pandas 主要数据类型：DataFrame 和 Series</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-dataframe"><span class="toc-number">2.</span> <span class="toc-text"> 二、 DataFrame</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE"><span class="toc-number">2.1.</span> <span class="toc-text"> 1. 导出数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">2.2.</span> <span class="toc-text"> 2. 导入数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">2.3.</span> <span class="toc-text"> 3. 类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%9F%A5%E8%AF%A2%E6%A3%80%E7%B4%A2"><span class="toc-number">2.4.</span> <span class="toc-text"> 4. 查询检索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%AE%A1%E6%95%B0"><span class="toc-number">2.5.</span> <span class="toc-text"> 5. 计数</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-pandas"><span class="toc-number">1.</span> <span class="toc-text">一、 pandas</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-pandas%E4%BD%9C%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text">1. pandas作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-pandas%E5%AE%89%E8%A3%85%E5%8F%8A%E5%BC%95%E5%85%A5"><span class="toc-number">1.2.</span> <span class="toc-text">2. pandas安装及引入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-pandas%E4%B8%BB%E8%A6%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8Bdataframe%E5%92%8Cseries"><span class="toc-number">1.3.</span> <span class="toc-text">3. pandas主要数据类型：DataFrame和Series</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-dataframe"><span class="toc-number">2.</span> <span class="toc-text">二、 DataFrame</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE"><span class="toc-number">2.1.</span> <span class="toc-text">1. 导出数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">2.2.</span> <span class="toc-text">2. 导入数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">2.3.</span> <span class="toc-text">3. 类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%9F%A5%E8%AF%A2%E6%A3%80%E7%B4%A2"><span class="toc-number">2.4.</span> <span class="toc-text">4. 查询检索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%AE%A1%E6%95%B0"><span class="toc-number">2.5.</span> <span class="toc-text">5. 计数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-numpy%E5%90%91%E9%87%8F%E8%BF%90%E7%AE%97"><span class="toc-number">3.</span> <span class="toc-text">三、 numpy（向量运算）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA"><span class="toc-number">3.1.</span> <span class="toc-text">1. 创建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%9B%E5%BB%BA"><span class="toc-number">3.1.1.</span> <span class="toc-text">1.1 自定义创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E9%9A%8F%E6%9C%BA%E5%88%9B%E5%BB%BA"><span class="toc-number">3.1.2.</span> <span class="toc-text">1.2 随机创建</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-nparray%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">3.2.</span> <span class="toc-text">2. np.array的性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97"><span class="toc-number">3.3.</span> <span class="toc-text">3. 矩阵运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-number">3.4.</span> <span class="toc-text">4. 增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#41-%E5%A2%9E"><span class="toc-number">3.4.1.</span> <span class="toc-text">4.1 增</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42-%E5%88%A0"><span class="toc-number">3.4.2.</span> <span class="toc-text">4.2 删</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#43-%E6%94%B9"><span class="toc-number">3.4.3.</span> <span class="toc-text">4.3 改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#44-%E6%9F%A5"><span class="toc-number">3.4.4.</span> <span class="toc-text">4.4 查</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%85%B6%E4%BB%96%E5%87%BD%E6%95%B0"><span class="toc-number">3.5.</span> <span class="toc-text">5. 其他函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#23-%E8%BF%AD%E4%BB%A3nditer"><span class="toc-number">3.5.1.</span> <span class="toc-text">2.3 迭代nditer</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-matplotlibpyplot%E5%9B%BE%E5%BD%A2%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-number">4.</span> <span class="toc-text">四、 matplotlib.pyplot（图形可视化）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%94%BB%E5%9B%BE"><span class="toc-number">4.1.</span> <span class="toc-text">1. 画图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%9B%BE%E8%A1%A8%E5%B1%9E%E6%80%A7%E6%A0%87%E9%A2%98-%E6%A0%87%E7%AD%BE-%E9%A2%9C%E8%89%B2%E7%AD%89"><span class="toc-number">4.2.</span> <span class="toc-text">2. 图表属性（标题、标签、颜色等）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rcparams"><span class="toc-number">4.2.1.</span> <span class="toc-text">.rcParams[]</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94-sklearn%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="toc-number">5.</span> <span class="toc-text">五、 sklearn（机器学习）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AD%A6%E4%B9%A0-%E9%A2%84%E6%B5%8B%E6%A8%A1%E5%9E%8B"><span class="toc-number">5.1.</span> <span class="toc-text">1. 学习-预测模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-linearregression%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-number">5.1.1.</span> <span class="toc-text">1.1 LinearRegression（线性回归）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#111-linearregression%E7%B1%BB%E4%BB%8B%E7%BB%8D"><span class="toc-number">5.1.1.1.</span> <span class="toc-text">1.1.1 LinearRegression类介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#112-%E7%A4%BA%E4%BE%8B"><span class="toc-number">5.1.1.2.</span> <span class="toc-text">1.1.2 示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-logisticregression%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92"><span class="toc-number">5.1.2.</span> <span class="toc-text">1.2 LogisticRegression（逻辑回归）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#121-logisticregression%E7%B1%BB%E4%BB%8B%E7%BB%8D"><span class="toc-number">5.1.2.1.</span> <span class="toc-text">1.2.1 LogisticRegression类介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#122-%E7%A4%BA%E4%BE%8B"><span class="toc-number">5.1.2.2.</span> <span class="toc-text">1.2.2 示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-kneighborsregressork%E8%BF%91%E9%82%BB%E5%9B%9E%E5%BD%92"><span class="toc-number">5.1.3.</span> <span class="toc-text">1.3. KNeighborsRegressor（K近邻回归）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#131-kneighborsregressor%E7%B1%BB%E4%BB%8B%E7%BB%8D"><span class="toc-number">5.1.3.1.</span> <span class="toc-text">1.3.1 KNeighborsRegressor类介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#132-%E7%A4%BA%E4%BE%8B"><span class="toc-number">5.1.3.2.</span> <span class="toc-text">1.3.2 示例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-metrics%E5%BA%A6%E9%87%8F%E6%A8%A1%E5%9D%97"><span class="toc-number">5.2.</span> <span class="toc-text">2. metrics度量模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-pairwise-metrics"><span class="toc-number">5.2.1.</span> <span class="toc-text">2.1 Pairwise metrics</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li class="active"><a href="" rel="bookmark" title="pandas分析数据及格式">pandas分析数据及格式</a></li>
+          <li class="active"><a href="" rel="bookmark" title="Python机器学习库">Python机器学习库</a></li><li><a href="../../../../../06/04/note/Python/Python%E8%AF%AD%E6%B3%95%E5%A4%8D%E4%B9%A0/" rel="bookmark" title="Python语法复习">Python语法复习</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -460,19 +956,19 @@ df['A']['a']#返回0
 <nav class="state">
     <div class="item posts">
       <a href="../archives/">
-        <span class="count">19</span>
+        <span class="count">28</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item categories">
       <a href="../categories/">
-        <span class="count">13</span>
+        <span class="count">14</span>
         <span class="name">分类</span>
       </a>
     </div>
     <div class="item tags">
       <a href="../tags/">
-        <span class="count">19</span>
+        <span class="count">22</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -550,9 +1046,24 @@ df['A']['a']#返回0
   <li class="item">
     
 <div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
 </div>
 
-    <span><a href="../../../../14/%E9%99%88%E5%BA%B7%E4%B8%9C%E5%92%8C%E7%8E%8B%E5%86%B0%E5%86%B0%E7%9A%84%E5%BF%AB%E4%B9%90%E5%B0%8F%E5%B1%8B/" title="陈康东和王冰冰的快乐小屋">陈康东和王冰冰的快乐小屋</a></span>
+    <span><a href="../../../../27/note/%E5%89%8D%E7%AB%AF/jQuery/" title="jQuery笔记">jQuery笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="../../../../12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" title="VMware安装中标麒麟">VMware安装中标麒麟</a></span>
   </li>
 
       
@@ -571,12 +1082,9 @@ df['A']['a']#返回0
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
 </div>
 
-    <span><a href="../../../../20/note/%E9%9A%8F%E7%AC%94/%E5%87%86%E5%A4%87%E5%AD%A6%E4%B9%A0docker/" title="docker随手记">docker随手记</a></span>
+    <span><a href="../../../../../07/27/note/Python/python%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" title="python使用技巧">python使用技巧</a></span>
   </li>
 
       
@@ -585,35 +1093,10 @@ df['A']['a']#返回0
 <div class="breadcrumb">
 <a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
 <i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%AC%94/" title="分类于 每日一笔">每日一笔</a>
+<a href="../../../../../../categories/note/Python/" title="分类于 Python">Python</a>
 </div>
 
-    <span><a href="../../../../../06/02/note/%E9%9A%8F%E7%AC%94/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%AC%94/%E5%9F%BA%E4%BA%8EPython%E5%92%8Cecharts%E7%9A%84%E5%8A%A8%E6%80%81%E5%9B%BE/" title="每日一笔-基于Python和echarts的动态图">每日一笔-基于Python和echarts的动态图</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="../../../../08/my-hexo/" title="my hexo">my hexo</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/Python/" title="分类于 Python">Python</a>
-</div>
-
-    <span><a href="../../../../28/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/" title="随笔-利用Python批量处理文件">随笔-利用Python批量处理文件</a></span>
+    <span><a href="../../../../../06/04/note/Python/Python%E8%AF%AD%E6%B3%95%E5%A4%8D%E4%B9%A0/" title="Python语法复习">Python语法复习</a></span>
   </li>
 
       
@@ -625,7 +1108,21 @@ df['A']['a']#返回0
 <a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
 </div>
 
-    <span><a href="../../../../27/note/%E5%89%8D%E7%AB%AF/jQuery/" title="jQuery笔记">jQuery笔记</a></span>
+    <span><a href="../../../../../04/23/note/%E5%89%8D%E7%AB%AF/echarts/" title="echarts用法简单记录">echarts用法简单记录</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/computer-science/java/" title="分类于 Java">Java</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/computer-science/java/course-1/" title="分类于 零基础学 Java 语言 - 浙江大学 - 翁恺">零基础学 Java 语言 - 浙江大学 - 翁恺</a>
+</div>
+
+    <span><a href="../../../../09/test/" title="my hexo">my hexo</a></span>
   </li>
 
       
@@ -646,10 +1143,10 @@ df['A']['a']#返回0
 <div class="breadcrumb">
 <a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
 <i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/Python/" title="分类于 Python">Python</a>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
 </div>
 
-    <span><a href="" title="pandas分析数据及格式">pandas分析数据及格式</a></span>
+    <span><a href="../../../../20/note/%E9%9A%8F%E7%AC%94/%E5%87%86%E5%A4%87%E5%AD%A6%E4%B9%A0docker/" title="docker随手记">docker随手记</a></span>
   </li>
 
       
@@ -658,10 +1155,10 @@ df['A']['a']#返回0
 <div class="breadcrumb">
 <a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
 <i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+<a href="../../../../../../categories/note/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="../../../../23/note/%E5%89%8D%E7%AB%AF/CSS/" title="CSS笔记及参考手册">CSS笔记及参考手册</a></span>
+    <span><a href="../../../../18/note/Java/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%8F%8A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="java基础语法及特性">java基础语法及特性</a></span>
   </li>
 
   </ul>
@@ -686,13 +1183,13 @@ df['A']['a']#返回0
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">126k 字</span>
+    <span title="站点总字数">199k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:54</span>
+    <span title="站点阅读时长">3:01</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
