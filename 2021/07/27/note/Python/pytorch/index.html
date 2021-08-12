@@ -74,7 +74,7 @@ nitgod1996 = 宁理大神 1996</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>5.4k</span>
+    <span>5.5k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -115,12 +115,12 @@ nitgod1996 = 宁理大神 1996</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicitspjpbj20zk0m81ky.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciub8ja1j20zk0m81ky.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciusoyjnj219g0u0x56.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicitzannuj20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicitcxhpij20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciukx8a7j20zk0m8aio.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicljgocqbj20zk0m8e81.jpg"></li>
           <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeu7txpzj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclgrvbd6j20zk0m8qv5.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipewr8iypj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipex2cdtbj20zk0m8x6p.jpg"></li>
         </ul>
       </div>
     </header>
@@ -164,240 +164,284 @@ nitgod1996 = 宁理大神 1996</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="一-安装"><a href="#一、-安装" class="headerlink" title="一、 安装"></a>一、 安装</h1><p>安装步骤详细看<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzMDEzMzA5L2FydGljbGUvZGV0YWlscy8xMDM5NjU2MTk=">https://blog.csdn.net/qq_23013309/article/details/103965619</span></p>
+    <h1 id="一-安装"><a class="anchor" href="#一-安装">#</a> 一、 安装</h1>
+<p>安装步骤详细看 https://blog.csdn.net/qq_23013309/article/details/103965619</p>
 <p>以下主要记录一些遇到的坑</p>
 <blockquote>
-<p>我因为电脑上装了好几个版本的python，所以把python.exe以版本号重命名了，使用pip时按python39 -m pip install 包名安装。正常情况下只需pip install 包名即可</p>
+<p>我因为电脑上装了好几个版本的 python，所以把 python.exe 以版本号重命名了，使用 pip 时按 python39 -m pip install 包名安装。正常情况下只需 pip install 包名即可</p>
 </blockquote>
-<h2 id="1-cuda安装成功但torchcudais_available输出false"><a href="#1-cuda安装成功，但torch-cuda-is-available-输出False" class="headerlink" title="1. cuda安装成功，但torch.cuda.is_available()输出False"></a>1. cuda安装成功，但torch.cuda.is_available()输出False</h2><p>原因是torch和torchvision安装成了cpu版</p>
-<p>解决方法：去<span class="exturl" data-url="aHR0cHM6Ly9kb3dubG9hZC5weXRvcmNoLm9yZy93aGwvdG9yY2hfc3RhYmxlLmh0bWw=">官网</span>下载GPU版的torch（cu开头的）。下载完在文件路径用pip安装即可</p>
+<h2 id="1-cuda-安装成功但-torchcudais_available-输出-false"><a class="anchor" href="#1-cuda安装成功但torchcudais_available输出false">#</a> 1. cuda 安装成功，但 torch.cuda.is_available () 输出 False</h2>
+<p>原因是 torch 和 torchvision 安装成了 cpu 版</p>
+<p>解决方法：去<span class="exturl" data-url="aHR0cHM6Ly9kb3dubG9hZC5weXRvcmNoLm9yZy93aGwvdG9yY2hfc3RhYmxlLmh0bWw=">官网</span>下载 GPU 版的 torch（cu 开头的）。下载完在文件路径用 pip 安装即可</p>
 <p><img data-src="/2021/07/27/note/Python/pytorch/image-20210727212106336.png" alt="image-20210727212106336"></p>
-<pre class=" language-bash"><code class="language-bash">python39 -m pip <span class="token function">install</span> torch-1.8.0-cp39-cp39-win_amd64.whl
-python39 -m pip <span class="token function">install</span> torch-1.9.0+cu111-cp39-cp39-win_amd64.whl
+<pre class=" language-language-bash"><code class="language-language-bash">python39 -m pip install torch-1.8.0-cp39-cp39-win_amd64.whl
+python39 -m pip install torch-1.9.0+cu111-cp39-cp39-win_amd64.whl
 或
-pip <span class="token function">install</span> torch-1.8.0-cp39-cp39-win_amd64.whl
-pip <span class="token function">install</span> torch-1.9.0+cu111-cp39-cp39-win_amd64.whl
+pip install torch-1.8.0-cp39-cp39-win_amd64.whl
+pip install torch-1.9.0+cu111-cp39-cp39-win_amd64.whl
 </code></pre>
-<p><strong>要注意和python版本对应，如python38就下载cp38，否则安装不了，下载cp37的也不行</strong></p>
-<h2 id="2-安装torch时报错torch-1x0-cp3x-cp3xm-win_amd64whl-is-not-a-supported-wheel-on-this-platform"><a href="#2-安装torch时报错torch-1-X-0-cp3X-cp3Xm-win-amd64-whl-is-not-a-supported-wheel-on-this-platform" class="headerlink" title="2. 安装torch时报错torch-1.X.0-cp3X-cp3Xm-win_amd64.whl is not a supported wheel on this platform."></a>2. 安装torch时报错torch-1.X.0-cp3X-cp3Xm-win_amd64.whl is not a supported wheel on this platform.</h2><p>原因是python版本对不上，上面讲到过，python39就下cp39，不要下cp37、cp38什么的</p>
-<h2 id="3-torch安装完成后import-torch报错runtimeerror-module-compiled-against-api-version-0xc-but-this-version-of-numpy-is-0xb"><a href="#3-torch安装完成后import-torch报错RuntimeError-module-compiled-against-API-version-0xc-but-this-version-of-numpy-is-0xb" class="headerlink" title="3. torch安装完成后import torch报错RuntimeError: module compiled against API version 0xc but this version of numpy is 0xb"></a>3. torch安装完成后import torch报错RuntimeError: module compiled against API version 0xc but this version of numpy is 0xb</h2><p>原因：numpy版本跟不上</p>
-<p>解决：更新numpy</p>
-<pre class=" language-bash"><code class="language-bash">python39 -m pip <span class="token function">install</span> numpy --upgrade 
+<p><strong>要注意和 python 版本对应，如 python38 就下载 cp38，否则安装不了，下载 cp37 的也不行</strong></p>
+<h2 id="2-安装-torch-时报错-torch-1x0-cp3x-cp3xm-win_amd64whl-is-not-a-supported-wheel-on-this-platform"><a class="anchor" href="#2-安装torch时报错torch-1x0-cp3x-cp3xm-win_amd64whl-is-not-a-supported-wheel-on-this-platform">#</a> 2. 安装 torch 时报错 torch-1.X.0-cp3X-cp3Xm-win_amd64.whl is not a supported wheel on this platform.</h2>
+<p>原因是 python 版本对不上，上面讲到过，python39 就下 cp39，不要下 cp37、cp38 什么的</p>
+<h2 id="3-torch-安装完成后-import-torch-报错-runtimeerror-module-compiled-against-api-version-0xc-but-this-version-of-numpy-is-0xb"><a class="anchor" href="#3-torch安装完成后import-torch报错runtimeerror-module-compiled-against-api-version-0xc-but-this-version-of-numpy-is-0xb">#</a> 3. torch 安装完成后 import torch 报错 RuntimeError: module compiled against API version 0xc but this version of numpy is 0xb</h2>
+<p>原因：numpy 版本跟不上</p>
+<p>解决：更新 numpy</p>
+<pre class=" language-language-bash"><code class="language-language-bash">python39 -m pip install numpy --upgrade 
 或
-pip <span class="token function">install</span> numpy --upgrade 
+pip install numpy --upgrade 
 </code></pre>
-<h1 id="pytorch简介"><a href="#pytorch简介" class="headerlink" title="pytorch简介"></a>pytorch简介</h1><p>pytorch是深度学习的框架，或者说是库。类似sklearn之于机器学习。</p>
-<h2 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1. 基本概念"></a>1. 基本概念</h2><ol>
-<li><p><strong>张量（tensor）：</strong>即向量，类似于<code>NumPy</code>的<code>ndarray</code>。</p>
-<p><code>tensor</code>可以使用像标准的NumPy一样的各种索引操作：如<code>x[:,1]</code>返回<strong>张量x</strong>第2列的内容</p>
+<h1 id="pytorch-简介"><a class="anchor" href="#pytorch简介">#</a> pytorch 简介</h1>
+<p>pytorch 是深度学习的框架，或者说是库。类似 sklearn 之于机器学习。</p>
+<h2 id="1-基本概念"><a class="anchor" href="#1-基本概念">#</a> 1. 基本概念</h2>
+<ol>
+<li>
+<p>** 张量（tensor）：** 即向量，类似于 <code>NumPy</code>  的 <code>ndarray</code> 。</p>
+<p><code>tensor</code>  可以使用像标准的 NumPy 一样的各种索引操作：如 <code>x[:,1]</code>  返回<strong>张量 x</strong> 第 2 列的内容</p>
 </li>
 </ol>
-<h2 id="2-基本用法"><a href="#2-基本用法" class="headerlink" title="2. 基本用法"></a>2. 基本用法</h2><h3 id="21-初始化张量"><a href="#2-1-初始化张量" class="headerlink" title="2.1 初始化张量"></a>2.1 初始化张量</h3><ol>
-<li> 创建一个没有初始化5*3的矩阵</li>
+<h2 id="2-基本用法"><a class="anchor" href="#2-基本用法">#</a> 2. 基本用法</h2>
+<h3 id="21-初始化张量"><a class="anchor" href="#21-初始化张量">#</a> 2.1 初始化张量</h3>
+<ol>
+<li>创建一个没有初始化 5*3 的矩阵</li>
 </ol>
-<pre class=" language-python"><code class="language-python">x <span class="token operator">=</span> torch<span class="token punctuation">.</span>empty<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">"""
+<pre class=" language-language-python"><code class="language-language-python">x = torch.empty(5, 3)
+"""
 tensor([[2.2391e-19, 4.5869e-41, 1.4191e-17],
         [4.5869e-41, 0.0000e+00, 0.0000e+00],
         [0.0000e+00, 0.0000e+00, 0.0000e+00],
         [0.0000e+00, 0.0000e+00, 0.0000e+00],
-        [0.0000e+00, 0.0000e+00, 0.0000e+00]])"""</span>
+        [0.0000e+00, 0.0000e+00, 0.0000e+00]])"""
 </code></pre>
 <ol start="2">
-<li><p>创建一个随机矩阵</p>
-<pre class=" language-python"><code class="language-python">x <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">"""
+<li>
+<p>创建一个随机矩阵</p>
+<pre class=" language-language-python"><code class="language-language-python">x = torch.rand(5, 3)
+"""
 tensor([[0.5307, 0.9752, 0.5376],
         [0.2789, 0.7219, 0.1254],
         [0.6700, 0.6100, 0.3484],
         [0.0922, 0.0779, 0.2446],
-        [0.2967, 0.9481, 0.1311]])"""</span>
+        [0.2967, 0.9481, 0.1311]])"""
 </code></pre>
 </li>
-<li><p>构造一个填满<code>0</code>且数据类型为<code>long</code>的矩阵:</p>
-<pre class=" language-python"><code class="language-python">x <span class="token operator">=</span> torch<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>torch<span class="token punctuation">.</span>long<span class="token punctuation">)</span>
+<li>
+<p>构造一个填满 <code>0</code>  且数据类型为 <code>long</code>  的矩阵:</p>
+<pre class=" language-language-python"><code class="language-language-python">x = torch.zeros(5, 3, dtype=torch.long)
 </code></pre>
 </li>
-<li><p>创建全为<code>1</code>的矩阵</p>
-<pre class=" language-python"><code class="language-python">x<span class="token operator">=</span>torch<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
+<li>
+<p>创建全为 <code>1</code>  的矩阵</p>
+<pre class=" language-language-python"><code class="language-language-python">x=torch.ones(5,3)
 </code></pre>
 </li>
-<li><p>直接从<strong>数据</strong>构造张量</p>
-<pre class=" language-python"><code class="language-python">x <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">5.5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#tensor([5.5000, 3.0000])</span>
+<li>
+<p>直接从<strong>数据</strong>构造张量</p>
+<pre class=" language-language-python"><code class="language-language-python">x = torch.tensor([5.5, 3])
+#tensor([5.5000, 3.0000])
 </code></pre>
 </li>
 </ol>
-<h3 id="22-获取张量信息"><a href="#2-2-获取张量信息" class="headerlink" title="2.2 获取张量信息"></a>2.2 获取张量信息</h3><ol>
-<li><p>获取张量形状</p>
-<pre class=" language-python"><code class="language-python">x<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#x是5*3的矩阵</span>
-<span class="token comment" spellcheck="true">#torch.Size([5, 3])</span>
+<h3 id="22-获取张量信息"><a class="anchor" href="#22-获取张量信息">#</a> 2.2 获取张量信息</h3>
+<ol>
+<li>
+<p>获取张量形状</p>
+<pre class=" language-language-python"><code class="language-language-python">x.size()#x是5*3的矩阵
+#torch.Size([5, 3])
 </code></pre>
 <blockquote>
-<p><code>torch.Size</code>本质上还是<code>tuple</code>，所以支持tuple的一切操作。</p>
+<p><code>torch.Size</code>  本质上还是 <code>tuple</code> ，所以支持 tuple 的一切操作。</p>
 </blockquote>
 </li>
-<li><p>改变张量形状</p>
-<pre class=" language-python"><code class="language-python">x<span class="token operator">=</span>torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#size(4,4)</span>
-y<span class="token operator">=</span>x<span class="token punctuation">.</span>view<span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#size(16)</span>
-z<span class="token operator">=</span>x<span class="token punctuation">.</span>view<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#size(2,8),-1表示自动匹配，如此处-1=4*4/8=2，即2行8列</span>
+<li>
+<p>改变张量形状</p>
+<pre class=" language-language-python"><code class="language-language-python">x=torch.randn(4,4)#size(4,4)
+y=x.view(16)#size(16)
+z=x.view(-1,8)#size(2,8),-1表示自动匹配，如此处-1=4*4/8=2，即2行8列
 </code></pre>
 </li>
 </ol>
-<h3 id="23-张量运算"><a href="#2-3-张量运算" class="headerlink" title="2.3 张量运算"></a>2.3 张量运算</h3><ol>
-<li><p>加法</p>
-<pre class=" language-python"><code class="language-python">x<span class="token operator">+</span>y
-torch<span class="token punctuation">.</span>add<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#以上等价，张量对应位置相加</span>
-torch<span class="token punctuation">.</span>add<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>out<span class="token operator">=</span>result<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#把和赋值给result</span>
-y<span class="token punctuation">.</span>add_<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#y=y+x</span>
+<h3 id="23-张量运算"><a class="anchor" href="#23-张量运算">#</a> 2.3 张量运算</h3>
+<ol>
+<li>
+<p>加法</p>
+<pre class=" language-language-python"><code class="language-language-python">x+y
+torch.add(x,y)#以上等价，张量对应位置相加
+torch.add(x,y,out=result)#把和赋值给result
+y.add_(x)#y=y+x
 </code></pre>
 <blockquote>
-<p>任何一个in-place改变张量的操作后面都固定一个<code>_</code>。例如<code>x.copy_(y)</code>、<code>x.t_()</code>将更改x</p>
+<p>任何一个 in-place 改变张量的操作后面都固定一个 <code>_</code> 。例如 <code>x.copy_(y)</code> 、 <code>x.t_()</code>  将更改 x</p>
 </blockquote>
 </li>
 </ol>
-<h3 id="24-对接numpy"><a href="#2-4-对接numpy" class="headerlink" title="2.4 对接numpy"></a>2.4 对接<code>numpy</code></h3><ol>
-<li><p>tensor转numpy</p>
-<pre class=" language-python"><code class="language-python">b <span class="token operator">=</span> a<span class="token punctuation">.</span>numpy<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#b=[1. 1. 1. 1. 1.]</span>
-a<span class="token punctuation">.</span>add_<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#a.add_(1)和torch.add(a,1,a)可以让b和a同步更新。操作符=则不行</span>
-<span class="token comment" spellcheck="true">#a=tensor([2., 2., 2., 2., 2.])</span>
-<span class="token comment" spellcheck="true">#b=[2. 2. 2. 2. 2.]</span>
+<h3 id="24-对接-numpy"><a class="anchor" href="#24-对接numpy">#</a> 2.4 对接 <code>numpy</code></h3>
+<ol>
+<li>
+<p>tensor 转 numpy</p>
+<pre class=" language-language-python"><code class="language-language-python">b = a.numpy()#b=[1. 1. 1. 1. 1.]
+a.add_(1)#a.add_(1)和torch.add(a,1,a)可以让b和a同步更新。操作符=则不行
+#a=tensor([2., 2., 2., 2., 2.])
+#b=[2. 2. 2. 2. 2.]
 </code></pre>
 </li>
-<li><p>numpy转tensor</p>
-<pre class=" language-python"><code class="language-python">a<span class="token operator">=</span>torch<span class="token punctuation">.</span>from_numpy<span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#a=tensor([1. 1. 1. 1. 1.])</span>
-np<span class="token punctuation">.</span>add<span class="token punctuation">(</span>b<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> out<span class="token operator">=</span>b<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#a=tensor([2., 2., 2., 2., 2.])</span>
-<span class="token comment" spellcheck="true">#b=[2. 2. 2. 2. 2.]</span>
+<li>
+<p>numpy 转 tensor</p>
+<pre class=" language-language-python"><code class="language-language-python">a=torch.from_numpy(b)#a=tensor([1. 1. 1. 1. 1.])
+np.add(b, 1, out=b)
+#a=tensor([2., 2., 2., 2., 2.])
+#b=[2. 2. 2. 2. 2.]
 </code></pre>
 </li>
 </ol>
-<h3 id="25-将张量移动到指定设备cpugpu"><a href="#2-5-将张量移动到指定设备（CPU-GPU）" class="headerlink" title="2.5 将张量移动到指定设备（CPU/GPU）"></a>2.5 将张量移动到指定设备（CPU/GPU）</h3><p>张量可以使用<code>.to</code>方法移动到任何设备（device）上：</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 当GPU可用时,我们可以运行以下代码</span>
-<span class="token comment" spellcheck="true"># 我们将使用`torch.device`来将tensor移入和移出GPU</span>
-<span class="token keyword">if</span> torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>is_available<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    device <span class="token operator">=</span> torch<span class="token punctuation">.</span>device<span class="token punctuation">(</span><span class="token string">"cuda"</span><span class="token punctuation">)</span>          <span class="token comment" spellcheck="true"># a CUDA device object</span>
-    y <span class="token operator">=</span> torch<span class="token punctuation">.</span>ones_like<span class="token punctuation">(</span>x<span class="token punctuation">,</span> device<span class="token operator">=</span>device<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 直接在GPU上创建tensor</span>
-    x <span class="token operator">=</span> x<span class="token punctuation">.</span>to<span class="token punctuation">(</span>device<span class="token punctuation">)</span>                       <span class="token comment" spellcheck="true"># 或者使用`.to("cuda")`方法</span>
-    z <span class="token operator">=</span> x <span class="token operator">+</span> y
-    <span class="token keyword">print</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>z<span class="token punctuation">.</span>to<span class="token punctuation">(</span><span class="token string">"cpu"</span><span class="token punctuation">,</span> torch<span class="token punctuation">.</span>double<span class="token punctuation">)</span><span class="token punctuation">)</span>       <span class="token comment" spellcheck="true"># `.to`也能在移动时改变dtype</span>
+<h3 id="25-将张量移动到指定设备cpugpu"><a class="anchor" href="#25-将张量移动到指定设备cpugpu">#</a> 2.5 将张量移动到指定设备（CPU/GPU）</h3>
+<p>张量可以使用 <code>.to</code>  方法移动到任何设备（device）上：</p>
+<pre class=" language-language-python"><code class="language-language-python"># 当GPU可用时,我们可以运行以下代码
+# 我们将使用`torch.device`来将tensor移入和移出GPU
+if torch.cuda.is_available():
+    device = torch.device("cuda")          # a CUDA device object
+    y = torch.ones_like(x, device=device)  # 直接在GPU上创建tensor
+    x = x.to(device)                       # 或者使用`.to("cuda")`方法
+    z = x + y
+    print(z)
+    print(z.to("cpu", torch.double))       # `.to`也能在移动时改变dtype
 </code></pre>
 <p>输出：</p>
-<pre class=" language-python"><code class="language-python">tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1.0445</span><span class="token punctuation">]</span><span class="token punctuation">,</span> device<span class="token operator">=</span><span class="token string">'cuda:0'</span><span class="token punctuation">)</span>
-tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1.0445</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>torch<span class="token punctuation">.</span>float64<span class="token punctuation">)</span>
+<pre class=" language-language-python"><code class="language-language-python">tensor([1.0445], device='cuda:0')
+tensor([1.0445], dtype=torch.float64)
 </code></pre>
-<h1 id="二-torchnn"><a href="#二、-torch-nn" class="headerlink" title="二、  torch.nn"></a>二、  <code>torch.nn</code></h1><h2 id="1-torchnnparameter"><a href="#1-torch-nn-Parameter" class="headerlink" title="1. torch.nn.Parameter()"></a>1. <code>torch.nn.Parameter()</code></h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC9kOGI3N2NjMDI0MTA=">https://www.jianshu.com/p/d8b77cc02410</span></p>
+<h1 id="二-torchnn"><a class="anchor" href="#二-torchnn">#</a> 二、   <code>torch.nn</code></h1>
+<h2 id="1-torchnnparameter"><a class="anchor" href="#1-torchnnparameter">#</a> 1.  <code>torch.nn.Parameter()</code></h2>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC9kOGI3N2NjMDI0MTA=">https://www.jianshu.com/p/d8b77cc02410</span></p>
 <blockquote>
-<p>pytorch中用于保存Variable的函数。一般将参数W和b转换成parameter类型，可供训练中改动</p>
+<p>pytorch 中用于保存 Variable 的函数。一般将参数 W 和 b 转换成 parameter 类型，可供训练中改动</p>
 </blockquote>
 <p>如</p>
-<pre class=" language-python"><code class="language-python">W <span class="token operator">=</span> Parameter<span class="token punctuation">(</span>torch<span class="token punctuation">.</span>Tensor<span class="token punctuation">(</span>RNN_HID_SIZE<span class="token punctuation">,</span> input_size<span class="token punctuation">)</span><span class="token punctuation">)</span>
-b <span class="token operator">=</span> Parameter<span class="token punctuation">(</span>torch<span class="token punctuation">.</span>Tensor<span class="token punctuation">(</span>RNN_HID_SIZE<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#parameter.data得到tensor数据 </span>
-W<span class="token punctuation">.</span>data<span class="token punctuation">.</span>uniform_<span class="token punctuation">(</span><span class="token operator">-</span>stdv<span class="token punctuation">,</span> stdv<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#初始化</span>
+<pre class=" language-language-python"><code class="language-language-python">W = Parameter(torch.Tensor(RNN_HID_SIZE, input_size))
+b = Parameter(torch.Tensor(RNN_HID_SIZE))
+#parameter.data得到tensor数据 
+W.data.uniform_(-stdv, stdv)#初始化
 </code></pre>
 <ol>
-<li><p>将一个不可训练的类型Tensor转换成可以训练的类型parameter</p>
+<li>
+<p>将一个不可训练的类型 Tensor 转换成可以训练的类型 parameter</p>
 </li>
-<li><p>并将这个parameter绑定到这个module里面</p>
+<li>
+<p>并将这个 parameter 绑定到这个 module 里面</p>
 </li>
-<li><p>经过类型转换这个self.v变成了模型的一部分，成为了模型中根据训练可以改动的参数了。</p>
+<li>
+<p>经过类型转换这个 self.v 变成了模型的一部分，成为了模型中根据训练可以改动的参数了。</p>
 </li>
 </ol>
-<h1 id="三-torchnnfunctional"><a href="#三、-torch-nn-functional" class="headerlink" title="三、 torch.nn.functional"></a>三、 <code>torch.nn.functional</code></h1><blockquote>
-<p>这是pytorch的主要库，里边包含了绝大部分的深度学习函数</p>
+<h1 id="三-torchnnfunctional"><a class="anchor" href="#三-torchnnfunctional">#</a> 三、  <code>torch.nn.functional</code></h1>
+<blockquote>
+<p>这是 pytorch 的主要库，里边包含了绝大部分的深度学习函数</p>
 </blockquote>
-<h2 id="1-激活函数"><a href="#1-激活函数" class="headerlink" title="1. 激活函数"></a>1. 激活函数</h2><h3 id="11-relu"><a href="#1-1-relu" class="headerlink" title="1.1 relu()"></a>1.1 <code>relu()</code></h3><p><img data-src="/2021/07/27/note/Python/pytorch/image-20210621220811079.png" alt="image-20210621220811079"> </p>
+<h2 id="1-激活函数"><a class="anchor" href="#1-激活函数">#</a> 1. 激活函数</h2>
+<h3 id="11-relu"><a class="anchor" href="#11-relu">#</a> 1.1  <code>relu()</code></h3>
+<p><img data-src="/2021/07/27/note/Python/pytorch/image-20210621220811079.png" alt="image-20210621220811079"></p>
 <ol>
-<li><p>调用方法</p>
-<pre class=" language-python"><code class="language-python">torch<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>functional<span class="token punctuation">.</span>relu<span class="token punctuation">(</span>input<span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#input：函数中的自变量x</span>
+<li>
+<p>调用方法</p>
+<pre class=" language-language-python"><code class="language-language-python">torch.nn.functional.relu(input, inplace=False)
+#input：函数中的自变量x
 </code></pre>
 </li>
-<li><p>也可自定义</p>
+<li>
+<p>也可自定义</p>
 </li>
 </ol>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">relu</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> np<span class="token punctuation">.</span>maximum<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span>
+<pre class=" language-language-python"><code class="language-language-python">def relu(x):
+    return np.maximum(0, x)
 </code></pre>
-<h2 id="2-线性函数"><a href="#2-线性函数" class="headerlink" title="2. 线性函数"></a>2. 线性函数</h2><h3 id="21-linear"><a href="#2-1-linear" class="headerlink" title="2.1 linear()"></a>2.1 <code>linear()</code></h3><p>$$<br>f(x)=ax+b<br>$$</p>
-<pre class=" language-python"><code class="language-python">torch<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>functional<span class="token punctuation">.</span>linear<span class="token punctuation">(</span>input<span class="token punctuation">,</span> weight<span class="token punctuation">,</span> bias<span class="token operator">=</span>None<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#input: 自变量x</span>
-<span class="token comment" spellcheck="true">#weight: 权重a</span>
-<span class="token comment" spellcheck="true">#bias: 偏置b</span>
+<h2 id="2-线性函数"><a class="anchor" href="#2-线性函数">#</a> 2. 线性函数</h2>
+<h3 id="21-linear"><a class="anchor" href="#21-linear">#</a> 2.1  <code>linear()</code></h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">f(x)=ax+b
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span></span></p>
+<pre class=" language-language-python"><code class="language-language-python">torch.nn.functional.linear(input, weight, bias=None)
+#input: 自变量x
+#weight: 权重a
+#bias: 偏置b
 </code></pre>
-<h2 id="3-损失函数"><a href="#3-损失函数" class="headerlink" title="3. 损失函数"></a>3. 损失函数</h2><h3 id="31-交叉熵误差cross_entropy"><a href="#3-1-交叉熵误差cross-entropy" class="headerlink" title="3.1 交叉熵误差cross_entropy()"></a>3.1 交叉熵误差<code>cross_entropy()</code></h3><p> <img data-src="/2021/07/27/note/Python/pytorch/image-20210622160932219.png" alt="image-20210622160932219"></p>
+<h2 id="3-损失函数"><a class="anchor" href="#3-损失函数">#</a> 3. 损失函数</h2>
+<h3 id="31-交叉熵误差-cross_entropy"><a class="anchor" href="#31-交叉熵误差cross_entropy">#</a> 3.1 交叉熵误差 <code>cross_entropy()</code></h3>
+<p><img data-src="/2021/07/27/note/Python/pytorch/image-20210622160932219.png" alt="image-20210622160932219"></p>
 <ol>
-<li><p>调用方法：</p>
-<pre class=" language-python"><code class="language-python">torch<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>functional<span class="token punctuation">.</span>cross_entropy<span class="token punctuation">(</span>input<span class="token punctuation">,</span> target<span class="token punctuation">,</span> weight<span class="token operator">=</span>None<span class="token punctuation">,</span> size_average<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#input: 预测值</span>
-<span class="token comment" spellcheck="true">#target: 监督值</span>
-<span class="token comment" spellcheck="true">#（大概应该是这样？）</span>
+<li>
+<p>调用方法：</p>
+<pre class=" language-language-python"><code class="language-language-python">torch.nn.functional.cross_entropy(input, target, weight=None, size_average=True)
+#input: 预测值
+#target: 监督值
+#（大概应该是这样？）
 </code></pre>
 </li>
-<li><p>也可自定义</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">cross_entropy_error</span><span class="token punctuation">(</span>y<span class="token punctuation">,</span>t<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""
+<li>
+<p>也可自定义</p>
+<pre class=" language-language-python"><code class="language-language-python">def cross_entropy_error(y,t):
+    """
     损失函数：交叉熵误差
     :param y: 预测值，np数组
     :param t: 监督值,np数组
     :return: 交叉熵误差float
-    """</span>
-    delta<span class="token operator">=</span><span class="token number">1e</span><span class="token operator">-</span><span class="token number">7</span>  <span class="token comment" spellcheck="true">#10的-7次，为了防止log0导致的下溢</span>
-    <span class="token keyword">return</span> <span class="token operator">-</span>np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>t<span class="token operator">*</span>np<span class="token punctuation">.</span>log<span class="token punctuation">(</span>y<span class="token operator">+</span>delta<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    """
+    delta=1e-7  #10的-7次，为了防止log0导致的下溢
+    return -np.sum(t*np.log(y+delta))
 </code></pre>
 </li>
 </ol>
-<h3 id="32-二元交叉熵binary_cross_entropy"><a href="#3-2-二元交叉熵binary-cross-entropy" class="headerlink" title="3.2 二元交叉熵binary_cross_entropy()"></a>3.2 二元交叉熵<code>binary_cross_entropy()</code></h3><p><img data-src="/2021/07/27/note/Python/pytorch/equation-1628496458752.svg" alt="[公式]"></p>
+<h3 id="32-二元交叉熵-binary_cross_entropy"><a class="anchor" href="#32-二元交叉熵binary_cross_entropy">#</a> 3.2 二元交叉熵 <code>binary_cross_entropy()</code></h3>
+<p><img data-src="/2021/07/27/note/Python/pytorch/equation-1628496458752.svg" alt="[公式]"></p>
 <p>其中， <img data-src="/2021/07/27/note/Python/pytorch/equation%20(3).svg" alt="[公式]">， <img data-src="/2021/07/27/note/Python/pytorch/equation%20(4).svg" alt="[公式]"> 。</p>
-<pre class=" language-python"><code class="language-python">torch<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>functional<span class="token punctuation">.</span>binary_cross_entropy<span class="token punctuation">(</span>input<span class="token punctuation">,</span> target<span class="token punctuation">,</span> weight<span class="token operator">=</span>None<span class="token punctuation">,</span> size_average<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<pre class=" language-language-python"><code class="language-language-python">torch.nn.functional.binary_cross_entropy(input, target, weight=None, size_average=True)
 </code></pre>
-<h3 id="33-二元逻辑交叉熵binary_cross_entropy_with_logits"><a href="#3-3-二元逻辑交叉熵binary-cross-entropy-with-logits" class="headerlink" title="3.3 二元逻辑交叉熵binary_cross_entropy_with_logits()"></a>3.3 二元逻辑交叉熵<code>binary_cross_entropy_with_logits()</code></h3><blockquote>
-<p>with_logits就是把sigmod函数<strong>集成</strong>进交叉熵函数，就不需要之后再调用一边sigmod函数了</p>
+<h3 id="33-二元逻辑交叉熵-binary_cross_entropy_with_logits"><a class="anchor" href="#33-二元逻辑交叉熵binary_cross_entropy_with_logits">#</a> 3.3 二元逻辑交叉熵 <code>binary_cross_entropy_with_logits()</code></h3>
+<blockquote>
+<p>with_logits 就是把 sigmod 函数<strong>集成</strong>进交叉熵函数，就不需要之后再调用一边 sigmod 函数了</p>
 </blockquote>
-<p>在 <img data-src="/2021/07/27/note/Python/pytorch/equation%20(5)-1628496675068.svg" alt="[公式]"> 外边复合一层sigmoid函数，即 <img data-src="/2021/07/27/note/Python/pytorch/equation%20(6).svg" alt="[公式]"> ，损失函数变为：</p>
+<p>在 <img data-src="/2021/07/27/note/Python/pytorch/equation%20(5)-1628496675068.svg" alt="[公式]"> 外边复合一层 sigmoid 函数，即 <img data-src="/2021/07/27/note/Python/pytorch/equation%20(6).svg" alt="[公式]"> ，损失函数变为：</p>
 <p><img data-src="/2021/07/27/note/Python/pytorch/equation%20(7)-1628496675069.svg" alt="[公式]"></p>
 <ol>
-<li><p>自定义</p>
-<pre class=" language-python"><code class="language-python">torch<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>functional<span class="token punctuation">.</span>binary_cross_entropy<span class="token punctuation">(</span>input<span class="token punctuation">,</span> target<span class="token punctuation">,</span> weight<span class="token operator">=</span>None<span class="token punctuation">,</span> size_average<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    <span class="token triple-quoted-string string">"""
+<li>
+<p>自定义</p>
+<pre class=" language-language-python"><code class="language-language-python">torch.nn.functional.binary_cross_entropy(input, target, weight=None, size_average=True)
+    """
     :param input: 输入，任意形状的张量--神经网络预测结果
     :param target: 靶向值，即用于验证的标签值：与输入形状相同的张量
     :param weight: 权重，可用于mask的作用，和input形状一致
     :return: 损失值（误差），可能是向量，也可能是一个float值
-    """</span>
+    """
 </code></pre>
 </li>
-<li><p>也可自定义</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">binary_cross_entropy_with_logits</span><span class="token punctuation">(</span>input<span class="token punctuation">,</span> target<span class="token punctuation">,</span> weight<span class="token operator">=</span>None<span class="token punctuation">,</span> size_average<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> reduce<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""
+<li>
+<p>也可自定义</p>
+<pre class=" language-language-python"><code class="language-language-python">def binary_cross_entropy_with_logits(input, target, weight=None, size_average=True, reduce=True):
+    """
     损失函数，二元交叉熵。可以直接调用nn.functional.binary_cross_entropy_with_logits()
     :param size_average: 可选，已弃用。是否求平均：默认情况下，损失是批次中每个损失元素的平均值。注意，对于有些损失，每个样品有多个元素。
     :param reduce: 可选，不推荐使用。是否压缩，如把向量求和；
     :return: 损失值（误差），可能是向量，也可能是一个float值
-    """</span>
-    <span class="token keyword">if</span> <span class="token operator">not</span> <span class="token punctuation">(</span>target<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> input<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">"Target size (&amp;#123;&amp;#125;) must be the same as input size (&amp;#123;&amp;#125;)"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>target<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> input<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    """
+    if not (target.size() == input.size()):
+        raise ValueError("Target size (&#123;&#125;) must be the same as input size (&#123;&#125;)".format(target.size(), input.size()))
 
-    max_val <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">-</span>input<span class="token punctuation">)</span><span class="token punctuation">.</span>clamp<span class="token punctuation">(</span>min<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
-    loss <span class="token operator">=</span> input <span class="token operator">-</span> input <span class="token operator">*</span> target <span class="token operator">+</span> max_val <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span>max_val<span class="token punctuation">)</span><span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token operator">-</span>input <span class="token operator">-</span> max_val<span class="token punctuation">)</span><span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    max_val = (-input).clamp(min=0)
+    loss = input - input * target + max_val + ((-max_val).exp() + (-input - max_val).exp()).log()
 
-    <span class="token keyword">if</span> weight <span class="token keyword">is</span> <span class="token operator">not</span> None<span class="token punctuation">:</span>
-        loss <span class="token operator">=</span> loss <span class="token operator">*</span> weight
+    if weight is not None:
+        loss = loss * weight
 
-    <span class="token keyword">if</span> <span class="token operator">not</span> reduce<span class="token punctuation">:</span>
-        <span class="token keyword">return</span> loss
-    <span class="token keyword">elif</span> size_average<span class="token punctuation">:</span>
-        <span class="token keyword">return</span> loss<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> loss<span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    if not reduce:
+        return loss
+    elif size_average:
+        return loss.mean()
+    else:
+        return loss.sum()
 </code></pre>
 </li>
 </ol>
-<h1 id="四-torchtensor"><a href="#四、-torch-Tensor" class="headerlink" title="四、 torch.Tensor"></a>四、 <code>torch.Tensor</code></h1><p>Tensor：张量，也就是向量。相当于numpy的array</p>
+<h1 id="四-torchtensor"><a class="anchor" href="#四-torchtensor">#</a> 四、  <code>torch.Tensor</code></h1>
+<p>Tensor：张量，也就是向量。相当于 numpy 的 array</p>
 <blockquote>
-<p><code>torch.Tensor(2,3)</code>：随机生成2X3的矩阵，float类型</p>
+<p><code>torch.Tensor(2,3)</code> ：随机生成 2X3 的矩阵，float 类型</p>
 </blockquote>
 <table>
 <thead>
@@ -407,7 +451,8 @@ W<span class="token punctuation">.</span>data<span class="token punctuation">.</
 <th>GPU tensor</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>32-bit floating point</td>
 <td><code>torch.FloatTensor</code></td>
 <td><code>torch.cuda.FloatTensor</code></td>
@@ -447,8 +492,9 @@ W<span class="token punctuation">.</span>data<span class="token punctuation">.</
 <td><code>torch.LongTensor</code></td>
 <td><code>torch.cuda.LongTensor</code></td>
 </tr>
-</tbody></table>
-<p><code>torch.Tensor</code>是默认的tensor类型（<code>torch.FlaotTensor</code>）的简称。</p>
+</tbody>
+</table>
+<p><code>torch.Tensor</code>  是默认的 tensor 类型（ <code>torch.FlaotTensor</code> ）的简称。</p>
 
   </div>
 
@@ -515,7 +561,7 @@ W<span class="token punctuation">.</span>data<span class="token punctuation">.</
     <div class="item left">
       
 
-  <a href="../../../../../06/25/note/Python/numpy/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipey0a334j20zk0m8qpt.jpg" title="numpy常用函数">
+  <a href="../../../../../06/25/note/Python/numpy/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexj2jgzj20zk0m8b09.jpg" title="numpy常用函数">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>numpy常用函数</h3>
@@ -525,7 +571,7 @@ W<span class="token punctuation">.</span>data<span class="token punctuation">.</
     <div class="item right">
       
 
-  <a href="../python%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclj61ylzj20zk0m8b29.jpg" title="python使用技巧">
+  <a href="../python%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giph47e9vtj20zk0m8x6l.jpg" title="python使用技巧">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>python使用技巧</h3>
@@ -547,7 +593,7 @@ W<span class="token punctuation">.</span>data<span class="token punctuation">.</
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">一、 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-cuda%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F%E4%BD%86torchcudais_available%E8%BE%93%E5%87%BAfalse"><span class="toc-number">1.1.</span> <span class="toc-text">1. cuda安装成功，但torch.cuda.is_available()输出False</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85torch%E6%97%B6%E6%8A%A5%E9%94%99torch-1x0-cp3x-cp3xm-win_amd64whl-is-not-a-supported-wheel-on-this-platform"><span class="toc-number">1.2.</span> <span class="toc-text">2. 安装torch时报错torch-1.X.0-cp3X-cp3Xm-win_amd64.whl is not a supported wheel on this platform.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-torch%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8Eimport-torch%E6%8A%A5%E9%94%99runtimeerror-module-compiled-against-api-version-0xc-but-this-version-of-numpy-is-0xb"><span class="toc-number">1.3.</span> <span class="toc-text">3. torch安装完成后import torch报错RuntimeError: module compiled against API version 0xc but this version of numpy is 0xb</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pytorch%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text">pytorch简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text">1. 基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">2.2.</span> <span class="toc-text">2. 基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%BC%A0%E9%87%8F"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.1 初始化张量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E8%8E%B7%E5%8F%96%E5%BC%A0%E9%87%8F%E4%BF%A1%E6%81%AF"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.2 获取张量信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-%E5%BC%A0%E9%87%8F%E8%BF%90%E7%AE%97"><span class="toc-number">2.2.3.</span> <span class="toc-text">2.3 张量运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-%E5%AF%B9%E6%8E%A5numpy"><span class="toc-number">2.2.4.</span> <span class="toc-text">2.4 对接numpy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-%E5%B0%86%E5%BC%A0%E9%87%8F%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E8%AE%BE%E5%A4%87cpugpu"><span class="toc-number">2.2.5.</span> <span class="toc-text">2.5 将张量移动到指定设备（CPU&#x2F;GPU）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-torchnn"><span class="toc-number">3.</span> <span class="toc-text">二、  torch.nn</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-torchnnparameter"><span class="toc-number">3.1.</span> <span class="toc-text">1. torch.nn.Parameter()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-torchnnfunctional"><span class="toc-number">4.</span> <span class="toc-text">三、 torch.nn.functional</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">4.1.</span> <span class="toc-text">1. 激活函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-relu"><span class="toc-number">4.1.1.</span> <span class="toc-text">1.1 relu()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BA%BF%E6%80%A7%E5%87%BD%E6%95%B0"><span class="toc-number">4.2.</span> <span class="toc-text">2. 线性函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-linear"><span class="toc-number">4.2.1.</span> <span class="toc-text">2.1 linear()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">4.3.</span> <span class="toc-text">3. 损失函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E4%BA%A4%E5%8F%89%E7%86%B5%E8%AF%AF%E5%B7%AEcross_entropy"><span class="toc-number">4.3.1.</span> <span class="toc-text">3.1 交叉熵误差cross_entropy()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-%E4%BA%8C%E5%85%83%E4%BA%A4%E5%8F%89%E7%86%B5binary_cross_entropy"><span class="toc-number">4.3.2.</span> <span class="toc-text">3.2 二元交叉熵binary_cross_entropy()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#33-%E4%BA%8C%E5%85%83%E9%80%BB%E8%BE%91%E4%BA%A4%E5%8F%89%E7%86%B5binary_cross_entropy_with_logits"><span class="toc-number">4.3.3.</span> <span class="toc-text">3.3 二元逻辑交叉熵binary_cross_entropy_with_logits()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-torchtensor"><span class="toc-number">5.</span> <span class="toc-text">四、 torch.Tensor</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text"> 一、 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-cuda-%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F%E4%BD%86-torchcudais_available-%E8%BE%93%E5%87%BA-false"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. cuda 安装成功，但 torch.cuda.is_available () 输出 False</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-torch-%E6%97%B6%E6%8A%A5%E9%94%99-torch-1x0-cp3x-cp3xm-win_amd64whl-is-not-a-supported-wheel-on-this-platform"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. 安装 torch 时报错 torch-1.X.0-cp3X-cp3Xm-win_amd64.whl is not a supported wheel on this platform.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-torch-%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E-import-torch-%E6%8A%A5%E9%94%99-runtimeerror-module-compiled-against-api-version-0xc-but-this-version-of-numpy-is-0xb"><span class="toc-number">1.3.</span> <span class="toc-text"> 3. torch 安装完成后 import torch 报错 RuntimeError: module compiled against API version 0xc but this version of numpy is 0xb</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pytorch-%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text"> pytorch 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text"> 1. 基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">2.2.</span> <span class="toc-text"> 2. 基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%BC%A0%E9%87%8F"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 2.1 初始化张量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E8%8E%B7%E5%8F%96%E5%BC%A0%E9%87%8F%E4%BF%A1%E6%81%AF"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 2.2 获取张量信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-%E5%BC%A0%E9%87%8F%E8%BF%90%E7%AE%97"><span class="toc-number">2.2.3.</span> <span class="toc-text"> 2.3 张量运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-%E5%AF%B9%E6%8E%A5-numpy"><span class="toc-number">2.2.4.</span> <span class="toc-text"> 2.4 对接 numpy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-%E5%B0%86%E5%BC%A0%E9%87%8F%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E8%AE%BE%E5%A4%87cpugpu"><span class="toc-number">2.2.5.</span> <span class="toc-text"> 2.5 将张量移动到指定设备（CPU&#x2F;GPU）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-torchnn"><span class="toc-number">3.</span> <span class="toc-text"> 二、   torch.nn</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-torchnnparameter"><span class="toc-number">3.1.</span> <span class="toc-text"> 1.  torch.nn.Parameter()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-torchnnfunctional"><span class="toc-number">4.</span> <span class="toc-text"> 三、  torch.nn.functional</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">4.1.</span> <span class="toc-text"> 1. 激活函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-relu"><span class="toc-number">4.1.1.</span> <span class="toc-text"> 1.1  relu()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BA%BF%E6%80%A7%E5%87%BD%E6%95%B0"><span class="toc-number">4.2.</span> <span class="toc-text"> 2. 线性函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-linear"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 2.1  linear()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">4.3.</span> <span class="toc-text"> 3. 损失函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E4%BA%A4%E5%8F%89%E7%86%B5%E8%AF%AF%E5%B7%AE-cross_entropy"><span class="toc-number">4.3.1.</span> <span class="toc-text"> 3.1 交叉熵误差 cross_entropy()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-%E4%BA%8C%E5%85%83%E4%BA%A4%E5%8F%89%E7%86%B5-binary_cross_entropy"><span class="toc-number">4.3.2.</span> <span class="toc-text"> 3.2 二元交叉熵 binary_cross_entropy()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#33-%E4%BA%8C%E5%85%83%E9%80%BB%E8%BE%91%E4%BA%A4%E5%8F%89%E7%86%B5-binary_cross_entropy_with_logits"><span class="toc-number">4.3.3.</span> <span class="toc-text"> 3.3 二元逻辑交叉熵 binary_cross_entropy_with_logits()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-torchtensor"><span class="toc-number">5.</span> <span class="toc-text"> 四、  torch.Tensor</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
       </div>
@@ -561,7 +607,7 @@ W<span class="token punctuation">.</span>data<span class="token punctuation">.</
 
 <nav class="state">
     <div class="item posts">
-      <a href="../archives/">
+      <a href="">
         <span class="count">28</span>
         <span class="name">文章</span>
       </a>
@@ -652,9 +698,12 @@ W<span class="token punctuation">.</span>data<span class="token punctuation">.</
   <li class="item">
     
 <div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
 </div>
 
-    <span><a href="../../../../../05/08/my-hexo/" title="my hexo">my hexo</a></span>
+    <span><a href="../../../../../04/23/note/%E5%89%8D%E7%AB%AF/echarts/" title="echarts用法简单记录">echarts用法简单记录</a></span>
   </li>
 
       
@@ -662,9 +711,47 @@ W<span class="token punctuation">.</span>data<span class="token punctuation">.</
     
 <div class="breadcrumb">
 <a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/software/" title="分类于 software">software</a>
 </div>
 
-    <span><a href="../../../../../06/10/%E8%A5%BF%E7%93%9C%E4%B9%A6%E5%A4%8D%E4%B9%A0%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/" title="西瓜书复习及其部分代码实现">西瓜书复习及其部分代码实现</a></span>
+    <span><a href="../../../../../05/10/note/software/maven%E5%A4%8D%E4%B9%A0/" title="maven复习">maven复习</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/" title="降低数据稀疏度的算法研究">降低数据稀疏度的算法研究</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="" title="pytorch">pytorch</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../05/14/%E9%99%88%E5%BA%B7%E4%B8%9C%E5%92%8C%E7%8E%8B%E5%86%B0%E5%86%B0%E7%9A%84%E5%BF%AB%E4%B9%90%E5%B0%8F%E5%B1%8B/" title="陈康东和王冰冰的快乐小屋">陈康东和王冰冰的快乐小屋</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../python%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" title="python使用技巧">python使用技巧</a></span>
   </li>
 
       
@@ -681,15 +768,6 @@ W<span class="token punctuation">.</span>data<span class="token punctuation">.</
 </div>
 
     <span><a href="../../../../../05/17/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-Java%E8%B0%83%E7%94%A8Python%E8%84%9A%E6%9C%AC/" title="随笔-Java调用Python脚本">随笔-Java调用Python脚本</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="" title="pytorch">pytorch</a></span>
   </li>
 
       
@@ -713,7 +791,7 @@ W<span class="token punctuation">.</span>data<span class="token punctuation">.</
 <a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
 </div>
 
-    <span><a href="../../../../../05/26/note/%E5%89%8D%E7%AB%AF/html/" title="html常用功能手册">html常用功能手册</a></span>
+    <span><a href="../../../../../05/27/note/%E5%89%8D%E7%AB%AF/JavaScript/" title="JavaScript基础语法">JavaScript基础语法</a></span>
   </li>
 
       
@@ -726,38 +804,6 @@ W<span class="token punctuation">.</span>data<span class="token punctuation">.</
 </div>
 
     <span><a href="../../../../../05/27/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E8%B0%83%E5%8F%96Python%E6%95%B0%E6%8D%AE/" title="前端调用Python数据">前端调用Python数据</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="../../../../../06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/" title="降低数据稀疏度的算法研究">降低数据稀疏度的算法研究</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="../../../../../08/10/note/%E5%89%8D%E7%AB%AF/ps%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" title="ps学习之路">ps学习之路</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/computer-science/java/" title="分类于 Java">Java</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/computer-science/java/course-1/" title="分类于 零基础学 Java 语言 - 浙江大学 - 翁恺">零基础学 Java 语言 - 浙江大学 - 翁恺</a>
-</div>
-
-    <span><a href="../../../../../05/09/test/" title="my hexo">my hexo</a></span>
   </li>
 
   </ul>
@@ -782,13 +828,13 @@ W<span class="token punctuation">.</span>data<span class="token punctuation">.</
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">199k 字</span>
+    <span title="站点总字数">195k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:01</span>
+    <span title="站点阅读时长">2:57</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

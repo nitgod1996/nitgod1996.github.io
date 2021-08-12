@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="../css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="Java,Python" />
+  <meta name="keywords" content="Python,Java" />
 
 
 <link rel="canonical" href="https://nitgod1996.com/2021/05/17/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-Java%E8%B0%83%E7%94%A8Python%E8%84%9A%E6%9C%AC/">
@@ -76,7 +76,7 @@ nitgod1996 = 宁理大神 1996</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>7.6k</span>
+    <span>7.7k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -117,12 +117,12 @@ nitgod1996 = 宁理大神 1996</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeybxm1pj20zk0m8niv.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipetv6p75j20zk0m8x6p.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclxp31goj20zk0m8qv5.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclga70tsj20zk0m84mr.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipewr8iypj20zk0m8b29.jpg"></li>
           <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipevarprfj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicivghyooj20zk0m8dir.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclh0m9pdj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicljitigmj20zk0m87fp.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipet8c1a2j20zk0m8kct.jpg"></li>
         </ul>
       </div>
     </header>
@@ -177,10 +177,12 @@ nitgod1996 = 宁理大神 1996</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="一-rest"><a href="#一、-REST" class="headerlink" title="一、 REST"></a>一、 REST</h1><h2 id="1-什么是rest以及restful"><a href="#1-什么是REST以及RESTful" class="headerlink" title="1. 什么是REST以及RESTful"></a>1. 什么是REST以及RESTful</h2><blockquote>
-<p>REST指的是一组架构约束条件和原则。” 如果一个架构符合REST的约束条件和原则，我们就称它为RESTful架构。</p>
+    <h1 id="一-rest"><a class="anchor" href="#一-rest">#</a> 一、 REST</h1>
+<h2 id="1-什么是-rest-以及-restful"><a class="anchor" href="#1-什么是rest以及restful">#</a> 1. 什么是 REST 以及 RESTful</h2>
+<blockquote>
+<p>REST 指的是一组架构约束条件和原则。&quot; 如果一个架构符合 REST 的约束条件和原则，我们就称它为 RESTful 架构。</p>
 </blockquote>
-<p>​        相当于是编写API的一套规则，像高德地图提供的API。</p>
+<p>​		相当于是编写 API 的一套规则，像高德地图提供的 API。</p>
 <table>
 <thead>
 <tr>
@@ -188,110 +190,135 @@ nitgod1996 = 宁理大神 1996</title>
 <th><span class="exturl" data-url="aHR0cHM6Ly9yZXN0YXBpLmFtYXAuY29tL3YzL3BsYWNlL3RleHQ/cGFyYW1ldGVycw==">https://restapi.amap.com/v3/place/text?parameters</span></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>请求方式</td>
 <td>GET</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <blockquote>
-<p>上面是高德地图提供的API，返回的是json格式的数据信息。</p>
+<p>上面是高德地图提供的 API，返回的是 json 格式的数据信息。</p>
 </blockquote>
-<p> 以下介绍REST的几大概念：</p>
+<p>以下介绍 REST 的几大概念：</p>
 <ul>
-<li>资源与URI</li>
+<li>资源与 URI</li>
 <li>统一资源接口</li>
 <li>资源的表述</li>
 <li>资源的链接</li>
 <li>状态的转移</li>
 </ul>
-<h3 id="11-资源与uri"><a href="#1-1-资源与URI" class="headerlink" title="1.1 资源与URI"></a>1.1 资源与URI</h3><p>URI是用于标记网络上的资源的<em>唯一标识</em></p>
+<h3 id="11-资源与-uri"><a class="anchor" href="#11-资源与uri">#</a> 1.1 资源与 URI</h3>
+<p>URI 是用于标记网络上的资源的<em>唯一标识</em></p>
 <blockquote>
-<p> 要让一个资源可以被识别，需要有个唯一标识，在Web中这个唯一标识就是URI(Uniform Resource Identifier)。</p>
+<p>要让一个资源可以被识别，需要有个唯一标识，在 Web 中这个唯一标识就是 URI (Uniform Resource Identifier)。</p>
 </blockquote>
-<p>URI既可以看成是资源的地址，也可以看成是资源的名称。</p>
-<p>以下是URI的编写技巧：</p>
+<p>URI 既可以看成是资源的地址，也可以看成是资源的名称。</p>
+<p>以下是 URI 的编写技巧：</p>
 <ul>
-<li>使用_或-分隔单词。如<span class="exturl" data-url="aHR0cDovL3d3dy5vc2NoaW5hLm5ldC9uZXdzLzM4MTE5L29zY2hpbmEtdHJhbnNsYXRlLXJld2FyZC1wbGFuJUUzJTgwJTgy">http://www.oschina.net/news/38119/oschina-translate-reward-plan。</span></li>
-<li>使用/来表示资源的层级关系</li>
-<li>使用?用来参数传递，&amp;分隔参数<ul>
-<li>如<span class="exturl" data-url="aHR0cHM6Ly9yZXN0YXBpLmFtYXAuY29tL3YzL3BsYWNlL3RleHQ/a2V5d29yZHM9JUU1JThDJTk3JUU0JUJBJUFDJUU1JUE0JUE3JUU1JUFEJUE2JmFtcDtjaXR5PWJlaWppbmcmYW1wO291dHB1dD14bWwmYW1wO29mZnNldD0yMCZhbXA7cGFnZT0xJmFtcDtrZXk9">https://restapi.amap.com/v3/place/text?keywords=北京大学&amp;city=beijing&amp;output=xml&amp;offset=20&amp;page=1&amp;key=</span>&lt;用户的key&gt;&amp;extensions=all</li>
+<li>使用_或 - 分隔单词。如 http://www.oschina.net/news/38119/oschina-translate-reward-plan。</li>
+<li>使用 / 来表示资源的层级关系</li>
+<li>使用？用来参数传递，&amp; 分隔参数
+<ul>
+<li>如 https://restapi.amap.com/v3/place/text?keywords = 北京大学 &amp; city=beijing&amp;output=xml&amp;offset=20&amp;page=1&amp;key=&lt;用户的 key&gt;&amp;extensions=all</li>
 </ul>
 </li>
-<li>,或;可以用来表示同级资源的关系</li>
+<li>, 或；可以用来表示同级资源的关系</li>
 </ul>
-<h3 id="12-统一资源接口"><a href="#1-2-统一资源接口" class="headerlink" title="1.2 统一资源接口"></a>1.2 统一资源接口</h3><blockquote>
-<p>RESTful架构应该遵循统一接口原则，接口应该使用标准的HTTP方法如GET，PUT和POST，并遵循这些方法的语义。</p>
-</blockquote>
-<h3 id="13-资源的表述"><a href="#1-3-资源的表述" class="headerlink" title="1.3 资源的表述"></a>1.3 资源的表述</h3><blockquote>
-<p>客户端通过HTTP方法可以获取资源。确切的说，客户端获取的只是资源的表述而已。</p>
-</blockquote>
-<p>​        资源在外界的具体呈现，可以有多种形式。在客户端和服务端之间传送的也是资源的表述，而不是资源本身。</p>
-<p>​         例如文本资源可以采用html、xml、json等格式，图片可以使用PNG或JPG展现出来。</p>
+<h3 id="12-统一资源接口"><a class="anchor" href="#12-统一资源接口">#</a> 1.2 统一资源接口</h3>
 <blockquote>
-<p> 资源的表述包括数据和元数据（描述数据的数据），例如，HTTP头”Content-Type” 就是这样一个元数据属性。</p>
+<p>RESTful 架构应该遵循统一接口原则，接口应该使用标准的 HTTP 方法如 GET，PUT 和 POST，并遵循这些方法的语义。</p>
 </blockquote>
-<p>​        客户端需要在<code>Request</code>头通过<code>Accept</code>说明自己需要的格式，而服务端在<code>Content-Type</code>返回该格式。如果不支持返回该格式，则报<strong>406错误</strong></p>
+<h3 id="13-资源的表述"><a class="anchor" href="#13-资源的表述">#</a> 1.3 资源的表述</h3>
+<blockquote>
+<p>客户端通过 HTTP 方法可以获取资源。确切的说，客户端获取的只是资源的表述而已。</p>
+</blockquote>
+<p>​		资源在外界的具体呈现，可以有多种形式。在客户端和服务端之间传送的也是资源的表述，而不是资源本身。</p>
+<p>​		 例如文本资源可以采用 html、xml、json 等格式，图片可以使用 PNG 或 JPG 展现出来。</p>
+<blockquote>
+<p>资源的表述包括数据和元数据（描述数据的数据），例如，HTTP 头 &quot;Content-Type&quot; 就是这样一个元数据属性。</p>
+</blockquote>
+<p>​		客户端需要在 <code>Request</code>  头通过 <code>Accept</code>  说明自己需要的格式，而服务端在 <code>Content-Type</code>  返回该格式。如果不支持返回该格式，则报<strong> 406 错误</strong></p>
 <p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS93M2Nub3RlL3Jlc3RmdWwtYXJjaGl0ZWN0dXJlLmh0bWw=">参考菜鸟教程</span></p>
-<h2 id="2-python编写简单的restful-api"><a href="#2-python编写简单的RESTful-API" class="headerlink" title="2. python编写简单的RESTful API"></a>2. python编写简单的RESTful API</h2><p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIyMTIxNTcvYXJ0aWNsZS9kZXRhaWxzLzc4MjE2MjY3">参考博客</span></p>
-<h3 id="21-安装flask库"><a href="#2-1-安装flask库" class="headerlink" title="2.1 安装flask库"></a>2.1 安装flask库</h3><p>使用豆瓣源</p>
-<pre class=" language-bash"><code class="language-bash">pip <span class="token function">install</span> flask -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
+<h2 id="2-python-编写简单的-restful-api"><a class="anchor" href="#2-python编写简单的restful-api">#</a> 2. python 编写简单的 RESTful API</h2>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIyMTIxNTcvYXJ0aWNsZS9kZXRhaWxzLzc4MjE2MjY3">参考博客</span></p>
+<h3 id="21-安装-flask-库"><a class="anchor" href="#21-安装flask库">#</a> 2.1 安装 flask 库</h3>
+<p>使用豆瓣源</p>
+<pre class=" language-language-bash"><code class="language-language-bash">pip install flask -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
 </code></pre>
-<h3 id="22-编写简单代码测试一下"><a href="#2-2-编写简单代码测试一下" class="headerlink" title="2.2 编写简单代码测试一下"></a>2.2 编写简单代码测试一下</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask
-app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
-@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>  
-<span class="token keyword">def</span> <span class="token function">hello_world</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token string">"hello world"</span>
-<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<h3 id="22-编写简单代码测试一下"><a class="anchor" href="#22-编写简单代码测试一下">#</a> 2.2 编写简单代码测试一下</h3>
+<pre class=" language-language-python"><code class="language-language-python">from flask import Flask
+app = Flask(__name__)
+@app.route('/')  
+def hello_world():
+    return "hello world"
+if __name__=='__main__':
+    app.run()
 </code></pre>
-<h3 id="23-访问localhost5000"><a href="#2-3-访问localho​st-50​00" class="headerlink" title="2.3 访问localho​st:50​00"></a>2.3 访问localho​st:50​00</h3><p><img data-src="/2021/05/17/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-Java%E8%B0%83%E7%94%A8Python%E8%84%9A%E6%9C%AC/image-20210516142311629.png" alt="image-20210516142311629"></p>
-<h3 id="24-flask介绍"><a href="#2-4-Flask介绍" class="headerlink" title="2.4 Flask介绍"></a>2.4 Flask介绍</h3><blockquote>
-<p>Flask是一个使用 <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9QeXRob24=">Python</span> 编写的轻量级 Web 应用框架。它可以很好地结合<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9NVkMlRTYlQTglQTElRTUlQkMlOEYvNzEzMTQ3">MVC模式</span>进行开发，开发人员分工合作，小型团队在短时间内就可以完成功能丰富的中小型网站或<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9XZWIlRTYlOUMlOEQlRTUlOEElQTEvMjgzNzU5Mw==">Web服务</span>的实现。</p>
+<h3 id="23-访问-localhost5000"><a class="anchor" href="#23-访问localhost5000">#</a> 2.3 访问 localho​st:50​00</h3>
+<p><img data-src="/2021/05/17/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-Java%E8%B0%83%E7%94%A8Python%E8%84%9A%E6%9C%AC/image-20210516142311629.png" alt="image-20210516142311629"></p>
+<h3 id="24-flask-介绍"><a class="anchor" href="#24-flask介绍">#</a> 2.4 Flask 介绍</h3>
+<blockquote>
+<p>Flask 是一个使用 <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9QeXRob24=">Python</span> 编写的轻量级 Web 应用框架。它可以很好地结合<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9NVkMlRTYlQTglQTElRTUlQkMlOEYvNzEzMTQ3"> MVC 模式</span>进行开发，开发人员分工合作，小型团队在短时间内就可以完成功能丰富的中小型网站或<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9XZWIlRTYlOUMlOEQlRTUlOEElQTEvMjgzNzU5Mw=="> Web 服务</span>的实现。</p>
 </blockquote>
-<h3 id="25-总结"><a href="#2-5-总结" class="headerlink" title="2.5 总结"></a>2.5 总结</h3><p>​        此方法是通过调用flask部署到线上的API实现的Java-Python交互。</p>
+<h3 id="25-总结"><a class="anchor" href="#25-总结">#</a> 2.5 总结</h3>
+<p>​		此方法是通过调用 flask 部署到线上的 API 实现的 Java-Python 交互。</p>
 <ol>
-<li><p>优点：</p>
+<li>
+<p>优点：</p>
 <ol>
-<li>调用方便，直接调取API即可获取数据。</li>
+<li>调用方便，直接调取 API 即可获取数据。</li>
 <li>减少耦合度</li>
 </ol>
 </li>
-<li><p>缺点是需要提前部署，且不能断开</p>
+<li>
+<p>缺点是需要提前部署，且不能断开</p>
 </li>
 </ol>
-<h1 id="二-rpc"><a href="#二、-RPC" class="headerlink" title="二、 RPC"></a>二、 RPC</h1><h2 id="1-什么是rpc"><a href="#1-什么是RPC" class="headerlink" title="1. 什么是RPC"></a>1. 什么是RPC</h2><p>RPC：Remote Procedure Call 远程过程调用</p>
+<h1 id="二-rpc"><a class="anchor" href="#二-rpc">#</a> 二、 RPC</h1>
+<h2 id="1-什么是-rpc"><a class="anchor" href="#1-什么是rpc">#</a> 1. 什么是 RPC</h2>
+<p>RPC：Remote Procedure Call 远程过程调用</p>
 <blockquote>
-<p>RPC就是要像调用本地的函数一样去调远程函数。</p>
+<p>RPC 就是要像调用本地的函数一样去调远程函数。</p>
 </blockquote>
-<p>在远程调用时，我们需要执行的函数体是在远程的机器上的。以下是一些RPC的概念</p>
-<h3 id="11-call-id映射"><a href="#1-1-Call-ID映射" class="headerlink" title="1.1 Call ID映射"></a>1.1 Call ID映射</h3><p>​    我们如何告诉远程机器我们要调用哪个函数？</p>
+<p>在远程调用时，我们需要执行的函数体是在远程的机器上的。以下是一些 RPC 的概念</p>
+<h3 id="11-call-id-映射"><a class="anchor" href="#11-call-id映射">#</a> 1.1 Call ID 映射</h3>
+<p>​	我们如何告诉远程机器我们要调用哪个函数？</p>
 <ul>
-<li><p>在本地调用中：函数体是直接通过函数指针来指定的。</p>
+<li>
+<p>在本地调用中：函数体是直接通过函数指针来指定的。</p>
 </li>
-<li><p>在RPC中：每个函数都有自己的一个ID，这个ID是所有进程中都是唯一确定的。<strong>客户端在做远程过程调用时，必须附上这个ID。</strong></p>
+<li>
+<p>在 RPC 中：每个函数都有自己的一个 ID，这个 ID 是所有进程中都是唯一确定的。<strong>客户端在做远程过程调用时，必须附上这个 ID。</strong></p>
 </li>
 </ul>
-<h3 id="12-序列化和反序列化"><a href="#1-2-序列化和反序列化" class="headerlink" title="1.2 序列化和反序列化"></a>1.2 序列化和反序列化</h3><p>​        客户端怎么把参数值传给远程的函数呢？</p>
+<h3 id="12-序列化和反序列化"><a class="anchor" href="#12-序列化和反序列化">#</a> 1.2 序列化和反序列化</h3>
+<p>​		客户端怎么把参数值传给远程的函数呢？</p>
 <ul>
 <li>本地调用中：我们只需要把参数压到栈里，然后让函数自己去栈里读就行。</li>
-<li>RPC中：需要客户端把<strong>参数</strong>先转成一个字节流，传给服务端后，再把字节流转成自己能读取的格式。这个过程叫序列化和反序列化。</li>
+<li>RPC 中：需要客户端把<strong>参数</strong>先转成一个字节流，传给服务端后，再把字节流转成自己能读取的格式。这个过程叫序列化和反序列化。</li>
 </ul>
-<h3 id="13-网络传输"><a href="#1-3-网络传输" class="headerlink" title="1.3 网络传输"></a>1.3 网络传输</h3><p>​        客户端和服务端是通过网络连接的。所有的数据都需要通过网络传输，因此就需要有一个网络传输层。</p>
-<p>​        尽管大部分RPC框架都使用TCP协议，但其实UDP也可以。</p>
-<h2 id="2-rpc与rest的区别"><a href="#2-RPC与REST的区别" class="headerlink" title="2. RPC与REST的区别"></a>2. RPC与REST的区别</h2><blockquote>
-<p>REST是一种架构风格，指的是一组架构约束条件和原则。满足这些约束条件和原则的应用程序或设计就是 RESTful。</p>
+<h3 id="13-网络传输"><a class="anchor" href="#13-网络传输">#</a> 1.3 网络传输</h3>
+<p>​		客户端和服务端是通过网络连接的。所有的数据都需要通过网络传输，因此就需要有一个网络传输层。</p>
+<p>​		尽管大部分 RPC 框架都使用 TCP 协议，但其实 UDP 也可以。</p>
+<h2 id="2-rpc-与-rest-的区别"><a class="anchor" href="#2-rpc与rest的区别">#</a> 2. RPC 与 REST 的区别</h2>
+<blockquote>
+<p>REST 是一种架构风格，指的是一组架构约束条件和原则。满足这些约束条件和原则的应用程序或设计就是 RESTful。</p>
 </blockquote>
-<p>大部分的REST的实现中使用了RPC的机制，大致与有三部分组成：</p>
+<p>大部分的 REST 的实现中使用了 RPC 的机制，大致与有三部分组成：</p>
 <ol>
-<li><p>method：访问方式，<code>get</code>，<code>post</code>之类的</p>
+<li>
+<p>method：访问方式， <code>get</code> ， <code>post</code>  之类的</p>
 </li>
-<li><p>Host/post：URI(统一资源标识)、服务器，端口</p>
+<li>
+<p>Host/post：URI (统一资源标识)、服务器，端口</p>
 </li>
-<li><p>Path：路径</p>
+<li>
+<p>Path：路径</p>
 </li>
 </ol>
 <blockquote>
-<p>RPC是远程过程调用，就是像调用本地方法一样调用远程方法</p>
+<p>RPC 是远程过程调用，就是像调用本地方法一样调用远程方法</p>
 </blockquote>
 <p>通常的调用过程，把函数序列化，远端收到后，再把函数反序列化，完成函数调用。</p>
 <table>
@@ -302,10 +329,11 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
 <th>RPC</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>通信协议</td>
 <td>HTTP</td>
-<td>一般使用TCP</td>
+<td>一般使用 TCP</td>
 </tr>
 <tr>
 <td>性能</td>
@@ -317,191 +345,217 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
 <td>高</td>
 <td>低</td>
 </tr>
-</tbody></table>
-<h2 id="2-实现java调用python函数"><a href="#2-实现Java调用Python函数" class="headerlink" title="2. 实现Java调用Python函数"></a>2. 实现Java调用Python函数</h2><p>主要RPC适用C/S模式的项目，还需要搭配Netty，所以暂时放弃此方法。</p>
-<h1 id="三-直接使用runtime推荐"><a href="#三、-直接使用Runtime-推荐" class="headerlink" title="三、 直接使用Runtime(推荐)"></a>三、 直接使用Runtime(推荐)</h1><p>​        在Java中如果需要调用第三方程序/脚本，可以直接通过Runtime实现，这也是最直接最粗暴的做法。</p>
-<h2 id="1-无参调用"><a href="#1-无参调用" class="headerlink" title="1. 无参调用"></a>1. 无参调用</h2><h3 id="11-python代码"><a href="#1-1-Python代码" class="headerlink" title="1.1 Python代码"></a>1.1 Python代码</h3><p><code>runtimeDemo2.py</code></p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sys
-sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'../'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 新加入的</span>
-<span class="token keyword">from</span> Java_connect_Python<span class="token punctuation">.</span>funDemo <span class="token keyword">import</span> hello
-<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-a<span class="token operator">=</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</tbody>
+</table>
+<h2 id="2-实现-java-调用-python-函数"><a class="anchor" href="#2-实现java调用python函数">#</a> 2. 实现 Java 调用 Python 函数</h2>
+<p>主要 RPC 适用 C/S 模式的项目，还需要搭配 Netty，所以暂时放弃此方法。</p>
+<h1 id="三-直接使用-runtime-推荐"><a class="anchor" href="#三-直接使用runtime推荐">#</a> 三、 直接使用 Runtime (推荐)</h1>
+<p>​		在 Java 中如果需要调用第三方程序 / 脚本，可以直接通过 Runtime 实现，这也是最直接最粗暴的做法。</p>
+<h2 id="1-无参调用"><a class="anchor" href="#1-无参调用">#</a> 1. 无参调用</h2>
+<h3 id="11-python-代码"><a class="anchor" href="#11-python代码">#</a> 1.1 Python 代码</h3>
+<p><code>runtimeDemo2.py</code></p>
+<pre class=" language-language-python"><code class="language-language-python">import sys
+sys.path.append('../')  # 新加入的
+from Java_connect_Python.funDemo import hello
+import numpy as np
+a=np.array([1,2,3])
 
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-    hello<span class="token punctuation">(</span><span class="token punctuation">)</span>
+if __name__ == '__main__':
+    print(a)
+    hello()
 </code></pre>
 <p><code>funDemo.py</code></p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Hello,Python'</span><span class="token punctuation">)</span>
+<pre class=" language-language-python"><code class="language-language-python">def hello():
+    print('Hello,Python')
 </code></pre>
-<h3 id="12-java代码"><a href="#1-2-java代码" class="headerlink" title="1.2 java代码"></a>1.2 java代码</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>simpleDemo<span class="token punctuation">;</span>
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>BufferedReader<span class="token punctuation">;</span>
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>InputStreamReader<span class="token punctuation">;</span>
+<h3 id="12-java-代码"><a class="anchor" href="#12-java代码">#</a> 1.2 java 代码</h3>
+<pre class=" language-language-java"><code class="language-language-java">package com.example.simpleDemo;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
  
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RuntimeDemo02</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+public class RuntimeDemo02 &#123;
 
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        String executer <span class="token operator">=</span> <span class="token string">"python"</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// python绝对路径</span>
-        String file_path <span class="token operator">=</span> <span class="token string">"F:\\project\\demo01\\Java_connect_Python\\runtimeDemo2.py"</span><span class="token punctuation">;</span>
-        String<span class="token punctuation">[</span><span class="token punctuation">]</span> command_line <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>executer<span class="token punctuation">,</span> file_path<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-        <span class="token keyword">try</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-          <span class="token comment" spellcheck="true">//  Process process = Runtime.getRuntime().exec(command_line);</span>
-            Process process <span class="token operator">=</span> Runtime<span class="token punctuation">.</span><span class="token function">getRuntime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>command_line<span class="token punctuation">,</span>null<span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"F:\\project\\demo01\\Java_connect_Python"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            BufferedReader in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InputStreamReader</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"GBK"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            String line<span class="token punctuation">;</span>
-            <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>line <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            in<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">// java代码中的 process.waitFor() 返回值（和我们通常意义上见到的0与1定义正好相反）</span>
-            <span class="token comment" spellcheck="true">// 返回值为0 - 表示调用python脚本成功；</span>
-            <span class="token comment" spellcheck="true">// 返回值为1 - 表示调用python脚本失败。</span>
-            <span class="token keyword">int</span> re <span class="token operator">=</span> process<span class="token punctuation">.</span><span class="token function">waitFor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"调用 python 脚本是否成功："</span> <span class="token operator">+</span> re<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e1<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            e1<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    public static void main(String[] args) &#123;
+        String executer = "python";
+        // python绝对路径
+        String file_path = "F:\\project\\demo01\\Java_connect_Python\\runtimeDemo2.py";
+        String[] command_line = new String[] &#123;executer, file_path&#125;;
+        try &#123;
+          //  Process process = Runtime.getRuntime().exec(command_line);
+            Process process = Runtime.getRuntime().exec(command_line,null,new File("F:\\project\\demo01\\Java_connect_Python"));
+            BufferedReader in = new BufferedReader(new InputStreamReader(process.getInputStream(),"GBK"));
+            String line;
+            while ((line = in.readLine()) != null) &#123;
+                System.out.println(line);
+            &#125;
+            in.close();
+            // java代码中的 process.waitFor() 返回值（和我们通常意义上见到的0与1定义正好相反）
+            // 返回值为0 - 表示调用python脚本成功；
+            // 返回值为1 - 表示调用python脚本失败。
+            int re = process.waitFor();
+            System.out.println("调用 python 脚本是否成功：" + re);
+        &#125; catch (IOException e1) &#123;
+            e1.printStackTrace();
+        &#125; catch (InterruptedException e) &#123;
+            e.printStackTrace();
+        &#125;
+    &#125;
+&#125;
 </code></pre>
-<h2 id="2-传参调用"><a href="#2-传参调用" class="headerlink" title="2. 传参调用"></a>2. 传参调用</h2><h3 id="21-python代码"><a href="#2-1-Python代码" class="headerlink" title="2.1 Python代码"></a>2.1 Python代码</h3><p><code>add.py</code></p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># coding=utf-8</span>
-<span class="token keyword">from</span> sys <span class="token keyword">import</span> argv
+<h2 id="2-传参调用"><a class="anchor" href="#2-传参调用">#</a> 2. 传参调用</h2>
+<h3 id="21-python-代码"><a class="anchor" href="#21-python代码">#</a> 2.1 Python 代码</h3>
+<p><code>add.py</code></p>
+<pre class=" language-language-python"><code class="language-language-python"># coding=utf-8
+from sys import argv
  
-a <span class="token operator">=</span> argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-b <span class="token operator">=</span> argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
-res <span class="token operator">=</span> int<span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">+</span> int<span class="token punctuation">(</span>b<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+a = argv[1]
+b = argv[2]
+res = int(a) + int(b)
+print(res)
 </code></pre>
-<h3 id="22-java代码"><a href="#2-2-Java代码" class="headerlink" title="2.2 Java代码"></a>2.2 Java代码</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>simpleDemo<span class="token punctuation">;</span>
+<h3 id="22-java-代码"><a class="anchor" href="#22-java代码">#</a> 2.2 Java 代码</h3>
+<pre class=" language-language-java"><code class="language-language-java">package com.example.simpleDemo;
 
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>DataInputStream<span class="token punctuation">;</span>
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>InputStream<span class="token punctuation">;</span>
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RuntimeDemo01</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException<span class="token punctuation">,</span> InterruptedException <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        String exe <span class="token operator">=</span> <span class="token string">"python"</span><span class="token punctuation">;</span>
-        String command <span class="token operator">=</span> <span class="token string">"F:\\project\\demo01\\Java_connect_Python\\add.py"</span><span class="token punctuation">;</span>
-        String num1 <span class="token operator">=</span> <span class="token string">"1"</span><span class="token punctuation">;</span>
-        String num2 <span class="token operator">=</span> <span class="token string">"2"</span><span class="token punctuation">;</span>
-        String<span class="token punctuation">[</span><span class="token punctuation">]</span> cmdArr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>exe<span class="token punctuation">,</span> command<span class="token punctuation">,</span> num1<span class="token punctuation">,</span> num2<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-        Process process <span class="token operator">=</span> Runtime<span class="token punctuation">.</span><span class="token function">getRuntime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>cmdArr<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        InputStream is <span class="token operator">=</span> process<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        DataInputStream dis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataInputStream</span><span class="token punctuation">(</span>is<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        String str <span class="token operator">=</span> dis<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        process<span class="token punctuation">.</span><span class="token function">waitFor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+public class RuntimeDemo01 &#123;
+    public static void main(String[] args) throws IOException, InterruptedException &#123;
+        String exe = "python";
+        String command = "F:\\project\\demo01\\Java_connect_Python\\add.py";
+        String num1 = "1";
+        String num2 = "2";
+        String[] cmdArr = new String[] &#123;exe, command, num1, num2&#125;;
+        Process process = Runtime.getRuntime().exec(cmdArr);
+        InputStream is = process.getInputStream();
+        DataInputStream dis = new DataInputStream(is);
+        String str = dis.readLine();
+        process.waitFor();
+        System.out.println(str);
+    &#125;
+&#125;
 </code></pre>
-<h2 id="3-解析"><a href="#3-解析" class="headerlink" title="3. 解析"></a>3. 解析</h2><h3 id="31-当py调用其他py函数时"><a href="#3-1-当py调用其他py函数时" class="headerlink" title="3.1 当py调用其他py函数时"></a>3.1 当py调用其他py函数时</h3><p>​        当Java需要调用的py脚本，其内部引用了其他py脚本定义的函数时，需要指定其包的路径，否则找不到模块。</p>
+<h2 id="3-解析"><a class="anchor" href="#3-解析">#</a> 3. 解析</h2>
+<h3 id="31-当-py-调用其他-py-函数时"><a class="anchor" href="#31-当py调用其他py函数时">#</a> 3.1 当 py 调用其他 py 函数时</h3>
+<p>​		当 Java 需要调用的 py 脚本，其内部引用了其他 py 脚本定义的函数时，需要指定其包的路径，否则找不到模块。</p>
 <ol>
-<li><p>在py文件添加</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sys
-sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'../'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 新加入的</span>
+<li>
+<p>在 py 文件添加</p>
+<pre class=" language-language-python"><code class="language-language-python">import sys
+sys.path.append('../')  # 新加入的
 </code></pre>
 </li>
-<li><p>Java调用时，使用<code>Runtime.getRuntime().exec(cmd,null,new File(path));</code>方法</p>
-<pre class=" language-java"><code class="language-java">String executer <span class="token operator">=</span> <span class="token string">"python"</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// python绝对路径</span>
-String file_path <span class="token operator">=</span> <span class="token string">"F:\\project\\demo01\\Java_connect_Python\\runtimeDemo2.py"</span><span class="token punctuation">;</span>
-String<span class="token punctuation">[</span><span class="token punctuation">]</span> command_line <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>executer<span class="token punctuation">,</span> file_path<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-Process process <span class="token operator">=</span> Runtime<span class="token punctuation">.</span><span class="token function">getRuntime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>command_line<span class="token punctuation">,</span>null<span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"F:\\project\\demo01\\Java_connect_Python"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<li>
+<p>Java 调用时，使用 <code>Runtime.getRuntime().exec(cmd,null,new File(path));</code>  方法</p>
+<pre class=" language-language-java"><code class="language-language-java">String executer = "python";
+// python绝对路径
+String file_path = "F:\\project\\demo01\\Java_connect_Python\\runtimeDemo2.py";
+String[] command_line = new String[] &#123;executer, file_path&#125;;
+Process process = Runtime.getRuntime().exec(command_line,null,new File("F:\\project\\demo01\\Java_connect_Python"));
 </code></pre>
 </li>
 </ol>
-<h3 id="32-步骤解析"><a href="#3-2-步骤解析" class="headerlink" title="3.2 步骤解析"></a>3.2 步骤解析</h3><ol>
-<li><p>通过<code>Runtime.getRuntime().exec()</code>创建进程类<code>Process</code>。</p>
+<h3 id="32-步骤解析"><a class="anchor" href="#32-步骤解析">#</a> 3.2 步骤解析</h3>
 <ol>
-<li><p>定义命令行执行脚本的语句<code>command_line</code></p>
-<pre class=" language-java"><code class="language-java">String executer <span class="token operator">=</span> <span class="token string">"python"</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// python绝对路径</span>
-String file_path <span class="token operator">=</span> <span class="token string">"F:\\project\\demo01\\Java_connect_Python\\runtimeDemo2.py"</span><span class="token punctuation">;</span>
-String<span class="token punctuation">[</span><span class="token punctuation">]</span> command_line <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>executer<span class="token punctuation">,</span> file_path<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-</code></pre>
-<p><strong>如果是需要传参的，那么在<code>command_line</code>中添加，如下</strong></p>
-<pre class=" language-java"><code class="language-java">String num1 <span class="token operator">=</span> <span class="token string">"1"</span><span class="token punctuation">;</span>
-String num2 <span class="token operator">=</span> <span class="token string">"2"</span><span class="token punctuation">;</span>
-String<span class="token punctuation">[</span><span class="token punctuation">]</span> command_line <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>executer<span class="token punctuation">,</span> file_path<span class="token punctuation">,</span>num1<span class="token punctuation">,</span>num2<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-</code></pre>
-</li>
-<li><p>定义模块路径（py的项目路径）<code>module_path</code></p>
-<pre class=" language-java"><code class="language-java">String module_path<span class="token operator">=</span><span class="token string">"F:\\project\\demo01\\Java_connect_Python"</span><span class="token punctuation">;</span>
-</code></pre>
-</li>
-<li><p>创建进程类<code>process</code></p>
-<pre class=" language-java"><code class="language-java">Process process <span class="token operator">=</span> Runtime<span class="token punctuation">.</span><span class="token function">getRuntime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>command_line<span class="token punctuation">,</span>null<span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>module_path<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-</li>
-</ol>
-</li>
-<li><p>捕获<code>process</code>的输出流，读取输出内容</p>
+<li>
+<p>通过 <code>Runtime.getRuntime().exec()</code>  创建进程类 <code>Process</code> 。</p>
 <ol>
-<li><p>创建<code>process</code>的输入流，此处选择<code>reader</code>，可以识别汉语字码</p>
-<pre class=" language-java"><code class="language-java">InputStreamReader is <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InputStreamReader</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"GBK"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<li>
+<p>定义命令行执行脚本的语句 <code>command_line</code></p>
+<pre class=" language-language-java"><code class="language-language-java">String executer = "python";// python绝对路径
+String file_path = "F:\\project\\demo01\\Java_connect_Python\\runtimeDemo2.py";
+String[] command_line = new String[] &#123;executer, file_path&#125;;
+</code></pre>
+<p><strong>如果是需要传参的，那么在 <code>command_line</code>  中添加，如下</strong></p>
+<pre class=" language-language-java"><code class="language-language-java">String num1 = "1";
+String num2 = "2";
+String[] command_line = new String[] &#123;executer, file_path,num1,num2&#125;;
 </code></pre>
 </li>
-<li><p>捕获输出流</p>
-<pre class=" language-java"><code class="language-java">BufferedReader in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span>is<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<li>
+<p>定义模块路径（py 的项目路径） <code>module_path</code></p>
+<pre class=" language-language-java"><code class="language-language-java">String module_path="F:\\project\\demo01\\Java_connect_Python";
 </code></pre>
 </li>
-<li><p>读取输出内容</p>
-<pre class=" language-java"><code class="language-java">String line<span class="token punctuation">;</span>
-<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>line <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-</li>
-<li><p>关闭输出流</p>
-<pre class=" language-java"><code class="language-java">in<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<li>
+<p>创建进程类 <code>process</code></p>
+<pre class=" language-language-java"><code class="language-language-java">Process process = Runtime.getRuntime().exec(command_line,null,new File(module_path));
 </code></pre>
 </li>
 </ol>
 </li>
-<li><p>打印状态信息</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// java代码中的 process.waitFor() 返回值（和我们通常意义上见到的0与1定义正好相反）</span>
-<span class="token comment" spellcheck="true">// 返回值为0 - 表示调用python脚本成功；</span>
-<span class="token comment" spellcheck="true">// 返回值为1 - 表示调用python脚本失败。</span>
-<span class="token keyword">int</span> re <span class="token operator">=</span> process<span class="token punctuation">.</span><span class="token function">waitFor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"调用 python 脚本是否成功："</span> <span class="token operator">+</span> re<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<li>
+<p>捕获 <code>process</code>  的输出流，读取输出内容</p>
+<ol>
+<li>
+<p>创建 <code>process</code>  的输入流，此处选择 <code>reader</code> ，可以识别汉语字码</p>
+<pre class=" language-language-java"><code class="language-language-java">InputStreamReader is = new InputStreamReader(process.getInputStream(),"GBK");
+</code></pre>
+</li>
+<li>
+<p>捕获输出流</p>
+<pre class=" language-language-java"><code class="language-language-java">BufferedReader in = new BufferedReader(is);
+</code></pre>
+</li>
+<li>
+<p>读取输出内容</p>
+<pre class=" language-language-java"><code class="language-language-java">String line;
+while ((line = in.readLine()) != null) &#123;
+    System.out.println(line);
+&#125;
+</code></pre>
+</li>
+<li>
+<p>关闭输出流</p>
+<pre class=" language-language-java"><code class="language-language-java">in.close();
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>打印状态信息</p>
+<pre class=" language-language-java"><code class="language-language-java">// java代码中的 process.waitFor() 返回值（和我们通常意义上见到的0与1定义正好相反）
+// 返回值为0 - 表示调用python脚本成功；
+// 返回值为1 - 表示调用python脚本失败。
+int re = process.waitFor();
+System.out.println("调用 python 脚本是否成功：" + re);
 </code></pre>
 </li>
 </ol>
 <p><strong>完整代码如下</strong></p>
-<pre class=" language-java"><code class="language-java">String executer <span class="token operator">=</span> <span class="token string">"python"</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// python绝对路径</span>
-String file_path <span class="token operator">=</span> <span class="token string">"F:\\project\\demo01\\Java_connect_Python\\runtimeDemo2.py"</span><span class="token punctuation">;</span>
-String num1 <span class="token operator">=</span> <span class="token string">"1"</span><span class="token punctuation">;</span>
-String num2 <span class="token operator">=</span> <span class="token string">"2"</span><span class="token punctuation">;</span>
-String<span class="token punctuation">[</span><span class="token punctuation">]</span> command_line <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>executer<span class="token punctuation">,</span> file_path<span class="token punctuation">,</span>num1<span class="token punctuation">,</span>num2<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-String module_path<span class="token operator">=</span><span class="token string">"F:\\project\\demo01\\Java_connect_Python"</span><span class="token punctuation">;</span>
-<span class="token keyword">try</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    Process process <span class="token operator">=</span> Runtime<span class="token punctuation">.</span><span class="token function">getRuntime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>command_line<span class="token punctuation">,</span>null<span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>module_path<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    InputStreamReader is <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InputStreamReader</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"GBK"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    BufferedReader in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span>is<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    String line<span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>line <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    in<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// java代码中的 process.waitFor() 返回值（和我们通常意义上见到的0与1定义正好相反）</span>
-    <span class="token comment" spellcheck="true">// 返回值为0 - 表示调用python脚本成功；</span>
-    <span class="token comment" spellcheck="true">// 返回值为1 - 表示调用python脚本失败。</span>
-    <span class="token keyword">int</span> re <span class="token operator">=</span> process<span class="token punctuation">.</span><span class="token function">waitFor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"调用 python 脚本是否成功："</span> <span class="token operator">+</span> re<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e1<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    e1<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<pre class=" language-language-java"><code class="language-language-java">String executer = "python";// python绝对路径
+String file_path = "F:\\project\\demo01\\Java_connect_Python\\runtimeDemo2.py";
+String num1 = "1";
+String num2 = "2";
+String[] command_line = new String[] &#123;executer, file_path,num1,num2&#125;;
+String module_path="F:\\project\\demo01\\Java_connect_Python";
+try &#123;
+    Process process = Runtime.getRuntime().exec(command_line,null,new File(module_path));
+    InputStreamReader is = new InputStreamReader(process.getInputStream(),"GBK");
+    BufferedReader in = new BufferedReader(is);
+    String line;
+    while ((line = in.readLine()) != null) &#123;
+        System.out.println(line);
+    &#125;
+    in.close();
+    // java代码中的 process.waitFor() 返回值（和我们通常意义上见到的0与1定义正好相反）
+    // 返回值为0 - 表示调用python脚本成功；
+    // 返回值为1 - 表示调用python脚本失败。
+    int re = process.waitFor();
+    System.out.println("调用 python 脚本是否成功：" + re);
+&#125; catch (IOException e1) &#123;
+    e1.printStackTrace();
+&#125; catch (InterruptedException e) &#123;
+    e.printStackTrace();
+&#125;
 </code></pre>
-<h3 id="33-函数解析"><a href="#3-3-函数解析" class="headerlink" title="3.3 函数解析"></a>3.3 函数解析</h3><h4 id="331-类runtime"><a href="#3-3-1-类Runtime" class="headerlink" title="3.3.1 类Runtime"></a>3.3.1 类<code>Runtime</code></h4><p>每个 Java 应用程序都有一个 <code>Runtime</code> 类实例，使应用程序能够与其运行的环境相连接。可以通过  <code>getRuntime</code> 方法获取当前运行时。 </p>
+<h3 id="33-函数解析"><a class="anchor" href="#33-函数解析">#</a> 3.3 函数解析</h3>
+<h4 id="331-类-runtime"><a class="anchor" href="#331-类runtime">#</a> 3.3.1 类 <code>Runtime</code></h4>
+<p>每个 Java 应用程序都有一个  <code>Runtime</code>  类实例，使应用程序能够与其运行的环境相连接。可以通过   <code>getRuntime</code>  方法获取当前运行时。</p>
 <table>
 <thead>
 <tr>
@@ -509,54 +563,62 @@ String module_path<span class="token operator">=</span><span class="token string
 <th>函数</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>static Runtime</code></td>
-<td><code>Runtime.getRuntime()</code> <br>        返回与当前 Java 应用程序相关的运行时对象。</td>
+<td><code>Runtime.getRuntime()</code>  &lt;br/&gt;        返回与当前 Java 应用程序相关的运行时对象。</td>
 </tr>
 <tr>
 <td><code>Process</code></td>
-<td><code>Runtime.getRuntime().exec(String[] cmdarray, String[] envp, File dir) </code>         <br>        在指定环境和工作目录的独立进程中执行指定的命令和变量。</td>
+<td><code>Runtime.getRuntime().exec(String[] cmdarray, String[] envp, File dir) </code>          &lt;br&gt;        在指定环境和工作目录的独立进程中执行指定的命令和变量。</td>
 </tr>
-</tbody></table>
-<h4 id="332-类process"><a href="#3-3-2-类Process" class="headerlink" title="3.3.2 类Process"></a>3.3.2 类<code>Process</code></h4><p>可通过<code>ProcessBuilder.start()</code> 和 <code>Runtime.exec </code>方法创建一个本机进程，并返回 <code>Process</code> 子类的一个实例，该实例可用来控制进程并获得相关信息。</p>
-<p><code>Process </code>类提供了执行从<strong>进程输入、执行输出到进程、等待进程完成、检查进程的退出状态以及销毁（杀掉）进程</strong>的方法。</p>
+</tbody>
+</table>
+<h4 id="332-类-process"><a class="anchor" href="#332-类process">#</a> 3.3.2 类 <code>Process</code></h4>
+<p>可通过 <code>ProcessBuilder.start()</code>  和  <code>Runtime.exec </code> 方法创建一个本机进程，并返回  <code>Process</code>  子类的一个实例，该实例可用来控制进程并获得相关信息。</p>
+<p><code>Process </code> 类提供了执行从<strong>进程输入、执行输出到进程、等待进程完成、检查进程的退出状态以及销毁（杀掉）进程</strong>的方法。</p>
 <table>
 <thead>
 <tr>
 <th>返回值类型</th>
-<th>函数（以下process是Process的对象）</th>
+<th>函数（以下 process 是 Process 的对象）</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>abstract  InputStream</code></td>
-<td><code>process.getInputStream() </code> <br>        获取子进程的输入流。</td>
+<td><code>process.getInputStream() </code>  &lt;br/&gt;        获取子进程的输入流。</td>
 </tr>
 <tr>
 <td><code>abstract  OutputStream</code></td>
-<td><code>process.getOutputStream() </code>         <br>        获取子进程的输出流。</td>
+<td><code>process.getOutputStream() </code>          &lt;br&gt;        获取子进程的输出流。</td>
 </tr>
 <tr>
-<td><code>abstract  int</code><br>返回：进程的出口值。<br>0 表示正常终止，1表示有错误</td>
-<td><code>process.waitFor()</code> <br>        导致当前线程等待，如有必要，一直要等到由该 Process 对象表示的进程已经终止。</td>
+<td><code>abstract  int</code> &lt;br&gt; 返回：进程的出口值。&lt;br&gt;0 表示正常终止，1 表示有错误</td>
+<td><code>process.waitFor()</code>  &lt;br&gt;        导致当前线程等待，如有必要，一直要等到由该 Process 对象表示的进程已经终止。</td>
 </tr>
-</tbody></table>
-<h3 id="34-总结"><a href="#3-4-总结" class="headerlink" title="3.4 总结"></a>3.4 总结</h3><p>比起前面的，显然Java自带的Runtime更加方便、简单粗暴。此方法适用于离线项目。</p>
+</tbody>
+</table>
+<h3 id="34-总结"><a class="anchor" href="#34-总结">#</a> 3.4 总结</h3>
+<p>比起前面的，显然 Java 自带的 Runtime 更加方便、简单粗暴。此方法适用于离线项目。</p>
 <ol>
-<li>优点：<ol>
+<li>优点：
+<ol>
 <li>简单、方便</li>
-<li>不需要部署，相当于直接内嵌在Java项目</li>
-<li>jdk自带功能，不需要其他外部依赖支持</li>
+<li>不需要部署，相当于直接内嵌在 Java 项目</li>
+<li>jdk 自带功能，不需要其他外部依赖支持</li>
 </ol>
 </li>
-<li>缺点：<ol>
-<li>耦合度过大，每次调用Python脚本都需要重写一次</li>
+<li>缺点：
+<ol>
+<li>耦合度过大，每次调用 Python 脚本都需要重写一次</li>
 </ol>
 </li>
 </ol>
 
       <div class="tags">
-          <a href="../../../../../../tags/Java/" rel="tag"><i class="ic i-tag"></i> Java</a>
           <a href="../../../../../../tags/Python/" rel="tag"><i class="ic i-tag"></i> Python</a>
+          <a href="../../../../../../tags/Java/" rel="tag"><i class="ic i-tag"></i> Java</a>
       </div>
   </div>
 
@@ -633,7 +695,7 @@ String module_path<span class="token operator">=</span><span class="token string
     <div class="item right">
       
 
-  <a href="../../../../18/note/Java/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%8F%8A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeun65urj20zk0m81ii.jpg" title="java基础语法及特性">
+  <a href="../../../../18/note/Java/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%8F%8A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclfb3vzhj20zk0m8wny.jpg" title="java基础语法及特性">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> Java</span>
   <h3>java基础语法及特性</h3>
@@ -655,7 +717,7 @@ String module_path<span class="token operator">=</span><span class="token string
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-rest"><span class="toc-number">1.</span> <span class="toc-text">一、 REST</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFrest%E4%BB%A5%E5%8F%8Arestful"><span class="toc-number">1.1.</span> <span class="toc-text">1. 什么是REST以及RESTful</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E8%B5%84%E6%BA%90%E4%B8%8Euri"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 资源与URI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 统一资源接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E8%B5%84%E6%BA%90%E7%9A%84%E8%A1%A8%E8%BF%B0"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3 资源的表述</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-python%E7%BC%96%E5%86%99%E7%AE%80%E5%8D%95%E7%9A%84restful-api"><span class="toc-number">1.2.</span> <span class="toc-text">2. python编写简单的RESTful API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E5%AE%89%E8%A3%85flask%E5%BA%93"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 安装flask库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E7%BC%96%E5%86%99%E7%AE%80%E5%8D%95%E4%BB%A3%E7%A0%81%E6%B5%8B%E8%AF%95%E4%B8%80%E4%B8%8B"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 编写简单代码测试一下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-%E8%AE%BF%E9%97%AElocalhost5000"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 访问localho​st:50​00</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-flask%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4 Flask介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-%E6%80%BB%E7%BB%93"><span class="toc-number">1.2.5.</span> <span class="toc-text">2.5 总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-rpc"><span class="toc-number">2.</span> <span class="toc-text">二、 RPC</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFrpc"><span class="toc-number">2.1.</span> <span class="toc-text">1. 什么是RPC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-call-id%E6%98%A0%E5%B0%84"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.1 Call ID映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-number">2.1.2.</span> <span class="toc-text">1.2 序列化和反序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93"><span class="toc-number">2.1.3.</span> <span class="toc-text">1.3 网络传输</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-rpc%E4%B8%8Erest%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.2.</span> <span class="toc-text">2. RPC与REST的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%9E%E7%8E%B0java%E8%B0%83%E7%94%A8python%E5%87%BD%E6%95%B0"><span class="toc-number">2.3.</span> <span class="toc-text">2. 实现Java调用Python函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8runtime%E6%8E%A8%E8%8D%90"><span class="toc-number">3.</span> <span class="toc-text">三、 直接使用Runtime(推荐)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%97%A0%E5%8F%82%E8%B0%83%E7%94%A8"><span class="toc-number">3.1.</span> <span class="toc-text">1. 无参调用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-python%E4%BB%A3%E7%A0%81"><span class="toc-number">3.1.1.</span> <span class="toc-text">1.1 Python代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-java%E4%BB%A3%E7%A0%81"><span class="toc-number">3.1.2.</span> <span class="toc-text">1.2 java代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BC%A0%E5%8F%82%E8%B0%83%E7%94%A8"><span class="toc-number">3.2.</span> <span class="toc-text">2. 传参调用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-python%E4%BB%A3%E7%A0%81"><span class="toc-number">3.2.1.</span> <span class="toc-text">2.1 Python代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-java%E4%BB%A3%E7%A0%81"><span class="toc-number">3.2.2.</span> <span class="toc-text">2.2 Java代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%A7%A3%E6%9E%90"><span class="toc-number">3.3.</span> <span class="toc-text">3. 解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E5%BD%93py%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96py%E5%87%BD%E6%95%B0%E6%97%B6"><span class="toc-number">3.3.1.</span> <span class="toc-text">3.1 当py调用其他py函数时</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-%E6%AD%A5%E9%AA%A4%E8%A7%A3%E6%9E%90"><span class="toc-number">3.3.2.</span> <span class="toc-text">3.2 步骤解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#33-%E5%87%BD%E6%95%B0%E8%A7%A3%E6%9E%90"><span class="toc-number">3.3.3.</span> <span class="toc-text">3.3 函数解析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#331-%E7%B1%BBruntime"><span class="toc-number">3.3.3.1.</span> <span class="toc-text">3.3.1 类Runtime</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#332-%E7%B1%BBprocess"><span class="toc-number">3.3.3.2.</span> <span class="toc-text">3.3.2 类Process</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#34-%E6%80%BB%E7%BB%93"><span class="toc-number">3.3.4.</span> <span class="toc-text">3.4 总结</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-rest"><span class="toc-number">1.</span> <span class="toc-text"> 一、 REST</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF-rest-%E4%BB%A5%E5%8F%8A-restful"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. 什么是 REST 以及 RESTful</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E8%B5%84%E6%BA%90%E4%B8%8E-uri"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 1.1 资源与 URI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 1.2 统一资源接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E8%B5%84%E6%BA%90%E7%9A%84%E8%A1%A8%E8%BF%B0"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 1.3 资源的表述</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-python-%E7%BC%96%E5%86%99%E7%AE%80%E5%8D%95%E7%9A%84-restful-api"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. python 编写简单的 RESTful API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E5%AE%89%E8%A3%85-flask-%E5%BA%93"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 2.1 安装 flask 库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E7%BC%96%E5%86%99%E7%AE%80%E5%8D%95%E4%BB%A3%E7%A0%81%E6%B5%8B%E8%AF%95%E4%B8%80%E4%B8%8B"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 2.2 编写简单代码测试一下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-%E8%AE%BF%E9%97%AE-localhost5000"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 2.3 访问 localho​st:50​00</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-flask-%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 2.4 Flask 介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-%E6%80%BB%E7%BB%93"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 2.5 总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-rpc"><span class="toc-number">2.</span> <span class="toc-text"> 二、 RPC</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF-rpc"><span class="toc-number">2.1.</span> <span class="toc-text"> 1. 什么是 RPC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-call-id-%E6%98%A0%E5%B0%84"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 1.1 Call ID 映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-number">2.1.2.</span> <span class="toc-text"> 1.2 序列化和反序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93"><span class="toc-number">2.1.3.</span> <span class="toc-text"> 1.3 网络传输</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-rpc-%E4%B8%8E-rest-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.2.</span> <span class="toc-text"> 2. RPC 与 REST 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%9E%E7%8E%B0-java-%E8%B0%83%E7%94%A8-python-%E5%87%BD%E6%95%B0"><span class="toc-number">2.3.</span> <span class="toc-text"> 2. 实现 Java 调用 Python 函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8-runtime-%E6%8E%A8%E8%8D%90"><span class="toc-number">3.</span> <span class="toc-text"> 三、 直接使用 Runtime (推荐)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%97%A0%E5%8F%82%E8%B0%83%E7%94%A8"><span class="toc-number">3.1.</span> <span class="toc-text"> 1. 无参调用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-python-%E4%BB%A3%E7%A0%81"><span class="toc-number">3.1.1.</span> <span class="toc-text"> 1.1 Python 代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-java-%E4%BB%A3%E7%A0%81"><span class="toc-number">3.1.2.</span> <span class="toc-text"> 1.2 java 代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BC%A0%E5%8F%82%E8%B0%83%E7%94%A8"><span class="toc-number">3.2.</span> <span class="toc-text"> 2. 传参调用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-python-%E4%BB%A3%E7%A0%81"><span class="toc-number">3.2.1.</span> <span class="toc-text"> 2.1 Python 代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-java-%E4%BB%A3%E7%A0%81"><span class="toc-number">3.2.2.</span> <span class="toc-text"> 2.2 Java 代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%A7%A3%E6%9E%90"><span class="toc-number">3.3.</span> <span class="toc-text"> 3. 解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E5%BD%93-py-%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96-py-%E5%87%BD%E6%95%B0%E6%97%B6"><span class="toc-number">3.3.1.</span> <span class="toc-text"> 3.1 当 py 调用其他 py 函数时</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-%E6%AD%A5%E9%AA%A4%E8%A7%A3%E6%9E%90"><span class="toc-number">3.3.2.</span> <span class="toc-text"> 3.2 步骤解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#33-%E5%87%BD%E6%95%B0%E8%A7%A3%E6%9E%90"><span class="toc-number">3.3.3.</span> <span class="toc-text"> 3.3 函数解析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#331-%E7%B1%BB-runtime"><span class="toc-number">3.3.3.1.</span> <span class="toc-text"> 3.3.1 类 Runtime</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#332-%E7%B1%BB-process"><span class="toc-number">3.3.3.2.</span> <span class="toc-text"> 3.3.2 类 Process</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#34-%E6%80%BB%E7%BB%93"><span class="toc-number">3.3.4.</span> <span class="toc-text"> 3.4 总结</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -672,7 +734,7 @@ String module_path<span class="token operator">=</span><span class="token string
 
 <nav class="state">
     <div class="item posts">
-      <a href="../archives/">
+      <a href="">
         <span class="count">28</span>
         <span class="name">文章</span>
       </a>
@@ -764,6 +826,49 @@ String module_path<span class="token operator">=</span><span class="token string
     
 <div class="breadcrumb">
 <a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+</div>
+
+    <span><a href="../../../../10/note/hexo/Hexo%E6%90%AD%E5%BB%BAGitHub%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" title="Hexo搭建GitHub静态博客">Hexo搭建GitHub静态博客</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
+</div>
+
+    <span><a href="../../../../20/note/%E9%9A%8F%E7%AC%94/%E5%87%86%E5%A4%87%E5%AD%A6%E4%B9%A0docker/" title="docker随手记">docker随手记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/Python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="../../../../../06/04/note/Python/Python%E8%AF%AD%E6%B3%95%E5%A4%8D%E4%B9%A0/" title="Python语法复习">Python语法复习</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../06/21/note/Python/jupyter/" title="jupty使用方法">jupty使用方法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
 <i class="ic i-angle-right"></i>
 <a href="../../../../../../categories/note/java/" title="分类于 Java">Java</a>
 </div>
@@ -776,9 +881,11 @@ String module_path<span class="token operator">=</span><span class="token string
     
 <div class="breadcrumb">
 <a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
 </div>
 
-    <span><a href="../../../../../06/10/%E8%A5%BF%E7%93%9C%E4%B9%A6%E5%A4%8D%E4%B9%A0%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/" title="西瓜书复习及其部分代码实现">西瓜书复习及其部分代码实现</a></span>
+    <span><a href="../../../../27/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E8%B0%83%E5%8F%96Python%E6%95%B0%E6%8D%AE/" title="前端调用Python数据">前端调用Python数据</a></span>
   </li>
 
       
@@ -787,12 +894,10 @@ String module_path<span class="token operator">=</span><span class="token string
 <div class="breadcrumb">
 <a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
 <i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/Python/" title="分类于 Python">Python</a>
+<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
 </div>
 
-    <span><a href="../../../../28/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/" title="随笔-利用Python批量处理文件">随笔-利用Python批量处理文件</a></span>
+    <span><a href="../../../../27/note/%E5%89%8D%E7%AB%AF/jQuery/" title="jQuery笔记">jQuery笔记</a></span>
   </li>
 
       
@@ -801,7 +906,7 @@ String module_path<span class="token operator">=</span><span class="token string
 <div class="breadcrumb">
 </div>
 
-    <span><a href="../../../../../07/27/note/Python/pytorch/" title="pytorch">pytorch</a></span>
+    <span><a href="../../../../14/%E9%99%88%E5%BA%B7%E4%B8%9C%E5%92%8C%E7%8E%8B%E5%86%B0%E5%86%B0%E7%9A%84%E5%BF%AB%E4%B9%90%E5%B0%8F%E5%B1%8B/" title="陈康东和王冰冰的快乐小屋">陈康东和王冰冰的快乐小屋</a></span>
   </li>
 
       
@@ -820,57 +925,9 @@ String module_path<span class="token operator">=</span><span class="token string
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/Linux/" title="分类于 Linux">Linux</a>
 </div>
 
-    <span><a href="../../../../12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" title="VMware安装中标麒麟">VMware安装中标麒麟</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="../../../../../06/21/note/Python/jupyter/" title="jupty使用方法">jupty使用方法</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
-</div>
-
-    <span><a href="../../../../23/note/%E5%89%8D%E7%AB%AF/CSS/" title="CSS笔记及参考手册">CSS笔记及参考手册</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" title="分类于 经验总结">经验总结</a>
-</div>
-
-    <span><a href="../../../../../06/04/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%8F%E4%B9%A6/" title="算法公式书">算法公式书</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/computer-science/java/" title="分类于 Java">Java</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/computer-science/java/course-1/" title="分类于 零基础学 Java 语言 - 浙江大学 - 翁恺">零基础学 Java 语言 - 浙江大学 - 翁恺</a>
-</div>
-
-    <span><a href="../../../../09/test/" title="my hexo">my hexo</a></span>
+    <span><a href="../../../../../06/25/note/Python/numpy/" title="numpy常用函数">numpy常用函数</a></span>
   </li>
 
   </ul>
@@ -895,13 +952,13 @@ String module_path<span class="token operator">=</span><span class="token string
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">199k 字</span>
+    <span title="站点总字数">195k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:01</span>
+    <span title="站点阅读时长">2:57</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

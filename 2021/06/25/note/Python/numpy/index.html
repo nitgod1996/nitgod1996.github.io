@@ -115,12 +115,12 @@ nitgod1996 = 宁理大神 1996</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipewr8iypj20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipexw3o58j20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipesrnqv3j20zk0m8ava.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeyonbf9j20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipexj2jgzj20zk0m8b09.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicliwyw55j20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicm0fdw5cj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclil3m4ej20zk0m8tn8.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclx6phq6j20zk0m8e36.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipet8c1a2j20zk0m8kct.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicitht3xtj20zk0m8k5v.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeuibk9fj20zk0m8ay2.jpg"></li>
         </ul>
       </div>
     </header>
@@ -164,133 +164,157 @@ nitgod1996 = 宁理大神 1996</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="一-常用函数"><a href="#一、-常用函数" class="headerlink" title="一、 常用函数"></a>一、 常用函数</h1><blockquote>
-<p>注意：文本以array代表np.array类型的<strong>对象</strong></p>
+    <h1 id="一-常用函数"><a class="anchor" href="#一-常用函数">#</a> 一、 常用函数</h1>
+<blockquote>
+<p>注意：文本以 array 代表 np.array 类型的<strong>对象</strong></p>
 </blockquote>
-<h2 id="1-创建"><a href="#1-创建" class="headerlink" title="1. 创建"></a>1. 创建</h2><h3 id="11-自定义创建"><a href="#1-1-自定义创建" class="headerlink" title="1.1 自定义创建"></a>1.1 自定义创建</h3><pre class=" language-python"><code class="language-python">x <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-              <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-              <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-array<span class="token operator">=</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#定义一个numpy类型矩阵</span>
-np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>x<span class="token punctuation">,</span>dtype<span class="token operator">=</span>np<span class="token punctuation">.</span>int<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#括号里直接放数组，则是把list类型转换成numpy</span>
-np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>x<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">,</span>dtype<span class="token operator">=</span>np<span class="token punctuation">.</span>int<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#也可以放表达式，输出结果是bool型的numpy，x是数组</span>
+<h2 id="1-创建"><a class="anchor" href="#1-创建">#</a> 1. 创建</h2>
+<h3 id="11-自定义创建"><a class="anchor" href="#11-自定义创建">#</a> 1.1 自定义创建</h3>
+<pre class=" language-language-python"><code class="language-language-python">x = np.array([[1, 2],
+              [2, 3],
+              [3, 4]])
+array=np.array(x)#定义一个numpy类型矩阵
+np.array(x,dtype=np.int)#括号里直接放数组，则是把list类型转换成numpy
+np.array(x>0,dtype=np.int)#也可以放表达式，输出结果是bool型的numpy，x是数组
 </code></pre>
 <p><strong>指定形状创建</strong></p>
-<pre class=" language-python"><code class="language-python">np<span class="token punctuation">.</span>zeros_like<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#返回形状和x一致的矩阵，元素全部为0</span>
-np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#输出形状为shape(1,2)的全是0的矩阵</span>
+<pre class=" language-language-python"><code class="language-language-python">np.zeros_like(x)#返回形状和x一致的矩阵，元素全部为0
+np.zeros((1,2)) #输出形状为shape(1,2)的全是0的矩阵
 </code></pre>
 <p><strong>循环形式创建</strong></p>
-<pre class=" language-python"><code class="language-python"> x<span class="token operator">=</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">5.0</span><span class="token punctuation">,</span><span class="token number">5.0</span><span class="token punctuation">,</span><span class="token number">0.1</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#在-5.0到5.0以0.1为单位(左闭右开)生成numpy数组[-5.0，-4.9....。4.9]</span>
+<pre class=" language-language-python"><code class="language-language-python"> x=np.arange(-5.0,5.0,0.1)
+#在-5.0到5.0以0.1为单位(左闭右开)生成numpy数组[-5.0，-4.9....。4.9]
 </code></pre>
-<h3 id="12-随机创建"><a href="#1-2-随机创建" class="headerlink" title="1.2 随机创建"></a>1.2 随机创建</h3><p><strong>随机抽取数创建：</strong></p>
-<pre class=" language-python"><code class="language-python">np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span>list<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#从list中随机抽取n个元素组成array</span>
-np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#从[0,a)中随机抽取b个元素组成array</span>
+<h3 id="12-随机创建"><a class="anchor" href="#12-随机创建">#</a> 1.2 随机创建</h3>
+<p><strong>随机抽取数创建：</strong></p>
+<pre class=" language-language-python"><code class="language-language-python">np.random.choice(list,n)#从list中随机抽取n个元素组成array
+np.random.choice(a,b)#从[0,a)中随机抽取b个元素组成array
 </code></pre>
 <p><strong>生成随机数创建：</strong></p>
-<pre class=" language-python"><code class="language-python">a<span class="token operator">=</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">100000</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">#随机创建一个长10000的向量</span>
-a2<span class="token operator">=</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">#随机创建一个100*100的向量</span>
+<pre class=" language-language-python"><code class="language-language-python">a=np.random.rand(100000)    #随机创建一个长10000的向量
+a2=np.random.rand(100,100)    #随机创建一个100*100的向量
 </code></pre>
 <blockquote>
-<p>rand生成的随机数是&lt;1的</p>
+<p>rand 生成的随机数是 &lt; 1 的</p>
 </blockquote>
-<h2 id="2-nparray的性质"><a href="#2-np-array的性质" class="headerlink" title="2. np.array的性质"></a>2. np.array的性质</h2><blockquote>
-<p>np.array是n维向量（矩阵），在Python中，多维向量类型常用的主要有3个：list、DataFrame和np.array。后两者显然更适合科研数据处理，其中，dataframe主要倾向于<strong>数据类型</strong>、<strong>数据格式</strong>等处理；np.array主要倾向于<strong>矩阵运算</strong></p>
+<h2 id="2-nparray-的性质"><a class="anchor" href="#2-nparray的性质">#</a> 2. np.array 的性质</h2>
+<blockquote>
+<p>np.array 是 n 维向量（矩阵），在 Python 中，多维向量类型常用的主要有 3 个：list、DataFrame 和 np.array。后两者显然更适合科研数据处理，其中，dataframe 主要倾向于<strong>数据类型</strong>、<strong>数据格式</strong>等处理；np.array 主要倾向于<strong>矩阵运算</strong></p>
 </blockquote>
-<h2 id="3-矩阵运算"><a href="#3-矩阵运算" class="headerlink" title="3. 矩阵运算"></a>3. 矩阵运算</h2><p><strong>乘法：</strong></p>
+<h2 id="3-矩阵运算"><a class="anchor" href="#3-矩阵运算">#</a> 3. 矩阵运算</h2>
+<p><strong>乘法：</strong></p>
 <ul>
-<li><code>np.dot(x,y)</code>：矩阵乘法（行X列），<code>x</code>和<code>y</code>不一定是<code>np.array</code>类型</li>
-<li><code>x*y</code>：对应位置相乘。1. <code>x</code>必须是<code>np.array</code>类型。2. <code>x</code>和<code>y</code>必须形状相同</li>
+<li><code>np.dot(x,y)</code> ：矩阵乘法（行 X 列）， <code>x</code>  和 <code>y</code>  不一定是 <code>np.array</code>  类型</li>
+<li><code>x*y</code> ：对应位置相乘。1.  <code>x</code>  必须是 <code>np.array</code>  类型。2.  <code>x</code>  和 <code>y</code>  必须形状相同</li>
 </ul>
 <p><strong>加减法：</strong></p>
 <ul>
-<li><code>x+y</code>/<code>x-y</code>：对应位置相加/键、减</li>
+<li><code>x+y</code> / <code>x-y</code> ：对应位置相加 / 键、减</li>
 </ul>
 <p><strong>逻辑运算：</strong></p>
 <ul>
-<li><p><code>x&lt;2</code>：每个元素和2比较，返回一个bool类型矩阵</p>
-<pre class=" language-python"><code class="language-python">x <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-              <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-              <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token operator">></span><span class="token number">2</span><span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">"""
+<li>
+<p><code>x&lt;2</code> ：每个元素和 2 比较，返回一个 bool 类型矩阵</p>
+<pre class=" language-language-python"><code class="language-language-python">x = np.array([[1, 2],
+              [2, 3],
+              [3, 4]])
+print(x>2)
+"""
 [[False False]
  [False  True]
  [ True  True]]
-"""</span>
+"""
 </code></pre>
 </li>
 </ul>
 <p><strong>求和：</strong></p>
 <ul>
-<li><code>np.sum(x)</code>：<strong>所有</strong>元素相加</li>
+<li><code>np.sum(x)</code> ：<strong>所有</strong>元素相加</li>
 </ul>
-<h2 id="4-增删改查"><a href="#4-增删改查" class="headerlink" title="4. 增删改查"></a>4. 增删改查</h2><pre class=" language-python"><code class="language-python">x <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-              <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-              <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<h2 id="4-增删改查"><a class="anchor" href="#4-增删改查">#</a> 4. 增删改查</h2>
+<pre class=" language-language-python"><code class="language-language-python">x = np.array([[1, 2],
+              [2, 3],
+              [3, 4]])
 </code></pre>
-<h3 id="41-增"><a href="#4-1-增" class="headerlink" title="4.1 增"></a>4.1 增</h3><pre class=" language-python"><code class="language-python">b<span class="token operator">=</span>np<span class="token punctuation">.</span>insert<span class="token punctuation">(</span>b<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>a<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
- <span class="token comment" spellcheck="true">#b是被插数组（二维）,a是插入数组（一维），第一个0是插入的位置，第二个0表示插入的是一位数组</span>
+<h3 id="41-增"><a class="anchor" href="#41-增">#</a> 4.1 增</h3>
+<pre class=" language-language-python"><code class="language-language-python">b=np.insert(b,0,a,0)
+ #b是被插数组（二维）,a是插入数组（一维），第一个0是插入的位置，第二个0表示插入的是一位数组
 </code></pre>
-<h3 id="42-删"><a href="#4-2-删" class="headerlink" title="4.2 删"></a>4.2 删</h3><h3 id="43-改"><a href="#4-3-改" class="headerlink" title="4.3 改"></a>4.3 改</h3><ul>
-<li><strong>类型转换：</strong><ul>
-<li><code>array.astype(np.float32) </code>：转换成固定的数据类型float32并返回</li>
-</ul>
-</li>
-<li><strong>矩阵转置：</strong>（行列互换）<ul>
-<li><code>x.T</code>：直接.T即可</li>
-</ul>
-</li>
-</ul>
-<h3 id="44-查"><a href="#4-4-查" class="headerlink" title="4.4 查"></a>4.4 查</h3><p>和dataframe的<code>.iloc[]</code>用法差不多</p>
+<h3 id="42-删"><a class="anchor" href="#42-删">#</a> 4.2 删</h3>
+<h3 id="43-改"><a class="anchor" href="#43-改">#</a> 4.3 改</h3>
 <ul>
-<li><p><strong>取单个元素：</strong><code>x[1,1]</code>：#矩阵第2行第2列的元素</p>
-</li>
-<li><p><strong>取行向量：</strong></p>
+<li><strong>类型转换：</strong>
 <ul>
-<li><code>x[1]</code>：第<strong>2</strong>行的向量</li>
-<li><code>x[1,...]</code>：第<strong>2</strong>的向量</li>
-<li><code>x[[1,2]]</code>：第<strong>2,3</strong>行的向量</li>
+<li><code>array.astype(np.float32) </code> ：转换成固定的数据类型 float32 并返回</li>
 </ul>
 </li>
-<li><p><strong>取列向量：</strong></p>
+<li><strong>矩阵转置：</strong>（行列互换）
 <ul>
-<li><code>x[:,1]</code>  ：矩阵第<strong>2</strong>列的向量（从0开始）</li>
-<li><code>x[...,1]</code>：第<strong>2</strong>列向量</li>
-<li><code>y[:,[1,2]]</code>：矩阵第<strong>2,3</strong>列的向量</li>
+<li><code>x.T</code> ：直接.T 即可</li>
 </ul>
 </li>
-<li><p><strong>获取矩阵形状：</strong></p>
+</ul>
+<h3 id="44-查"><a class="anchor" href="#44-查">#</a> 4.4 查</h3>
+<p>和 dataframe 的 <code>.iloc[]</code>  用法差不多</p>
 <ul>
-<li><p><code>array.shape[n]</code>：返回矩阵第<strong>n+1</strong>维的长度</p>
-<p>如：<code>x[0]</code>返回<strong>3</strong>，<code>x[1]</code>返回<strong>2</strong>。</p>
-<p>​    最外面那层<code>[]</code>包裹的就是第1维（行）</p>
-<p>​    里面一层<code>[]</code>是第2维（列）</p>
-<p>​    再里面是第3维</p>
+<li>
+<p><strong>取单个元素：</strong> <code>x[1,1]</code> ：# 矩阵第 2 行第 2 列的元素</p>
 </li>
-<li><p><code>np.shape(x)</code>：返回矩阵<code>x</code>的各维度长度，此例返回**(3, 2)**</p>
+<li>
+<p><strong>取行向量：</strong></p>
+<ul>
+<li><code>x[1]</code> ：第<strong> 2</strong> 行的向量</li>
+<li><code>x[1,...]</code> ：第<strong> 2</strong> 的向量</li>
+<li><code>x[[1,2]]</code> ：第<strong> 2,3</strong> 行的向量</li>
+</ul>
 </li>
-<li><p><code>np.ndim(x)</code>：返回矩阵的<strong>维数</strong>，此例返回<strong>2</strong></p>
+<li>
+<p><strong>取列向量：</strong></p>
+<ul>
+<li><code>x[:,1]</code>   ：矩阵第<strong> 2</strong> 列的向量（从 0 开始）</li>
+<li><code>x[...,1]</code> ：第<strong> 2</strong> 列向量</li>
+<li><code>y[:,[1,2]]</code> ：矩阵第<strong> 2,3</strong> 列的向量</li>
+</ul>
+</li>
+<li>
+<p><strong>获取矩阵形状：</strong></p>
+<ul>
+<li>
+<p><code>array.shape[n]</code> ：返回矩阵第<strong> n+1</strong> 维的长度</p>
+<p>如： <code>x[0]</code>  返回<strong> 3</strong>， <code>x[1]</code>  返回<strong> 2</strong>。</p>
+<p>​	最外面那层 <code>[]</code>  包裹的就是第 1 维（行）</p>
+<p>​	里面一层 <code>[]</code>  是第 2 维（列）</p>
+<p>​	再里面是第 3 维</p>
+</li>
+<li>
+<p><code>np.shape(x)</code> ：返回矩阵 <code>x</code>  的各维度长度，此例返回 **(3, 2)**</p>
+</li>
+<li>
+<p><code>np.ndim(x)</code> ：返回矩阵的<strong>维数</strong>，此例返回<strong> 2</strong></p>
 </li>
 </ul>
 </li>
-<li><p><strong>获取特殊值的索引：</strong></p>
+<li>
+<p><strong>获取特殊值的索引：</strong></p>
 <ul>
-<li><code>array.argmax()</code>：返回向量最大值的索引</li>
-<li><code>np.argmax(array,axis=n)</code>：返回向量在<strong>第n+1维</strong>最大值的索引，可不写</li>
+<li><code>array.argmax()</code> ：返回向量最大值的索引</li>
+<li><code>np.argmax(array,axis=n)</code> ：返回向量在<strong>第 n+1 维</strong>最大值的索引，可不写</li>
 <li></li>
 </ul>
 </li>
 </ul>
-<h1 id="二-其他函数"><a href="#二、-其他函数" class="headerlink" title="二、 其他函数"></a>二、 其他函数</h1><pre class=" language-python"><code class="language-python">
-<span class="token number">9</span><span class="token punctuation">.</span> numpy<span class="token punctuation">.</span>frombuffer<span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> dtype<span class="token operator">=</span>float<span class="token punctuation">,</span> count<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> offset<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true">#通过使用指定的缓冲区来创建数组</span>
+<h1 id="二-其他函数"><a class="anchor" href="#二-其他函数">#</a> 二、 其他函数</h1>
+<pre class=" language-language-python"><code class="language-language-python">
+9. numpy.frombuffer(buffer, dtype=float, count=-1, offset=0)
+        #通过使用指定的缓冲区来创建数组
 </code></pre>
 <p>参数</p>
-<p>  缓冲区：它表示暴露缓冲区接口的对象。</p>
-<p>  dtype：代表返回的数据类型数组的数据类型。</p>
-<p>  count：代表返回的ndarray的长度。默认值为-1。</p>
-<p>  偏移量：代表读取的起始位置。默认值为0。</p>
-<h3 id="23-迭代nditer"><a href="#2-3-迭代nditer" class="headerlink" title="2.3 迭代nditer"></a>2.3 迭代nditer</h3><p>it=np.nditer(a, flags=[<strong>‘multi_index’</strong>], op_flags=[<strong>‘readwrite’</strong>])</p>
+<p>缓冲区：它表示暴露缓冲区接口的对象。</p>
+<p>dtype：代表返回的数据类型数组的数据类型。</p>
+<p>count：代表返回的 ndarray 的长度。默认值为 - 1。</p>
+<p>偏移量：代表读取的起始位置。默认值为 0。</p>
+<h3 id="23-迭代-nditer"><a class="anchor" href="#23-迭代nditer">#</a> 2.3 迭代 nditer</h3>
+<p>it=np.nditer(a, flags=[<strong>'multi_index'</strong>], op_flags=[<strong>'readwrite'</strong>])</p>
 <table>
 <thead>
 <tr>
@@ -299,18 +323,22 @@ a2<span class="token operator">=</span>np<span class="token punctuation">.</span
 <th>op_flags</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>迭代的数组</td>
-<td><strong>‘multi_index’*<em><strong>：正常迭代（</strong>每次迭代可以跟踪一种索引类型</em>*）</strong></td>
-<td>设置对原数组的权限  默认read_only</td>
+<td><strong>'multi_index'****：正常迭代（<strong>每次迭代可以跟踪一种索引类型</strong>）</strong></td>
+<td>设置对原数组的权限  默认 read_only</td>
 </tr>
-</tbody></table>
-<p>while not it.finished:<br>   print(it[0],it.multi_index)<br>   it.iternext()</p>
+</tbody>
+</table>
+<p>while not it.finished:<br>
+print(it[0],it.multi_index)<br>
+it.iternext()</p>
 <p>/</p>
 <p>for x in it:</p>
-<p>·it.finished:迭代器是否到最后</p>
-<p>·it.iternext()：迭代器往后迭代一个位置</p>
-<p>·it.multi_index:迭代器所指元素在原数组的位置（行列…）</p>
+<p>・it.finished: 迭代器是否到最后</p>
+<p>・it.iternext ()：迭代器往后迭代一个位置</p>
+<p>・it.multi_index: 迭代器所指元素在原数组的位置（行列...）</p>
 
   </div>
 
@@ -377,7 +405,7 @@ a2<span class="token operator">=</span>np<span class="token punctuation">.</span
     <div class="item left">
       
 
-  <a href="../../../../21/note/Python/jupyter/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeybxm1pj20zk0m8niv.jpg" title="jupty使用方法">
+  <a href="../../../../21/note/Python/jupyter/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicljgocqbj20zk0m8e81.jpg" title="jupty使用方法">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>jupty使用方法</h3>
@@ -387,7 +415,7 @@ a2<span class="token operator">=</span>np<span class="token punctuation">.</span
     <div class="item right">
       
 
-  <a href="../../../../../07/27/note/Python/pytorch/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeun65urj20zk0m81ii.jpg" title="pytorch">
+  <a href="../../../../../07/27/note/Python/pytorch/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexj2jgzj20zk0m8b09.jpg" title="pytorch">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>pytorch</h3>
@@ -409,7 +437,7 @@ a2<span class="token operator">=</span>np<span class="token punctuation">.</span
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">一、 常用函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA"><span class="toc-number">1.1.</span> <span class="toc-text">1. 创建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%9B%E5%BB%BA"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 自定义创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E9%9A%8F%E6%9C%BA%E5%88%9B%E5%BB%BA"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 随机创建</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-nparray%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">1.2.</span> <span class="toc-text">2. np.array的性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text">3. 矩阵运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-number">1.4.</span> <span class="toc-text">4. 增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#41-%E5%A2%9E"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 增</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42-%E5%88%A0"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 删</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#43-%E6%94%B9"><span class="toc-number">1.4.3.</span> <span class="toc-text">4.3 改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#44-%E6%9F%A5"><span class="toc-number">1.4.4.</span> <span class="toc-text">4.4 查</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E5%85%B6%E4%BB%96%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">二、 其他函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#23-%E8%BF%AD%E4%BB%A3nditer"><span class="toc-number">2.0.1.</span> <span class="toc-text">2.3 迭代nditer</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text"> 一、 常用函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. 创建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%9B%E5%BB%BA"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 1.1 自定义创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E9%9A%8F%E6%9C%BA%E5%88%9B%E5%BB%BA"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 1.2 随机创建</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-nparray-%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. np.array 的性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text"> 3. 矩阵运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-number">1.4.</span> <span class="toc-text"> 4. 增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#41-%E5%A2%9E"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 4.1 增</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42-%E5%88%A0"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 4.2 删</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#43-%E6%94%B9"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 4.3 改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#44-%E6%9F%A5"><span class="toc-number">1.4.4.</span> <span class="toc-text"> 4.4 查</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E5%85%B6%E4%BB%96%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text"> 二、 其他函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#23-%E8%BF%AD%E4%BB%A3-nditer"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 2.3 迭代 nditer</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
       </div>
@@ -423,7 +451,7 @@ a2<span class="token operator">=</span>np<span class="token punctuation">.</span
 
 <nav class="state">
     <div class="item posts">
-      <a href="../archives/">
+      <a href="">
         <span class="count">28</span>
         <span class="name">文章</span>
       </a>
@@ -514,76 +542,9 @@ a2<span class="token operator">=</span>np<span class="token punctuation">.</span
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/Python/" title="分类于 Python">Python</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="../../../../../05/17/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-Java%E8%B0%83%E7%94%A8Python%E8%84%9A%E6%9C%AC/" title="随笔-Java调用Python脚本">随笔-Java调用Python脚本</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-</div>
-
-    <span><a href="../../../../10/%E8%A5%BF%E7%93%9C%E4%B9%A6%E5%A4%8D%E4%B9%A0%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/" title="西瓜书复习及其部分代码实现">西瓜书复习及其部分代码实现</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/Python/" title="分类于 Python">Python</a>
-</div>
-
-    <span><a href="../../../../04/note/Python/Python%E8%AF%AD%E6%B3%95%E5%A4%8D%E4%B9%A0/" title="Python语法复习">Python语法复习</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/computer-science/java/" title="分类于 Java">Java</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/computer-science/java/course-1/" title="分类于 零基础学 Java 语言 - 浙江大学 - 翁恺">零基础学 Java 语言 - 浙江大学 - 翁恺</a>
-</div>
-
-    <span><a href="../../../../../05/09/test/" title="my hexo">my hexo</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
-</div>
-
-    <span><a href="../../../../../05/27/note/%E5%89%8D%E7%AB%AF/JavaScript/" title="JavaScript基础语法">JavaScript基础语法</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
-</div>
-
-    <span><a href="../../../../../05/20/note/%E9%9A%8F%E7%AC%94/%E5%87%86%E5%A4%87%E5%AD%A6%E4%B9%A0docker/" title="docker随手记">docker随手记</a></span>
+    <span><a href="../../../../../08/10/note/%E5%89%8D%E7%AB%AF/ps%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" title="ps学习之路">ps学习之路</a></span>
   </li>
 
       
@@ -599,9 +560,81 @@ a2<span class="token operator">=</span>np<span class="token punctuation">.</span
   <li class="item">
     
 <div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/software/" title="分类于 software">software</a>
 </div>
 
-    <span><a href="../../../../../07/27/note/Python/pytorch/" title="pytorch">pytorch</a></span>
+    <span><a href="../../../../../05/10/note/software/maven%E5%A4%8D%E4%B9%A0/" title="maven复习">maven复习</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/Python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="../../../../../05/13/note/Python/pandas/" title="Python机器学习库">Python机器学习库</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="../../../../../05/23/note/%E5%89%8D%E7%AB%AF/CSS/" title="CSS笔记及参考手册">CSS笔记及参考手册</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="../../../../../04/23/note/%E5%89%8D%E7%AB%AF/echarts/" title="echarts用法简单记录">echarts用法简单记录</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="../../../../../05/12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" title="VMware安装中标麒麟">VMware安装中标麒麟</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="../../../../../05/27/note/%E5%89%8D%E7%AB%AF/jQuery/" title="jQuery笔记">jQuery笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/" title="降低数据稀疏度的算法研究">降低数据稀疏度的算法研究</a></span>
   </li>
 
       
@@ -616,18 +649,6 @@ a2<span class="token operator">=</span>np<span class="token punctuation">.</span
 </div>
 
     <span><a href="../../../../../05/28/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/" title="随笔-利用Python批量处理文件">随笔-利用Python批量处理文件</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
-</div>
-
-    <span><a href="../../../../../05/27/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E8%B0%83%E5%8F%96Python%E6%95%B0%E6%8D%AE/" title="前端调用Python数据">前端调用Python数据</a></span>
   </li>
 
   </ul>
@@ -652,13 +673,13 @@ a2<span class="token operator">=</span>np<span class="token punctuation">.</span
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">199k 字</span>
+    <span title="站点总字数">195k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:01</span>
+    <span title="站点阅读时长">2:57</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
