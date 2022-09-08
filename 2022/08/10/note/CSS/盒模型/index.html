@@ -1,0 +1,682 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="../images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="宁理大神1996" href="https://nitgod1996.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="宁理大神1996" href="https://nitgod1996.com/atom.xml" />
+<link rel="alternate" type="application/json" title="宁理大神1996" href="https://nitgod1996.com/feed.json" />
+
+
+
+<link rel="stylesheet" href="../css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="https://nitgod1996.com/2022/08/10/note/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B/">
+
+
+
+  <title>
+CSS 盒模型 |
+nitgod1996 = 宁理大神 1996</title>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">CSS 盒模型
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-08-10 18:06:22">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-10T18:06:22+08:00">2022-08-10</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>2.8k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>3 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">nitgod1996</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipet4bz0yj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicljitigmj20zk0m87fp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicitf0kl1j20zk0m87fe.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipexw3o58j20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclffsa1cj20zk0m811l.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="../../../../../../index.html">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://nitgod1996.com/2022/08/10/note/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="../../../../../../images/avatar.jpg">
+    <meta itemprop="name" content="宁理大神1996">
+    <meta itemprop="description" content=", 宁理大神的个人博客">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="宁理大神 1996">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <blockquote>
+<p>容器从某种程度上来说其实就是父元素</p>
+</blockquote>
+<h1 id="css-基础框盒模型盒子模型"><a class="anchor" href="#css基础框盒模型盒子模型">#</a> css 基础框盒模型（盒子模型）</h1>
+<p>CSS 传统布局基于盒子模型，所有元素都在一个盒子（容器）中</p>
+<p>每个盒子有 4 个边界：</p>
+<ol>
+<li><em>内容边界</em> <em>Content edge</em>（最里面显示内容）</li>
+<li><em>内边距边界</em> <em>Padding Edge</em>（content + 内边距 padding）</li>
+<li><em>边框边界</em> <em>Border Edge</em>（padding edge + 边框宽度 border width）</li>
+<li><em>外边框边界</em> <em>Margin Edge</em>（border edge + 外边距 margin）</li>
+</ol>
+<p><img data-src="/2022/08/10/note/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B/boxmodel-(3).png" alt="CSS Box model"></p>
+<p><img data-src="/2022/08/10/note/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B/boxmodel.gif" alt="CSS 框模型"></p>
+<h2 id="1-内容边界"><a class="anchor" href="#1-内容边界">#</a> 1. 内容边界</h2>
+<p>容纳着元素的 “真实内容”，例如文本、图像等，其尺寸为内容宽度和内容高度确定。</p>
+<p>主要 css 属性：</p>
+<ul>
+<li>
+<p><code>width</code> ：内容宽度。% 或 px 或 rem。% 是相对父元素的百分比</p>
+</li>
+<li>
+<p><code>height</code> ：内容高度。% 或 px 或 rem</p>
+</li>
+<li>
+<p><code>min-width</code> ：最小内容宽度。这种一般是针对可以灵活变动的元素</p>
+</li>
+<li>
+<p><code>max-width</code> ：最大内容宽度</p>
+</li>
+<li>
+<p><code>min-height</code> ：最小内容高度</p>
+</li>
+<li>
+<p><code>max-height</code> ：最大内容高度</p>
+</li>
+<li>
+<p><code>box-sizing</code> ：</p>
+<ul>
+<li><code>content-box</code> ：默认。在宽度和高度<strong>之外</strong>绘制元素的内边距和边框。&lt;font color=red&gt;height 和 width 绑定内容边界 &lt;/font&gt;</li>
+<li><code>border-box</code> ：<strong>向内</strong>绘制内边距和边框。换句话说，&lt;font color=red&gt;height 和 width 绑定边框边界 &lt;/font&gt;</li>
+</ul>
+<p><img data-src="/2022/08/10/note/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B/../../%25E5%2589%258D%25E7%25AB%25AF/HTML+CSS/image-20220224221608202.png" alt="image-20220224221608202"> <img data-src="/2022/08/10/note/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B/image-20220224221629723.png" alt="image-20220224221629723"></p>
+</li>
+</ul>
+<h2 id="2-内边距边界"><a class="anchor" href="#2-内边距边界">#</a> 2. 内边距边界</h2>
+<p>内容边界 + padding。是边框（border）内的那块空间。<strong>内边距</strong>则是内容和边框之间的那块空白区域</p>
+<p>主要 css 属性：</p>
+<ul>
+<li><code>padding-top</code> ：上内边距。px、%、rem</li>
+<li><code>padding-right</code> ：右内边距。</li>
+<li><code>padding-bottom</code> ：下内边距</li>
+<li><code>padding-left</code> ：左内边距</li>
+<li><code>padding</code> ：内边距，以上的<strong>简写</strong></li>
+</ul>
+<h2 id="3-边框边界"><a class="anchor" href="#3-边框边界">#</a> 3. 边框边界</h2>
+<p>内边距边界 + 边框宽度。边框由 <code>border</code>  属性控制</p>
+<p>主要 css 属性：</p>
+<ul>
+<li><code>border-width</code> ：边框宽度。</li>
+<li><code>border-style</code> ：边框样式：
+<ul>
+<li><code>dotted</code> 	定义点状</li>
+<li><code>dashed</code> 	定义虚线</li>
+<li><code>solid</code> 	定义实线。</li>
+<li><code>double</code> 	定义双线</li>
+</ul>
+</li>
+<li><code>border-color</code> ：边框颜色</li>
+<li><code>border</code> ：以上简写</li>
+<li>可以分别控制各边边框
+<ul>
+<li><code>border-top</code> ：上边框
+<ul>
+<li><code>border-top-width</code> ：上边框宽度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>box-sizing</code> ：如果 <code>box-sizing</code>  设置 <code>border-box</code> ，则可用 <code>width</code>  和 <code>height</code>  设置边框边界</li>
+</ul>
+<h2 id="4-外边距边界"><a class="anchor" href="#4-外边距边界">#</a> 4. 外边距边界</h2>
+<p>盒子最外围边界，边框边界 + margin。<strong>外边距</strong>是边框与别的盒子之间的空白区域</p>
+<p>主要 css 属性：</p>
+<ul>
+<li><code>margin-top</code> ：上外边距。px、%、rem</li>
+<li><code>margin-right</code> ：右外边距。</li>
+<li><code>margin-bottom</code> ：下外边距</li>
+<li><code>margin-left</code> ：左外边距</li>
+<li><code>margin</code> ：外边距，以上的<strong>简写</strong></li>
+</ul>
+<h3 id="41-负外边距"><a class="anchor" href="#41-负外边距">#</a> 4.1 负外边距</h3>
+<p>不同于内边距和边框宽度，外边距可以设置为<strong>负值</strong>。负外边距有一些特殊用途，比如让元素<strong>重叠</strong>或者拉伸到<strong>比容器还宽</strong>。</p>
+<p>虽然负外边距在有些时候很实用，不过还是要尽量避免，不然网页样式可能会失控。</p>
+<h3 id="42-外边距折叠"><a class="anchor" href="#42-外边距折叠">#</a> 4.2 外边距折叠</h3>
+<p>当<strong>顶部</strong>和<strong>底部</strong>的外边距相邻时，就会重叠，产生单个外边距。这种现象被称作<strong>折叠</strong>。折叠规则是取<strong>较大</strong>的边距。（其实就是把外边距视为<strong>自己边框 - 相邻盒子边框的距离</strong>）。&lt;font color=red&gt; 只有上下外边距会重叠，左右不会 &lt;/font&gt;</p>
+<p>如：段落（ <code>&lt;p&gt;</code> ）默认有  <code>1em</code>  的上外边 距和  <code>1em</code>  的下外边距。但当前后叠放两个段落时，它们的外边 距不会相加产生一个  <code>2em</code>  的间距，而会<strong>折叠</strong>，只产生  <code>1em</code>  的间隔。</p>
+<blockquote>
+<p>折叠外边距就像 “个人空间”。如果在公交车站站着两个人，他们每个人都认为较为舒适的 个人空间应为 3 英尺 ①，那么他们就会乐意间隔 3 英尺，而不必间隔 6 英尺才让双方满意。</p>
+</blockquote>
+<h4 id="421-多个外边距折叠"><a class="anchor" href="#421-多个外边距折叠">#</a> 4.2.1 多个外边距折叠</h4>
+<p><strong>所有</strong>在页面上紧挨着的容器都<strong>可能</strong>会产生外边距折叠。如下例</p>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>Come join us!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="5"></td><td><pre>            <span class="token comment">&lt;!-- 无论嵌套多少层，都会产生折叠 --></span></pre></td></tr><tr><td data-num="6"></td><td><pre>            The Franklin Running club meets at 6:00pm</pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p>上例中，有 3 个不同的外边距折叠到一块了： <code>&lt;h2&gt;</code>  底部的外边距、 <code>&lt;div&gt;</code>  顶部的外边距、 <code>&lt;p&gt;</code>  顶部的外边距。计算值分别是 19.92px、0px、16px。因此最终间隔还是 19.92px， 也就是三者中<strong>最大的值</strong>。</p>
+<p>但是父子间的外边距折叠有个前提，那就是<strong> padding 和 border=0</strong></p>
+<h4 id="422-避免外边距折叠"><a class="anchor" href="#422-避免外边距折叠">#</a> 4.2.2 避免外边距折叠</h4>
+<p>外边距折叠从某种意义上来说也是<strong>外边距扩展</strong>。因为当父元素下面紧挨着的子元素外边距<strong>大于</strong>父元素的外边距时，父元素的外边距会变大（和子元素一样），因此有时候避免外边距折叠是很有必要的。</p>
+<p>有以下避免方法：</p>
+<ul>
+<li><strong>父元素</strong> <code>overflow: auto</code> （或者非 <code> visible</code>  的值），防止和<strong>子元素</strong>折叠。这种方式<strong>副作用最小</strong>。</li>
+<li><strong>父元素</strong>加上边框或者内边距，防止和<strong>子元素</strong>折叠</li>
+<li>设置为<strong>浮动元素 float</strong>、<strong>内联块 inline</strong>、<strong>绝对定位 absolute</strong> 或<strong>固定定位 fixed</strong> 时，外边距不会在它外面折叠</li>
+<li>使用  <code>Flexbox </code> 布局时，<strong>弹性布局</strong>内的元素之间不会发生外边距折叠。<strong>网格布局</strong>同理</li>
+<li>当元素显示为  <code>table-cell</code>  时不具备外边距属性，因此它们不会折叠</li>
+</ul>
+<h1 id="容器尺寸问题"><a class="anchor" href="#容器尺寸问题">#</a> 容器尺寸问题</h1>
+<blockquote>
+<p>容器的宽度默认由其性质决定（块级元素还是行内元素）；容器的高度默认<strong>由内容决定</strong>， 而不是容器自己决定。</p>
+</blockquote>
+<h2 id="1-溢出问题"><a class="anchor" href="#1-溢出问题">#</a> 1. 溢出问题</h2>
+<p>当明确设置一个容器的尺寸时，内容可能会<strong>溢出</strong>容器。如下</p>
+<p><img data-src="/2022/08/10/note/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B/image-20220811162054496.png" alt="image-20220811162054496"></p>
+<p>这种情况可以通过 <code>overflow</code>  属性控制</p>
+<ul>
+<li><code>visible</code> （默认值）：溢出可见。 所有内容可见，即使溢出容器边缘</li>
+<li><code>hidden</code> ：溢出隐藏。溢出容器内边距边缘的内容<strong>被裁剪</strong>，无法看见。</li>
+<li><code>scroll</code> ：溢出滚动。容器出现<strong>滚动条</strong>，用户可以通过滚动查看剩余内容。</li>
+<li><code>auto</code> ：只有内容溢出时容器才会出现<strong>滚动条</strong>。</li>
+</ul>
+<p>可以用  <code>overflow-x</code>  属性<strong>单独控制水平方向</strong>的溢出，或者用  <code>overflow-y</code>  控制<strong>垂直方向</strong> 溢出。</p>
+<h2 id="2-百分比宽高"><a class="anchor" href="#2-百分比宽高">#</a> 2. 百分比宽高</h2>
+<p>百分比参考的是元素容器块（其实就是父元素）的大小，而容器的<strong>高度</strong>通常是由 <strong>子元素的高度</strong>决定的（如果没有显示的设置过的话）。那么如果使用<strong>百分比</strong>设置子元素的<strong>高度</strong>，那么就会造成<strong>死循环</strong>，就会被浏览器忽略</p>
+<p>因此，要想让百分比高度生效，必须显示地声明容器（父元素）的高度</p>
+<h1 id="等间距排列猫头鹰选择器"><a class="anchor" href="#等间距排列猫头鹰选择器">#</a> 等间距排列（猫头鹰选择器）</h1>
+<p>经常会有这样的场景：一排组件（如卡片）需要等间距的排列，最左边和最右边都<strong>紧贴</strong>屏幕或外部容器（没有最左外边距和最右的外边距）。</p>
+<p>这就有了个问题，统一设置外边距总有一边是会有空白的，有时候会把所有都设置一个外边距，然后到最边上的一个元素用 0 覆盖。其实有个更加方便的方法就是使用<strong>猫头鹰选择器</strong> <code>* + *</code> 。</p>
+<p><code>* + *</code> ：选中所有元素的除了兄弟中排第一的所有元素。</p>
+<p>这样一来，就可以设置除了第一个之外的所有卡片的左边距即可。</p>
+<p>当然，也可以只用 <code>+ *</code> ，针对性地选中对应容器下的元素</p>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-08-11 16:42:51" itemprop="dateModified" datetime="2022-08-11T16:42:51+08:00">2022-08-11</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="../images/wechatpay.png" alt="宁理大神1996 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="../images/alipay.png" alt="宁理大神1996 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="../images/paypal.png" alt="宁理大神1996 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>宁理大神1996 <i class="ic i-at"><em>@</em></i>宁理大神 1996
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="../../../../../../https:/nitgod1996.com/2022/08/10/note/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B/" title="CSS 盒模型">https://nitgod1996.com/2022/08/10/note/CSS/盒模型/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="../../../../03/note/JavaScript/%E5%86%85%E5%AD%98%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giph4baakhj20zk0m8h5q.jpg" title="JavaScript内存、作用域和闭包">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>JavaScript内存、作用域和闭包</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="../%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicitcxhpij20zk0m8hdt.jpg" title="选择器与优先级">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>选择器与优先级</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#css-%E5%9F%BA%E7%A1%80%E6%A1%86%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text"> css 基础框盒模型（盒子模型）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%86%85%E5%AE%B9%E8%BE%B9%E7%95%8C"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. 内容边界</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%86%85%E8%BE%B9%E8%B7%9D%E8%BE%B9%E7%95%8C"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. 内边距边界</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BE%B9%E6%A1%86%E8%BE%B9%E7%95%8C"><span class="toc-number">1.3.</span> <span class="toc-text"> 3. 边框边界</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A4%96%E8%BE%B9%E8%B7%9D%E8%BE%B9%E7%95%8C"><span class="toc-number">1.4.</span> <span class="toc-text"> 4. 外边距边界</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#41-%E8%B4%9F%E5%A4%96%E8%BE%B9%E8%B7%9D"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 4.1 负外边距</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42-%E5%A4%96%E8%BE%B9%E8%B7%9D%E6%8A%98%E5%8F%A0"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 4.2 外边距折叠</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#421-%E5%A4%9A%E4%B8%AA%E5%A4%96%E8%BE%B9%E8%B7%9D%E6%8A%98%E5%8F%A0"><span class="toc-number">1.4.2.1.</span> <span class="toc-text"> 4.2.1 多个外边距折叠</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#422-%E9%81%BF%E5%85%8D%E5%A4%96%E8%BE%B9%E8%B7%9D%E6%8A%98%E5%8F%A0"><span class="toc-number">1.4.2.2.</span> <span class="toc-text"> 4.2.2 避免外边距折叠</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E5%B0%BA%E5%AF%B8%E9%97%AE%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text"> 容器尺寸问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%BA%A2%E5%87%BA%E9%97%AE%E9%A2%98"><span class="toc-number">2.1.</span> <span class="toc-text"> 1. 溢出问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%99%BE%E5%88%86%E6%AF%94%E5%AE%BD%E9%AB%98"><span class="toc-number">2.2.</span> <span class="toc-text"> 2. 百分比宽高</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AD%89%E9%97%B4%E8%B7%9D%E6%8E%92%E5%88%97%E7%8C%AB%E5%A4%B4%E9%B9%B0%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text"> 等间距排列（猫头鹰选择器）</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="宁理大神1996"
+      data-src="../images/avatar.jpg">
+  <p class="name" itemprop="name">宁理大神1996</p>
+  <div class="description" itemprop="description">宁理大神的个人博客</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="../archives/">
+        <span class="count">50</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="../categories/">
+        <span class="count">14</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="../tags/">
+        <span class="count">22</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3lvdXJuYW1l" title="https:&#x2F;&#x2F;github.com&#x2F;yourname"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPXlvdXJpZA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;yourid"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="../index.html" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../archives/" rel="section"><i class="ic i-archive"></i>归档</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="../../../../03/note/JavaScript/%E5%86%85%E5%AD%98%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="../%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../09/08/note/CSS/flex%E5%B8%83%E5%B1%80/" title="flex布局（弹性布局）">flex布局（弹性布局）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/Python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="../../../../../../2021/05/29/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E5%A4%84%E7%90%86json/" title="随笔-利用Python处理json">随笔-利用Python处理json</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2021/07/27/note/Python/pytorch/" title="pytorch">pytorch</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="../../../../../../2021/05/27/note/%E5%89%8D%E7%AB%AF/JavaScript/" title="JavaScript基础语法">JavaScript基础语法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2021/05/14/%E9%99%88%E5%BA%B7%E4%B8%9C%E5%92%8C%E7%8E%8B%E5%86%B0%E5%86%B0%E7%9A%84%E5%BF%AB%E4%B9%90%E5%B0%8F%E5%B1%8B/" title="陈康东和王冰冰的快乐小屋">陈康东和王冰冰的快乐小屋</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../15/note/CSS/CSS%E5%85%AB%E8%82%A1/" title="CSS八股">CSS八股</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
+</div>
+
+    <span><a href="../../../../../../2021/05/27/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E8%B0%83%E5%8F%96Python%E6%95%B0%E6%8D%AE/" title="前端调用Python数据">前端调用Python数据</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="../../../../../../2021/05/26/note/%E5%89%8D%E7%AB%AF/html%EF%BC%88%E5%BC%83%E7%94%A8%EF%BC%89/" title="html常用功能手册">html常用功能手册</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2021/11/10/note/%E5%89%8D%E7%AB%AF/HTML+CSS/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../04/11/markdown%E8%AF%AD%E6%B3%95/" title="markdown语法">markdown语法</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">宁理大神1996 @ nitgod1996</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">566k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">8:35</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/08/10/note/CSS/盒模型/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="../../../../../../js/app.js?v=0.2.5"></script>
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

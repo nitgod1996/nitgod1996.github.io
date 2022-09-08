@@ -88,12 +88,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipey84bjtj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclflwv2aj20zk0m84qp.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipexe4oykj20zk0m87ji.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclhpw3lwj20zk0m8gvw.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclxp31goj20zk0m8qv5.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giph47e9vtj20zk0m8x6l.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipesng5oej20zk0m87d4.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciukx8a7j20zk0m8aio.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciusoyjnj219g0u0x56.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclhtuo6nj20zk0m8ttm.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicivghyooj20zk0m8dir.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclfdu6exj20zk0m87hw.jpg"></li>
         </ul>
       </div>
     </header>
@@ -120,7 +120,7 @@
           
 <article class="item">
   <div class="cover">
-    <a href="2021/05/10/note/hexo/Hexo%E6%90%AD%E5%BB%BAGitHub%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" itemprop="url" title="Hexo搭建GitHub静态博客"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gicm0fdw5cj20zk0m8hdt.jpg"></a>
+    <a href="2021/05/10/note/hexo/Hexo%E6%90%AD%E5%BB%BAGitHub%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" itemprop="url" title="Hexo搭建GitHub静态博客"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gicm07ih54j20zk0m84qp.jpg"></a>
   </div>
   <div class="info">
     
@@ -220,120 +220,103 @@
         
 <article class="item">
   <div class="cover">
-    <a href="2022/09/07/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/demo000002/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclxp31goj20zk0m8qv5.jpg"></a>
+    <a href="2022/09/08/note/CSS/flex%E5%B8%83%E5%B1%80/" itemprop="url" title="flex布局（弹性布局）"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1giclwuom7cj20zk0m8dvn.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-09-07 20:00:42">
+  <span class="item" title="创建时间：2022-09-08 22:36:24">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-09-07T20:00:42+08:00">2022-09-07</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-09-08T22:36:24+08:00">2022-09-08</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>472</span>
+    <span>2.4k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>1 分钟</span>
+    <span>2 分钟</span>
   </span>
 </div>
 
-    <h3><a href="2022/09/07/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/demo000002/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="2022/09/08/note/CSS/flex%E5%B8%83%E5%B1%80/" itemprop="url" title="flex布局（弹性布局）">flex布局（弹性布局）</a></h3>
     <div class="excerpt">
-        /**
-* 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
-*
-*
-* @param array int整型一维数组
-* @param target int整型
-* @return int整型二维数组
-*/
-function combinationSum(array, target) {
-// write code here
-let ans = [];
-let dfs = (curIdx, curSum, temp) =&gt; {
-if (curIdx &gt;= array.length || curSum &gt; target) {
-return;
-}...
+        # 1.2 flex 布局（弹性盒子）
+flex 意味弹性布局，用来给盒子模型提供最大的灵活性。
+
+设置 flex 布局后，子元素的 float 、 clear 、 vertical-align 属性将失效
+
+# 1.2.1 flex 简介
+采用 flex 布局的元素，称为 flex 容器，简称 “容器”。他的所有子元素自动成为容器成员，成为 flex 项目，简称 “项目”。&amp;lt;font color=red &amp;gt; 需要在容器（父元素）通过 display 属性设置 flex 布局，然后在项目（子元素）设置 flex 属性。webkit 内核浏览器要用...
     </div>
-    <a href="2022/09/07/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/demo000002/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="2022/09/08/note/CSS/flex%E5%B8%83%E5%B1%80/" itemprop="url" title="flex布局（弹性布局）" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="2022/09/02/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/demo111/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gipeu7txpzj20zk0m81kx.jpg"></a>
+    <a href="2022/09/08/note/JavaScript/%E6%9C%9F%E7%BA%A6%E3%80%81%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" itemprop="url" title="异步与事件循环"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1giclx29mstj20zk0m8hdt.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-09-02 14:53:20">
+  <span class="item" title="创建时间：2022-09-08 22:36:09">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-09-02T14:53:20+08:00">2022-09-02</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-09-08T22:36:09+08:00">2022-09-08</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>593</span>
+    <span>18k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>1 分钟</span>
+    <span>16 分钟</span>
   </span>
 </div>
 
-    <h3><a href="2022/09/02/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/demo111/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="2022/09/08/note/JavaScript/%E6%9C%9F%E7%BA%A6%E3%80%81%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" itemprop="url" title="异步与事件循环">异步与事件循环</a></h3>
     <div class="excerpt">
-        let Tree = function (val, children) {
-this.val = val || 0;
-this.children = children || [];
-};
-let method = (n, nums1, nums2) =&gt; {
-let tree = new Array(n).fill(0).map(() =&gt; [0, [], 0]);
-for (let i = 0; i &lt; n - 1; i++) {
-tree[i][0] = nums2[i];
-tree[nums1[i] - 1][1].push(i + 1);
-}
-tree[n -...
+        主要复习promise以及练习算输出顺序的题
+      
     </div>
-    <a href="2022/09/02/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/demo111/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="2022/09/08/note/JavaScript/%E6%9C%9F%E7%BA%A6%E3%80%81%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" itemprop="url" title="异步与事件循环" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="2022/09/02/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/xiec/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gicm07ih54j20zk0m84qp.jpg"></a>
+    <a href="2022/09/08/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%85%AB%E8%82%A1/" itemprop="url" title="未命名"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gipewf5l51j20zk0m8b29.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-09-02 13:32:45">
+  <span class="item" title="创建时间：2022-09-08 22:33:15">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-09-02T13:32:45+08:00">2022-09-02</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-09-08T22:33:15+08:00">2022-09-08</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>0</span>
+    <span>1.3k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -344,86 +327,100 @@ tree[n -...
   </span>
 </div>
 
-    <h3><a href="2022/09/02/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/xiec/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="2022/09/08/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%85%AB%E8%82%A1/" itemprop="url" title="未命名">未命名</a></h3>
     <div class="excerpt">
-        
+        # 十大排序
+# 冒泡排序
+
+两重循环
+每次循环比较 i 和 i-1 ，把更大的换到后面，遍历结束后最大的在最后。
+第二次循环长度 - 1，以此类推
+
+复杂度： n^2 ，空间 1
+# 选择排序
+
+两重循环
+每次循环找出当前最小值，遍历一轮结束，与 “最前” 元素互换
+第二次循环长度 - 1（j=i），以此类推
+
+复杂度： n^2 ，空间 1
+# 插入排序
+
+两重循环
+每次循环将当前元素与前面元素比较，如果小于前者则前者后移，继续和新的前者比较。
+直到到达合适位置插入（每轮结束前面 i 个元素都是有序的）
+第二次循环长度 - 1（j=i），以此类推
+
+复杂度： n^2 ，空间 1
+#...
     </div>
-    <a href="2022/09/02/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/xiec/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="2022/09/08/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%85%AB%E8%82%A1/" itemprop="url" title="未命名" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="2022/09/01/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/CSS/%E5%A4%96%E8%BE%B9%E8%B7%9D%E6%8A%98%E5%8F%A0/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclffsa1cj20zk0m811l.jpg"></a>
+    <a href="2022/08/28/note/JavaScript/JavaScript%E5%85%AB%E8%82%A1/" itemprop="url" title="JavaScript八股文"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gipeuibk9fj20zk0m8ay2.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-09-01 17:31:32">
+  <span class="item" title="创建时间：2022-08-28 21:27:31">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-09-01T17:31:32+08:00">2022-09-01</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-28T21:27:31+08:00">2022-08-28</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>102</span>
+    <span>12k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>1 分钟</span>
+    <span>11 分钟</span>
   </span>
 </div>
 
-    <h3><a href="2022/09/01/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/CSS/%E5%A4%96%E8%BE%B9%E8%B7%9D%E6%8A%98%E5%8F%A0/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="2022/08/28/note/JavaScript/JavaScript%E5%85%AB%E8%82%A1/" itemprop="url" title="JavaScript八股文">JavaScript八股文</a></h3>
     <div class="excerpt">
-        &lt;!DOCTYPE html&gt;
+        # 数据类型
+# 基本数据类型
+6 大基本数据类型
 
-Document
+number ：数值。
 
-h2 {
-margin: 19px;
-}
-div {
-margin: 15px;
-}
-p {
-margin: 16px;
-}
-
-Come join us!
-
-The Franklin Running club meets at 6:00pm
+isNaN 判断任何参数是否是数值或者是否可以转换成数值。例：
+console.log(isNaN(NaN));//trueconsole.log(isNaN(10));//falseconsole.log(isNaN(&quot;10&quot;));//false, 可以转为...
     </div>
-    <a href="2022/09/01/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/CSS/%E5%A4%96%E8%BE%B9%E8%B7%9D%E6%8A%98%E5%8F%A0/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="2022/08/28/note/JavaScript/JavaScript%E5%85%AB%E8%82%A1/" itemprop="url" title="JavaScript八股文" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="2022/08/30/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/474.%20%E4%B8%80%E5%92%8C%E9%9B%B6/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclip4jbpj20zk0m87cv.jpg"></a>
+    <a href="2022/08/18/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%85%AB%E8%82%A1/" itemprop="url" title="操作系统八股"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gicis3attqj20zk0m8k7l.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-08-30 17:37:36">
+  <span class="item" title="创建时间：2022-08-18 11:09:36">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-08-30T17:37:36+08:00">2022-08-30</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-18T11:09:36+08:00">2022-08-18</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>379</span>
+    <span>1.6k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -434,257 +431,250 @@ The Franklin Running club meets at 6:00pm
   </span>
 </div>
 
-    <h3><a href="2022/08/30/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/474.%20%E4%B8%80%E5%92%8C%E9%9B%B6/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="2022/08/18/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%85%AB%E8%82%A1/" itemprop="url" title="操作系统八股">操作系统八股</a></h3>
     <div class="excerpt">
-        /**
-* 0-1背包
-* 很明显，0和1的数量均为weight，而子集长度是value
-* @param {string[]} strs
-* @param {number} m
-* @param {number} n
-* @return {number}
-*/
-var findMaxForm = function (strs, m, n) {
-strs.forEach((item) =&gt; {
-let zeros = 0,
-ones = 0;
-for (let i = 0; i &lt; item.length; i++) {
-if (item[i] === &#39;0&#39;)...
+        # 线程和进程的区别
+# 什么是进程？
+操作系统中最核心的概念就是进程，进程是对正在运行中的程序的一个抽象，是系统进行资源分配和调度的基本单位
+操作系统的其他所有内容都是围绕着进程展开的，负责执行这些任务的是 CPU
+进程是一种抽象的概念，从来没有统一的标准定义看，一般由程序、数据集合和进程控制块三部分组成：
+
+程序：用于描述进程要完成的功能，是控制进程执行的指令集
+数据集合：程序在执行时所需要的数据和工作区
+程序控制块：包含进程的描述信息和控制信息，是进程存在的唯一标志
+
+#...
     </div>
-    <a href="2022/08/30/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/474.%20%E4%B8%80%E5%92%8C%E9%9B%B6/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="2022/08/18/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%85%AB%E8%82%A1/" itemprop="url" title="操作系统八股" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="2022/08/30/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/494.%20%E7%9B%AE%E6%A0%87%E5%92%8C/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gipew28b65j20zk0m8hdt.jpg"></a>
+    <a href="2022/08/15/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%85%AB%E8%82%A1%E6%96%87/" itemprop="url" title="计算机网络八股文"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gicljitigmj20zk0m87fp.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-08-30 15:25:55">
+  <span class="item" title="创建时间：2022-08-15 21:28:35">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-08-30T15:25:55+08:00">2022-08-30</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-15T21:28:35+08:00">2022-08-15</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>1.5k</span>
+    <span>14k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>1 分钟</span>
+    <span>13 分钟</span>
   </span>
 </div>
 
-    <h3><a href="2022/08/30/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/494.%20%E7%9B%AE%E6%A0%87%E5%92%8C/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="2022/08/15/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%85%AB%E8%82%A1%E6%96%87/" itemprop="url" title="计算机网络八股文">计算机网络八股文</a></h3>
     <div class="excerpt">
-        /**
-* dp[i][j]保存前i个数自由组合（加/减）得到j的种数
-* 因为nums可以随意添加+-，因此target正负的种数一定是一样的
-* @param {number[]} nums
-* @param {number} target
-* @return {number}
-*/
-var findTargetSumWays1 = function (nums, target) {
-target = Math.abs(target);
-let n = nums.length,
-m = target + nums.reduce((a, b) =&gt; Math.abs(a) +...
+        # HTTP
+# HTTP 状态码
+
+1XX（临时响应）：协议处于中间状态，还需要后序操作
+
+100（继续）：请求者应该继续提出请求（表示服务器已经收到请求的一部分，正在等待其余部分）（如 post，先传 header，服务器响应 100，再发 body，响应 200）
+101（切换协议）：客户端请求服务器切换协议，服务器已确认并准备切换协议（如 http 升级...
     </div>
-    <a href="2022/08/30/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/494.%20%E7%9B%AE%E6%A0%87%E5%92%8C/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="2022/08/15/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%85%AB%E8%82%A1%E6%96%87/" itemprop="url" title="计算机网络八股文" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="2022/08/30/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/1049.%20%E6%9C%80%E5%90%8E%E4%B8%80%E5%9D%97%E7%9F%B3%E5%A4%B4%E7%9A%84%E9%87%8D%E9%87%8F%20II/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gipev1x5e4j20zk0m8b29.jpg"></a>
+    <a href="2022/08/15/note/CSS/CSS%E5%85%AB%E8%82%A1/" itemprop="url" title="CSS八股"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gipevo9j1jj20zk0m8e81.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-08-30 13:53:40">
+  <span class="item" title="创建时间：2022-08-15 21:22:23">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-08-30T13:53:40+08:00">2022-08-30</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-15T21:22:23+08:00">2022-08-15</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>1k</span>
+    <span>2.9k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>1 分钟</span>
+    <span>3 分钟</span>
   </span>
 </div>
 
-    <h3><a href="2022/08/30/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/1049.%20%E6%9C%80%E5%90%8E%E4%B8%80%E5%9D%97%E7%9F%B3%E5%A4%B4%E7%9A%84%E9%87%8D%E9%87%8F%20II/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="2022/08/15/note/CSS/CSS%E5%85%AB%E8%82%A1/" itemprop="url" title="CSS八股">CSS八股</a></h3>
     <div class="excerpt">
-        /**
-* 抽象成0-1背包。d[i][j]保存的是前i个石头组合（加减）与j的最小绝对值差
-* @param {number[]} stones
-* @return {number}
-*/
-var lastStoneWeightII1 = function (stones) {
-if (stones.length === 1) {
-return stones[0];
-}
-stones.sort((a, b) =&gt; a - b);
-let sum = stones.reduce((a, b) =&gt; a + b);
-let dp = new Array(stones.length -...
+        # 说说你对盒子模型的理解
+浏览器的渲染引擎会将所有元素表示为一个个矩形的盒子，盒子主要由四部分组成。
+
+content ：元素内容，显示文本或图像
+padding ：元素内边距，这是元素内容和元素边框之间的距离
+border ：元素边框，这个边框可以设置宽度
+margin ：元素外边距，这是元素边框和另一个元素之间的距离。
+
+标准盒子模型中， width 定义的就是 content-box 的尺寸，怪异盒子模型是 border-box 的尺寸，也就是 content+padding+border 的宽度。通过 box-sizing 设置选用哪种模型。
+# 外边距重叠
+另外 margin...
     </div>
-    <a href="2022/08/30/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/1049.%20%E6%9C%80%E5%90%8E%E4%B8%80%E5%9D%97%E7%9F%B3%E5%A4%B4%E7%9A%84%E9%87%8D%E9%87%8F%20II/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="2022/08/15/note/CSS/CSS%E5%85%AB%E8%82%A1/" itemprop="url" title="CSS八股" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/416.%20%E5%88%86%E5%89%B2%E7%AD%89%E5%92%8C%E5%AD%90%E9%9B%86/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclx29mstj20zk0m8hdt.jpg"></a>
+    <a href="2022/08/11/note/CSS/%E7%9B%B8%E5%AF%B9%E5%8D%95%E4%BD%8Drem%E5%92%8Cem/" itemprop="url" title="相对单位和自适应"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1giclx6phq6j20zk0m8e36.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-08-29 21:10:53">
+  <span class="item" title="创建时间：2022-08-11 13:57:00">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-08-29T21:10:53+08:00">2022-08-29</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-11T13:57:00+08:00">2022-08-11</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>454</span>
+    <span>3.2k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>1 分钟</span>
+    <span>3 分钟</span>
   </span>
 </div>
 
-    <h3><a href="2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/416.%20%E5%88%86%E5%89%B2%E7%AD%89%E5%92%8C%E5%AD%90%E9%9B%86/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="2022/08/11/note/CSS/%E7%9B%B8%E5%AF%B9%E5%8D%95%E4%BD%8Drem%E5%92%8Cem/" itemprop="url" title="相对单位和自适应">相对单位和自适应</a></h3>
     <div class="excerpt">
-        /**
-* @param {number[]} nums
-* @return {boolean}
-*/
-var canPartition1 = function (nums) {
-let sum = nums.reduce((a, b) =&gt; a + b);
-if (sum % 2 === 1) {
-return false;
-}
-let dp = new Array(nums.length).fill(0).map(() =&gt; new Array(sum / 2 + 1).fill(0));
-nums.sort((a, b) =&gt; a - b);
-for (let j =...
+        由于显示器的大小、分辨率的差别，同时 100px 在不同的用户页面上可能相差很大，每个用户的体验也可能千差万别。
+不管我们 喜欢与否，都得抛弃以前那种固定宽度的栏目设计，开始考虑响应式设计
+# em
+em 是最常见的相对长度单位，适合基于特定的字号进行排版。在 CSS 中，1em 等于当前元素的字号，其准确值取决于作用的元素
+如下：
+.padded&amp;#123; font-size: 16px; padding: 1em; border: 1px solid red;&amp;#125;如图：（因为是块级元素，因此宽度是父元素的 100%)
+可以看到， padding 是 16px...
     </div>
-    <a href="2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/416.%20%E5%88%86%E5%89%B2%E7%AD%89%E5%92%8C%E5%AD%90%E9%9B%86/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="2022/08/11/note/CSS/%E7%9B%B8%E5%AF%B9%E5%8D%95%E4%BD%8Drem%E5%92%8Cem/" itemprop="url" title="相对单位和自适应" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/96.%20%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclh3brzpj20zk0m8ann.jpg"></a>
+    <a href="2022/08/10/note/CSS/%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7/" itemprop="url" title="选择器与优先级"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gipex2cdtbj20zk0m8x6p.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-08-29 20:56:09">
+  <span class="item" title="创建时间：2022-08-10 18:08:26">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-08-29T20:56:09+08:00">2022-08-29</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-10T18:08:26+08:00">2022-08-10</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>135</span>
+    <span>7k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>1 分钟</span>
+    <span>6 分钟</span>
   </span>
 </div>
 
-    <h3><a href="2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/96.%20%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="2022/08/10/note/CSS/%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7/" itemprop="url" title="选择器与优先级">选择器与优先级</a></h3>
     <div class="excerpt">
-        /**
-* Sum(左边i个节点的种类*右边n-i-1的种类)
-* @param {number} n
-* @return {number}
-*/
-var numTrees = function (n) {
-let dp = new Array(n + 1).fill(0);
-dp[0] = 1;
-for (let i = 1; i
+        # 选择器
+# 基础选择器
+
+#id -id 选择器：通过 id 属性和 #+id值 匹配，优先级为 1,0,0
+.class - 类选择器：通过 class 属性和 .+class值 匹配，优先级为 0,1,0
+tagname - 标签（元素）选择器：通过 标签名 匹配（直接写标签名即可），优先级 0,0,1
+* - 通用选择器：通过 * 匹配，匹配所有元素，优先级 0,0,0
+
+例：
+&amp;lt;h1 id=&quot;page-title&quot; class=&quot;title&quot; style=&quot;font-family:...
     </div>
-    <a href="2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/96.%20%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="2022/08/10/note/CSS/%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7/" itemprop="url" title="选择器与优先级" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/343.%20%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gicitht3xtj20zk0m8k5v.jpg"></a>
+    <a href="2022/08/10/note/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B/" itemprop="url" title="CSS盒模型"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gipetlbztpj20zk0m84qp.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-08-29 20:34:10">
+  <span class="item" title="创建时间：2022-08-10 18:06:22">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-08-29T20:34:10+08:00">2022-08-29</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-10T18:06:22+08:00">2022-08-10</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>437</span>
+    <span>2.8k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>1 分钟</span>
+    <span>3 分钟</span>
   </span>
 </div>
 
-    <h3><a href="2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/343.%20%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="2022/08/10/note/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B/" itemprop="url" title="CSS盒模型">CSS盒模型</a></h3>
     <div class="excerpt">
-        /**
-* @param {number} n
-* @return {number}
-*/
-var integerBreak = function (n) {
-let dp = new Array(n + 1);
-dp[0] = 0;
-dp[1] = 1;
-for (let i = 2; i &lt;= 2 3=&quot;6&quot; n; i++) { let max=&quot;0;&quot; for (let j=&quot;1;&quot; &lt; i; j++) * (i - j) 是单纯的把整数拆分为两个数相乘，而j dp[i j]是拆分成两个以及两个以上的个数相乘。 j]...
+        容器从某种程度上来说其实就是父元素
+
+# css 基础框盒模型（盒子模型）
+CSS 传统布局基于盒子模型，所有元素都在一个盒子（容器）中
+每个盒子有 4 个边界：
+
+内容边界 Content edge（最里面显示内容）
+内边距边界 Padding Edge（content + 内边距 padding）
+边框边界 Border Edge（padding edge + 边框宽度 border width）
+外边框边界 Margin Edge（border edge + 外边距 margin）
+
+# 1. 内容边界
+容纳着元素的 “真实内容”，例如文本、图像等，其尺寸为内容宽度和内容高度确定。
+主要...
     </div>
-    <a href="2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/343.%20%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="2022/08/10/note/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B/" itemprop="url" title="CSS盒模型" class="btn">more...</a>
   </div>
 </article>
 
@@ -695,7 +685,7 @@ for (let i = 2; i &lt;= 2 3=&quot;6&quot; n; i++) { let max=&quot;0;&quot; for (
   
   <nav class="pagination">
     <div class="inner">
-    <span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="page/14/">14</a><a class="extend next" rel="next" href="page/2/"><i class="ic i-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="page/5/">5</a><a class="extend next" rel="next" href="page/2/"><i class="ic i-angle-right" aria-label="下一页"></i></a>
     </div>
   </nav>
 
@@ -722,8 +712,8 @@ for (let i = 2; i &lt;= 2 3=&quot;6&quot; n; i++) { let max=&quot;0;&quot; for (
 
 <nav class="state">
     <div class="item posts">
-      <a href="">
-        <span class="count">140</span>
+      <a href="../archives/">
+        <span class="count">50</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -813,70 +803,7 @@ for (let i = 2; i &lt;= 2 3=&quot;6&quot; n; i++) { let max=&quot;0;&quot; for (
 <div class="breadcrumb">
 </div>
 
-    <span><a href="2022/07/28/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%BB%83%E4%B9%A0/%E5%A0%86%E6%8E%92%E5%BA%8F/" title="未命名">未命名</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="2022/07/31/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E6%95%B0%E7%BB%84/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/69%20x%20%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9%20/" title="未命名">未命名</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="2021/05/08/my-hexo/" title="my hexo">my hexo</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="2022/08/03/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%93%88%E5%B8%8C%E8%A1%A8/202.%20%E5%BF%AB%E4%B9%90%E6%95%B0/" title="未命名">未命名</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="2022/07/31/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E6%95%B0%E7%BB%84/%E7%A7%BB%E5%8A%A8%E5%85%83%E7%B4%A0/283.%20%E7%A7%BB%E5%8A%A8%E9%9B%B6/" title="未命名">未命名</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="2022/07/28/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%BB%83%E4%B9%A0/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%93%88%E5%B8%8C/" title="未命名">未命名</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/62.%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84/" title="未命名">未命名</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="2022/08/08/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%9B%9E%E6%BA%AF/131.%20%E5%88%86%E5%89%B2%E5%9B%9E%E6%96%87%E4%B8%B2/" title="未命名">未命名</a></span>
+    <span><a href="2021/05/14/%E9%99%88%E5%BA%B7%E4%B8%9C%E5%92%8C%E7%8E%8B%E5%86%B0%E5%86%B0%E7%9A%84%E5%BF%AB%E4%B9%90%E5%B0%8F%E5%B1%8B/" title="陈康东和王冰冰的快乐小屋">陈康东和王冰冰的快乐小屋</a></span>
   </li>
 
       
@@ -885,12 +812,22 @@ for (let i = 2; i &lt;= 2 3=&quot;6&quot; n; i++) { let max=&quot;0;&quot; for (
 <div class="breadcrumb">
 <a href="categories/note/" title="分类于 笔记">笔记</a>
 <i class="ic i-angle-right"></i>
-<a href="categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
-<i class="ic i-angle-right"></i>
-<a href="categories/note/%E9%9A%8F%E7%AC%94/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%AC%94/" title="分类于 每日一笔">每日一笔</a>
+<a href="categories/note/software/" title="分类于 software">software</a>
 </div>
 
-    <span><a href="2021/06/02/note/%E9%9A%8F%E7%AC%94/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%AC%94/%E5%9F%BA%E4%BA%8EPython%E5%92%8Cecharts%E7%9A%84%E5%8A%A8%E6%80%81%E5%9B%BE/" title="每日一笔-基于Python和echarts的动态图">每日一笔-基于Python和echarts的动态图</a></span>
+    <span><a href="2021/05/10/note/software/maven%E5%A4%8D%E4%B9%A0/" title="maven复习">maven复习</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="categories/note/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="2021/05/18/note/Java/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%8F%8A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="java基础语法及特性">java基础语法及特性</a></span>
   </li>
 
       
@@ -899,7 +836,64 @@ for (let i = 2; i &lt;= 2 3=&quot;6&quot; n; i++) { let max=&quot;0;&quot; for (
 <div class="breadcrumb">
 </div>
 
-    <span><a href="2022/08/19/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E8%B4%AA%E5%BF%83/1005.%20K%20%E6%AC%A1%E5%8F%96%E5%8F%8D%E5%90%8E%E6%9C%80%E5%A4%A7%E5%8C%96%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C/" title="未命名">未命名</a></span>
+    <span><a href="2022/08/11/note/CSS/%E7%9B%B8%E5%AF%B9%E5%8D%95%E4%BD%8Drem%E5%92%8Cem/" title="相对单位和自适应">相对单位和自适应</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="2021/07/27/note/Python/python%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" title="python使用技巧">python使用技巧</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="2021/06/25/note/Python/numpy/" title="numpy常用函数">numpy常用函数</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="2022/08/10/note/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B/" title="CSS盒模型">CSS盒模型</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="2021/05/27/note/%E5%89%8D%E7%AB%AF/JavaScript/" title="JavaScript基础语法">JavaScript基础语法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="2021/06/07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/" title="降低数据稀疏度的算法研究">降低数据稀疏度的算法研究</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="2022/04/11/markdown%E8%AF%AD%E6%B3%95/" title="markdown语法">markdown语法</a></span>
   </li>
 
   </ul>
@@ -924,13 +918,13 @@ for (let i = 2; i &lt;= 2 3=&quot;6&quot; n; i++) { let max=&quot;0;&quot; for (
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">537k 字</span>
+    <span title="站点总字数">566k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">8:09</span>
+    <span title="站点阅读时长">8:35</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

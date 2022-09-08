@@ -88,12 +88,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipexbei4hj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclx6phq6j20zk0m8e36.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclh5u05ej20zk0m87df.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipetfk5zwj20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclh3brzpj20zk0m8ann.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeyonbf9j20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclh3brzpj20zk0m8ann.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicljitigmj20zk0m87fp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclffsa1cj20zk0m811l.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipexw3o58j20zk0m8e81.jpg"></li>
         </ul>
       </div>
     </header>
@@ -119,117 +119,117 @@
         
 <article class="item">
   <div class="cover">
-    <a href="../../2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/63.%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84%20II/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gipesrnqv3j20zk0m8ava.jpg"></a>
+    <a href="../../2022/08/03/note/JavaScript/%E5%86%85%E5%AD%98%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/" itemprop="url" title="JavaScript内存、作用域和闭包"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1giclhfehz7j20zk0m8u0x.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-08-29 20:21:20">
+  <span class="item" title="创建时间：2022-08-03 20:09:22">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-08-29T20:21:20+08:00">2022-08-29</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-03T20:09:22+08:00">2022-08-03</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>576</span>
+    <span>8.3k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>1 分钟</span>
+    <span>8 分钟</span>
   </span>
 </div>
 
-    <h3><a href="../../2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/63.%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84%20II/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="../../2022/08/03/note/JavaScript/%E5%86%85%E5%AD%98%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/" itemprop="url" title="JavaScript内存、作用域和闭包">JavaScript内存、作用域和闭包</a></h3>
     <div class="excerpt">
-        /**
-* @param {number[][]} obstacleGrid
-* @return {number}
-*/
-var uniquePathsWithObstacles = function (obstacleGrid) {
-let m = obstacleGrid.length,
-n = obstacleGrid[0].length;
-let dp = new Array(m).fill(0).map(() =&gt; new Array(n));
-dp[0][0] = obstacleGrid[0][0] ^ 1;
-for (let i = 0; i &lt; m; i++)...
+        # 执行上下文（作用域）
+
+任何变量（不管包含的是原始值还是引用值）都存在于某个执行上下文中（也称作用域）。
+
+以上是红宝书中的原话。（之前一直搞不懂上下文和作用域有什么区别。。。其实就是同一个东西）
+作用域决定了变量的生命周期，以及他们可以访问代码的哪些部分。
+JavaScript 有 3 种作用域：
+
+全局作用域：最外层作用域，即 window 对象的作用域
+函数作用域：函数内的作用域，也是最复杂的一个作用域。
+
+var 的声明范围即为函数作用域
+
+块级作用域： &amp;#123;&amp;#125; 包裹的作用域，如 for 、 while 、 if 等块。单独的...
     </div>
-    <a href="../../2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/63.%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84%20II/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="../../2022/08/03/note/JavaScript/%E5%86%85%E5%AD%98%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/" itemprop="url" title="JavaScript内存、作用域和闭包" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="../../2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/62.%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclgi503lj20zk0m8hdt.jpg"></a>
+    <a href="../../2022/07/31/note/JavaScript/JavaScript%E5%87%BD%E6%95%B0/" itemprop="url" title="JavaScript函数"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1giclfw2t96j20zk0m8x6p.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-08-29 20:16:47">
+  <span class="item" title="创建时间：2022-07-31 20:10:23">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-08-29T20:16:47+08:00">2022-08-29</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-07-31T20:10:23+08:00">2022-07-31</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>289</span>
+    <span>11k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>1 分钟</span>
+    <span>10 分钟</span>
   </span>
 </div>
 
-    <h3><a href="../../2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/62.%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="../../2022/07/31/note/JavaScript/JavaScript%E5%87%BD%E6%95%B0/" itemprop="url" title="JavaScript函数">JavaScript函数</a></h3>
     <div class="excerpt">
-        /**
-* dp是二维数组，保存到每个格子的路径数
-* @param {number} m
-* @param {number} n
-* @return {number}
-*/
-var uniquePaths = function (m, n) {
-let dp = new Array(m).fill(0).map(() =&gt; new Array(n));
-dp[0][0] = 1;
-for (let i = 0; i &lt; m; i++) {
-for (let j = 0; j &lt; n; j++) {
-if (i === 0 || j === 0) {
-dp[i][j] =...
+        # Function 函数快速入门
+JavaScript 中函数实际上是对象，每个函数都是 Function 类型的实例
+定义一个函数：函数有多种定义方法
+
+函数声明定义：这种方法会自动提升，即调用函数的代码可以写在定义函数的代码上面。（因为在执行代码前，JavaScript 引擎会先扫描一遍，发现函数声明就将其提升到源代码树顶部，即函数声明提升。）
+function sum(a,b)&amp;#123; return a+b;&amp;#125;
+
+函数表达式
+let sum=function(a,b)&amp;#123; return...
     </div>
-    <a href="../../2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/62.%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="../../2022/07/31/note/JavaScript/JavaScript%E5%87%BD%E6%95%B0/" itemprop="url" title="JavaScript函数" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="../../2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/746.%20%E4%BD%BF%E7%94%A8%E6%9C%80%E5%B0%8F%E8%8A%B1%E8%B4%B9%E7%88%AC%E6%A5%BC%E6%A2%AF/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclh3brzpj20zk0m8ann.jpg"></a>
+    <a href="../../2022/04/27/note/%E5%89%8D%E7%AB%AF/Mock/" itemprop="url" title="未命名"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1giph4baakhj20zk0m8h5q.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-08-29 20:11:21">
+  <span class="item" title="创建时间：2022-04-27 21:11:32">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-08-29T20:11:21+08:00">2022-08-29</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-04-27T21:11:32+08:00">2022-04-27</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>204</span>
+    <span>0</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -240,147 +240,115 @@ dp[i][j] =...
   </span>
 </div>
 
-    <h3><a href="../../2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/746.%20%E4%BD%BF%E7%94%A8%E6%9C%80%E5%B0%8F%E8%8A%B1%E8%B4%B9%E7%88%AC%E6%A5%BC%E6%A2%AF/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="../../2022/04/27/note/%E5%89%8D%E7%AB%AF/Mock/" itemprop="url" title="未命名">未命名</a></h3>
     <div class="excerpt">
-        /**
-*dp[i] = Math.min(dp[i - 1] + cost[i - 1], dp[i - 2] + cost[i - 2]);
-* @param {number[]} cost
-* @return {number}
-*/
-var minCostClimbingStairs = function (cost) {
-let len = cost.length;
-let dp = new Array(len + 1);
-dp[0] = 0;
-dp[1] = 0;
-for (let i = 2; i
+        
     </div>
-    <a href="../../2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/746.%20%E4%BD%BF%E7%94%A8%E6%9C%80%E5%B0%8F%E8%8A%B1%E8%B4%B9%E7%88%AC%E6%A5%BC%E6%A2%AF/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="../../2022/04/27/note/%E5%89%8D%E7%AB%AF/Mock/" itemprop="url" title="未命名" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="../../2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/70.%20%E7%88%AC%E6%A5%BC%E6%A2%AF/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclgrvbd6j20zk0m8qv5.jpg"></a>
+    <a href="../../2022/04/27/note/%E5%89%8D%E7%AB%AF/axios/" itemprop="url" title="axios"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gipevuctzzj20zk0m84qp.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-08-29 20:06:25">
+  <span class="item" title="创建时间：2022-04-27 10:43:36">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-08-29T20:06:25+08:00">2022-08-29</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-04-27T10:43:36+08:00">2022-04-27</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>157</span>
+    <span>8.3k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>1 分钟</span>
+    <span>8 分钟</span>
   </span>
 </div>
 
-    <h3><a href="../../2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/70.%20%E7%88%AC%E6%A5%BC%E6%A2%AF/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="../../2022/04/27/note/%E5%89%8D%E7%AB%AF/axios/" itemprop="url" title="axios">axios</a></h3>
     <div class="excerpt">
-        /**
-* 每种都可以从前一层+1 和 前2层+2得到，因此是n-1和n-2之和，也就是斐波那契数的变体
-* @param {number} n
-* @return {number}
-*/
-var climbStairs = function (n) {
-let dp = new Array(n + 1);
-dp[0] = 1;
-dp[1] = 1;
-for (let i = 2; i
+        # 一、 axios 基本介绍
+# axios, ajax 和 fetch 的比较
+# Ajax
+前端程序员常说的 Ajax 是 Asynchronous JavaScript and XML 的缩写，意思是异步网络请求。区别于传统 web 开发中采用的同步方式。
+Ajax 带来的最大影响就是页面可以无刷新的请求数据。以往，页面表单提交数据，在用户点击完”submit“按钮后，页面会强制刷新一下，体验十分不友好。
+实现一个 Ajax 请求
+在现代浏览器上实现一个 Ajax 请求是非常容易的，
+var request = new XMLHttpRequest(); // 创建...
     </div>
-    <a href="../../2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/70.%20%E7%88%AC%E6%A5%BC%E6%A2%AF/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="../../2022/04/27/note/%E5%89%8D%E7%AB%AF/axios/" itemprop="url" title="axios" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="../../2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/509.%20%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gipevgoki5j20zk0m84qp.jpg"></a>
+    <a href="../../2022/04/15/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%AE%97%E6%B3%95%E9%A2%98%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0/" itemprop="url" title="算法题常用函数"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gicivghyooj20zk0m8dir.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-08-29 20:00:44">
+  <span class="item" title="创建时间：2022-04-15 14:44:03">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-08-29T20:00:44+08:00">2022-08-29</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-04-15T14:44:03+08:00">2022-04-15</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>235</span>
+    <span>3.4k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>1 分钟</span>
+    <span>3 分钟</span>
   </span>
 </div>
 
-    <h3><a href="../../2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/509.%20%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="../../2022/04/15/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%AE%97%E6%B3%95%E9%A2%98%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0/" itemprop="url" title="算法题常用函数">算法题常用函数</a></h3>
     <div class="excerpt">
-        /**
-* @param {number} n
-* @return {number}
-*/
-var fib1 = function (n) {
-if (n === 0) {
-return 0;
-} else if (n === 1) {
-return 1;
-}
-return fib(n - 1) + fib(n - 2);
-};
-
-/**
-* @param {number} n
-* @return {number}
-*/
-var fib = function (n) {
-let fibs = new Array(n + 1);
-fibs[0] = 0;
-fibs[1] = 1;
-for...
+        经过一些事情，深刻了解到掌握多种语言的重要性，因此这里记录一下各种语言的常用操作，及算法题各种常用函数
+      
     </div>
-    <a href="../../2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/509.%20%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="../../2022/04/15/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%AE%97%E6%B3%95%E9%A2%98%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0/" itemprop="url" title="算法题常用函数" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="../../2022/08/25/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/demo0003/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclwuom7cj20zk0m8dvn.jpg"></a>
+    <a href="../../2022/04/11/markdown%E8%AF%AD%E6%B3%95/" itemprop="url" title="markdown语法"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1giclh3brzpj20zk0m8ann.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-08-25 19:17:46">
+  <span class="item" title="创建时间：2022-04-11 15:58:56">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-08-25T19:17:46+08:00">2022-08-25</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-04-11T15:58:56+08:00">2022-04-11</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>310</span>
+    <span>382</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -391,135 +359,163 @@ for...
   </span>
 </div>
 
-    <h3><a href="../../2022/08/25/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/demo0003/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="../../2022/04/11/markdown%E8%AF%AD%E6%B3%95/" itemprop="url" title="markdown语法">markdown语法</a></h3>
     <div class="excerpt">
-        let Person = function () {};
-let person = new Person();
-console.log(person.constructor === Person); //true
-console.log(Person.prototype.constructor === Person); //true
-console.log(Person.prototype.constructor === Object); //false
+        # #：标题 1
+# ##：标题 2
+# ###： 标题 3
+# ####：....
+~ 中划线～：中划线
+* 倾斜 *：倾斜
+** 加粗 **：加粗
+`行内代码`： 行内代码
+```块状代码```：如 ```javascript```，必须顶格写
+let a=0;*+ 空格：无序号编号
 
-console.log(person.__proto__ === Person.prototype);...
+唱
+
+tap 键
+
+跳
+按回车，圆圈消失
+
+rap
+
+篮球
+
+序号 + 空格：有序号编号
+
+唱
+
+tap 键
+
+跳
+按回车，序号消失
+
+rap
+
+篮球
+
+---：分割线
+
+# 内嵌 html
+&amp;lt;u&amp;gt;&amp;lt;/u&amp;gt;：&amp;lt;u &amp;gt; 下划线...
     </div>
-    <a href="../../2022/08/25/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/demo0003/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="../../2022/04/11/markdown%E8%AF%AD%E6%B3%95/" itemprop="url" title="markdown语法" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="../../2022/08/25/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/websocket%E7%BB%83%E4%B9%A0/web/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclh3brzpj20zk0m8ann.jpg"></a>
+    <a href="../../2022/03/16/note/%E5%89%8D%E7%AB%AF/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9/" itemprop="url" title="未命名"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1giclfb3vzhj20zk0m8wny.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-08-25 16:06:23">
+  <span class="item" title="创建时间：2022-03-16 19:35:26">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-08-25T16:06:23+08:00">2022-08-25</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-03-16T19:35:26+08:00">2022-03-16</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>1.2k</span>
+    <span>5.9k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>1 分钟</span>
+    <span>5 分钟</span>
   </span>
 </div>
 
-    <h3><a href="../../2022/08/25/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/websocket%E7%BB%83%E4%B9%A0/web/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="../../2022/03/16/note/%E5%89%8D%E7%AB%AF/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9/" itemprop="url" title="未命名">未命名</a></h3>
     <div class="excerpt">
-        &lt;!DOCTYPE html&gt;
+        # 一、 常见的
+# 1. typeof、instanceof、constructor、new.target 的区别
+这些函数、关键字都可以判断数据类型，总结一下他们的区别
 
-Title
+typeof： typeof 主要用于基本数据类型以及函数的判别，对引用数据类型 object 就无法细分其类别了。其以字符串形式返回结果
 
-连接
+语法：
 
-发送
+typeof+空格+变量/常量
+typeof(变量/常量)
 
-关闭
-
-const name = &#39;test&#39;//连接用户名
-let connect = document.querySelector(&#39;#connect&#39;),//连接按钮
-sendMessage = document.querySelector(&#39;#sendMessage&#39;),//发送按钮
-destroy = document.querySelector(&#39;#destroy&#39;),//关闭按钮
-wsUrl =...
+undefined ：表示值未定义
+boolean ：布尔值
+string ：字符串
+number ：数值
+object ：对象或 null
+function ：函数和 class
+symbol...
     </div>
-    <a href="../../2022/08/25/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/websocket%E7%BB%83%E4%B9%A0/web/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="../../2022/03/16/note/%E5%89%8D%E7%AB%AF/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9/" itemprop="url" title="未命名" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="../../2022/08/25/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/websocket%E7%BB%83%E4%B9%A0/server/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gipew28b65j20zk0m8hdt.jpg"></a>
+    <a href="../../2022/01/14/note/%E5%89%8D%E7%AB%AF/js%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" itemprop="url" title="JavaScript高级程序设计"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-08-25 16:02:31">
+  <span class="item" title="创建时间：2022-01-14 17:03:50">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-08-25T16:02:31+08:00">2022-08-25</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-01-14T17:03:50+08:00">2022-01-14</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>575</span>
+    <span>131k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>1 分钟</span>
+    <span>1:59</span>
   </span>
 </div>
 
-    <h3><a href="../../2022/08/25/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/websocket%E7%BB%83%E4%B9%A0/server/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="../../2022/01/14/note/%E5%89%8D%E7%AB%AF/js%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" itemprop="url" title="JavaScript高级程序设计">JavaScript高级程序设计</a></h3>
     <div class="excerpt">
-        const WebSocket = require(&#39;ws&#39;);
-const port = 1024; //端口
-const pathname = &#39;/ws/&#39;; //访问路径
-
-new WebSocket.Server({ port }, function () {
-console.log(&#39;websocket服务开启&#39;);
-}).on(&#39;connection&#39;, connectHandler);
-
-function connectHandler(ws)...
+        做个笔记
+      
     </div>
-    <a href="../../2022/08/25/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/websocket%E7%BB%83%E4%B9%A0/server/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="../../2022/01/14/note/%E5%89%8D%E7%AB%AF/js%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" itemprop="url" title="JavaScript高级程序设计" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="../../2022/08/19/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E8%B4%AA%E5%BF%83/1005.%20K%20%E6%AC%A1%E5%8F%96%E5%8F%8D%E5%90%8E%E6%9C%80%E5%A4%A7%E5%8C%96%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giciundwu5j20zk0m8n9e.jpg"></a>
+    <a href="../../2021/12/24/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" title="未命名"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gicit31ffoj20zk0m8naf.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-08-19 17:09:51">
+  <span class="item" title="创建时间：2021-12-24 15:30:16">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-08-19T17:09:51+08:00">2022-08-19</time>
+    <time itemprop="dateCreated datePublished" datetime="2021-12-24T15:30:16+08:00">2021-12-24</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>106</span>
+    <span>1.3k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -530,38 +526,38 @@ function connectHandler(ws)...
   </span>
 </div>
 
-    <h3><a href="../../2022/08/19/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E8%B4%AA%E5%BF%83/1005.%20K%20%E6%AC%A1%E5%8F%96%E5%8F%8D%E5%90%8E%E6%9C%80%E5%A4%A7%E5%8C%96%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="../../2021/12/24/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" title="未命名">未命名</a></h3>
     <div class="excerpt">
-        /**
-* @param {number[]} nums
-* @param {number} k
-* @return {number}
-*/
-var largestSumAfterKNegations = function (nums, k) {};
+        优先队列：优先队列也是一种抽象数据类型。优先队列中的每个元素都有优先级，而优先级高（或者低）的将会先出队，而优先级相同的则按照其在优先队列中的顺序依次出队。
+
+字符串哈希：即将一个字符串转化成一个整数，并保证字符串不同，得到的哈希值不同，这样就可以用来判断一个该字串是否重复出现过。
+用字符串 Hash，最怕的就是，出现冲突的情况，即不同字符串却有着相同的 hash 值，这是我们不想看到的。所以为了降低冲突的概率，可以用双 Hash 方法。
+将一个字符串用不同的 Base 和 MOD，hash 两次，将这两个结果用一个二元组表示，作为一个总的 Hash 结果。
+相当于我们用不同的 Base 和...
     </div>
-    <a href="../../2022/08/19/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E8%B4%AA%E5%BF%83/1005.%20K%20%E6%AC%A1%E5%8F%96%E5%8F%8D%E5%90%8E%E6%9C%80%E5%A4%A7%E5%8C%96%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="../../2021/12/24/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" title="未命名" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="../../2022/08/14/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/demo02/" itemprop="url" title="未命名"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclfw2t96j20zk0m8x6p.jpg"></a>
+    <a href="../../2021/11/14/note/%E6%89%BE%E5%B7%A5%E4%BD%9C/LeetCode%E9%94%99%E9%A2%98%E9%9B%86/" itemprop="url" title="LeetCode错题集"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1giclga70tsj20zk0m84mr.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2022-08-14 11:13:34">
+  <span class="item" title="创建时间：2021-11-14 13:20:40">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-08-14T11:13:34+08:00">2022-08-14</time>
+    <time itemprop="dateCreated datePublished" datetime="2021-11-14T13:20:40+08:00">2021-11-14</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>165</span>
+    <span>16</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -572,18 +568,12 @@ var largestSumAfterKNegations = function (nums, k) {};
   </span>
 </div>
 
-    <h3><a href="../../2022/08/14/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/demo02/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="../../2021/11/14/note/%E6%89%BE%E5%B7%A5%E4%BD%9C/LeetCode%E9%94%99%E9%A2%98%E9%9B%86/" itemprop="url" title="LeetCode错题集">LeetCode错题集</a></h3>
     <div class="excerpt">
-        /**
-* @param {number} n
-* @return {number}
-*/
-var countSpecialNumbers = function (n) {
-// let bigN = BigInt(n);
-let dynamic = 0;
-for (let i = 1; i &lt;= n; i++) { if (isspecial(i)) dynamic++; } return dynamic; }; function isspecial(n) let s=&quot;String(n);&quot; set=&quot;new&quot; set(); for (let...
+        # 动态规划
+375. 猜数字大小 II
     </div>
-    <a href="../../2022/08/14/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/demo02/" itemprop="url" title="未命名" class="btn">more...</a>
+    <a href="../../2021/11/14/note/%E6%89%BE%E5%B7%A5%E4%BD%9C/LeetCode%E9%94%99%E9%A2%98%E9%9B%86/" itemprop="url" title="LeetCode错题集" class="btn">more...</a>
   </div>
 </article>
 
@@ -594,7 +584,7 @@ for (let i = 1; i &lt;= n; i++) { if (isspecial(i)) dynamic++; } return dynamic;
   
   <nav class="pagination">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="../../"><i class="ic i-angle-left" aria-label="上一页"></i></a><a class="page-number" href="../../">1</a><span class="page-number current">2</span><a class="page-number" href="../3/">3</a><span class="space">&hellip;</span><a class="page-number" href="../14/">14</a><a class="extend next" rel="next" href="../3/"><i class="ic i-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="../../"><i class="ic i-angle-left" aria-label="上一页"></i></a><a class="page-number" href="../../">1</a><span class="page-number current">2</span><a class="page-number" href="../3/">3</a><span class="space">&hellip;</span><a class="page-number" href="../5/">5</a><a class="extend next" rel="next" href="../3/"><i class="ic i-angle-right" aria-label="下一页"></i></a>
     </div>
   </nav>
 
@@ -621,8 +611,8 @@ for (let i = 1; i &lt;= n; i++) { if (isspecial(i)) dynamic++; } return dynamic;
 
 <nav class="state">
     <div class="item posts">
-      <a href="">
-        <span class="count">140</span>
+      <a href="../archives/">
+        <span class="count">50</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -712,7 +702,16 @@ for (let i = 1; i &lt;= n; i++) { if (isspecial(i)) dynamic++; } return dynamic;
 <div class="breadcrumb">
 </div>
 
-    <span><a href="../../2022/08/10/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E8%B4%AA%E5%BF%83/53.%20%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/" title="未命名">未命名</a></span>
+    <span><a href="../../2021/07/27/note/Python/pytorch/" title="pytorch">pytorch</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../2022/04/27/note/%E5%89%8D%E7%AB%AF/axios/" title="axios">axios</a></span>
   </li>
 
       
@@ -721,10 +720,24 @@ for (let i = 1; i &lt;= n; i++) { if (isspecial(i)) dynamic++; } return dynamic;
 <div class="breadcrumb">
 <a href="../../categories/note/" title="分类于 笔记">笔记</a>
 <i class="ic i-angle-right"></i>
-<a href="../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+<a href="../../categories/note/Linux/" title="分类于 Linux">Linux</a>
 </div>
 
-    <span><a href="../../2021/04/23/note/%E5%89%8D%E7%AB%AF/echarts/" title="echarts用法简单记录">echarts用法简单记录</a></span>
+    <span><a href="../../2021/05/12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" title="VMware安装中标麒麟">VMware安装中标麒麟</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="../../categories/computer-science/java/" title="分类于 Java">Java</a>
+<i class="ic i-angle-right"></i>
+<a href="../../categories/computer-science/java/course-1/" title="分类于 零基础学 Java 语言 - 浙江大学 - 翁恺">零基础学 Java 语言 - 浙江大学 - 翁恺</a>
+</div>
+
+    <span><a href="../../2021/05/09/test/" title="my hexo">my hexo</a></span>
   </li>
 
       
@@ -733,7 +746,19 @@ for (let i = 1; i &lt;= n; i++) { if (isspecial(i)) dynamic++; } return dynamic;
 <div class="breadcrumb">
 </div>
 
-    <span><a href="../../2022/08/03/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%93%88%E5%B8%8C%E8%A1%A8/202.%20%E5%BF%AB%E4%B9%90%E6%95%B0/" title="未命名">未命名</a></span>
+    <span><a href="../../2022/08/15/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%85%AB%E8%82%A1%E6%96%87/" title="计算机网络八股文">计算机网络八股文</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../categories/note/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="../../2021/05/18/note/Java/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%8F%8A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="java基础语法及特性">java基础语法及特性</a></span>
   </li>
 
       
@@ -742,7 +767,7 @@ for (let i = 1; i &lt;= n; i++) { if (isspecial(i)) dynamic++; } return dynamic;
 <div class="breadcrumb">
 </div>
 
-    <span><a href="../../2022/08/02/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E6%95%B0%E7%BB%84/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/54.%20%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/" title="未命名">未命名</a></span>
+    <span><a href="../../2022/09/08/note/CSS/flex%E5%B8%83%E5%B1%80/" title="flex布局（弹性布局）">flex布局（弹性布局）</a></span>
   </li>
 
       
@@ -751,7 +776,7 @@ for (let i = 1; i &lt;= n; i++) { if (isspecial(i)) dynamic++; } return dynamic;
 <div class="breadcrumb">
 </div>
 
-    <span><a href="../../2022/08/08/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%9B%9E%E6%BA%AF/77.%20%E7%BB%84%E5%90%88/" title="未命名">未命名</a></span>
+    <span><a href="../../2021/11/10/note/%E5%89%8D%E7%AB%AF/HTML+CSS/" title="未命名">未命名</a></span>
   </li>
 
       
@@ -760,43 +785,19 @@ for (let i = 1; i &lt;= n; i++) { if (isspecial(i)) dynamic++; } return dynamic;
 <div class="breadcrumb">
 </div>
 
-    <span><a href="../../2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/509.%20%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0/" title="未命名">未命名</a></span>
+    <span><a href="../../2021/08/10/note/%E5%89%8D%E7%AB%AF/ps%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" title="ps学习之路">ps学习之路</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
+<a href="../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
 </div>
 
-    <span><a href="../../2022/08/09/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%9B%9E%E6%BA%AF/93.%20%E5%A4%8D%E5%8E%9F%20IP%20%E5%9C%B0%E5%9D%80/" title="未命名">未命名</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="../../2022/08/05/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/239.%20%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%9C%80%E5%A4%A7%E5%80%BC/" title="未命名">未命名</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="../../2022/08/02/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E9%93%BE%E8%A1%A8/19.%20%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%AC%20N%20%E4%B8%AA%E7%BB%93%E7%82%B9/" title="未命名">未命名</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="../../2022/07/31/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E6%95%B0%E7%BB%84/%E7%A7%BB%E5%8A%A8%E5%85%83%E7%B4%A0/27%20%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/" title="未命名">未命名</a></span>
+    <span><a href="../../2021/05/27/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E8%B0%83%E5%8F%96Python%E6%95%B0%E6%8D%AE/" title="前端调用Python数据">前端调用Python数据</a></span>
   </li>
 
   </ul>
@@ -821,13 +822,13 @@ for (let i = 1; i &lt;= n; i++) { if (isspecial(i)) dynamic++; } return dynamic;
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">537k 字</span>
+    <span title="站点总字数">566k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">8:09</span>
+    <span title="站点阅读时长">8:35</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

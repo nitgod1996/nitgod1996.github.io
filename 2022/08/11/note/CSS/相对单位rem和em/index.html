@@ -1,0 +1,624 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="../images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="宁理大神1996" href="https://nitgod1996.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="宁理大神1996" href="https://nitgod1996.com/atom.xml" />
+<link rel="alternate" type="application/json" title="宁理大神1996" href="https://nitgod1996.com/feed.json" />
+
+
+
+<link rel="stylesheet" href="../css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="https://nitgod1996.com/2022/08/11/note/CSS/%E7%9B%B8%E5%AF%B9%E5%8D%95%E4%BD%8Drem%E5%92%8Cem/">
+
+
+
+  <title>
+相对单位和自适应 |
+nitgod1996 = 宁理大神 1996</title>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">相对单位和自适应
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-08-11 13:57:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-11T13:57:00+08:00">2022-08-11</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>3.2k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>3 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">nitgod1996</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeyvx1d4j20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclga70tsj20zk0m84mr.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclgi503lj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipewr8iypj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="../../../../../../index.html">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://nitgod1996.com/2022/08/11/note/CSS/%E7%9B%B8%E5%AF%B9%E5%8D%95%E4%BD%8Drem%E5%92%8Cem/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="../../../../../../images/avatar.jpg">
+    <meta itemprop="name" content="宁理大神1996">
+    <meta itemprop="description" content=", 宁理大神的个人博客">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="宁理大神 1996">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>由于显示器的大小、分辨率的差别，同时 100px 在不同的用户页面上可能相差很大，每个用户的体验也可能千差万别。</p>
+<p>不管我们 喜欢与否，都得抛弃以前那种固定宽度的栏目设计，开始考虑<strong>响应式</strong>设计</p>
+<h1 id="em"><a class="anchor" href="#em">#</a> em</h1>
+<p>em 是最常见的<strong>相对长度</strong>单位，适合基于特定的字号进行排版。在 CSS 中，1em 等于<strong>当前元素</strong>的字号，其准确值取决于作用的元素</p>
+<p>如下：</p>
+<figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token selector">.padded</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token property">font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token property">padding</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid red<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>如图：<img data-src="/2022/08/11/note/CSS/%E7%9B%B8%E5%AF%B9%E5%8D%95%E4%BD%8Drem%E5%92%8Cem/image-20220811140344000.png" alt="image-20220811140344000">（因为是<strong>块级元素</strong>，因此宽度是父元素的 100%)</p>
+<p>可以看到， <code>padding</code>  是 <code>16px</code> 。这里设置内边距的值为 <code>1em</code> 。浏览器将其乘以字号，最终渲染为 <code>16px</code> 。这一点很重要：浏览器会根据相对单位的值计算出绝对值，称作<strong>计算值</strong>（computed value）。</p>
+<p>由于 <code>font-size</code>  可以<strong>继承</strong>，我们不需要每次使用 <code>em</code>  时都去定义一下字号大小，它将沿用父元素的字号。</p>
+<h2 id="使用-em-定义字号"><a class="anchor" href="#使用em定义字号">#</a> 使用 em 定义字号</h2>
+<p>前面说了， <code>1em</code>  等于元素当前的字号，而当没有显示地定义 <code>font-size</code>  时，字号大小<strong>继承</strong>自父元素。那么我们可以通过 <code>em</code>  定义元素的 <code>font-size</code>  为父元素的 <code>n</code>  倍。</p>
+<p>如定义 <code>font-size: 0.5em</code> ，此时元素的字号即为父元素的二分之一</p>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token selector">.child</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token property">font-size</span><span class="token punctuation">:</span> 0.5em<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>father<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>父元素</pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>child<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="8"></td><td><pre>        子元素</pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p><img data-src="/2022/08/11/note/CSS/%E7%9B%B8%E5%AF%B9%E5%8D%95%E4%BD%8Drem%E5%92%8Cem/image-20220811141309359.png" alt="image-20220811141309359"></p>
+<p>那么问题来了，再声明子元素的 <code>padding: 1em</code> ，<strong>这时候 1em 为多少 px？</strong></p>
+<p><code>css</code>  改成如下</p>
+<figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token selector">.father</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token property">font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token selector">.child</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token property">font-size</span><span class="token punctuation">:</span> 0.5em<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token property">padding</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p><img data-src="/2022/08/11/note/CSS/%E7%9B%B8%E5%AF%B9%E5%8D%95%E4%BD%8Drem%E5%92%8Cem/image-20220811141753560.png" alt="image-20220811141753560"> 打开浏览器控制台，可以看到 <code>padding</code>  变为了 <code>8px</code> ，也就是说， <code>1em</code>  是跟随的<strong>改变后的 font-size</strong> 的</p>
+<h2 id="em-字号陷阱嵌套"><a class="anchor" href="#em字号陷阱嵌套">#</a> em 字号陷阱（嵌套）</h2>
+<p>有时候开发者会使用选择器选中多个元素进行样式定义。当这些同时被选中的元素具有<strong>父子关系</strong>时，就有可能发生<strong>嵌套</strong>，导致 em 不断变大 / 变小</p>
+<p>如下：</p>
+<figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token selector">ul</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre> <span class="token property">font-size</span><span class="token punctuation">:</span> .8em<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Top level</pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Second level</pre></td></tr><tr><td data-num="5"></td><td><pre>                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="6"></td><td><pre>                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Third level</pre></td></tr><tr><td data-num="7"></td><td><pre>                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="8"></td><td><pre>                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Fourth level</pre></td></tr><tr><td data-num="9"></td><td><pre>                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="10"></td><td><pre>                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Fifth level<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="11"></td><td><pre>                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="12"></td><td><pre>                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="13"></td><td><pre>                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="14"></td><td><pre>                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="15"></td><td><pre>                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="16"></td><td><pre>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="17"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="18"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p><img data-src="/2022/08/11/note/CSS/%E7%9B%B8%E5%AF%B9%E5%8D%95%E4%BD%8Drem%E5%92%8Cem/image-20220811142211032.png" alt="image-20220811142211032"></p>
+<p>所以：</p>
+<ul>
+<li>要么嵌套的元素字号<strong>和父元素一样</strong></li>
+<li>要么不要同时定义具有<strong>父子关系</strong>的元素</li>
+</ul>
+<h1 id="rem"><a class="anchor" href="#rem">#</a> rem</h1>
+<p><code>rem</code>  是 <code>root em</code>  的缩写。 <code>rem</code>  和 <code>em</code>  差不多，也是跟随字号相对单位，但 <code>rem</code>  不是相对于当前元素，而是相对于<strong>根元素</strong>的单位。也就是 **&lt;html&gt;<strong>（可以通过 <code>:root</code>  选中）。一般浏览器默认根元素的字号是</strong> 16px**</p>
+<p>与 <code> em</code>  相比， <code>rem</code>  降低了复杂性。实际上， <code>rem</code>  结合了 <code>px</code>  和 <code> em</code>  的优点，既保留了相对单位 的优势，又简单易用。但也不意味着抛弃 <code>px</code>  和 <code>em</code></p>
+<blockquote>
+<p>拿不准的时候，用 rem 设置字号，用 px 设置边框，用 em 设置其他大部分属性。</p>
+</blockquote>
+<h2 id="重置-html-默认字号"><a class="anchor" href="#重置html默认字号">#</a> 重置 html 默认字号</h2>
+<blockquote>
+<p>过去几年有一个常见的模式，更准确地说是<strong>反模式</strong>，就是将网页根元素的字号设置为 0.625em 或者 62.5%</p>
+</blockquote>
+<figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token selector">html</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre> <span class="token property">font-size</span><span class="token punctuation">:</span> .625em<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>这样会把默认字号缩小为<strong> 10px</strong>，可以极大的简化计算。</p>
+<p>但也有<strong>缺点</strong>：可能会被迫写很多重复的代码，因为 10px 对大部分文字来说<strong>太小了</strong>，而 16px 则差不多刚刚好</p>
+<p>应该摒弃<strong>像素思维</strong>，就把 rem 当做正常单位，不要总想着 1rem 等于多少 px。不要为了 10px 便于计算而设置默认字号为 10px，而是应该以实际情况设置最合适的默认字号如（14px、16px）。而不是将默认字体设置为 10px 然后再覆盖一遍</p>
+<h1 id="响应式尺寸"><a class="anchor" href="#响应式尺寸">#</a> 响应式尺寸</h1>
+<blockquote>
+<p>我们甚至可以根据屏幕尺寸，用<strong>媒体查询</strong>改变根元素的字号。这样就能够基 于不同用户的屏幕尺寸，渲染出不同大小的面板</p>
+</blockquote>
+<p><strong>媒体查询</strong>：即 <code>@media</code>  规则，可以<strong>指定</strong>某种屏幕尺寸或者媒体类型（比如，打印机 或者屏幕）下的样式。</p>
+<figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">/* 作用到所有的屏幕 */</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token selector">:root</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token property">font-size</span><span class="token punctuation">:</span> 0.75em<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token punctuation">&#125;</span> </pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token comment">/* 仅作用到宽度 800px 及其以上的屏幕 */</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 800px<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token selector">:root</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token property">font-size</span><span class="token punctuation">:</span> 0.875em<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token punctuation">&#125;</span> </pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token comment">/* 仅作用到宽度 1200px 及其以上的屏幕 */</span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 1200px<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>    <span class="token selector">:root</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        <span class="token property">font-size</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    <span class="token punctuation">&#125;</span> </pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>（阿里开发的 <code>flexible.js</code>  就用到了这个，此外还同时监听了<strong>视口</strong>的变化。）</p>
+<h1 id="视口的相对单位"><a class="anchor" href="#视口的相对单位">#</a> 视口的相对单位</h1>
+<blockquote>
+<p><strong>视口</strong>：浏览器窗口里网页<strong>可见部分</strong>的边框区域。它<strong>不包括</strong>浏览器的地址栏、工具 栏、状态栏。</p>
+</blockquote>
+<p>视口有以下单位：</p>
+<ul>
+<li><code>vh</code> ：视口高度的 1/100。</li>
+<li><code>vw</code> ：视口宽度的 1/100。</li>
+<li><code>vmin</code> ：视口宽、高中<strong>较小</strong>的一方的 1/100</li>
+<li><code>vmax</code> ：视口宽、高中<strong>较大</strong>的一方的 1/100</li>
+</ul>
+<p>可以通过视口单位设置浏览器窗口变大变小时组件大小<strong>跟着变化</strong>（自适应）的功能。</p>
+<h2 id="使用-vw-定义字号"><a class="anchor" href="#使用vw定义字号">#</a> 使用 vw 定义字号</h2>
+<p>通过相对视口单位设置字号，然后在通过 <code>rem</code> / <code>em</code>  设置组件的尺寸，那么就可以让组件<strong>随着视口大小改动</strong>。</p>
+<p>也可以在一定程度上<strong>适配</strong>不同尺寸的设备，代替媒体查询的功能。同时可以在不同尺寸的设备间<strong>平滑过渡</strong>，而不是在某个断点突然改变。</p>
+<h1 id="使用-calc-定义字号"><a class="anchor" href="#使用calc定义字号">#</a> 使用 <code>calc()</code>  定义字号</h1>
+<p><code>calc()</code>  函数内可以对两个及其以上的值进行<strong>基本运算</strong>。当要结合<strong>不同单位</strong>的值时， <code>calc() </code> 特别实用。它支持的运算包括：加（+）、减（−）、乘（×）、除（÷）。加号和减号两边<strong>必须有空白</strong></p>
+<p>如下：</p>
+<figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token selector">:root</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>0.5em + 1vw<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>现在打开网页，慢慢缩放浏览器，字体会平滑地缩放。 <code>0.5em</code>  保证了<strong>最小字号</strong>， <code>1vw </code> 则确保 了字体会<strong>随着视口缩放</strong>。</p>
+<hr>
+<p>(这样<strong>不用媒体查询</strong>就实现了大部分的<strong>响应式</strong>策略。省掉三四个硬编码的断点，网页上的内容 也能根据视口流畅地缩放。)</p>
+<h1 id="百分比单位和无单位数值"><a class="anchor" href="#百分比单位和无单位数值">#</a> 百分比单位和无单位数值</h1>
+<p>除了 em、rem、视口单位，还有个相对单位就是百分比单位。</p>
+<p><strong>百分比</strong>就是<strong>相对父元素</strong>的百分比的大小，这个没什么好说的。</p>
+<p>有些属性允许<strong>无单位</strong>的值（即一个不指定单位的数）。支持这种值的属性包括 line-height、 z-index、font-weight（700 等于 bold，400 等于 normal，等等）。</p>
+<p>其中特别要注意的是<strong>行高 line-height</strong> 的设置</p>
+<h2 id="行高-line-height"><a class="anchor" href="#行高line-height">#</a> 行高 line-height</h2>
+<p>我们常常使用 <code>line-height</code>  来设置字体的<strong>垂直居中</strong>，其实在设置行高时，通常我们应该使用<strong>无单位</strong>的数值</p>
+<p>由于行高是属于会被<strong>继承</strong>的属性，如果使用了别的单位设置行高，那么每次<strong>修改元素字号</strong>时，都可能会发生行高不适配，<strong>字体重叠</strong>的情况。，如下<img data-src="/2022/08/11/note/CSS/%E7%9B%B8%E5%AF%B9%E5%8D%95%E4%BD%8Drem%E5%92%8Cem/image-20220811152350993.png" alt="image-20220811152350993"></p>
+<p>因为用别的单位继承行高的值，继承的都是<strong>计算值</strong>，也就是说，继承后行高是<strong>固定</strong>的</p>
+<figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">/* 后代元素继承了计算值（19.2px）*/</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token selector">body</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token property">line-height</span><span class="token punctuation">:</span> 1.2em<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token punctuation">&#125;</span> </pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token comment">/* 字号为 32px*/</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token selector">.about-us</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token property">font-size</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>字号 &gt; 行高，那么显然字体就会重叠了</p>
+<p>而如果改成<strong>无单位</strong>的数值定义行高，（行高的无单位是<strong>相对当前字号的比例</strong>），如</p>
+<figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token selector">body</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token property">line-height</span><span class="token punctuation">:</span> 1.2<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span> </pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment">/* 字号为 32px，行高继承为 1.2，算出来是 32*1.2=38.4px*/</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token selector">.about-us</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token property">font-size</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>这时字号 &lt; 行高，就不会产生重叠了</p>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-09-02 13:42:17" itemprop="dateModified" datetime="2022-09-02T13:42:17+08:00">2022-09-02</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="../images/wechatpay.png" alt="宁理大神1996 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="../images/alipay.png" alt="宁理大神1996 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="../images/paypal.png" alt="宁理大神1996 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>宁理大神1996 <i class="ic i-at"><em>@</em></i>宁理大神 1996
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="../../../../../../https:/nitgod1996.com/2022/08/11/note/CSS/%E7%9B%B8%E5%AF%B9%E5%8D%95%E4%BD%8Drem%E5%92%8Cem/" title="相对单位和自适应">https://nitgod1996.com/2022/08/11/note/CSS/相对单位rem和em/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="../../../../10/note/CSS/%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giph4baakhj20zk0m8h5q.jpg" title="选择器与优先级">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>选择器与优先级</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="../../../../15/note/CSS/CSS%E5%85%AB%E8%82%A1/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipevgoki5j20zk0m84qp.jpg" title="CSS八股">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>CSS八股</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#em"><span class="toc-number">1.</span> <span class="toc-text"> em</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-em-%E5%AE%9A%E4%B9%89%E5%AD%97%E5%8F%B7"><span class="toc-number">1.1.</span> <span class="toc-text"> 使用 em 定义字号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#em-%E5%AD%97%E5%8F%B7%E9%99%B7%E9%98%B1%E5%B5%8C%E5%A5%97"><span class="toc-number">1.2.</span> <span class="toc-text"> em 字号陷阱（嵌套）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rem"><span class="toc-number">2.</span> <span class="toc-text"> rem</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E7%BD%AE-html-%E9%BB%98%E8%AE%A4%E5%AD%97%E5%8F%B7"><span class="toc-number">2.1.</span> <span class="toc-text"> 重置 html 默认字号</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B0%BA%E5%AF%B8"><span class="toc-number">3.</span> <span class="toc-text"> 响应式尺寸</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%86%E5%8F%A3%E7%9A%84%E7%9B%B8%E5%AF%B9%E5%8D%95%E4%BD%8D"><span class="toc-number">4.</span> <span class="toc-text"> 视口的相对单位</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-vw-%E5%AE%9A%E4%B9%89%E5%AD%97%E5%8F%B7"><span class="toc-number">4.1.</span> <span class="toc-text"> 使用 vw 定义字号</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-calc-%E5%AE%9A%E4%B9%89%E5%AD%97%E5%8F%B7"><span class="toc-number">5.</span> <span class="toc-text"> 使用 calc()  定义字号</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%99%BE%E5%88%86%E6%AF%94%E5%8D%95%E4%BD%8D%E5%92%8C%E6%97%A0%E5%8D%95%E4%BD%8D%E6%95%B0%E5%80%BC"><span class="toc-number">6.</span> <span class="toc-text"> 百分比单位和无单位数值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E9%AB%98-line-height"><span class="toc-number">6.1.</span> <span class="toc-text"> 行高 line-height</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="宁理大神1996"
+      data-src="../images/avatar.jpg">
+  <p class="name" itemprop="name">宁理大神1996</p>
+  <div class="description" itemprop="description">宁理大神的个人博客</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="../archives/">
+        <span class="count">50</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="../categories/">
+        <span class="count">14</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="../tags/">
+        <span class="count">22</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3lvdXJuYW1l" title="https:&#x2F;&#x2F;github.com&#x2F;yourname"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPXlvdXJpZA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;yourid"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="../index.html" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../archives/" rel="section"><i class="ic i-archive"></i>归档</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="../../../../10/note/CSS/%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="../../../../15/note/CSS/CSS%E5%85%AB%E8%82%A1/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2021/05/08/my-hexo/" title="my hexo">my hexo</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/Python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="../../../../../../2021/05/28/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/" title="随笔-利用Python批量处理文件">随笔-利用Python批量处理文件</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="../../../../../../2021/04/23/note/%E5%89%8D%E7%AB%AF/echarts/" title="echarts用法简单记录">echarts用法简单记录</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../07/31/note/JavaScript/JavaScript%E5%87%BD%E6%95%B0/" title="JavaScript函数">JavaScript函数</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../18/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%85%AB%E8%82%A1/" title="操作系统八股">操作系统八股</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../04/11/markdown%E8%AF%AD%E6%B3%95/" title="markdown语法">markdown语法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../10/note/CSS/%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7/" title="选择器与优先级">选择器与优先级</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/Python/" title="分类于 Python">Python</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="../../../../../../2021/05/17/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-Java%E8%B0%83%E7%94%A8Python%E8%84%9A%E6%9C%AC/" title="随笔-Java调用Python脚本">随笔-Java调用Python脚本</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="../../../../../../2021/05/26/note/%E5%89%8D%E7%AB%AF/html%EF%BC%88%E5%BC%83%E7%94%A8%EF%BC%89/" title="html常用功能手册">html常用功能手册</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../09/08/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%85%AB%E8%82%A1/" title="未命名">未命名</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">宁理大神1996 @ nitgod1996</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">566k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">8:35</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/08/11/note/CSS/相对单位rem和em/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="../../../../../../js/app.js?v=0.2.5"></script>
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

@@ -1,0 +1,762 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="../images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="宁理大神1996" href="https://nitgod1996.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="宁理大神1996" href="https://nitgod1996.com/atom.xml" />
+<link rel="alternate" type="application/json" title="宁理大神1996" href="https://nitgod1996.com/feed.json" />
+
+
+
+<link rel="stylesheet" href="../css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="https://nitgod1996.com/2022/08/10/note/CSS/%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7/">
+
+
+
+  <title>
+选择器与优先级 |
+nitgod1996 = 宁理大神 1996</title>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">选择器与优先级
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-08-10 18:08:26">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-10T18:08:26+08:00">2022-08-10</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>7k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>6 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">nitgod1996</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipewf5l51j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipew8gmvyj20zk0m87wh.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicliierfjj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclx6phq6j20zk0m8e36.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipetlbztpj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="../../../../../../index.html">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://nitgod1996.com/2022/08/10/note/CSS/%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="../../../../../../images/avatar.jpg">
+    <meta itemprop="name" content="宁理大神1996">
+    <meta itemprop="description" content=", 宁理大神的个人博客">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="宁理大神 1996">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="选择器"><a class="anchor" href="#选择器">#</a> 选择器</h1>
+<h2 id="基础选择器"><a class="anchor" href="#基础选择器">#</a> 基础选择器</h2>
+<ul>
+<li><code>#id</code> -<strong>id 选择器</strong>：通过 <code>id</code>  属性和 <code>#+id值</code> 匹配，优先级为 1,0,0</li>
+<li><code>.class</code> -<strong> 类选择器</strong>：通过 <code>class</code>  属性和 <code>.+class值</code> 匹配，优先级为 0,1,0</li>
+<li><code>tagname</code> -<strong> 标签（元素）选择器</strong>：通过 <code>标签名</code> 匹配（直接写标签名即可），优先级 0,0,1</li>
+<li><code>*</code> -<strong> 通用选择器</strong>：通过 <code>*</code>  匹配，匹配所有元素，优先级 0,0,0</li>
+</ul>
+<p>例：</p>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page-title<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">font-family</span><span class="token punctuation">:</span> Arial<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>Wombat Coffee Roasters<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token comment">/* 标签选择器 */</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token selector">h1</span> <span class="token punctuation">&#123;</span> </pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token property">font-family</span><span class="token punctuation">:</span> serif<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token punctuation">&#125;</span> </pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token comment">/*id 选择器 */</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token selector">#page-title</span> <span class="token punctuation">&#123;</span> </pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token property">font-family</span><span class="token punctuation">:</span> sans-serif<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token punctuation">&#125;</span> </pre></td></tr><tr><td data-num="11"></td><td><pre>     <span class="token comment">/* 类选择器 */</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token selector">.title</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        <span class="token property">font-family</span><span class="token punctuation">:</span> monospace<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>    <span class="token punctuation">&#125;</span> </pre></td></tr><tr><td data-num="15"></td><td><pre>    <span class="token comment">/* 通用选择器 */</span></pre></td></tr><tr><td data-num="16"></td><td><pre>    <span class="token selector">*</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>        <span class="token property">font-family</span><span class="token punctuation">:</span> monospace<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="18"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><h2 id="属性选择器"><a class="anchor" href="#属性选择器">#</a> 属性选择器</h2>
+<p>属性选择器用于根据 HTML 属性匹配元素。其优先级与一个类选择器（0,1,0）相等</p>
+<ul>
+<li><code>[attr]</code> ： 匹配拥有<strong>指定属性</strong>的元素，<strong>无论属性值是什么</strong>，例如：  <code>input[disabled]</code> 。</li>
+<li><code>[attr=&quot;value&quot;]</code> ：匹配<strong>特定属性</strong>且<strong>特定属性值</strong>的元素， 例如： <code>input[type=&quot;radio&quot;]</code> 。</li>
+<li><code>[attr^=&quot;value&quot;]</code> -<strong>“开头” 属性选择器</strong>：匹配特定属性以特定字符串<strong>开头</strong>的属性值的元素，例如： <code>a[href^=&quot;https&quot;]</code> 。</li>
+<li><code>[attr$=&quot;value&quot;]</code> -<strong>“结尾” 属性选择器</strong>。同上</li>
+<li><code>[attr*=&quot;value&quot;]</code> -<strong>“包含” 属性选择器</strong>。 且属性值<strong>包含</strong>指定的字符串值</li>
+<li>后面的也主要是一些<strong>字符串匹配规则</strong></li>
+<li><code>[attr~=&quot;value&quot;]</code> ——“空格分隔的列表” 属性选择器。该选择器匹配的元素拥有指定 属性 attr，且属性值是一个空格分隔的值列表，列表中的某个值等于指定的字符串值， 例如：a [rel=&quot;author&quot;]。</li>
+<li><code> [attr|=&quot;value&quot;]</code> —— 匹配的元素拥有指定属性 attr，且属性值要么等于指定的字符 串值，要么以该字符串开头且紧跟着一个连字符（-）。适用于语言属性，因为该属性有 时候会指定一种语言的子集（比如墨西哥西班牙语，es-MX，或者普通的西班牙语，es）， 例如：[lang|=&quot;es&quot;]</li>
+</ul>
+<p><strong>属性选择器不区分大小写</strong></p>
+<h2 id="组合器"><a class="anchor" href="#组合器">#</a> 组合器</h2>
+<p>组合器将多个基础选择器连接起来组成一个复杂选择器，组合器本身<strong>不增加</strong>优先级</p>
+<ul>
+<li><code> </code> （空格）-<strong> 后代组合器</strong>：匹配该元素的<strong>所有子孙元素</strong></li>
+<li><code>&gt;</code> -<strong> 子组合器</strong>：匹配该元素的<strong>直接后代</strong></li>
+<li><code>+</code> -<strong> 相邻兄弟组合器</strong>：匹配该元素<strong>紧随其后</strong>的<strong>一个</strong>兄弟元素</li>
+<li><code>~</code> -<strong> 通用兄弟组合器</strong>：匹配该元素<strong>后面所有</strong>的兄弟元素</li>
+</ul>
+<p>多个组合器可以<strong>复合使用</strong></p>
+<h2 id="伪类选择器"><a class="anchor" href="#伪类选择器">#</a> 伪类选择器 <code>:</code></h2>
+<p>伪类选择器和伪元素选择器是比较难以理解的部分：</p>
+<ul>
+<li><strong>伪类选择器</strong>：处于某个<strong>特定状态</strong>的元素。如<strong>用户交互</strong>，或者相对于<strong>父子兄弟</strong>的位置</li>
+<li><strong>伪元素选择器</strong>：匹配在<strong>文档中</strong>没有直接对应 HTML 元素的<strong>特定部分</strong>。如某个文本前面的位置</li>
+</ul>
+<hr>
+<p>伪类元素器的使用：一般是前面是一个正常的选择器，后面跟上一个伪类选择器，匹配该元素<strong>所有子孙元素</strong>中<strong>满足一定条件</strong>的元素。如</p>
+<figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token selector">.cls :first-child</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    color = red<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>伪类选择器种类：</p>
+<p><strong>用户交互</strong></p>
+<ul>
+<li><code>:focus</code> ：匹配<strong>获取焦点</strong>的元素</li>
+<li><code>:hover</code> ：匹配鼠标正悬停在其上方的元素</li>
+</ul>
+<p><strong>文档树</strong></p>
+<ul>
+<li>
+<p><code>:root</code> ：匹配文档根元素</p>
+</li>
+<li>
+<p><code>:first-child</code> ：匹配该元素所有子孙中的老大</p>
+</li>
+<li>
+<p><code>:last-child</code> ：匹配该元素所有子孙中的老小</p>
+</li>
+<li>
+<p><code>:only-child</code> ：匹配该元素所有子孙中的独生子女。</p>
+</li>
+<li>
+<p><code>:nth-child(an+b)</code> ：匹配该元素所有子孙中一定位置的子孙。</p>
+</li>
+<li>
+<p><code>:nth-last-child(an+b)</code> ：和上面差不多</p>
+<p><img data-src="/2022/08/10/note/CSS/%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7/image-20220810214629552.png" alt="image-20220810214629552"></p>
+<p>例：</p>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cls<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>老大<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token comment">&lt;!-- 红 --></span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>老二<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>老三<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>老四<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>老五<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token comment">&lt;!-- 红 --></span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="12"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="13"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"></span></span></pre></td></tr><tr><td data-num="16"></td><td><pre>    <span class="token selector">.cls :first-child</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>        <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="18"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<p>还有一些暂时懒得写了，</p>
+<p>:first-of-type—— 类似于:first-child，但不是根据在全部子元素中的位置查找元 素，而是根据拥有相同标签名的子元素中的数字顺序查找第一个元素。  :last-of-type—— 匹配每种类型的最后一个子元素。  :only-of-type—— 该选择器匹配的元素是满足该类型的唯一一个子元素。  :nth-of-type (an+b)—— 根据目标元素在特定类型下的数字顺序以及特定公式选择元 素，类似于:nth-child。  nth-last-of-type (an+b)—— 根据元素类型以及特定公式选择元素，从其中最后一个 元素往前算，类似于:nth-last-child。  :not ()—— 匹配的元素不匹配括号内的选择器。括号内的选择器必须是基 础选择器，它只能指定元素本身，无法用于排除祖先元素，同时不允许包含另一个排除 选择器。  :empty—— 匹配的元素必须没有子元素。注意，如果元素包含空格就无法由该选择器 匹配，因为空格在 DOM 中属于文本节点。写作本书时，W3C 正在考虑:blank 伪类选择 器，它跟:empty 的行为类似，但是能选中仅包含空格的元素，目前还没有浏览器支 持:blank。</p>
+<p>:disabled—— 匹配已禁用的元素，包括 input、select 以及 button 元素。  :enabled—— 匹配已启用的元素，即那些能够被激活或者接受焦点的元素。  :checked—— 匹配已经针对选定的复选框、单选按钮或选择框选项。  :invalid—— 根据输入类型中的定义，匹配有非法输入值的元素。例如，当的值不是一个合法的邮箱地址时，该元素会被匹配（Level4）。  :valid—— 匹配有合法值的元素（Level4）。  :required—— 匹配设置了 required 属性的元素（Level4）。  :optional—— 匹配没有设置 required 属性的元素（Level4）。以上并未列出全部伪类 选择器。请参阅 MDN 文档 Pseudo-classes，查看 MDN 上的完整清单。</p>
+<h2 id="伪元素选择器"><a class="anchor" href="#伪元素选择器">#</a> 伪元素选择器 <code>::</code></h2>
+<blockquote>
+<p>伪元素类似于伪类，但是它不匹配特定状态的元素，而是<strong>匹配在文档中没有直接对应 HTML 元素的特定部分</strong>。伪元素选择器可能只匹配元素的一部分，甚至向 HTML 标记中未定义的地方 插入内容。</p>
+</blockquote>
+<p>语法：前面是一个正常的选择器，后面跟上一个伪元素选择器</p>
+<ul>
+<li><code>::before</code> ：在该元素前<strong>创建</strong>一个伪元素。该元素默认是行内元素，可用于插入文字、图片或其他形状。必须指定 content 属性才能让元素出现，例 如： <code>.menu::before</code> 。</li>
+<li><code>::after</code> ：在该元素<strong>后</strong>创建一个（伪）元素。</li>
+<li><code>::first-letter</code> ：匹配该元素的<strong>第一个文本字符</strong>的样式，例如： <code>h2::firstletter</code> 。</li>
+<li><code>::first-line</code> ：匹配该元素的<strong>第一行</strong>文本的样式。</li>
+<li><code> ::selection</code> ：匹配指定用户使用<strong>鼠标高亮选择</strong>的任意文本的样式。通常用于改变选 中文本的 background-color。只有少数属性可以使用，包括 color、background-color、 cursor、text-decoration</li>
+</ul>
+<h1 id="样式冲突层叠"><a class="anchor" href="#样式冲突层叠">#</a> 样式冲突（层叠）</h1>
+<blockquote>
+<p>每条规则单独来看很简单，但是当两条规则提 供了冲突的样式时会发生什么呢？如果你发现有一条规则没有按照预期生效，可能是因为另一条 规则跟它冲突了。</p>
+</blockquote>
+<p>比如某个元素（标签），在不同的地方都设置了样式（比如不同的选择器中），这时候可能会造成<strong>样式冲突</strong>。比如都定义了一样的样式如字体颜色，或者复杂点的通过布局等形成冲突。那么我们得知道到底<strong>哪个样式生效</strong></p>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page-title<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">font-family</span><span class="token punctuation">:</span> Arial<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>Wombat Coffee Roasters<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token selector">h1</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token property">font-family</span><span class="token punctuation">:</span> serif<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token punctuation">&#125;</span> </pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token selector">#page-title</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token property">font-family</span><span class="token punctuation">:</span> sans-serif<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token punctuation">&#125;</span> </pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token selector">.title</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token property">font-family</span><span class="token punctuation">:</span> monospace<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token punctuation">&#125;</span> </pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p>如上例子，我们在 3 个不同的<strong>选择器</strong>中定义了例子中的元素的字体，同时还在标签内通过 <code>style</code>  属性也定义了，那么到底哪个生效呢？</p>
+<p><strong>层叠</strong>指的就是这一系列规则。它决定了如何解决冲突，是 CSS 语言的基础。当声明冲突时，层叠会依据三种条件解决冲突。</p>
+<ol>
+<li>
+<p><strong>样式的来源</strong>：样式是从哪里来的，包括你的样式和浏览器默认样式等。</p>
+</li>
+<li>
+<p><strong>选择器优先级</strong>：哪些选择器比另一些选择器更重要。</p>
+</li>
+<li>
+<p><strong>源码顺序</strong>：样式在样式表里的声明顺序。</p>
+</li>
+</ol>
+<p><img data-src="/2022/08/10/note/CSS/%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7/image-20220810194821640.png" alt="深入解析CSS"></p>
+<h2 id="样式的来源"><a class="anchor" href="#样式的来源">#</a> 样式的来源</h2>
+<p>即 样式来自哪里？你添加到网页里的样式并不是<strong>浏览器</strong>唯一 ** 使用的样式，还有其他类型或来源的样式：</p>
+<ul>
+<li><strong>浏览器默认样式</strong>（用户代理样式）</li>
+<li><strong>作者样式</strong>（你定义的样式）
+<ul>
+<li><strong>行内样式</strong>（内联样式）：即通过 <code>style</code>  属性直接定义在标签内的样式</li>
+<li><strong>选择器</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>优先级</strong>：作者样式表 &gt; 浏览器默认样式。行内样式 &gt; 选择器</p>
+<p>新建的 HTML 文档一开始在各种浏览器中都会有其默认的样式（如默认字体、边距等），而程序员定义的样式会<strong>覆盖</strong>浏览器默认的样式</p>
+<h2 id="优先级"><a class="anchor" href="#优先级">#</a> 优先级</h2>
+<p>遇到冲突时，浏览器会尝试检查它们的<strong>优先级</strong>，优先级高的享受渲染权</p>
+<p>前面已经说过，<strong>优先级：作者样式表 &gt; 浏览器默认样式。行内样式 &gt; 选择器</strong></p>
+<p>但有个<strong>例外</strong>，就是 <code>!important</code>  声明</p>
+<h3 id="行内样式"><a class="anchor" href="#行内样式">#</a> 行内样式</h3>
+<blockquote>
+<p>即通过 <code>style</code>  属性直接定义在标签内的样式</p>
+</blockquote>
+<p>还是之前那个例子</p>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page-title<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">font-family</span><span class="token punctuation">:</span> Arial<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>Wombat Coffee Roasters<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token selector">h1</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token property">font-family</span><span class="token punctuation">:</span> serif<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token punctuation">&#125;</span> </pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token selector">#page-title</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token property">font-family</span><span class="token punctuation">:</span> sans-serif<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token punctuation">&#125;</span> </pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token selector">.title</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token property">font-family</span><span class="token punctuation">:</span> monospace<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token punctuation">&#125;</span> </pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p>根据<strong>优先级：行内样式 &gt; 选择器</strong>的规则，那么可以得出，最终生效的是 <code>style=&quot;font-family: Arial;&quot;</code></p>
+<p>那么如果没有行内样式呢？下面 3 个选择器的选哪个？</p>
+<h3 id="选择器优先级"><a class="anchor" href="#选择器优先级">#</a> 选择器优先级</h3>
+<p>选择器内部也有<strong>优先级</strong>的划分，一般来说，<strong>id 选择器</strong>的优先级最大</p>
+<p>选择器优先级有<strong> 4 个等级</strong>：从高到低如下</p>
+<ol>
+<li><strong>id 选择器</strong>（ <code>#</code> ）:1,0,0</li>
+<li><strong>class（类）选择器</strong>（ <code>.</code> ）、<strong>属性选择器</strong>（ <code>[]</code> ）、<strong>伪类选择器</strong>（ <code>:</code> ）：0,1,0</li>
+<li><strong>标签（元素）选择器</strong>、<strong>伪元素选择器</strong>（ <code>::</code> ）：0,0,1</li>
+<li><strong>通用选择器</strong>（ <code>*</code> ）：0,0,0</li>
+</ol>
+<p><strong>同一级别</strong>的选择器优先级可以<strong>相加</strong>：因为有<strong>组合器</strong>的存在，因此有时候选择一个元素需要多个选择器搭配，这时候要算优先级就需要比对，比对规则如下：</p>
+<ol>
+<li>先找优先级 100 的（id 选择器），id 选择器多的获胜，如果一样</li>
+<li>找优先级 010 的，多的获胜，如果一样</li>
+<li>以此类推</li>
+</ol>
+<p>如下例</p>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cls1<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>id1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cls2<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>id2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cls3<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>id3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>            你好</pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"></span></span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token selector">#id1 .cls2 .cls3</span><span class="token punctuation">&#123;</span> <span class="token comment">/* 优先级：1,2,0*/</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token selector">.cls1 #id2 #id3</span><span class="token punctuation">&#123;</span> <span class="token comment">/* 优先级：2,1,0*/</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p>最终显示：<img data-src="/2022/08/10/note/CSS/%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7/image-20220810202151603.png" alt="image-20220810202151603"></p>
+<h3 id="important-声明"><a class="anchor" href="#important声明">#</a> !important 声明</h3>
+<p>标记为<strong>重要</strong>（important）的声明。如下所示，在声明的后面加上 <code>!important</code> ，该声明就会被标记为重要的声明。</p>
+<figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token property">color</span><span class="token punctuation">:</span> red <span class="token important">!important</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>标记了 <code>!important</code>  的声明会被当作<strong>最高优先级</strong>的来源。&lt;font color=red&gt; 无论这个声明定义在哪，只要有 <code>!important</code> ，就是最高优先级，就按它渲染（除非和它冲突的也有 <code>!important</code> ）。&lt;/font&gt;</p>
+<h2 id="注意点"><a class="anchor" href="#注意点">#</a> 注意点</h2>
+<p>一般<strong>不建议</strong>使用 <code>!important</code> ，因为如果要覆盖这个样式，又要用个 <code>!important</code> ，导致后面样式优先级越来越大，越来越难改</p>
+<p><strong>id 选择器</strong>同理，优先级也太大。</p>
+<h2 id="源码顺序"><a class="anchor" href="#源码顺序">#</a> 源码顺序</h2>
+<p>顾名思义，<strong>相同优先级</strong>的情况下，写在<strong>越后面</strong>的优先级越高</p>
+<h2 id="总结"><a class="anchor" href="#总结">#</a> 总结</h2>
+<p>这时候再来看看之前的图</p>
+<p><img data-src="/2022/08/10/note/CSS/%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7/image-20220810194821640.png" alt="深入解析CSS"></p>
+<p>因此浏览器判断渲染哪个样式的流程一般如下：</p>
+<ol>
+<li>
+<p>首先看样式是默认样式还是用户定义的，优先选择<strong>用户定义</strong>的。如果是用户定义的→</p>
+</li>
+<li>
+<p>是<strong>行内样式</strong>还是<strong>选择器</strong>内的，优先选择<strong>行内样式</strong>。如果是选择器→</p>
+</li>
+<li>
+<p>判断选择器的<strong>优先级</strong></p>
+<ol>
+<li>首先看 id 选择器数量，选择<strong>数量多</strong>的，如果一样</li>
+<li>看优先级 010（类选择器）的数量，选择<strong>数量多</strong>的，依次类推</li>
+</ol>
+<p>如果还是一样→</p>
+</li>
+<li>
+<p>看<strong>源码顺序</strong>，哪个定义在<strong>后面</strong>优先选哪个。</p>
+</li>
+<li>
+<p><strong>额外规则</strong>：有 **!important<strong> 选</strong>！important**，如果冲突的样式也有 **!important**，则再按照以上规则择优</p>
+</li>
+</ol>
+<p>如果一个<strong>声明</strong>（针对某个样式的<strong>一行代码</strong>）在层叠中 “胜出”，它就被称作一个<strong>层叠值</strong>。元素的每个属性最多只有一个层叠值。</p>
+<h1 id="继承"><a class="anchor" href="#继承">#</a> 继承</h1>
+<p>子元素会<strong>继承</strong>父元素的<strong>部分样式</strong>，主要是<strong>文本相关</strong>的，如：</p>
+<ul>
+<li>color：字体颜色</li>
+<li>font：字体
+<ul>
+<li>font-family：字体（宋体、黑体...）</li>
+<li>font-size：字体大小</li>
+<li>font-weight：字体宽度（控制粗细）</li>
+<li>font-variant：字母的大小写</li>
+<li>font-style：字体风格（斜体..）</li>
+</ul>
+</li>
+<li>line-height：行高</li>
+<li>text-align：对齐方式（水平）</li>
+<li>text-indent：首行缩进</li>
+<li>text-transform：也是字母大小写</li>
+<li>white-space：是否超出换行（wrap）</li>
+<li>letter-spacing：字体间距（类似行间距）</li>
+<li>word-spacing：单词间距</li>
+</ul>
+<p>还有一些别的特殊属性，如：</p>
+<p><strong>列表属性</strong>：list-style、list-style-type、 list-style-position 以及 list-style-image。</p>
+<p><strong>表格边框属性</strong>： border-collapse 和 border-spacing</p>
+<h2 id="继承属性冲突"><a class="anchor" href="#继承属性冲突">#</a> 继承属性冲突</h2>
+<p>继承属性会顺序传递给后代元素，直到它被层叠值<strong>覆盖</strong>。</p>
+<p>也就是说，继承的<strong>优先级非常低</strong>，只要定义了新的样式，即可被覆盖</p>
+<h2 id="继承覆盖层叠-inherit"><a class="anchor" href="#继承覆盖层叠inherit">#</a> 继承覆盖层叠 <code>inherit</code></h2>
+<p>有时，我们想用继承代替一个层叠值。这时候可以用 <code>inherit</code>  关键字。可以用它来覆盖另 一个值，这样该元素就会继承其父元素的值</p>
+<figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token selector">.footer</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token property">color</span><span class="token punctuation">:</span> #666<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token property">background-color</span><span class="token punctuation">:</span> #ccc<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token property">padding</span><span class="token punctuation">:</span> 15px 0<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token punctuation">&#125;</span> </pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token selector">.footer a</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token property">color</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token property">text-decoration</span><span class="token punctuation">:</span> underline<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>当然，前提是 <code>inherit</code>  的选择器优先级需要<strong>大于</strong>要覆盖的那个（相当于是生成新的层叠值，只不过<strong>引用</strong>了父元素的属性值）</p>
+<p>这样做的<strong>好处</strong>是：相当于<strong>绑定</strong>了父元素，当父元素发生改变时，它也会跟着改变</p>
+<h2 id="重置样式-initial"><a class="anchor" href="#重置样式initial">#</a> 重置样式 <code>initial</code></h2>
+<p>有时，你需要撤销作用于某个元素的样式。这可以用 <code>initial</code>  关键字来实现。使用 <code>initial</code>  可以将其重置为<strong>默认值</strong>，这么做的好处是不需要思考太多。</p>
+<p>&lt;font color=red&gt; 其实就是<strong>继承</strong>了 <code>body</code>  的样式 &lt;/font&gt;</p>
+<p><code>initial</code> ：初始化</p>
+<h1 id="简写属性覆盖层叠值"><a class="anchor" href="#简写属性覆盖层叠值">#</a> 简写属性覆盖层叠值</h1>
+<p>简写属性是用于同时给多个属性赋值的属性。比如 <code>font</code>  是一个简写属性，可以用于设置多 种字体属性。它指定了 <code> font-style</code> 、 <code>font-weight</code> 、 <code>font-size</code> 、 <code>font-height</code>  以 及 <code> font-family</code></p>
+<p><strong>简写属性会默默覆盖其他样式</strong></p>
+<p>简写属性可以省略一些值，只指定我们关注的值。但是要知道，这样做<strong>仍然会设置</strong>省略的值，即它们会被<strong>隐式</strong>地设置为<strong>初始值</strong></p>
+<p>如下：</p>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page-title<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Wombat Coffee Roasters<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token selector">h1</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token selector">#page-title</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token property">font</span><span class="token punctuation">:</span> 15px Helvetica<span class="token punctuation">,</span> Arial<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p><img data-src="/2022/08/10/note/CSS/%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7/image-20220810210402946.png" alt="image-20220810210402946"> 可以看到，前面设置的<strong>粗体</strong>被覆盖了，变成了默认粗细</p>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-08-10 21:59:38" itemprop="dateModified" datetime="2022-08-10T21:59:38+08:00">2022-08-10</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="../images/wechatpay.png" alt="宁理大神1996 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="../images/alipay.png" alt="宁理大神1996 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="../images/paypal.png" alt="宁理大神1996 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>宁理大神1996 <i class="ic i-at"><em>@</em></i>宁理大神 1996
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="../../../../../../https:/nitgod1996.com/2022/08/10/note/CSS/%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7/" title="选择器与优先级">https://nitgod1996.com/2022/08/10/note/CSS/选择器与优先级/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="../%E7%9B%92%E6%A8%A1%E5%9E%8B/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclimtf7dj20zk0m8qav.jpg" title="CSS盒模型">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>CSS盒模型</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="../../../../11/note/CSS/%E7%9B%B8%E5%AF%B9%E5%8D%95%E4%BD%8Drem%E5%92%8Cem/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipesrnqv3j20zk0m8ava.jpg" title="相对单位和自适应">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>相对单位和自适应</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text"> 选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.1.</span> <span class="toc-text"> 基础选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text"> 属性选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E5%99%A8"><span class="toc-number">1.3.</span> <span class="toc-text"> 组合器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.4.</span> <span class="toc-text"> 伪类选择器 :</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%AA%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.5.</span> <span class="toc-text"> 伪元素选择器 ::</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81%E5%B1%82%E5%8F%A0"><span class="toc-number">2.</span> <span class="toc-text"> 样式冲突（层叠）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8F%E7%9A%84%E6%9D%A5%E6%BA%90"><span class="toc-number">2.1.</span> <span class="toc-text"> 样式的来源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">2.2.</span> <span class="toc-text"> 优先级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E6%A0%B7%E5%BC%8F"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 行内样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 选择器优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#important-%E5%A3%B0%E6%98%8E"><span class="toc-number">2.2.3.</span> <span class="toc-text"> !important 声明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="toc-number">2.3.</span> <span class="toc-text"> 注意点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E7%A0%81%E9%A1%BA%E5%BA%8F"><span class="toc-number">2.4.</span> <span class="toc-text"> 源码顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">2.5.</span> <span class="toc-text"> 总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF"><span class="toc-number">3.</span> <span class="toc-text"> 继承</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E5%B1%9E%E6%80%A7%E5%86%B2%E7%AA%81"><span class="toc-number">3.1.</span> <span class="toc-text"> 继承属性冲突</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E8%A6%86%E7%9B%96%E5%B1%82%E5%8F%A0-inherit"><span class="toc-number">3.2.</span> <span class="toc-text"> 继承覆盖层叠 inherit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E7%BD%AE%E6%A0%B7%E5%BC%8F-initial"><span class="toc-number">3.3.</span> <span class="toc-text"> 重置样式 initial</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%80%E5%86%99%E5%B1%9E%E6%80%A7%E8%A6%86%E7%9B%96%E5%B1%82%E5%8F%A0%E5%80%BC"><span class="toc-number">4.</span> <span class="toc-text"> 简写属性覆盖层叠值</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="宁理大神1996"
+      data-src="../images/avatar.jpg">
+  <p class="name" itemprop="name">宁理大神1996</p>
+  <div class="description" itemprop="description">宁理大神的个人博客</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="../archives/">
+        <span class="count">50</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="../categories/">
+        <span class="count">14</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="../tags/">
+        <span class="count">22</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3lvdXJuYW1l" title="https:&#x2F;&#x2F;github.com&#x2F;yourname"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPXlvdXJpZA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;yourid"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="../index.html" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../archives/" rel="section"><i class="ic i-archive"></i>归档</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="../%E7%9B%92%E6%A8%A1%E5%9E%8B/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="../../../../11/note/CSS/%E7%9B%B8%E5%AF%B9%E5%8D%95%E4%BD%8Drem%E5%92%8Cem/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
+</div>
+
+    <span><a href="../../../../../../2021/05/20/note/%E9%9A%8F%E7%AC%94/%E5%87%86%E5%A4%87%E5%AD%A6%E4%B9%A0docker/" title="docker随手记">docker随手记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
+</div>
+
+    <span><a href="../../../../../../2021/05/27/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E8%B0%83%E5%8F%96Python%E6%95%B0%E6%8D%AE/" title="前端调用Python数据">前端调用Python数据</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/Python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="../../../../../../2021/05/29/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E5%A4%84%E7%90%86json/" title="随笔-利用Python处理json">随笔-利用Python处理json</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../15/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%85%AB%E8%82%A1%E6%96%87/" title="计算机网络八股文">计算机网络八股文</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+</div>
+
+    <span><a href="../../../../../../2021/06/10/%E8%A5%BF%E7%93%9C%E4%B9%A6%E5%A4%8D%E4%B9%A0%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/" title="西瓜书复习及其部分代码实现">西瓜书复习及其部分代码实现</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../11/note/CSS/%E7%9B%B8%E5%AF%B9%E5%8D%95%E4%BD%8Drem%E5%92%8Cem/" title="相对单位和自适应">相对单位和自适应</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2021/11/09/note/%E5%89%8D%E7%AB%AF/Vue/" title="Vue学习笔记">Vue学习笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../07/31/note/JavaScript/JavaScript%E5%87%BD%E6%95%B0/" title="JavaScript函数">JavaScript函数</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2021/12/24/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2021/06/25/note/Python/numpy/" title="numpy常用函数">numpy常用函数</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">宁理大神1996 @ nitgod1996</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">566k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">8:35</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/08/10/note/CSS/选择器与优先级/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="../../../../../../js/app.js?v=0.2.5"></script>
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

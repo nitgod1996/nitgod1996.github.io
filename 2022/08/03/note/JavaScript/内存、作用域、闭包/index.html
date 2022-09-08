@@ -1,0 +1,852 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="../images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="宁理大神1996" href="https://nitgod1996.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="宁理大神1996" href="https://nitgod1996.com/atom.xml" />
+<link rel="alternate" type="application/json" title="宁理大神1996" href="https://nitgod1996.com/feed.json" />
+
+
+
+<link rel="stylesheet" href="../css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="https://nitgod1996.com/2022/08/03/note/JavaScript/%E5%86%85%E5%AD%98%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/">
+
+
+
+  <title>
+JavaScript 内存、作用域和闭包 |
+nitgod1996 = 宁理大神 1996</title>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">JavaScript 内存、作用域和闭包
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-08-03 20:09:22">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-03T20:09:22+08:00">2022-08-03</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>8.3k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>8 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">nitgod1996</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciryrr3rj20zk0m8nhk.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclx29mstj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicm07ih54j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeubcbajj20zk0m8h1h.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="../../../../../../index.html">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://nitgod1996.com/2022/08/03/note/JavaScript/%E5%86%85%E5%AD%98%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="../../../../../../images/avatar.jpg">
+    <meta itemprop="name" content="宁理大神1996">
+    <meta itemprop="description" content=", 宁理大神的个人博客">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="宁理大神 1996">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="执行上下文作用域"><a class="anchor" href="#执行上下文作用域">#</a> 执行上下文（作用域）</h1>
+<blockquote>
+<p>任何变量（不管包含的是原始值还是引用值）都存在于某个执行上下文中（也称作用域）。</p>
+</blockquote>
+<p>以上是红宝书中的原话。（之前一直搞不懂上下文和作用域有什么区别。。。其实就是同一个东西）</p>
+<p>作用域决定了变量的<strong>生命周期</strong>，以及他们可以访问代码的哪些部分。</p>
+<p><code>JavaScript</code>  有 3 种作用域：</p>
+<ul>
+<li><strong>全局作用域</strong>：最外层作用域，即 <code>window</code>  对象的作用域</li>
+<li><strong>函数作用域</strong>：函数内的作用域，也是最复杂的一个作用域。
+<ul>
+<li><code>var</code>  的声明范围即为函数作用域</li>
+</ul>
+</li>
+<li><strong>块级作用域</strong>： <code>&#123;&#125;</code>  包裹的作用域，如 <code>for</code> 、 <code>while</code> 、 <code>if</code>  等块。单独的 <code>&#123;&#125;</code>  块也算
+<ul>
+<li>函数作用域也算块级作用域</li>
+<li><code>let</code>  和 <code>const</code>  的声明范围是块级作用域</li>
+</ul>
+</li>
+</ul>
+<p>每个作用域都有一个关联的<strong>变量对象</strong>，保存该作用域下<strong>定义</strong>的所有变量和函数。</p>
+<p>如果是<strong>函数作用域</strong>，其一开始就有个定义对象 <code>arguments</code>  作为<strong>变量对象</strong></p>
+<h2 id="函数作用域"><a class="anchor" href="#函数作用域">#</a> 函数作用域</h2>
+<p>每个函数<strong>调用</strong>都有一个专属的函数作用域，其所有代码都<strong>执行完毕</strong>后会销毁。</p>
+<p>当代码执行流进入函数，函数的作用域被推到一个作用域栈（上下文栈）上（此时原本的作用域比如全局作用域就被压在了下面），执行完毕后弹出，继续执行原来的作用域的代码。</p>
+<p>如下代码：</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">let</span> color <span class="token operator">=</span> <span class="token string">'blue'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">function</span> <span class="token function">changeColor</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    color <span class="token operator">=</span> <span class="token string">'red'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token function">changeColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>color<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><ol>
+<li>一开始代码执行流在全局作用域，<strong>作用域栈</strong>内只有一个全局作用域（既是堆顶，也是堆底）
+<ol>
+<li>在第 1 行创建了一个 <code>color</code>  变量并赋值 <code>blue</code></li>
+<li>在第 3 行定义了一个 <code>changeColor</code>  的 <code>Function</code>  对象</li>
+</ol>
+</li>
+<li>在第 7 行执行 <code>changeColor()</code> ，代码执行流进入<strong>函数 <code>changeColor()</code>  的作用域</strong>
+<ol>
+<li>将 ** <code>changeColor</code>  作用域 ** 压入作用域栈，成为堆顶</li>
+<li><strong>全局作用域</strong>被压在 <code>changeColor</code>  作用域下</li>
+</ol>
+</li>
+<li><code>changeColor()</code>  的代码执行完毕，弹出栈顶，所有都被销毁（如临时创建的 <code>a</code>  以及 <code>arguments</code> ）</li>
+<li>代码执行流重新进入<strong>全局作用域</strong>，继续往下执行</li>
+</ol>
+<h2 id="作用域链"><a class="anchor" href="#作用域链">#</a> 作用域链</h2>
+<p><strong>作用域链</strong>：决定各级上下文访问变量和函数的<strong>顺序</strong></p>
+<blockquote>
+<p>作用域中的代码被执行的时候，会创建<strong>变量对象</strong>的一个<strong>作用域链</strong>。<strong>正在执行</strong>的作用域的变量对象始终位于作用域链的最前端。</p>
+<p>作用域链中的下一个变量对象来自包含上下文（外面一层），再下一个对象来自再下一个包含上下文，以此类推至全局上下文。</p>
+</blockquote>
+<p>上面例子中的 <code>changeColor()</code>  的作用域链包含 2 个<strong>变量对象</strong>，一个是他本身的变量对象（包含 <code>arguments</code>  和 <code>a</code> ），另一个是全局作用域的变量对象（包含 <code>color</code> ）。因为能在作用域链中找到 <code>color</code> ，因此在 <code>changeColor()</code>  中能访问 <code>color</code></p>
+<p>在作用域链上能找到的变量，均能被访问或修改。（一般来说，外层作用域的变量对象均在作用域链上）</p>
+<hr>
+<p>看一个例子：</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">var</span> color <span class="token operator">=</span> <span class="token string">'blue'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">function</span> <span class="token function">changeColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">let</span> anotherColor <span class="token operator">=</span> <span class="token string">'red'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token keyword">function</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token keyword">let</span> temp <span class="token operator">=</span> anotherColor<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        anotherColor <span class="token operator">=</span> color<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        color <span class="token operator">=</span> temp<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token function">swap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token function">changeColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>红宝书上的作用域链图是下侧为<strong>最前端</strong>。不过我感觉有些别扭，下面画了些以顶部为<strong>最前端</strong>的简图</p>
+<ul>
+<li>
+<p>代码流执行到第 1 行的作用域链如下：</p>
+<ul>
+<li>全局作用域链：<img data-src="/2022/08/03/note/JavaScript/%E5%86%85%E5%AD%98%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/image-20220803221352152.png" alt="image-20220803221352152"></li>
+</ul>
+</li>
+<li>
+<p>执行到第 2 行：</p>
+<ul>
+<li>全局作用域链：<img data-src="/2022/08/03/note/JavaScript/%E5%86%85%E5%AD%98%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/image-20220803221633548.png" alt="image-20220803221633548"></li>
+</ul>
+</li>
+<li>
+<p>执行到第 11 行，进入 <code>changeColor</code>  作用域：红色代表 <code>changeColor</code>  函数作用域</p>
+<ul>
+<li>
+<p>执行到 <code>changeColor</code>  作用域内第 1 行的代码（第 3 行的位置 <code>let anotherColor = 'red';</code> ）</p>
+<ul>
+<li>
+<p>全局作用域链：<img data-src="/2022/08/03/note/JavaScript/%E5%86%85%E5%AD%98%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/image-20220803221633548.png" alt="image-20220803221633548"></p>
+</li>
+<li>
+<p><code>anotherColor</code>  作用域链：<img data-src="/2022/08/03/note/JavaScript/%E5%86%85%E5%AD%98%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/image-20220803221823039.png" alt="image-20220803221823039"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>执行到 <code>changeColor</code>  作用域内第 2 行的代码（第 4 行的位置 <code>function swap()</code> ）</p>
+<ul>
+<li>全局作用域链：<img data-src="/2022/08/03/note/JavaScript/%E5%86%85%E5%AD%98%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/image-20220803221633548.png" alt="image-20220803221633548"></li>
+<li><code>anotherColor</code>  作用域链：<img data-src="/2022/08/03/note/JavaScript/%E5%86%85%E5%AD%98%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/image-20220803221928812.png" alt="image-20220803221928812"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>执行到 <code>changeColor</code>  作用域内第 9 行的代码，进入 <code>swap</code>  作用域：这个新的颜色代表 <code>swap</code>  函数作用域</p>
+<ul>
+<li>执行到 <code>swap</code>  作用域内第 1 行的代码（第 5 行的位置 <code>let temp = anotherColor;</code> ）
+<ul>
+<li>全局作用域链：<img data-src="/2022/08/03/note/JavaScript/%E5%86%85%E5%AD%98%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/image-20220803221633548.png" alt="image-20220803221633548"></li>
+<li><code>anotherColor</code>  作用域链：<img data-src="/2022/08/03/note/JavaScript/%E5%86%85%E5%AD%98%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/image-20220803221928812.png" alt="image-20220803221928812"></li>
+<li><code>swap</code>  作用域链：<img data-src="/2022/08/03/note/JavaScript/%E5%86%85%E5%AD%98%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/image-20220803222013207.png" alt="image-20220803222013207"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>到 <code>changeColor</code>  作用域内第 9 行的代码执行完毕，释放 <code>swap</code>  作用域</p>
+</li>
+<li>
+<p>第 11 行执行完毕，释放 <code>changeColor</code>  的作用域</p>
+</li>
+</ul>
+<blockquote>
+<p><code>JavaScript</code>  引擎在查找变量时<strong>顺着作用域链</strong>找的，先找最前端的正在执行的作用域的变量对象，没找到再一层层往下找，直到全局作用域。因此，&lt;font color=red&gt; 访问局部变量比访问全局变量要快得多。&lt;/font&gt;</p>
+</blockquote>
+<h1 id="内存"><a class="anchor" href="#内存">#</a> 内存</h1>
+<h2 id="垃圾回收"><a class="anchor" href="#垃圾回收">#</a> 垃圾回收</h2>
+<p><code>JavaScript</code>  会自动释放内存，其基本思路是：</p>
+<ul>
+<li>确定哪些变量不会再被使用，然后释放他的内存</li>
+<li><strong>周期性</strong>：垃圾回收程序是每隔一段时间运行一次的</li>
+</ul>
+<p>但是单靠算法也无法完美避免内存的泄露，因此需要理解垃圾回收机制，注意避免。</p>
+<h3 id="回收算法"><a class="anchor" href="#回收算法">#</a> 回收算法</h3>
+<p>前面说过，回收程序在确定变量不会再被使用时，释放他的内存，那么怎么确认呢，就需要跟踪记录哪些变量还有可能使用。</p>
+<p>一般来说，局部变量在其作用域执行时，不会被删除。此时，内存会给他分配空间以保存相应的值。当作用域中的代码执行完后，里面的变量基本就不会被使用了，此时就会释放该作用域占用的所有内存。但有一种情况例外，就是当局部变量被其他作用域的变量<strong>引用</strong>（在其他作用域被使用）时，回收程序会认为他扔需要使用，就不会释放内存。</p>
+<p>如何标记未使用的变量主要有以下两种方式：<strong>标记清理</strong>和<strong>引用计数</strong></p>
+<h4 id="标记清理常用"><a class="anchor" href="#标记清理常用">#</a> 标记清理（常用）</h4>
+<p>标记清理是针对<strong>变量</strong>（变量名）的</p>
+<ol>
+<li>
+<p>当变量进入上下文时（如函数内声明一个变量），这个变量会被加上一个<strong>存在于上下文</strong>的标记。</p>
+<p>标记方法有很多（这都不重要）</p>
+<ul>
+<li>如反转某一位</li>
+<li>或维护 “上下文中” 和 “不在上下文中” 的变量列表</li>
+</ul>
+</li>
+<li>
+<p>当变量离开上下文时（上下文内的代码执行完），也会被加上一个<strong>离开上下文</strong>的标记。</p>
+</li>
+<li>
+<p>垃圾回收程序运行时，会标记（待删除）内存中存储的所有变量。然后将</p>
+<ul>
+<li>所有上下文中的变量</li>
+<li>被在上下文中的变量<strong>引用</strong>的变量</li>
+</ul>
+<p>的标记去掉，剩下的还带着（待删除）标记的变量就是待删除的了。（因为不会再被访问了）</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">let</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span> </pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token comment">// 此时，a 和 b 均在上下文中，且 a 被 b 引用</span></pre></td></tr></table></figure><figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">let</span> <span class="token function-variable function">method</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token keyword">let</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token keyword">return</span> b<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token keyword">let</span> method1 <span class="token operator">=</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token comment">// 此时，a 已经离开上下文，但 a 仍在被 b 引用</span></pre></td></tr></table></figure></li>
+<li>
+<p>到了回收周期进行清理待删除标记的变量，并回收他们的内存。</p>
+</li>
+</ol>
+<h4 id="引用计数"><a class="anchor" href="#引用计数">#</a> 引用计数</h4>
+<p>引用计数是针对<strong>值</strong>（变量值）的</p>
+<ul>
+<li>
+<p>当声明一个变量并为它赋予一个<strong>引用值</strong>时，这个<strong>值</strong>的引用数为 1</p>
+<ul>
+<li>
+<p>如果这个<strong>值</strong>又被赋给了另一个变量，那么引用数 + 1</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">// [1, 2, 3] 的引用数为 1</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">let</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span> <span class="token comment">// [1, 2, 3] 的引用数为 2</span></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>
+<p>如果保存该<strong>值</strong>的变量被覆盖了，则引用数 - 1</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// [1, 2, 3] 的引用数为 1</span></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<p>引用计数有一个<strong>严重</strong>的缺陷，就是当 a 引用 b，而 b 又引用 a 时，会造成<strong>循环引用</strong>，导致这两个值一直不被释放</p>
+<h4 id="总结"><a class="anchor" href="#总结">#</a> 总结</h4>
+<ul>
+<li><strong>标记清理</strong>是针对<strong>变量</strong>（变量名）的</li>
+<li><strong>引用计数</strong>是针对<strong>值</strong>（变量值）的</li>
+<li><strong>标记清理</strong>比引用计数更常用，也更好</li>
+</ul>
+<h3 id="回收周期"><a class="anchor" href="#回收周期">#</a> 回收周期</h3>
+<p>垃圾回收程序周期运行，当垃圾累积到一定数量会影响性能，因此回收周期（时间调度）很重要。</p>
+<p>回收频率太低会导致<strong>垃圾积压</strong>，频率太高会到处<strong>小内存片泛滥</strong>。</p>
+<p>IE7 后，JavaScript 引擎的垃圾回收程序为<strong>动态</strong>改变分配变量、字面量或数组槽位等阈值。</p>
+<ul>
+<li>
+<p>设一个初始阈值。</p>
+</li>
+<li>
+<p>如果有一次回收内存不到已分配的 15%，则阈值会翻倍。</p>
+</li>
+<li>
+<p>如果有一次回收内存达到 85%，则阈值重置为默认值。</p>
+</li>
+</ul>
+<p>（有点像网络拥塞控制的慢开始和快重传）</p>
+<h2 id="内存管理"><a class="anchor" href="#内存管理">#</a> 内存管理</h2>
+<h3 id="手动释放内存"><a class="anchor" href="#手动释放内存">#</a> 手动释放内存</h3>
+<p><code>JavaScript</code>  是自动回收内存的，但也可以通过<strong>解除引用</strong>的方式手动释放内存。</p>
+<blockquote>
+<p>如果数据不再必要，那么把他设置成 <code>null</code> ，从而释放引用</p>
+</blockquote>
+<p>这种方法最适合<strong>全局变量</strong>，因为局部变量在超出作用域会被自动接触引用，而全局变量会一直存在直到浏览器关闭</p>
+<p>&lt;font color=red&gt; 注：解除引用不是立即回收相关内存，而是在<strong>下一次</strong>垃圾回收的时候释放 &lt;/font&gt;</p>
+<h3 id="多用-let-和-const"><a class="anchor" href="#多用let和const">#</a> 多用 let 和 const</h3>
+<p>let 和 const 以块级作用域为单位，比 var 更有助于被回收</p>
+<h3 id="善用隐藏类"><a class="anchor" href="#善用隐藏类">#</a> 善用隐藏类</h3>
+<p>能够共享相同隐藏类的对象性能更好。</p>
+<p>算是属于 V8JavaScript 引擎（Chrome 使用这个引擎）的特性。</p>
+<p>通过下面这个例子来解释：</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">function</span> <span class="token function">Article</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">this</span><span class="token punctuation">.</span>title<span class="token operator">=</span><span class="token string">"title"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">let</span> a1<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Article</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token keyword">let</span> a2<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Article</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>这时候 <code>a1</code>  和 <code>a2</code>  同属于一个类（ <code>Article</code> ）</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>a2<span class="token punctuation">.</span>author<span class="token operator">=</span><span class="token string">'jake'</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>这时候 <code>a1</code>  和 <code>a2</code>  还是同属于一个类（ <code>Article</code> ），但他们不属于同一个<strong>隐藏类</strong>。其中， <code>a2</code>  的隐藏类比 <code>a1</code>  多了一个 <code>author</code>  属性</p>
+<p>再看下例：</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">function</span> <span class="token function">Article</span><span class="token punctuation">(</span><span class="token parameter">author</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">this</span><span class="token punctuation">.</span>title<span class="token operator">=</span><span class="token string">"title"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">this</span><span class="token punctuation">.</span>author<span class="token operator">=</span>author<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token keyword">let</span> a1<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Article</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token keyword">let</span> a2<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Article</span><span class="token punctuation">(</span><span class="token string">"jake"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>同样的，此时 2 者属于同一个类，也属于同一个隐藏类</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">delete</span> a1<span class="token punctuation">.</span>author<span class="token punctuation">;</span></pre></td></tr></table></figure><p>现在， <code>a1</code>  和 <code>a2</code>  又不属于同一个隐藏类了。</p>
+<hr>
+<p>&lt;font color=red&gt; 能够共享隐藏类的对象<strong>性能更好</strong>，即尽可能少的制造隐藏类 &lt;/font&gt;</p>
+<p>因此，我们可以把 <code>delete a1.author</code>  改成下面这样</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>a1<span class="token punctuation">.</span>author<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">;</span><span class="token comment">// 用这个代替 delete</span></pre></td></tr></table></figure><h3 id="对象池"><a class="anchor" href="#对象池">#</a> 对象池</h3>
+<p>开发者无法控制什么时候开始收集垃圾，但可以<strong>间接控制触发垃圾回收的条件</strong>。</p>
+<ul>
+<li>
+<p>** 标准 1：** 对象更替速度。</p>
+<p>如果很多对象初始化，然后一下子又都超出了作用域（不再用到），那么浏览器更频繁地垃圾回收</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">function</span> <span class="token function">addVector</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">let</span> result<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Vector</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    result<span class="token punctuation">.</span>x<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    result<span class="token punctuation">.</span>y<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token keyword">return</span> result<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>如上面这个例子，如果多次调用 <code>addVector()</code> ，那么 <code>Vector</code>  的实例对象被频繁的创建，又很快超出作用域，生命周期很短。垃圾回收程序会发现此处对象更替速度快，则会更频繁地安排垃圾回收。</p>
+<p><strong>解决：<strong>不要频繁的创建对象，可以通过</strong>对象池</strong>来实现。</p>
+</li>
+<li>
+<p>** 对象池：** 创建一个对象池，用来管理一组可回收的对象</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">//vectorPool：假设这是一个已经创建好的对象池对象，先不管是怎么实现的</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">let</span> v1<span class="token operator">=</span>vectorPool<span class="token punctuation">.</span><span class="token function">allocate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 从对象池中取一个 vector 对象</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">let</span> v2<span class="token operator">=</span>vectorPool<span class="token punctuation">.</span><span class="token function">allocate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">addVector</span><span class="token punctuation">(</span>v1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">addVector</span><span class="token punctuation">(</span>v2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>vectorPool<span class="token punctuation">.</span><span class="token function">free</span><span class="token punctuation">(</span>v1<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>vectorPool<span class="token punctuation">.</span><span class="token function">free</span><span class="token punctuation">(</span>v2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 用完把 result 对象还给对象池</span></pre></td></tr><tr><td data-num="8"></td><td><pre>v1<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>v2<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token keyword">function</span> <span class="token function">addVector</span><span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token comment">// 函数改成这样</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    result<span class="token punctuation">.</span>x<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    result<span class="token punctuation">.</span>y<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>    <span class="token keyword">return</span> result<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>这样垃圾回收检测就不会发现有对象更替，也就不会频繁的垃圾回收。</p>
+</li>
+</ul>
+<hr>
+<p>一般<strong>对象池</strong>都是用<strong>数组</strong>实现的，JavaScript 的数组大小是动态可变的， <code>Array.push()</code>  操作有可能会导致不必要的垃圾回收，因此最好一开始就初始化创建一个大小够用的数组作为<strong>对象池</strong>。</p>
+<p>原话是这样的，但不是很理解。</p>
+<blockquote>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">let</span> list<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">let</span> vector<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Vector</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>list<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>vector<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>引擎会删除大小为 100 的数组，再创建一个大小为 200 的数组。垃圾回收程序看到这个删除操作，可能会跑过来进行一次垃圾回收。</p>
+</blockquote>
+<p>不知道这个是不是和 <code>C++</code>  的 capacity 一样，当数组长度超过 <code>capacity</code>  时，加长 <code>capacity</code> ，然后之后的 <code>push</code>  就不需要再花大力气分配新的内存了。但我看 JavaScript 好像并不是这样，所以不是很理解，以下是 CSDN 中说的</p>
+<blockquote>
+<p>JavaScript 据元素的增加和删除来动态调整存储空间大小，内部是通过扩容和收缩机制实现</p>
+</blockquote>
+<h3 id="内存泄漏"><a class="anchor" href="#内存泄漏">#</a> 内存泄漏</h3>
+<p><code>JavaScript</code>  的内存泄漏大部分是由<strong>不合理的引用</strong>导致的。</p>
+<ul>
+<li>
+<p>意外声明<strong>全局变量</strong>是最常见也是最容易修复的内存泄漏</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">function</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    name<span class="token operator">=</span><span class="token string">'jake'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>这里 <code>name</code>  一不小心定义在了<strong>全局作用域</strong>（ <code>window</code> ），即使 <code>setName</code>  的上下文执行完毕不再需要，也不会释放</p>
+<p>解决：只要在 <code>name</code>  前面加上 <code>var</code> 、 <code>let</code> 、 <code>const</code>  即可。（最好不要用 <code>var</code> ）</p>
+</li>
+<li>
+<p><strong>定时器</strong>可能会导致内存泄漏。（本质上是<strong>闭包</strong>引起的）</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">'Jack'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>只要定时器一直运行，回调函数中引用的 <code>name</code>  就会一直占内存。因而就不会清理外部变量（外面那个 <code>name</code> ）</p>
+</li>
+<li>
+<p>关于闭包的泄漏，在下面会详细讲。&lt;font color=red&gt; 其实节流和防抖函数也是利用这个，使计时器一直不被回收 &lt;/font&gt;</p>
+</li>
+</ul>
+<h1 id="闭包"><a class="anchor" href="#闭包">#</a> 闭包</h1>
+<blockquote>
+<p><strong>闭包</strong>指的是那些<strong>引用</strong>了另一个函数作用域中变量的函数</p>
+</blockquote>
+<p>解析一下上面这句话：</p>
+<ol>
+<li>
+<p><strong>引用</strong>：这个引用很关键，闭包不仅仅是函数内的函数，还有个重要条件是<strong>引用</strong>了另一个函数作用域的变量</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">function</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">'jack'</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">// 这是一个闭包</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token keyword">return</span> name<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token keyword">function</span> <span class="token function">outer2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">// 这不是</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">'joker'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token keyword">return</span> name<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
+<li>
+<p>另一个函数域：指的一般是外部域。因为只有外层的作用域的变量是可以被引用的（变量对象在<strong>作用域链</strong>后端可以被找到）</p>
+</li>
+<li>
+<p>的函数：指的是里面那层函数，上面例子中被 <code>return</code>  的函数是闭包，而不是外层的 <code>outer</code></p>
+</li>
+</ol>
+<h2 id="闭包的内存泄漏"><a class="anchor" href="#闭包的内存泄漏">#</a> 闭包的内存泄漏</h2>
+<p>看以下例子</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">function</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">'jack'</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">// 这是一个闭包</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token keyword">return</span> name<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token keyword">let</span> method <span class="token operator">=</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 通过引用 outer 的返回值定义一个 method 函数</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 执行 method 函数</span></pre></td></tr></table></figure><p>在定义 <code>let method = outer();</code>  这段代码，代码执行流进入 <code>outer</code>  的函数作用域，执行完毕后本来应该释放局部变量 <code>name</code> ，但因为返回了一个匿名函数（闭包），而这个匿名函数对 <code>name</code>  有所<strong>引用</strong>（需要用到），因此 <code>name</code>  实际上与这个匿名函数<strong>共生死</strong></p>
+<p>而这个匿名函数（闭包）作为返回值被 <code>method</code> <strong> 引用</strong>，又导致匿名函数与 <code>method</code>  绑定在了一起，此时 <code>method</code> →闭包→ <code>name</code> ，只要箭头左侧的变量 / 值存在，右侧的就不会被释放（反之不会）。</p>
+<p>在这个例子中， <code>method</code>  因为是全局变量，因此直到浏览器窗口被关闭前都不会被销毁，因此只要 <code>method</code>  不被别的值覆盖， <code>name</code>  也会一直在内存中。</p>
+<p>&lt;font color=red&gt; 注：匿名函数≠闭包，只是这个例子中是同一个 &lt;/font&gt;</p>
+<hr>
+<p>不过我们可以<strong>减少</strong>闭包的内存泄漏，如下例</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">function</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token keyword">return</span> obj<span class="token punctuation">.</span>a<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token keyword">let</span> temp<span class="token operator">=</span><span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">'a'</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>这里闭包引用了 <code>obj.a</code> ，从而使得 <code>obj</code>  无法释放。当 <code>obj</code>  大到一定程度的时候，会严重影响性能，而我们仅仅是需要 <code>obj.a</code>  的属性，得不偿失。</p>
+<p>可以改成下面这样：</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">function</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">let</span> a <span class="token operator">=</span> obj<span class="token punctuation">.</span>a<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    obj <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token keyword">return</span> a<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token keyword">let</span> temp<span class="token operator">=</span><span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">'a'</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>这样一来，当执行到 <code>obj = null</code>  时， <code>obj</code>  会被<strong>解除引用</strong>（本质上是解除了 <code>obj</code>  对其他变量的引用，而 <code>obj.a</code>  由于还存在被 <code>a</code>  的引用，不会被释放），在下一次垃圾回收时会被释放。而 <code>a</code>  则会一直存在在内存中，但大大降低了内存的泄漏。</p>
+<h2 id="闭包的-this-指向"><a class="anchor" href="#闭包的this指向">#</a> 闭包的 this 指向</h2>
+<p>如果闭包不是使用<strong>箭头函数</strong>定义，那么其 <code>this</code>  会在<strong>运行</strong>（被调用）时绑定到<strong>执行函数</strong>的上下文（调用闭包函数的对象的作用域）。也就是说，这种情况下，&lt;font color=red&gt; 闭包的 <code>this</code>  指向调用该闭包函数的对象 &lt;/font&gt;。即：</p>
+<ul>
+<li>如果在全局函数调用：
+<ul>
+<li>非严格模式下： <code>this</code>  等于（指向） <code>window</code></li>
+<li>严格模式下： <code>this</code>  为 <code>undefined</code></li>
+</ul>
+</li>
+<li>如果作为某个对象的方法调用： <code>this</code>  等于（指向）这个对象</li>
+</ul>
+<p>如下例：</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>window<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">'red'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    color<span class="token operator">:</span> <span class="token string">'blue'</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token function">getColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>            <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>color<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span><span class="token function">getColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// red</span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token comment">// 相当于</span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token comment">// let c = obj.getColor();</span></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token comment">// c();</span></pre></td></tr></table></figure><p>这里解析一下：</p>
+<ol>
+<li>
+<p>闭包是函数声明式定义，非箭头函数，因此与就看谁调用的了</p>
+</li>
+<li>
+<p>在 <code>obj.getColor()()</code>  这块，我们可以把他看成是以下 2 行代码</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">let</span> c <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token function">getColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 先对返回的闭包函数进行一个赋值</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//c () 实际上是 window.c ()</span></pre></td></tr></table></figure><p>这样就很容易看出，闭包是在全局对象上被调用的</p>
+</li>
+</ol>
+<hr>
+<p>那么该如何通过闭包调用到 <code>obj.color</code>  呢？</p>
+<p>每个函数在<strong>被调用时</strong>会自动创建 2 个变量： <code>this</code>  和 <code>arguments</code> ，&lt;font color=red&gt; 但内部函数永远无法直接访问外部函数的这 2 个变量。&lt;/font &gt; 因此我们只能通过创建一个临时变量引用来保存这 2 个变量的值，如下：</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>window<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">'red'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    color<span class="token operator">:</span> <span class="token string">'blue'</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token function">getColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token keyword">let</span> self <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>            <span class="token keyword">return</span> self<span class="token punctuation">.</span>color<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span><span class="token function">getColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// blue</span></pre></td></tr></table></figure><h2 id="防抖-节流"><a class="anchor" href="#防抖-节流">#</a> 防抖、节流</h2>
+<p>防抖和节流是闭包的一个很经典的例子，具体的防抖节流介绍这里就不详细讲了，就列举几个例子</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">// 节流函数（计时器版）</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">function</span> <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token parameter">func<span class="token punctuation">,</span> wait</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">var</span> timeout<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">// 这是一个闭包</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token keyword">var</span> context <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token keyword">var</span> args <span class="token operator">=</span> arguments<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>timeout<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>            timeout <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>                timeout <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>                <span class="token function">func</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="12"></td><td><pre>            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> wait<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="14"></td><td><pre></pre></td></tr><tr><td data-num="15"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>这里在 <code>debounce</code>  函数域中定义了计时变量 <code>timeout</code> ，</p>
+<ul>
+<li>为了阻止 <code>timeout</code>  被<strong>自动释放</strong>，使用闭包来对其引用。</li>
+</ul>
+<hr>
+<p>计时器版也是如此</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">function</span> <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token parameter">func<span class="token punctuation">,</span> wait</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">var</span> previous <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token keyword">var</span> now <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token keyword">var</span> context <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token keyword">var</span> args <span class="token operator">=</span> arguments<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token keyword">if</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> previous <span class="token operator">></span> wait<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>            <span class="token function">func</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>            previous <span class="token operator">=</span> now<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><hr>
+<p>主要参考《JavaScript 高级程序设计》，由于本人水平有限，可能会有理解不到位的地方，欢迎各位指正</p>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-08-04 22:56:39" itemprop="dateModified" datetime="2022-08-04T22:56:39+08:00">2022-08-04</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="../images/wechatpay.png" alt="宁理大神1996 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="../images/alipay.png" alt="宁理大神1996 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="../images/paypal.png" alt="宁理大神1996 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>宁理大神1996 <i class="ic i-at"><em>@</em></i>宁理大神 1996
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="../../../../../../https:/nitgod1996.com/2022/08/03/note/JavaScript/%E5%86%85%E5%AD%98%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/" title="JavaScript 内存、作用域和闭包">https://nitgod1996.com/2022/08/03/note/JavaScript/内存、作用域、闭包/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="../../../../../07/31/note/JavaScript/JavaScript%E5%87%BD%E6%95%B0/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclip4jbpj20zk0m87cv.jpg" title="JavaScript函数">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>JavaScript函数</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="../../../../10/note/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclimtf7dj20zk0m8qav.jpg" title="CSS盒模型">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>CSS盒模型</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">1.</span> <span class="toc-text"> 执行上下文（作用域）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">1.1.</span> <span class="toc-text"> 函数作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE"><span class="toc-number">1.2.</span> <span class="toc-text"> 作用域链</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%85%E5%AD%98"><span class="toc-number">2.</span> <span class="toc-text"> 内存</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="toc-number">2.1.</span> <span class="toc-text"> 垃圾回收</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 回收算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E8%AE%B0%E6%B8%85%E7%90%86%E5%B8%B8%E7%94%A8"><span class="toc-number">2.1.1.1.</span> <span class="toc-text"> 标记清理（常用）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E8%AE%A1%E6%95%B0"><span class="toc-number">2.1.1.2.</span> <span class="toc-text"> 引用计数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">2.1.1.3.</span> <span class="toc-text"> 总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E6%94%B6%E5%91%A8%E6%9C%9F"><span class="toc-number">2.1.2.</span> <span class="toc-text"> 回收周期</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-number">2.2.</span> <span class="toc-text"> 内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E9%87%8A%E6%94%BE%E5%86%85%E5%AD%98"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 手动释放内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%94%A8-let-%E5%92%8C-const"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 多用 let 和 const</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%96%84%E7%94%A8%E9%9A%90%E8%97%8F%E7%B1%BB"><span class="toc-number">2.2.3.</span> <span class="toc-text"> 善用隐藏类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%B1%A0"><span class="toc-number">2.2.4.</span> <span class="toc-text"> 对象池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F"><span class="toc-number">2.2.5.</span> <span class="toc-text"> 内存泄漏</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AD%E5%8C%85"><span class="toc-number">3.</span> <span class="toc-text"> 闭包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F"><span class="toc-number">3.1.</span> <span class="toc-text"> 闭包的内存泄漏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84-this-%E6%8C%87%E5%90%91"><span class="toc-number">3.2.</span> <span class="toc-text"> 闭包的 this 指向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E6%8A%96-%E8%8A%82%E6%B5%81"><span class="toc-number">3.3.</span> <span class="toc-text"> 防抖、节流</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="宁理大神1996"
+      data-src="../images/avatar.jpg">
+  <p class="name" itemprop="name">宁理大神1996</p>
+  <div class="description" itemprop="description">宁理大神的个人博客</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="../archives/">
+        <span class="count">50</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="../categories/">
+        <span class="count">14</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="../tags/">
+        <span class="count">22</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3lvdXJuYW1l" title="https:&#x2F;&#x2F;github.com&#x2F;yourname"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPXlvdXJpZA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;yourid"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="../index.html" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../archives/" rel="section"><i class="ic i-archive"></i>归档</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="../../../../../07/31/note/JavaScript/JavaScript%E5%87%BD%E6%95%B0/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="../../../../10/note/CSS/%E7%9B%92%E6%A8%A1%E5%9E%8B/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../15/note/CSS/CSS%E5%85%AB%E8%82%A1/" title="CSS八股">CSS八股</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../04/15/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%AE%97%E6%B3%95%E9%A2%98%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0/" title="算法题常用函数">算法题常用函数</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../15/note/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%85%AB%E8%82%A1%E6%96%87/" title="计算机网络八股文">计算机网络八股文</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/software/" title="分类于 software">software</a>
+</div>
+
+    <span><a href="../../../../../../2021/05/10/note/software/maven%E5%A4%8D%E4%B9%A0/" title="maven复习">maven复习</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="../../../../../../2021/04/23/note/%E5%89%8D%E7%AB%AF/echarts/" title="echarts用法简单记录">echarts用法简单记录</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="" title="JavaScript内存、作用域和闭包">JavaScript内存、作用域和闭包</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2021/11/09/note/%E5%89%8D%E7%AB%AF/Vue/" title="Vue学习笔记">Vue学习笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../04/27/note/%E5%89%8D%E7%AB%AF/Mock/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2021/06/21/note/Python/jupyter/" title="jupty使用方法">jupty使用方法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="../../../../../../2021/05/23/note/%E5%89%8D%E7%AB%AF/CSS%EF%BC%88%E5%BC%83%E7%94%A8%EF%BC%89/" title="CSS笔记及参考手册">CSS笔记及参考手册</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">宁理大神1996 @ nitgod1996</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">566k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">8:35</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/08/03/note/JavaScript/内存、作用域、闭包/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="../../../../../../js/app.js?v=0.2.5"></script>
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
