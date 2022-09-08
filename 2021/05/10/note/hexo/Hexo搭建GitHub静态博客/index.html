@@ -117,12 +117,12 @@ nitgod1996 = 宁理大神 1996</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicit31ffoj20zk0m8naf.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclx29mstj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipex2cdtbj20zk0m8x6p.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclfb3vzhj20zk0m8wny.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipey0a334j20zk0m8qpt.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicm0fdw5cj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclhnx9glj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeyhsblkj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclflwv2aj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclx6phq6j20zk0m8e36.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclwrdwyaj20zk0m8are.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipetfk5zwj20zk0m8e81.jpg"></li>
         </ul>
       </div>
     </header>
@@ -209,7 +209,7 @@ sudo apt-get install npm
 <pre class=" language-language-bash"><code class="language-language-bash">$ git config --global user.name "nitgod1996"// 你的github用户名，非昵称
 $ git config --global user.email  "xxx@qq.com"// 填写你的github注册邮箱
 </code></pre>
-<h1 id="三-安装-hexo"><a class="anchor" href="#三-安装hexo">#</a> 三、 安装 Hexo</h1>
+<h1 id="三-安装部署-hexo"><a class="anchor" href="#三-安装部署hexo">#</a> 三、 安装部署 Hexo</h1>
 <h2 id="1-installation"><a class="anchor" href="#1-installation">#</a> 1. Installation</h2>
 <p>打开 Git 命令行，执行如下命令</p>
 <pre class=" language-language-bash"><code class="language-language-bash">$ npm install -g hexo
@@ -955,6 +955,20 @@ feed:
 <li>
 <p>shoka 主题许多代码格式不支持，如 <code>yaml</code> 、 <code>ejs</code> ，如果在 typora 中编辑了这些代码，则不显示高亮，严重的甚至会引发代码注入产生 bug。 <code>ejs</code>  可用 <code>html</code>  格式代替</p>
 </li>
+<li>
+<p>hexo d 部署失败：1. SSH 没配置好。2. SSH 配置好了</p>
+<pre class=" language-language-bash"><code class="language-language-bash">nothing to commit, working tree clean
+Connection reset by 52.74.223.119 port 22
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+</code></pre>
+<ol>
+<li>SSH 没配置好的问题，可以参照前面 SSH 配置方法。</li>
+<li>SSH 配置好了，那可能是网的问题。我上次遇到就是，换个网就好了</li>
+</ol>
+</li>
 </ul>
 <p>转载</p>
 <ol>
@@ -975,7 +989,7 @@ feed:
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2021-06-03 16:28:31" itemprop="dateModified" datetime="2021-06-03T16:28:31+08:00">2021-06-03</time>
+    <time title="修改时间：2021-08-12 16:33:30" itemprop="dateModified" datetime="2021-08-12T16:33:30+08:00">2021-08-12</time>
   </span>
 </div>
 
@@ -1062,11 +1076,11 @@ feed:
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text"> 一、 安装环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85-git"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. 安装 Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-nodejs"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. 安装 node.js</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E9%85%8D%E7%BD%AE-github"><span class="toc-number">2.</span> <span class="toc-text"> 二、 配置 Github</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BB%BA%E7%AB%8B-repository"><span class="toc-number">2.1.</span> <span class="toc-text"> 1. 建立 Repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE-ssh-key"><span class="toc-number">2.2.</span> <span class="toc-text"> 2. 配置 SSH-Key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B5%8B%E8%AF%95%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F"><span class="toc-number">2.3.</span> <span class="toc-text"> 3. 测试是否成功</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E5%AE%89%E8%A3%85-hexo"><span class="toc-number">3.</span> <span class="toc-text"> 三、 安装 Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-installation"><span class="toc-number">3.1.</span> <span class="toc-text"> 1. Installation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-quick-start"><span class="toc-number">3.2.</span> <span class="toc-text"> 2. Quick Start</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-hexo-%E4%BB%8B%E7%BB%8D"><span class="toc-number">4.</span> <span class="toc-text"> 四、 Hexo 介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-_configxml-%E4%BB%8B%E7%BB%8D"><span class="toc-number">4.1.</span> <span class="toc-text"> 1. 配置文件 _config.xml  介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-site-%E7%AB%99%E7%82%B9%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-number">4.1.1.</span> <span class="toc-text"> 1.1 Site 站点基本信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-url-%E8%B7%AF%E5%BE%84%E4%BF%A1%E6%81%AF"><span class="toc-number">4.1.2.</span> <span class="toc-text"> 1.2  URL 路径信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-directory-%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E4%BF%A1%E6%81%AF"><span class="toc-number">4.1.3.</span> <span class="toc-text"> 1.3 Directory 文件目录信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-writing-%E6%96%87%E7%AB%A0%E4%BF%A1%E6%81%AF"><span class="toc-number">4.1.4.</span> <span class="toc-text"> 1.4 Writing 文章信息</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#141-asset-%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6"><span class="toc-number">4.1.4.1.</span> <span class="toc-text"> 1.4.1  Asset  资源文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-category-amp-tag-%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE%E9%85%8D%E7%BD%AE"><span class="toc-number">4.1.5.</span> <span class="toc-text"> 1.5 Category &amp; Tag 分类及标签配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-pagination-%E5%88%86%E9%A1%B5"><span class="toc-number">4.1.6.</span> <span class="toc-text"> 1.6  Pagination 分页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-%E5%85%B6%E4%BB%96"><span class="toc-number">4.1.7.</span> <span class="toc-text"> 1.7 其他</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#theme"><span class="toc-number">4.1.7.1.</span> <span class="toc-text"> theme:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#theme_config"><span class="toc-number">4.1.7.2.</span> <span class="toc-text"> theme_config:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#includeexclude"><span class="toc-number">4.1.7.3.</span> <span class="toc-text"> include&#x2F;exclude：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#deploy"><span class="toc-number">4.1.7.4.</span> <span class="toc-text"> deploy：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93"><span class="toc-number">4.2.</span> <span class="toc-text"> 2. 命令总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 2.1 常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E5%A4%8D%E5%90%88%E5%91%BD%E4%BB%A4"><span class="toc-number">4.2.2.</span> <span class="toc-text"> 2.2 复合命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%86%99%E4%BD%9C%E7%9B%B8%E5%85%B3"><span class="toc-number">4.3.</span> <span class="toc-text"> 3. 写作相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0"><span class="toc-number">4.3.1.</span> <span class="toc-text"> 3.1 创建文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-%E5%9B%BE%E7%89%87%E6%8F%92%E5%85%A5%E8%AE%BE%E7%BD%AE"><span class="toc-number">4.3.2.</span> <span class="toc-text"> 3.2 图片插入设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#321-%E7%BC%96%E8%BE%91%E5%99%A8-typora-%E8%AE%BE%E7%BD%AE"><span class="toc-number">4.3.2.1.</span> <span class="toc-text"> 3.2.1 编辑器 Typora 设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#322-%E5%AE%89%E8%A3%85-hexo-asset-image-%E6%8F%92%E4%BB%B6"><span class="toc-number">4.3.2.2.</span> <span class="toc-text"> 3.2.2 安装 hexo-asset-image 插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#323-%E7%BC%96%E8%BE%91%E6%8F%92%E4%BB%B6%E7%9A%84-indexjs"><span class="toc-number">4.3.2.3.</span> <span class="toc-text"> 3.2.3 编辑插件的 index.js</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#324-%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87"><span class="toc-number">4.3.2.4.</span> <span class="toc-text"> 3.2.4 插入图片</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-front-matter-%E4%BB%8B%E7%BB%8D"><span class="toc-number">4.4.</span> <span class="toc-text"> 4. Front-matter 介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E4%BC%98%E5%8C%96"><span class="toc-number">4.5.</span> <span class="toc-text"> 5. 优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#51-%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E5%8E%8B%E7%BC%A9"><span class="toc-number">4.5.1.</span> <span class="toc-text"> 5.1 静态资源压缩</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2"><span class="toc-number">4.6.</span> <span class="toc-text"> 6. 美化博客</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#61-%E7%9C%8B%E6%9D%BF%E5%A8%98"><span class="toc-number">4.6.1.</span> <span class="toc-text"> 6.1 看板娘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#62-%E6%B7%BB%E5%8A%A0%E7%82%B9%E5%87%BB%E7%89%B9%E6%95%88"><span class="toc-number">4.6.2.</span> <span class="toc-text"> 6.2 添加点击❤特效</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#63-%E7%82%B9%E5%87%BB%E7%83%9F%E8%8A%B1%E7%89%B9%E6%95%88"><span class="toc-number">4.6.3.</span> <span class="toc-text"> 6.3 点击烟花特效</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#64-%E6%B7%BB%E5%8A%A0%E6%BB%9A%E5%8A%A8%E5%BD%A9%E8%89%B2%E5%AD%97%E5%B9%95"><span class="toc-number">4.6.4.</span> <span class="toc-text"> 6.4 添加滚动彩色字幕</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#65-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A0%87%E9%A2%98%E6%81%B6%E6%90%9E"><span class="toc-number">4.6.5.</span> <span class="toc-text"> 6.5 浏览器标题恶搞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#66-%E9%9B%AA%E8%8A%B1%E9%A3%98%E8%90%BD%E7%89%B9%E6%95%88"><span class="toc-number">4.6.6.</span> <span class="toc-text"> 6.6 雪花飘落特效</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94-%E4%B8%BB%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text"> 五、 主题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-next"><span class="toc-number">5.1.</span> <span class="toc-text"> 1. next</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E5%AE%89%E8%A3%85%E5%B9%B6%E5%90%AF%E7%94%A8"><span class="toc-number">5.1.1.</span> <span class="toc-text"> 1.1 安装并启用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-next-%E7%89%B9%E6%80%A7"><span class="toc-number">5.1.2.</span> <span class="toc-text"> 1.2 NexT 特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#121-%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">5.1.2.1.</span> <span class="toc-text"> 1.2.1 主题配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E9%80%89%E6%8B%A9-scheme"><span class="toc-number">5.1.2.1.1.</span> <span class="toc-text"> 1. 选择 Scheme</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95"><span class="toc-number">5.1.2.1.2.</span> <span class="toc-text"> 2. 设置菜单</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E8%AE%BE%E7%BD%AE%E4%BE%A7%E6%A0%8F"><span class="toc-number">5.1.2.1.3.</span> <span class="toc-text"> 3. 设置侧栏</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E8%AE%BE%E7%BD%AE%E5%A4%B4%E5%83%8F"><span class="toc-number">5.1.2.1.4.</span> <span class="toc-text"> 4. 设置头像</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87"><span class="toc-number">5.1.2.1.5.</span> <span class="toc-text"> 5. 网站图标</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-%E7%A4%BE%E4%BA%A4%E9%93%BE%E6%8E%A5"><span class="toc-number">5.1.2.1.6.</span> <span class="toc-text"> 6. 社交链接</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-%E7%9B%AE%E5%BD%95"><span class="toc-number">5.1.2.1.7.</span> <span class="toc-text"> 7.  目录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-%E8%AE%BE%E7%BD%AE%E4%BB%8E%E6%96%87%E7%AB%A0%E5%93%AA%E9%87%8C%E5%BC%80%E5%A7%8B%E9%98%85%E8%AF%BB"><span class="toc-number">5.1.2.1.8.</span> <span class="toc-text"> 8. 设置从文章哪里开始阅读</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9-%E9%A6%96%E9%A1%B5%E5%8D%9A%E5%AE%A2%E4%B8%8D%E5%B1%95%E7%A4%BA%E5%85%A8%E6%96%87"><span class="toc-number">5.1.2.1.9.</span> <span class="toc-text"> 9. 首页博客不展示全文</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#10-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.1.2.1.10.</span> <span class="toc-text"> 10. 字体设置</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#122-busuanzi-%E6%B5%8F%E8%A7%88%E7%BB%9F%E8%AE%A1%E6%8F%92%E4%BB%B6"><span class="toc-number">5.1.2.2.</span> <span class="toc-text"> 1.2.2 busuanzi 浏览统计插件</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD-%E6%8F%92%E4%BB%B6"><span class="toc-number">6.</span> <span class="toc-text"> 六、 插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#441-feed-%E6%8F%92%E4%BB%B6"><span class="toc-number">6.0.1.</span> <span class="toc-text"> 4.4.1 feed 插件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">7.</span> <span class="toc-text"> 其他</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6"><span class="toc-number">8.</span> <span class="toc-text"> 错误集锦</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text"> 一、 安装环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85-git"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. 安装 Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-nodejs"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. 安装 node.js</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E9%85%8D%E7%BD%AE-github"><span class="toc-number">2.</span> <span class="toc-text"> 二、 配置 Github</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BB%BA%E7%AB%8B-repository"><span class="toc-number">2.1.</span> <span class="toc-text"> 1. 建立 Repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE-ssh-key"><span class="toc-number">2.2.</span> <span class="toc-text"> 2. 配置 SSH-Key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B5%8B%E8%AF%95%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F"><span class="toc-number">2.3.</span> <span class="toc-text"> 3. 测试是否成功</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2-hexo"><span class="toc-number">3.</span> <span class="toc-text"> 三、 安装部署 Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-installation"><span class="toc-number">3.1.</span> <span class="toc-text"> 1. Installation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-quick-start"><span class="toc-number">3.2.</span> <span class="toc-text"> 2. Quick Start</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-hexo-%E4%BB%8B%E7%BB%8D"><span class="toc-number">4.</span> <span class="toc-text"> 四、 Hexo 介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-_configxml-%E4%BB%8B%E7%BB%8D"><span class="toc-number">4.1.</span> <span class="toc-text"> 1. 配置文件 _config.xml  介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-site-%E7%AB%99%E7%82%B9%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-number">4.1.1.</span> <span class="toc-text"> 1.1 Site 站点基本信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-url-%E8%B7%AF%E5%BE%84%E4%BF%A1%E6%81%AF"><span class="toc-number">4.1.2.</span> <span class="toc-text"> 1.2  URL 路径信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-directory-%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E4%BF%A1%E6%81%AF"><span class="toc-number">4.1.3.</span> <span class="toc-text"> 1.3 Directory 文件目录信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-writing-%E6%96%87%E7%AB%A0%E4%BF%A1%E6%81%AF"><span class="toc-number">4.1.4.</span> <span class="toc-text"> 1.4 Writing 文章信息</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#141-asset-%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6"><span class="toc-number">4.1.4.1.</span> <span class="toc-text"> 1.4.1  Asset  资源文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-category-amp-tag-%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE%E9%85%8D%E7%BD%AE"><span class="toc-number">4.1.5.</span> <span class="toc-text"> 1.5 Category &amp; Tag 分类及标签配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-pagination-%E5%88%86%E9%A1%B5"><span class="toc-number">4.1.6.</span> <span class="toc-text"> 1.6  Pagination 分页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-%E5%85%B6%E4%BB%96"><span class="toc-number">4.1.7.</span> <span class="toc-text"> 1.7 其他</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#theme"><span class="toc-number">4.1.7.1.</span> <span class="toc-text"> theme:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#theme_config"><span class="toc-number">4.1.7.2.</span> <span class="toc-text"> theme_config:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#includeexclude"><span class="toc-number">4.1.7.3.</span> <span class="toc-text"> include&#x2F;exclude：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#deploy"><span class="toc-number">4.1.7.4.</span> <span class="toc-text"> deploy：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93"><span class="toc-number">4.2.</span> <span class="toc-text"> 2. 命令总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 2.1 常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E5%A4%8D%E5%90%88%E5%91%BD%E4%BB%A4"><span class="toc-number">4.2.2.</span> <span class="toc-text"> 2.2 复合命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%86%99%E4%BD%9C%E7%9B%B8%E5%85%B3"><span class="toc-number">4.3.</span> <span class="toc-text"> 3. 写作相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0"><span class="toc-number">4.3.1.</span> <span class="toc-text"> 3.1 创建文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-%E5%9B%BE%E7%89%87%E6%8F%92%E5%85%A5%E8%AE%BE%E7%BD%AE"><span class="toc-number">4.3.2.</span> <span class="toc-text"> 3.2 图片插入设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#321-%E7%BC%96%E8%BE%91%E5%99%A8-typora-%E8%AE%BE%E7%BD%AE"><span class="toc-number">4.3.2.1.</span> <span class="toc-text"> 3.2.1 编辑器 Typora 设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#322-%E5%AE%89%E8%A3%85-hexo-asset-image-%E6%8F%92%E4%BB%B6"><span class="toc-number">4.3.2.2.</span> <span class="toc-text"> 3.2.2 安装 hexo-asset-image 插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#323-%E7%BC%96%E8%BE%91%E6%8F%92%E4%BB%B6%E7%9A%84-indexjs"><span class="toc-number">4.3.2.3.</span> <span class="toc-text"> 3.2.3 编辑插件的 index.js</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#324-%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87"><span class="toc-number">4.3.2.4.</span> <span class="toc-text"> 3.2.4 插入图片</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-front-matter-%E4%BB%8B%E7%BB%8D"><span class="toc-number">4.4.</span> <span class="toc-text"> 4. Front-matter 介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E4%BC%98%E5%8C%96"><span class="toc-number">4.5.</span> <span class="toc-text"> 5. 优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#51-%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E5%8E%8B%E7%BC%A9"><span class="toc-number">4.5.1.</span> <span class="toc-text"> 5.1 静态资源压缩</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2"><span class="toc-number">4.6.</span> <span class="toc-text"> 6. 美化博客</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#61-%E7%9C%8B%E6%9D%BF%E5%A8%98"><span class="toc-number">4.6.1.</span> <span class="toc-text"> 6.1 看板娘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#62-%E6%B7%BB%E5%8A%A0%E7%82%B9%E5%87%BB%E7%89%B9%E6%95%88"><span class="toc-number">4.6.2.</span> <span class="toc-text"> 6.2 添加点击❤特效</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#63-%E7%82%B9%E5%87%BB%E7%83%9F%E8%8A%B1%E7%89%B9%E6%95%88"><span class="toc-number">4.6.3.</span> <span class="toc-text"> 6.3 点击烟花特效</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#64-%E6%B7%BB%E5%8A%A0%E6%BB%9A%E5%8A%A8%E5%BD%A9%E8%89%B2%E5%AD%97%E5%B9%95"><span class="toc-number">4.6.4.</span> <span class="toc-text"> 6.4 添加滚动彩色字幕</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#65-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A0%87%E9%A2%98%E6%81%B6%E6%90%9E"><span class="toc-number">4.6.5.</span> <span class="toc-text"> 6.5 浏览器标题恶搞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#66-%E9%9B%AA%E8%8A%B1%E9%A3%98%E8%90%BD%E7%89%B9%E6%95%88"><span class="toc-number">4.6.6.</span> <span class="toc-text"> 6.6 雪花飘落特效</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94-%E4%B8%BB%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text"> 五、 主题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-next"><span class="toc-number">5.1.</span> <span class="toc-text"> 1. next</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E5%AE%89%E8%A3%85%E5%B9%B6%E5%90%AF%E7%94%A8"><span class="toc-number">5.1.1.</span> <span class="toc-text"> 1.1 安装并启用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-next-%E7%89%B9%E6%80%A7"><span class="toc-number">5.1.2.</span> <span class="toc-text"> 1.2 NexT 特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#121-%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">5.1.2.1.</span> <span class="toc-text"> 1.2.1 主题配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E9%80%89%E6%8B%A9-scheme"><span class="toc-number">5.1.2.1.1.</span> <span class="toc-text"> 1. 选择 Scheme</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95"><span class="toc-number">5.1.2.1.2.</span> <span class="toc-text"> 2. 设置菜单</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E8%AE%BE%E7%BD%AE%E4%BE%A7%E6%A0%8F"><span class="toc-number">5.1.2.1.3.</span> <span class="toc-text"> 3. 设置侧栏</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E8%AE%BE%E7%BD%AE%E5%A4%B4%E5%83%8F"><span class="toc-number">5.1.2.1.4.</span> <span class="toc-text"> 4. 设置头像</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87"><span class="toc-number">5.1.2.1.5.</span> <span class="toc-text"> 5. 网站图标</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-%E7%A4%BE%E4%BA%A4%E9%93%BE%E6%8E%A5"><span class="toc-number">5.1.2.1.6.</span> <span class="toc-text"> 6. 社交链接</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-%E7%9B%AE%E5%BD%95"><span class="toc-number">5.1.2.1.7.</span> <span class="toc-text"> 7.  目录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-%E8%AE%BE%E7%BD%AE%E4%BB%8E%E6%96%87%E7%AB%A0%E5%93%AA%E9%87%8C%E5%BC%80%E5%A7%8B%E9%98%85%E8%AF%BB"><span class="toc-number">5.1.2.1.8.</span> <span class="toc-text"> 8. 设置从文章哪里开始阅读</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9-%E9%A6%96%E9%A1%B5%E5%8D%9A%E5%AE%A2%E4%B8%8D%E5%B1%95%E7%A4%BA%E5%85%A8%E6%96%87"><span class="toc-number">5.1.2.1.9.</span> <span class="toc-text"> 9. 首页博客不展示全文</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#10-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.1.2.1.10.</span> <span class="toc-text"> 10. 字体设置</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#122-busuanzi-%E6%B5%8F%E8%A7%88%E7%BB%9F%E8%AE%A1%E6%8F%92%E4%BB%B6"><span class="toc-number">5.1.2.2.</span> <span class="toc-text"> 1.2.2 busuanzi 浏览统计插件</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD-%E6%8F%92%E4%BB%B6"><span class="toc-number">6.</span> <span class="toc-text"> 六、 插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#441-feed-%E6%8F%92%E4%BB%B6"><span class="toc-number">6.0.1.</span> <span class="toc-text"> 4.4.1 feed 插件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">7.</span> <span class="toc-text"> 其他</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6"><span class="toc-number">8.</span> <span class="toc-text"> 错误集锦</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="../../../../../04/23/note/%E5%89%8D%E7%AB%AF/echarts/" rel="bookmark" title="echarts用法简单记录">echarts用法简单记录</a></li><li><a href="../../software/maven%E5%A4%8D%E4%B9%A0/" rel="bookmark" title="maven复习">maven复习</a></li><li class="active"><a href="" rel="bookmark" title="Hexo搭建GitHub静态博客">Hexo搭建GitHub静态博客</a></li><li><a href="../../../../12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" rel="bookmark" title="VMware安装中标麒麟">VMware安装中标麒麟</a></li><li><a href="../../../../13/note/Python/pandas/" rel="bookmark" title="Python机器学习库">Python机器学习库</a></li><li><a href="../../../../17/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-Java%E8%B0%83%E7%94%A8Python%E8%84%9A%E6%9C%AC/" rel="bookmark" title="随笔-Java调用Python脚本">随笔-Java调用Python脚本</a></li><li><a href="../../../../18/note/Java/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%8F%8A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="bookmark" title="java基础语法及特性">java基础语法及特性</a></li><li><a href="../../../../20/note/%E9%9A%8F%E7%AC%94/%E5%87%86%E5%A4%87%E5%AD%A6%E4%B9%A0docker/" rel="bookmark" title="docker随手记">docker随手记</a></li><li><a href="../../../../23/note/%E5%89%8D%E7%AB%AF/CSS/" rel="bookmark" title="CSS笔记及参考手册">CSS笔记及参考手册</a></li><li><a href="../../../../26/note/%E5%89%8D%E7%AB%AF/html/" rel="bookmark" title="html常用功能手册">html常用功能手册</a></li><li><a href="../../../../27/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E8%B0%83%E5%8F%96Python%E6%95%B0%E6%8D%AE/" rel="bookmark" title="前端调用Python数据">前端调用Python数据</a></li><li><a href="../../../../27/note/%E5%89%8D%E7%AB%AF/JavaScript/" rel="bookmark" title="JavaScript基础语法">JavaScript基础语法</a></li><li><a href="../../../../27/note/%E5%89%8D%E7%AB%AF/jQuery/" rel="bookmark" title="jQuery笔记">jQuery笔记</a></li><li><a href="../../../../28/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/" rel="bookmark" title="随笔-利用Python批量处理文件">随笔-利用Python批量处理文件</a></li><li><a href="../../../../29/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E5%A4%84%E7%90%86json/" rel="bookmark" title="随笔-利用Python处理json">随笔-利用Python处理json</a></li><li><a href="../../../../../06/02/note/%E9%9A%8F%E7%AC%94/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%AC%94/%E5%9F%BA%E4%BA%8EPython%E5%92%8Cecharts%E7%9A%84%E5%8A%A8%E6%80%81%E5%9B%BE/" rel="bookmark" title="每日一笔-基于Python和echarts的动态图">每日一笔-基于Python和echarts的动态图</a></li><li><a href="../../../../../06/04/note/Python/Python%E8%AF%AD%E6%B3%95%E5%A4%8D%E4%B9%A0/" rel="bookmark" title="Python语法复习">Python语法复习</a></li><li><a href="../../../../../06/10/%E8%A5%BF%E7%93%9C%E4%B9%A6%E5%A4%8D%E4%B9%A0%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/" rel="bookmark" title="西瓜书复习及其部分代码实现">西瓜书复习及其部分代码实现</a></li>
+          <li><a href="../../../../../04/23/note/%E5%89%8D%E7%AB%AF/echarts/" rel="bookmark" title="echarts用法简单记录">echarts用法简单记录</a></li><li><a href="../../software/maven%E5%A4%8D%E4%B9%A0/" rel="bookmark" title="maven复习">maven复习</a></li><li class="active"><a href="" rel="bookmark" title="Hexo搭建GitHub静态博客">Hexo搭建GitHub静态博客</a></li><li><a href="../../../../12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" rel="bookmark" title="VMware安装中标麒麟">VMware安装中标麒麟</a></li><li><a href="../../../../13/note/Python/pandas/" rel="bookmark" title="Python机器学习库">Python机器学习库</a></li><li><a href="../../../../17/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-Java%E8%B0%83%E7%94%A8Python%E8%84%9A%E6%9C%AC/" rel="bookmark" title="随笔-Java调用Python脚本">随笔-Java调用Python脚本</a></li><li><a href="../../../../18/note/Java/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%8F%8A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="bookmark" title="java基础语法及特性">java基础语法及特性</a></li><li><a href="../../../../20/note/%E9%9A%8F%E7%AC%94/%E5%87%86%E5%A4%87%E5%AD%A6%E4%B9%A0docker/" rel="bookmark" title="docker随手记">docker随手记</a></li><li><a href="../../../../23/note/%E5%89%8D%E7%AB%AF/CSS%EF%BC%88%E5%BC%83%E7%94%A8%EF%BC%89/" rel="bookmark" title="CSS笔记及参考手册">CSS笔记及参考手册</a></li><li><a href="../../../../26/note/%E5%89%8D%E7%AB%AF/html%EF%BC%88%E5%BC%83%E7%94%A8%EF%BC%89/" rel="bookmark" title="html常用功能手册">html常用功能手册</a></li><li><a href="../../../../27/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E8%B0%83%E5%8F%96Python%E6%95%B0%E6%8D%AE/" rel="bookmark" title="前端调用Python数据">前端调用Python数据</a></li><li><a href="../../../../27/note/%E5%89%8D%E7%AB%AF/JavaScript/" rel="bookmark" title="JavaScript基础语法">JavaScript基础语法</a></li><li><a href="../../../../27/note/%E5%89%8D%E7%AB%AF/jQuery/" rel="bookmark" title="jQuery笔记">jQuery笔记</a></li><li><a href="../../../../28/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/" rel="bookmark" title="随笔-利用Python批量处理文件">随笔-利用Python批量处理文件</a></li><li><a href="../../../../29/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E5%A4%84%E7%90%86json/" rel="bookmark" title="随笔-利用Python处理json">随笔-利用Python处理json</a></li><li><a href="../../../../../06/02/note/%E9%9A%8F%E7%AC%94/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%AC%94/%E5%9F%BA%E4%BA%8EPython%E5%92%8Cecharts%E7%9A%84%E5%8A%A8%E6%80%81%E5%9B%BE/" rel="bookmark" title="每日一笔-基于Python和echarts的动态图">每日一笔-基于Python和echarts的动态图</a></li><li><a href="../../../../../06/04/note/Python/Python%E8%AF%AD%E6%B3%95%E5%A4%8D%E4%B9%A0/" rel="bookmark" title="Python语法复习">Python语法复习</a></li><li><a href="../../../../../06/10/%E8%A5%BF%E7%93%9C%E4%B9%A6%E5%A4%8D%E4%B9%A0%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/" rel="bookmark" title="西瓜书复习及其部分代码实现">西瓜书复习及其部分代码实现</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -1080,7 +1094,7 @@ feed:
 <nav class="state">
     <div class="item posts">
       <a href="">
-        <span class="count">28</span>
+        <span class="count">140</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -1172,41 +1186,16 @@ feed:
 <div class="breadcrumb">
 </div>
 
-    <span><a href="../../../../../07/27/note/Python/python%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" title="python使用技巧">python使用技巧</a></span>
+    <span><a href="../../../../../../2022/08/02/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E9%93%BE%E8%A1%A8/19.%20%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%AC%20N%20%E4%B8%AA%E7%BB%93%E7%82%B9/" title="未命名">未命名</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
 </div>
 
-    <span><a href="" title="Hexo搭建GitHub静态博客">Hexo搭建GitHub静态博客</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
-</div>
-
-    <span><a href="../../../../27/note/%E5%89%8D%E7%AB%AF/JavaScript/" title="JavaScript基础语法">JavaScript基础语法</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
-</div>
-
-    <span><a href="../../../../26/note/%E5%89%8D%E7%AB%AF/html/" title="html常用功能手册">html常用功能手册</a></span>
+    <span><a href="../../../../../../2022/08/04/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%AD%97%E7%AC%A6%E4%B8%B2/151.%20%E9%A2%A0%E5%80%92%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%8D%95%E8%AF%8D/" title="未命名">未命名</a></span>
   </li>
 
       
@@ -1216,9 +1205,11 @@ feed:
 <a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
 <i class="ic i-angle-right"></i>
 <a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/Python/" title="分类于 Python">Python</a>
 </div>
 
-    <span><a href="../../../../27/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E8%B0%83%E5%8F%96Python%E6%95%B0%E6%8D%AE/" title="前端调用Python数据">前端调用Python数据</a></span>
+    <span><a href="../../../../29/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E5%A4%84%E7%90%86json/" title="随笔-利用Python处理json">随笔-利用Python处理json</a></span>
   </li>
 
       
@@ -1227,17 +1218,7 @@ feed:
 <div class="breadcrumb">
 </div>
 
-    <span><a href="../../../../08/my-hexo/" title="my hexo">my hexo</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" title="分类于 经验总结">经验总结</a>
-</div>
-
-    <span><a href="../../../../../06/04/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%8F%E4%B9%A6/" title="算法公式书">算法公式书</a></span>
+    <span><a href="../../../../../../2022/08/04/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%AD%97%E7%AC%A6%E4%B8%B2/459.%20%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="未命名">未命名</a></span>
   </li>
 
       
@@ -1246,7 +1227,7 @@ feed:
 <div class="breadcrumb">
 </div>
 
-    <span><a href="../../../../../06/21/note/Python/jupyter/" title="jupty使用方法">jupty使用方法</a></span>
+    <span><a href="../../../../../../2022/07/28/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%BB%83%E4%B9%A0/%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81/" title="未命名">未命名</a></span>
   </li>
 
       
@@ -1255,7 +1236,25 @@ feed:
 <div class="breadcrumb">
 </div>
 
-    <span><a href="../../../../../08/10/note/%E5%89%8D%E7%AB%AF/ps%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" title="ps学习之路">ps学习之路</a></span>
+    <span><a href="../../../../../../2022/07/28/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%BB%83%E4%B9%A0/dist/demo01.dev/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2022/03/16/note/%E5%89%8D%E7%AB%AF/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2022/08/09/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%9B%9E%E6%BA%AF/332.%20%E9%87%8D%E6%96%B0%E5%AE%89%E6%8E%92%E8%A1%8C%E7%A8%8B/" title="未命名">未命名</a></span>
   </li>
 
       
@@ -1263,11 +1262,18 @@ feed:
     
 <div class="breadcrumb">
 <a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/Linux/" title="分类于 Linux">Linux</a>
 </div>
 
-    <span><a href="../../../../12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" title="VMware安装中标麒麟">VMware安装中标麒麟</a></span>
+    <span><a href="../../../../../06/10/%E8%A5%BF%E7%93%9C%E4%B9%A6%E5%A4%8D%E4%B9%A0%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/" title="西瓜书复习及其部分代码实现">西瓜书复习及其部分代码实现</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2022/08/09/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%9B%9E%E6%BA%AF/46.%20%E5%85%A8%E6%8E%92%E5%88%97/" title="未命名">未命名</a></span>
   </li>
 
   </ul>
@@ -1282,7 +1288,7 @@ feed:
   <div class="copyright">
     
     &copy; 2010 – 
-    <span itemprop="copyrightYear">2021</span>
+    <span itemprop="copyrightYear">2022</span>
     <span class="with-love">
       <i class="ic i-sakura rotate"></i>
     </span>
@@ -1292,13 +1298,13 @@ feed:
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">195k 字</span>
+    <span title="站点总字数">537k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:57</span>
+    <span title="站点阅读时长">8:09</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

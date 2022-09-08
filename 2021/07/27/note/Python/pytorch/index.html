@@ -74,7 +74,7 @@ nitgod1996 = 宁理大神 1996</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>5.5k</span>
+    <span>18k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -82,7 +82,7 @@ nitgod1996 = 宁理大神 1996</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">阅读时长</span>
-    <span>5 分钟</span>
+    <span>17 分钟</span>
   </span>
 </div>
 
@@ -116,11 +116,11 @@ nitgod1996 = 宁理大神 1996</title>
       <div id="imgs" class="pjax">
         <ul>
           <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciukx8a7j20zk0m8aio.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicljgocqbj20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeu7txpzj20zk0m81kx.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclgrvbd6j20zk0m8qv5.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipewr8iypj20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipex2cdtbj20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeyhsblkj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclfw2t96j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipexbei4hj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipetv6p75j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipesx5fdwj20zk0m81kx.jpg"></li>
         </ul>
       </div>
     </header>
@@ -199,7 +199,14 @@ pip install numpy --upgrade
 <p><code>tensor</code>  可以使用像标准的 NumPy 一样的各种索引操作：如 <code>x[:,1]</code>  返回<strong>张量 x</strong> 第 2 列的内容</p>
 </li>
 </ol>
-<h2 id="2-基本用法"><a class="anchor" href="#2-基本用法">#</a> 2. 基本用法</h2>
+<h2 id="15-基本类型"><a class="anchor" href="#15-基本类型">#</a> 1.5 基本类型</h2>
+<ul>
+<li><code>nn.Model</code> ：所有神经网络的基类。在 <code>pytorch</code>  框架下，创建一个神经网络类均要继承 <code>nn.Model</code> 。封装了 <code>forward</code>  函数，可直接由 <code>model</code>  对象调取参数，如 <code>model.conv1.weight.grad</code></li>
+<li><code>nn.Paramater</code> ：保存模型参数的类，继承自 <code>torch.Tensor</code> 。因为参数大部分都是以<strong>张量</strong>的形式存在。</li>
+<li><code>torch.Tensor</code> ：张量，对应 <code>numpy</code>  的 <code>array</code> 。形式上是多维数组。不过比 <code>array</code>  多了 <code>grad</code>  的部分，用于计算梯度。 <code>loss</code>  函数均是以 <code>torch.Tensor</code>  存储。封装了 <code>backward</code>  函数</li>
+<li><code>torch.optim</code> ：优化器，用于更新参数的类。存储了模型的参数、梯度、学习率等信息。核心函数是<strong>更新参数</strong>的 <code>step</code>  和<strong>梯度清零</strong>的 <code>zero_grad</code></li>
+</ul>
+<h2 id="2-张量-tensor"><a class="anchor" href="#2-张量tensor">#</a> 2. 张量 Tensor</h2>
 <h3 id="21-初始化张量"><a class="anchor" href="#21-初始化张量">#</a> 2.1 初始化张量</h3>
 <ol>
 <li>创建一个没有初始化 5*3 的矩阵</li>
@@ -235,7 +242,7 @@ tensor([[0.5307, 0.9752, 0.5376],
 </code></pre>
 </li>
 <li>
-<p>直接从<strong>数据</strong>构造张量</p>
+<p>直接从<strong>向量</strong>构造张量</p>
 <pre class=" language-language-python"><code class="language-language-python">x = torch.tensor([5.5, 3])
 #tensor([5.5000, 3.0000])
 </code></pre>
@@ -309,11 +316,464 @@ if torch.cuda.is_available():
 <pre class=" language-language-python"><code class="language-language-python">tensor([1.0445], device='cuda:0')
 tensor([1.0445], dtype=torch.float64)
 </code></pre>
-<h1 id="二-torchnn"><a class="anchor" href="#二-torchnn">#</a> 二、   <code>torch.nn</code></h1>
-<h2 id="1-torchnnparameter"><a class="anchor" href="#1-torchnnparameter">#</a> 1.  <code>torch.nn.Parameter()</code></h2>
+<h3 id="26-张量的其他函数"><a class="anchor" href="#26-张量的其他函数">#</a> 2.6 张量的其他函数</h3>
+<pre class=" language-language-python"><code class="language-language-python">a=torch.Tensor(2,3)
+b=a.view(-1,1)#修改形状。-1是自动适配，1确定了列为1，则行为6/1=6
+#b.size=(6*1)
+</code></pre>
+<h2 id="3-损失函数"><a class="anchor" href="#3-损失函数">#</a> 3. 损失函数</h2>
+<h3 id="31-均方误差"><a class="anchor" href="#31-均方误差">#</a> 3.1 均方误差</h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>l</mi><mi>o</mi><mi>s</mi><mi>s</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>n</mi><mo>∑</mo><mo stretchy="false">(</mo><mi>x</mi><mi>i</mi><mtext>−</mtext><mi>y</mi><mi>i</mi><mo stretchy="false">)</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">loss(x,y)=1/n∑(xi−yi)2
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal">s</span><span class="mord mathnormal">s</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.6000100000000002em;vertical-align:-0.55001em;"></span><span class="mord">1</span><span class="mord">/</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-symbol large-op" style="position:relative;top:-0.000004999999999977245em;">∑</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mord mathnormal">i</span><span class="mord">−</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mord mathnormal">i</span><span class="mclose">)</span><span class="mord">2</span></span></span></span></span></p>
+<p><code>nn.MSELoss(size_average=True)</code> ：MSELoss () 是一个对象而不是一个函数，所以使用的时候一般是</p>
+<pre class=" language-language-python"><code class="language-language-python">criterion = nn.MSELoss()
+loss = criterion(out, target)
+#或者
+loss = nn.MSELoss()(out, target)
+#然后backward求梯度
+optimizer.zero_grad()#求梯度前先归零
+loss.backward()
+</code></pre>
+<h3 id="32-交叉熵误差"><a class="anchor" href="#32-交叉熵误差">#</a> 3.2 交叉熵误差</h3>
+<h4 id="321-交叉熵误差-cross_entropy"><a class="anchor" href="#321-交叉熵误差cross_entropy">#</a> 3.2.1 交叉熵误差 <code>cross_entropy()</code></h4>
+<p><img data-src="/2021/07/27/note/Python/pytorch/image-20210622160932219.png" alt="image-20210622160932219"></p>
+<ol>
+<li>
+<p>调用方法：</p>
+<pre class=" language-language-python"><code class="language-language-python">torch.nn.functional.cross_entropy(input, target, weight=None, size_average=True)
+#input: 预测值
+#target: 监督值
+#（大概应该是这样？）
+</code></pre>
+</li>
+<li>
+<p>也可自定义</p>
+<pre class=" language-language-python"><code class="language-language-python">def cross_entropy_error(y,t):    """    损失函数：交叉熵误差    :param y: 预测值，np数组    :param t: 监督值,np数组    :return: 交叉熵误差float    """    delta=1e-7  #10的-7次，为了防止log0导致的下溢    return -np.sum(t*np.log(y+delta))
+</code></pre>
+</li>
+</ol>
+<h4 id="322-二元交叉熵-binary_cross_entropy"><a class="anchor" href="#322-二元交叉熵binary_cross_entropy">#</a> 3.2.2 二元交叉熵 <code>binary_cross_entropy()</code></h4>
+<p><img data-src="/2021/07/27/note/Python/pytorch/equation-1628496458752.svg" alt="[公式]"></p>
+<p>其中， <img data-src="/2021/07/27/note/Python/pytorch/equation%20(3).svg" alt="[公式]">， <img data-src="/2021/07/27/note/Python/pytorch/equation%20(4).svg" alt="[公式]"> 。</p>
+<pre class=" language-language-python"><code class="language-language-python">torch.nn.functional.binary_cross_entropy(input, target, weight=None, size_average=True)
+</code></pre>
+<h4 id="323-二元逻辑交叉熵-binary_cross_entropy_with_logits"><a class="anchor" href="#323-二元逻辑交叉熵binary_cross_entropy_with_logits">#</a> 3.2.3 二元逻辑交叉熵 <code>binary_cross_entropy_with_logits()</code></h4>
+<blockquote>
+<p>with_logits 就是把 sigmod 函数<strong>集成</strong>进交叉熵函数，就不需要之后再调用一边 sigmod 函数了</p>
+</blockquote>
+<p>在 <img data-src="/2021/07/27/note/Python/pytorch/equation%20(5)-1628496675068.svg" alt="[公式]"> 外边复合一层 sigmoid 函数，即 <img data-src="/2021/07/27/note/Python/pytorch/equation%20(6).svg" alt="[公式]"> ，损失函数变为：</p>
+<p><img data-src="/2021/07/27/note/Python/pytorch/equation%20(7)-1628496675069.svg" alt="[公式]"></p>
+<ol>
+<li>
+<p>自定义</p>
+<pre class=" language-language-python"><code class="language-language-python">torch.nn.functional.binary_cross_entropy(input, target, weight=None, size_average=True)    """    :param input: 输入，任意形状的张量--神经网络预测结果    :param target: 靶向值，即用于验证的标签值：与输入形状相同的张量    :param weight: 权重，可用于mask的作用，和input形状一致    :return: 损失值（误差），可能是向量，也可能是一个float值    """
+</code></pre>
+</li>
+<li>
+<p>也可自定义</p>
+<pre class=" language-language-python"><code class="language-language-python">def binary_cross_entropy_with_logits(input, target, weight=None, size_average=True, reduce=True):    """    损失函数，二元交叉熵。可以直接调用nn.functional.binary_cross_entropy_with_logits()    :param size_average: 可选，已弃用。是否求平均：默认情况下，损失是批次中每个损失元素的平均值。注意，对于有些损失，每个样品有多个元素。    :param reduce: 可选，不推荐使用。是否压缩，如把向量求和；    :return: 损失值（误差），可能是向量，也可能是一个float值    """    if not (target.size() == input.size()):        raise ValueError("Target size (&#123;&#125;) must be the same as input size (&#123;&#125;)".format(target.size(), input.size()))    max_val = (-input).clamp(min=0)    loss = input - input * target + max_val + ((-max_val).exp() + (-input - max_val).exp()).log()    if weight is not None:        loss = loss * weight    if not reduce:        return loss    elif size_average:        return loss.mean()    else:        return loss.sum()
+</code></pre>
+</li>
+</ol>
+<h1 id="二-使用-pytorch-训练神经网络"><a class="anchor" href="#二-使用pytorch训练神经网络">#</a> 二、 使用 pytorch 训练神经网络</h1>
+<p>首先，先明确一下步骤：</p>
+<ol>
+<li>创建神经网络类
+<ol>
+<li>初始化参数（权重和偏置）</li>
+<li>初始化各个层</li>
+<li>重写 <code>forward</code>  函数</li>
+</ol>
+</li>
+<li>创建优化器 <code>nn.optim</code></li>
+<li>确定损失函数 <code>loss</code> 。<em>2 和 3 位置可以互换，因为损失函数和反向传播的关系，所以我比较喜欢把 loss 放下面</em></li>
+<li>根据损失函数求梯度 <code>backward</code></li>
+<li>学习 - 更新 <code>optim.step</code></li>
+</ol>
+<h2 id="1-创建神经网络类-forward"><a class="anchor" href="#1-创建神经网络类forward">#</a> 1. 创建神经网络类 forward</h2>
+<p>代码来源：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FwYWNoZWNuL3B5dG9yY2gtZG9jLXpo">GitHub 中文 pytorch 教程</span></p>
+<pre class=" language-language-python"><code class="language-language-python">import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+#在pytorch中，所有的神经网络类都要继承自nn.Model
+class Net(nn.Module):
+
+    def __init__(self):
+        super(Net, self).__init__()
+        # 1 input image channel, 6 output channels, 3x3 square convolution
+        # kernel
+        self.conv1 = nn.Conv2d(1, 6, 3)#
+        self.conv2 = nn.Conv2d(6, 16, 3)#以上2个卷积层，这些函数封装了初始化参数的功能
+        # an affine operation: y = Wx + b
+        self.fc1 = nn.Linear(16 * 6 * 6, 120)  # 6*6 from image dimension
+        self.fc2 = nn.Linear(120, 84)
+        self.fc3 = nn.Linear(84, 10)#以上3个affine层
+
+    def forward(self, x):
+        """
+        1. forward函数是模型的核心函数，是整个网络的学习函数。样本→预测值
+        2. 在有些代码中是predict()，实际上每层forward()已经由nn.function()封装好了，如nn.Conv2d和nn.Linear
+        3. 卷积神经网络的运算顺序如下
+        input -> conv2d -> relu -> maxpool2d -> conv2d -> relu -> maxpool2d
+              -> view -> linear -> relu -> linear -> relu -> linear
+              -> MSELoss 均方误差，也可以使用交叉熵
+              -> loss
+        :param x:预测样本
+        :return:预测值，可用于计算损失函数
+        """
+        # Max pooling over a (2, 2) window
+        x = F.max_pool2d(F.relu(self.conv1(x)), (2, 2))
+        # If the size is a square you can only specify a single number
+        x = F.max_pool2d(F.relu(self.conv2(x)), 2)
+        x = x.view(-1, self.num_flat_features(x))
+        x = F.relu(self.fc1(x))
+        x = F.relu(self.fc2(x))
+        x = self.fc3(x)
+        return x
+
+    def num_flat_features(self, x):
+        size = x.size()[1:]  # all dimensions except the batch dimension
+        num_features = 1
+        for s in size:
+            num_features *= s
+        return num_features
+
+net = Net()
+print(net)
+</code></pre>
+<p>出：</p>
+<pre class=" language-language-py"><code class="language-language-py">Net(
+  (conv1): Conv2d(1, 6, kernel_size=(3, 3), stride=(1, 1))
+  (conv2): Conv2d(6, 16, kernel_size=(3, 3), stride=(1, 1))
+  (fc1): Linear(in_features=576, out_features=120, bias=True)
+  (fc2): Linear(in_features=120, out_features=84, bias=True)
+  (fc3): Linear(in_features=84, out_features=10, bias=True)
+)
+
+</code></pre>
+<p>参数可由 <code>net.paramater()</code>  返回。也可直接 <code>net.conv1.weight.grad</code>  返回</p>
+<pre class=" language-language-python"><code class="language-language-python">print(list(net.paramater()))
+print(net.conv1.weight.grad)
+</code></pre>
+<p>以上代码大致完成了以下功能：</p>
+<ol>
+<li>初始化参数和各层逻辑</li>
+<li>建立起了神经网络的基本输入 - 输出模型</li>
+</ol>
+<p>该类可用于：</p>
+<ol>
+<li><code>.forward</code>  用于预测样本输出</li>
+<li><code>.forward</code>  的输出用于计算损失函数求梯度</li>
+</ol>
+<h2 id="2-创建优化器-optim"><a class="anchor" href="#2-创建优化器optim">#</a> 2. 创建优化器 optim</h2>
+<p>优化器保存模型的<strong>参数</strong>和梯度更新的<strong>学习率</strong>，将模型<strong>解耦</strong>，选择合适的优化器可以大大提高代码效率。</p>
+<p>优化器有很多中，本例使用了 SGD</p>
+<pre class=" language-language-python"><code class="language-language-python">import torch.optim as optim
+optimizer = optim.SGD(net.parameters(), lr=0.01)
+#model.parameters()：注册model参数进SGD优化器
+#lr=0.01:学习率为0.01
+</code></pre>
+<p>以上代码解决了：</p>
+<ol>
+<li>参数的解耦</li>
+<li>学习率的选择</li>
+</ol>
+<p>可用于：</p>
+<ol>
+<li>参数的更新</li>
+</ol>
+<h2 id="3-计算损失函数-loss"><a class="anchor" href="#3-计算损失函数loss">#</a> 3. 计算损失函数 loss</h2>
+<p>求损失函数很简单， <code>pytorch</code>  有很多封装好的损失函数可供我们调用。不过有几点需要注意的：</p>
+<ol>
+<li>损失函数 <code>loss</code>  是以 <code>torch.Tensor</code>  类型保存在 <code>python</code>  中。</li>
+<li><code>.backward</code>  是 <code>torch.Tensor</code>  的函数，所以直接由 <code>loss</code>  对象调用。&lt;font color=red&gt;ps： <code>backward</code>  是用于求梯度的函数，前提是定义了 forward 函数 &lt;/font&gt;</li>
+<li><code>pytorch</code>  封装的损失函数有些用法不一致，如 <code>MSELoss()</code>  是个对象，正确调用方法是 <code>MSELoss()(output,target)</code> ；而 <code>binary_cross_entropy_with_logits()</code>  则是直接参数写括号里即可 <code>binary_cross_entropy_with_logits(output,target)</code></li>
+</ol>
+<p>例：</p>
+<pre class=" language-language-python"><code class="language-language-python">input = torch.randn(1, 1, 32, 32)#随机一组input
+output = net(input)	#net(input)等价于net.forward(input)，模型的输出output
+target = torch.randn(10)  # 随机一组标签
+target = target.view(1, -1)  # 使其形状和output一致
+criterion = nn.MSELoss() # 定义损失函数，此处选均方误差
+loss = criterion(output, target) #将（输出-标签）代入损失函数
+#以上一句相当于loss = nn.MSELoss()(output, target)
+print(loss)
+</code></pre>
+<p>出：</p>
+<pre class=" language-language-python"><code class="language-language-python">tensor(0.4969, grad_fn=<mselossbackward>)#可知，tensor保存了关于损失函数的信息<mselossbackward>
+</mselossbackward></mselossbackward></code></pre>
+<p>以上代码主要解决了：</p>
+<ol>
+<li>求出模型预测值和标签值</li>
+<li>用选定的损失函数计算了预测值和标签值的误差</li>
+</ol>
+<p>以上代码可用于：</p>
+<ol>
+<li><code>loss</code>  用于反向传播求梯度</li>
+</ol>
+<h2 id="4-反向传播求梯度-backward-优化器更新参数-step"><a class="anchor" href="#4-反向传播求梯度backward优化器更新参数step">#</a> 4. 反向传播求梯度 backward + 优化器更新参数 step</h2>
+<p>显而易见，反向传播的详细过程已经在 <code>pytorch</code>  中封装好了，我们只需直接调用 <code>Tensor</code>  对象的 <code>.backward</code>  函数即可求出梯度</p>
+<p>同样，有几点需要注意：</p>
+<ol>
+<li>只需调用 <code>.backward()</code> ，梯度会自动保存在 <code>Paramater</code>  中，不需要我们手动写入</li>
+<li>&lt;font color=red&gt; 每次调用调用 <code>.backward()</code>  求梯度时，都需要对原来的梯度<strong>清零</strong> <code>optim.zero_grad</code> &lt;/font&gt;</li>
+</ol>
+<pre class=" language-language-python"><code class="language-language-python">optimizer.zero_grad()     # 把所有参数的梯度清零
+loss.backward()	#误差反向传播求梯度
+optimizer.step() #更新参数
+
+#以上代码一般用循环包裹，因为要不断的更新参数拟合标签值
+</code></pre>
+<h2 id="5-主函数训练测试"><a class="anchor" href="#5-主函数训练测试">#</a> 5. 主函数训练测试</h2>
+<ol>
+<li>创建优化器 <code>optimizer</code></li>
+<li>创建<strong>分片</strong>迭代器 <code>data_iter</code></li>
+<li>进入 <code>epoch</code>  循环训练测试
+<ol>
+<li><strong>在训练中，每一步需要加上 <code>model.train()</code> </strong></li>
+<li><strong>在测试时，每一步需要加上 <code>model.eval()</code> </strong></li>
+</ol>
+</li>
+</ol>
+<pre class=" language-language-python"><code class="language-language-python">def train(model):
+    optimizer = optim.Adam(model.parameters(), lr = 1e-3)#优化器，用于梯度下降。学习率为0.001
+    #加载数据
+    data_iter = data_loader.get_loader(batch_size = args.batch_size)
+    #type=DataLoader,类似list的数据类型，除了list的数据还包括一些其他参数
+    #每次分成13片，分片大小32（其中每个样本有49个序列号）。重复训练1000次
+    for epoch in range(args.epochs):
+        model.train()#pytorch用于训练数据时需要加上这个
+
+        run_loss = 0.0#总损失
+
+        for idx, data in enumerate(data_iter):#每次分成13片，分片大小32，即循环13次
+            #idx：索引。data：对应索引的数据（32条）
+            data = utils.to_var(data)#把data挪到GPU
+            ret = model.run_on_batch(data, optimizer)#保存有loss等信息的张量字典dict[Tensor]
+            run_loss += ret['loss'].item()
+
+            print('损失')
+
+        if epoch % 1 == 0:#这个代码？
+            evaluate(model, data_iter)#预测
+def evaluate(model, val_iter):
+    """
+    测试数据（预测数据）。输出实时误差
+    :param model: 神经网络模型。算法使用哪种策略
+    :param val_iter: 分片规则。DataLoader。如batch=13,batch_size=32。共400条样本
+    :return: void
+    """
+    model.eval()#pytorch测试（预测）数据时需要加上这个
+	"""
+	求误差的代码
+	"""
+</code></pre>
+<h1 id="三-各个层的模型"><a class="anchor" href="#三-各个层的模型">#</a> 三、 各个层的模型</h1>
+<p>在 <code>pytorch</code>  中，每个层相当于一个<strong>小型的神经网络</strong>。因此，各层的类也均是继承自 <code>nn.Model</code> 。</p>
+<p><code>layer</code>  的类也包括 <code>init</code> 、 <code>forward</code>  等函数，以及保存自层的参数。</p>
+<h2 id="1-linear-layers"><a class="anchor" href="#1-linear-layers">#</a> 1. Linear layers</h2>
+<p>线性层，主要包括 Affine 全连接层，Regression 回归层等</p>
+<h3 id="11-torchnnlinear"><a class="anchor" href="#11-torchnnlinear">#</a> 1.1  <code>torch.nn.Linear()</code></h3>
+<p>这是一个<strong>类</strong></p>
+<blockquote>
+<p><strong>class</strong> <strong>torch</strong>.<strong>nn</strong>.<strong>Linear</strong>(in_features, out_features, bias=True)</p>
+</blockquote>
+<p><strong>参数：</strong></p>
+<ul>
+<li>
+<p><strong>in_features</strong> - 输入样本长度</p>
+</li>
+<li>
+<p><strong>out_features</strong> - 输出样本长度</p>
+<blockquote>
+<p>实际上是<strong> weight</strong> 的大小， <code>self.weight = Parameter(torch.Tensor(out_features, in_features))</code></p>
+<p>并不一定要代入 x 的样本数和特征数，这可能仅仅是个中间的过渡层</p>
+</blockquote>
+</li>
+<li>
+<p><strong>bias</strong> - 若设置为 False，这层不会学习偏置。默认值：True</p>
+</li>
+</ul>
+<p>** 成员变量：** 成员变量保存权重等参数</p>
+<ul>
+<li><strong>weight</strong> - 形状为 (out_features * in_features) 的模块中可学习的权值</li>
+<li><strong>bias</strong> - 形状为 (out_features) 的模块中可学习的偏置</li>
+</ul>
+<p><strong>例：</strong></p>
+<pre class=" language-language-python"><code class="language-language-python">m = nn.Linear(20, 30)#m相当于linear[w,b]模型,#W[30*20]
+input = torch.randn(128, 20)
+output = m(input)
+print(output.size())#torch.Size([128, 30])
+</code></pre>
+<h3 id="12-torchnnfunctionallinear"><a class="anchor" href="#12-torchnnfunctionallinear">#</a> 1.2  <code>torch.nn.functional.Linear()</code></h3>
+<p>这是一个<strong>函数</strong></p>
+<pre class=" language-language-python"><code class="language-language-python">W=torch.Tensor(16,5)#W[16,5]
+b=torch.Tensor(16)#b[16]
+x=torch.Tensor(9,5)#x[9,5]
+gamma=F.relu(F.linear(x, W, b))#y=x*W^T+b
+print(gamma.size())#torch.Size([9, 16])
+</code></pre>
+<p>由以上可知，<strong>W[r,c]</strong>，W 的列是必须消失的，即 W_HID。行是最终保留的</p>
+<h2 id="2-lstmcell-layers"><a class="anchor" href="#2-lstmcell-layers">#</a> 2. LSTMCell layers</h2>
+<p>一个长期短期记忆 (LSTM) 神经元。（LSTM 是改进的 RNN）</p>
+<blockquote>
+<p>class torch.nn.LSTMCell(input_size, hidden_size, bias=True)</p>
+</blockquote>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.15999999999999992em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>i</mi><mo>=</mo><mi>σ</mi><mo stretchy="false">(</mo><msub><mi>W</mi><mrow><mi>i</mi><mi>i</mi></mrow></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mrow><mi>i</mi><mi>i</mi></mrow></msub><mo>+</mo><msub><mi>W</mi><mrow><mi>h</mi><mi>i</mi></mrow></msub><mi>h</mi><mo>+</mo><msub><mi>b</mi><mrow><mi>h</mi><mi>i</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>f</mi><mo>=</mo><mi>σ</mi><mo stretchy="false">(</mo><msub><mi>W</mi><mrow><mi>i</mi><mi>f</mi></mrow></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mrow><mi>i</mi><mi>f</mi></mrow></msub><mo>+</mo><msub><mi>W</mi><mrow><mi>h</mi><mi>f</mi></mrow></msub><mi>h</mi><mo>+</mo><msub><mi>b</mi><mrow><mi>h</mi><mi>f</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>g</mi><mo>=</mo><mi>tanh</mi><mo>⁡</mo><mo stretchy="false">(</mo><msub><mi>W</mi><mrow><mi>i</mi><mi>g</mi></mrow></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mrow><mi>i</mi><mi>g</mi></mrow></msub><mo>+</mo><msub><mi>W</mi><mrow><mi>h</mi><mi>g</mi></mrow></msub><mi>h</mi><mo>+</mo><msub><mi>b</mi><mrow><mi>h</mi><mi>g</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>o</mi><mo>=</mo><mi>σ</mi><mo stretchy="false">(</mo><msub><mi>W</mi><mrow><mi>i</mi><mi>o</mi></mrow></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mrow><mi>i</mi><mi>o</mi></mrow></msub><mo>+</mo><msub><mi>W</mi><mrow><mi>h</mi><mi>o</mi></mrow></msub><mi>h</mi><mo>+</mo><msub><mi>b</mi><mrow><mi>h</mi><mi>o</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><msup><mi>c</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo>=</mo><mi>f</mi><mo>∗</mo><mi>c</mi><mo>+</mo><mi>i</mi><mo>∗</mo><mi>g</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><msup><mi>h</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo>=</mo><mi>o</mi><mo>∗</mo><mi>tanh</mi><mo>⁡</mo><mo stretchy="false">(</mo><msup><mi>c</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{ll}
+        i = \sigma(W_{ii} x + b_{ii} + W_{hi} h + b_{hi}) \\
+        f = \sigma(W_{if} x + b_{if} + W_{hf} h + b_{hf}) \\
+        g = \tanh(W_{ig} x + b_{ig} + W_{hg} h + b_{hg}) \\
+        o = \sigma(W_{io} x + b_{io} + W_{ho} h + b_{ho}) \\
+        c&#x27; = f * c + i * g \\
+        h&#x27; = o * \tanh(c&#x27;) \\
+        \end{array}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:7.200000000000001em;vertical-align:-3.35em;"></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.850000000000001em;"><span style="top:-6.010000000000001em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">h</span><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">h</span><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span><span style="top:-4.810000000000001em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">h</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">h</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span><span style="top:-3.6100000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mop">tanh</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">h</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">h</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">o</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight">o</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight">o</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">h</span><span class="mord mathnormal mtight">o</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">h</span><span class="mord mathnormal mtight">o</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span><span style="top:-1.2100000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span></span></span><span style="top:-0.009999999999999953em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">h</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathnormal">o</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mop">tanh</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.35em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span></span></span></span></span></p>
+<p><code>σ</code>  是 <code>sigmoid</code>  函数 ， <code>*</code>  是 Hadamard 积，即对应位置相乘</p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li>input_size – 输入的 <code>x</code>  特征维度。</li>
+<li>hidden_size – 隐状态 <code>h</code>  的维度。</li>
+<li>bias – 如果为 <code>False</code> ，那么将不会使用 <code>bias</code> 。默认为 <code>True</code> 。</li>
+</ul>
+<p><strong>输入</strong>: input, (h_0, c_0)</p>
+<ul>
+<li>
+<p><code>input (batch, input_size)</code> : 包含输入序列特征的 <code>Tensor</code> 。</p>
+</li>
+<li>
+<p><code>h_0 ( batch, hidden_size)</code> :  <code>h_t-1</code></p>
+</li>
+<li>
+<p><code>c_0 (batch, hidden_size)</code> :  <code>cell_t-1</code> 。</p>
+<blockquote>
+<p>cell 是 LSTM 区别于 RNN 的独有的概念，是 LSTM 的核心</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>输出</strong>： h_1, c_1</p>
+<ul>
+<li><code>h_1 (batch, hidden_size)</code> :  <code>h_t</code></li>
+<li><code>c_1 (batch, hidden_size)</code> :  <code>cell_t</code></li>
+</ul>
+<p><code>LSTM</code>  模型<strong>参数</strong>:</p>
+<ul>
+<li><code>weight_ih</code>  – 输入 - 隐藏的权重， <code>xt</code>  的权重 <code>Ut</code> ，形状为 <code>(4*hidden_size x input_size)</code></li>
+<li><code>weight_hh</code>  – 隐藏 - 隐藏的权重， <code>h_t-1</code>  的权重 <code>Wh</code> ，隐藏的形状，形状为 <code>(4*hidden_size x hidden_size)</code> 。</li>
+<li><code>bias_ih</code>  – 输入 - 隐藏的偏置， <code>xt</code>  的偏置 <code>bt</code> ，形状为 <code>( 4*hidden_size)</code></li>
+<li><code>bias_hh</code>  – 隐藏 - 隐藏的偏置， <code>h_t-1</code>  的偏置 <code>bh</code> , 形状为 <code>( 4*hidden_size)</code> 。</li>
+</ul>
+<p>Examples:</p>
+<pre class=" language-language-python"><code class="language-language-python">rnn = nn.LSTMCell(10, 20)
+input = Variable(torch.randn(6, 3, 10))
+hx = Variable(torch.randn(3, 20))
+cx = Variable(torch.randn(3, 20))
+output = []
+for i in range(6):
+   hx, cx = rnn(input[i], (hx, cx))
+   output.append(hx)
+</code></pre>
+<h1 id="二-神经网络类-torchnn"><a class="anchor" href="#二-神经网络类torchnn">#</a> 二、  神经网络类 <code>torch.nn</code></h1>
+<h2 id="1-nnmodel"><a class="anchor" href="#1-nnmodel">#</a> 1.  <code>nn.Model</code></h2>
+<p>pytorch 中，所有神经网络的类均需继承 <code>nn.Model</code> 。它是所有网络的基类。</p>
+<p>主要包括以下函数：</p>
+<ul>
+<li>
+<p><code>.parameters()</code> ：返回模型的所有参数（权重、偏置、各层梯度）的迭代器，一般用 <code>list</code>  包裹。</p>
+<ul>
+<li>
+<p>index=0,1 分别是第一层的<strong>权重 weight</strong> 和<strong>偏置 bias</strong></p>
+</li>
+<li>
+<p>不过参数一般直接调字段变量比较方便，如下</p>
+<pre class=" language-language-python"><code class="language-language-python">class Net(nn.Module):
+    def __init__(self):
+        super(Net, self).__init__()#固定格式，必须写
+        self.conv1 = nn.Conv2d(1, 6, 3)#
+        self.conv2 = nn.Conv2d(6, 16, 3)#以上2个卷积层
+        
+net=Net()
+print(net.conv1.bias.grad)#第一层卷积层的偏置的梯度
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><code>.zero_grad()</code> ：将所有梯度归零。&lt;font color=red&gt; <code>.backward()</code>  前的必备操作，不清零会导致梯度叠加 &lt;/font&gt;</p>
+</li>
+<li>
+<p><code>()</code> / <code>.forward()</code> ：两者等价，前馈函数。input→output</p>
+<ul>
+<li><code>torch.Tensor.backward()</code> ：求梯度的反馈函数封装在 Tensor 中，因为损失函数一般以张量的形式存在，所以保存在 Tensor 中。</li>
+</ul>
+</li>
+</ul>
+<p><strong>使用规则</strong>：</p>
+<ol>
+<li>
+<p>初始化函数 <code>__init__</code> ：</p>
+<ol>
+<li>
+<p>第一行写 <code>super(类名, self).__init__()</code></p>
+<blockquote>
+<p>后 2 步一般封装在 <code>build(self)</code>  中</p>
+</blockquote>
+</li>
+<li>
+<p>类的性质</p>
+<ol>
+<li>某一层（全连接层、卷积层、...）：初始化（该层）模型参数</li>
+<li>整个神经网络：初始化各层</li>
+</ol>
+</li>
+</ol>
+<pre class=" language-language-python"><code class="language-language-python">def __init__(self):
+    super(Net, self).__init__()#固定格式，必须写
+    
+def build1(self):
+    self.W = Parameter(torch.Tensor(RNN_HID_SIZE, input_size))
+    self.b = Parameter(torch.Tensor(RNN_HID_SIZE))
+    self.reset_parameters()
+    
+def build2(self):#初始化各层
+    self.conv1 = nn.Conv2d(1, 6, 3)#层模型函数封装了参数的初始化及更新方法
+    self.conv2 = nn.Conv2d(6, 16, 3)#以上2个卷积层
+</code></pre>
+<p>关于初始化方法 <code>reset_parameters()</code> ：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM5Nzg5NzcvYXJ0aWNsZS9kZXRhaWxzLzg0ODYxNDUz">可参考此博客</span></p>
+</li>
+<li>
+<p><code>forward(self)</code>  必须重写</p>
+<ol>
+<li>层模型：主要是该层的模型逻辑，输入如何到输出</li>
+<li>神经网络模型：把每层的 <code>forward</code>  通过<strong>连接公式</strong>连接起来</li>
+</ol>
+</li>
+<li>
+<p>更新函数 <code>run_on_batch(self, data, optimizer)</code></p>
+<ol>
+<li>整个仅神经网络类有</li>
+<li>主要是定义优化器更新参数</li>
+</ol>
+<pre class=" language-language-python"><code class="language-language-python">def run_on_batch(self, loss, optimizer):
+    """
+   	执行训练函数
+    :param loss: 损失函数的损失值,tensor
+    :param optimizer: 优化器，用于执行误差反向传播中的梯度下降。其包含了模型的参数和梯度等信息
+    :return:
+    """
+    if optimizer is not None:
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+        
+   	return loss
+</code></pre>
+</li>
+</ol>
+<h2 id="2-torchnnparameter"><a class="anchor" href="#2-torchnnparameter">#</a> 2.  <code>torch.nn.Parameter()</code></h2>
 <p><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC9kOGI3N2NjMDI0MTA=">https://www.jianshu.com/p/d8b77cc02410</span></p>
 <blockquote>
-<p>pytorch 中用于保存 Variable 的函数。一般将参数 W 和 b 转换成 parameter 类型，可供训练中改动</p>
+<p>pytorch 中用于保存参数的函数。一般将参数 W 和 b 转换成 parameter 类型，可供训练中改动</p>
 </blockquote>
 <p>如</p>
 <pre class=" language-language-python"><code class="language-language-python">W = Parameter(torch.Tensor(RNN_HID_SIZE, input_size))
@@ -322,16 +782,188 @@ b = Parameter(torch.Tensor(RNN_HID_SIZE))
 W.data.uniform_(-stdv, stdv)#初始化
 </code></pre>
 <ol>
+<li>将一个不可训练的类型 Tensor 转换成可以训练的类型 parameter</li>
+<li>并将这个 parameter 绑定到这个 module 里面</li>
+<li>经过类型转换这个 self.v 变成了模型的一部分，成为了模型中根据训练可以改动的参数了。</li>
+</ol>
+<h2 id="3-nndropoutpinplacefalse"><a class="anchor" href="#3-nndropoutpinplacefalse">#</a> 3.  <code>nn.Dropout(p,inplace=False)</code></h2>
+<p><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC83NzYwOTY4OQ==">https://zhuanlan.zhihu.com/p/77609689</span></p>
+<p>dropout，通过丢掉一些不重要的特征，增加模型鲁棒性，降低过拟合，一般设置在 0.3-0.5，太大容易丢失重要特征</p>
+<p>如果模型的参数太多，而训练样本又太少，训练出来的模型很容易产生过拟合的现象。</p>
+<h1 id="三-torchtensor"><a class="anchor" href="#三-torchtensor">#</a> 三、  <code>torch.Tensor</code></h1>
+<p>Tensor：张量，也就是向量。相当于 numpy 的 array。此外， <code>torch.Tensor</code>  是个很重要的类，它封装了一些很重要的函数</p>
+<blockquote>
+<p><code>torch.Tensor(2,3)</code> ：随机生成 2X3 的矩阵，float 类型</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Data tyoe</th>
+<th>CPU tensor</th>
+<th>GPU tensor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>32-bit floating point</td>
+<td><code>torch.FloatTensor</code></td>
+<td><code>torch.cuda.FloatTensor</code></td>
+</tr>
+<tr>
+<td>64-bit floating point</td>
+<td><code>torch.DoubleTensor</code></td>
+<td><code>torch.cuda.DoubleTensor</code></td>
+</tr>
+<tr>
+<td>16-bit floating point</td>
+<td>N/A</td>
+<td><code>torch.cuda.HalfTensor</code></td>
+</tr>
+<tr>
+<td>8-bit integer (unsigned)</td>
+<td><code>torch.ByteTensor</code></td>
+<td><code>torch.cuda.ByteTensor</code></td>
+</tr>
+<tr>
+<td>8-bit integer (signed)</td>
+<td><code>torch.CharTensor</code></td>
+<td><code>torch.cuda.CharTensor</code></td>
+</tr>
+<tr>
+<td>16-bit integer (signed)</td>
+<td><code>torch.ShortTensor</code></td>
+<td><code>torch.cuda.ShortTensor</code></td>
+</tr>
+<tr>
+<td>32-bit integer (signed)</td>
+<td><code>torch.IntTensor</code></td>
+<td><code>torch.cuda.IntTensor</code></td>
+</tr>
+<tr>
+<td>64-bit integer (signed)</td>
+<td><code>torch.LongTensor</code></td>
+<td><code>torch.cuda.LongTensor</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>torch.Tensor</code>  是默认的 tensor 类型（ <code>torch.FlaotTensor</code> ）的简称。</p>
+<h2 id="0-torchtensor"><a class="anchor" href="#0-torchtensor">#</a> 0.  <code>torch.Tensor()</code></h2>
+<p>和 numpy 的 array 一样的用法，用于各种方法创建 Tensor。</p>
+<ul>
+<li><code>torch.Tensor(2,3)</code> ：随机生成 2X3 的矩阵，float 类型</li>
+<li><code>torch.Tensor(list)</code> ：以向量创建 Tensor</li>
+</ul>
+<h2 id="1-backward"><a class="anchor" href="#1-backward">#</a> 1.  <code>.backward()</code></h2>
+<p>反馈函数：作用是求各参数的梯度</p>
+<p>在 torch 中，参数保存在 <code>Paramater</code>  类中，损失函数保存在 <code>torch.Tensor</code>  类中，模型 model 继承 <code>nn.Model</code>  类，即保存在 <code>nn.Model</code>  中。</p>
+<p><code>Paramater</code>  负责保存参数</p>
+<p><code>nn.Model</code>  负责保存神经网络模型，封装了 <code>forward</code> 、 <code>paramater</code>  等</p>
+<p><code>torch.Tensor</code>  是张量类，是 <code>Paramater</code>  的父类。封装了 <code>backward</code> ，损失函数 <code>loss</code>  以 <code>Tensor</code>  形式可以直接调用 <code>backward</code></p>
+<h1 id="四-torchoptim-优化器"><a class="anchor" href="#四-torchoptim优化器">#</a> 四、  <code>torch.optim</code>  优化器</h1>
+<p>优化器的主要作用是用于<strong>快速</strong>更新参数。</p>
+<p><code>optim</code>  有各种不同的更新规则，例如 SGD，Nesterov-SGD，Adam，RMSProp 等。</p>
+<pre class=" language-language-python"><code class="language-language-python">import torch.optim as optim
+
+# create your optimizer
+optimizer = optim.SGD(net.parameters(), lr=0.01)
+
+# in your training loop:
+optimizer.zero_grad()   # zero the gradient buffers
+output = net(input)
+loss = criterion(output, target)
+loss.backward()
+optimizer.step()    # Does the update
+</code></pre>
+<h1 id="torchautograd"><a class="anchor" href="#torchautograd">#</a>  <code>torch.autograd</code></h1>
+<p>自动微分模块</p>
+<h2 id="1-variable"><a class="anchor" href="#1-variable">#</a> 1.  <code>.Variable</code></h2>
+<p><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8zNDI5ODk4Mw==">https://zhuanlan.zhihu.com/p/34298983</span></p>
+<blockquote>
+<p>tensor 是硬币的话，那 Variable 就是钱包，它记录着里面的钱的多少，和钱的流向</p>
+</blockquote>
+<p>autograd.Variable 是包的中央类，它包裹着 Tensor, 支持几乎所有 Tensor 的操作，并附加额外的属性，在进行操作以后，通过调用.backward () 来计算梯度，通过.data 来访问原始 raw data (tensor), 并将变量梯度累加到.grad</p>
+<p><code>Variable</code>  与 <code> Function</code>  互连并建立一个非循环图，编码完整的计算历史。</p>
+<h1 id="torch-全局函数tensor-对象也可调用"><a class="anchor" href="#torch全局函数tensor对象也可调用">#</a>  <code>torch</code>  全局函数（Tensor 对象也可调用）</h1>
+<blockquote>
+<p>设 tensor 为 Tensor 类型的对象</p>
+</blockquote>
+<ol>
 <li>
-<p>将一个不可训练的类型 Tensor 转换成可以训练的类型 parameter</p>
+<p><code>torch.unsqueeze(input, dim, out=None)</code>  或者 <code>tensor.unsqueeze(dim,out=None)</code> ：扩张维度。</p>
+<p><code>input</code> ：tensor 对象</p>
+<p><code>dim</code> ：从哪个维度扩张</p>
+<pre class=" language-language-python"><code class="language-language-python">a = torch.Tensor(2, 3)
+print(a.unsqueeze(dim = 0))
+print(a.unsqueeze(dim = 1))
+</code></pre>
+<p><img data-src="/2021/07/27/note/Python/pytorch/image-20210819194857386.png" alt="image-20210819194857386"></p>
 </li>
 <li>
-<p>并将这个 parameter 绑定到这个 module 里面</p>
-</li>
-<li>
-<p>经过类型转换这个 self.v 变成了模型的一部分，成为了模型中根据训练可以改动的参数了。</p>
+<p><code>torch.cat(inputs,dim=0)</code> ：拼接多个张量。</p>
+<p><code>inputs</code> ：张量的<strong>序列</strong>。list 或其他类型。</p>
+<p><code>dim</code> ：在哪个维度拼接</p>
 </li>
 </ol>
+<h1 id="工具类-torchutilsdata"><a class="anchor" href="#工具类-torchutilsdata">#</a> 工具类  <code>torch.utils.data</code></h1>
+<h2 id="1-dataset-类"><a class="anchor" href="#1-dataset类">#</a> 1.  <code>.Dataset</code>  类</h2>
+<blockquote>
+<p><strong>class</strong> <strong>torch</strong>.<strong>utils</strong>.<strong>data</strong>.<strong>Dataset</strong></p>
+</blockquote>
+<p>表示 Dataset 的抽象类。</p>
+<ul>
+<li>
+<p>在 pytorch 中，所有数据集 <code>dataset</code>  都必须继承 <code>Dataset</code>  类。就像神经网络类必须继承 <code>nn.Model</code>  一样。</p>
+</li>
+<li>
+<p>所有子类应该 override <code>__len__</code> 和 <code>__getitem__</code></p>
+<ul>
+<li>
+<p><code>__len__(self)</code> ：数据集的大小</p>
+</li>
+<li>
+<p><code>__getitem__(self)</code> :  赋予<strong>类对象</strong>以 <code>self[key]</code>  的能力，并自定义 <code>self[key]</code> 。</p>
+<pre class=" language-language-python"><code class="language-language-python">class dataset(Dataset):
+    def __init__(self):
+        self.context=&#123;0:0,1:-1&#125;#这个是数据集，也可以从文件加载
+    def __getitem__(self, index):
+        rec=self.context[index]+1
+        return rec
+
+if __name__ == '__main__':
+    d=dataset()
+    print(d[0],d[1])#输出1,0
+</code></pre>
+</li>
+<li>
+<pre class=" language-language-python"><code class="language-language-python">def __getitem__(self, idx):
+    return self[idx]+1
+content=&#123;'0':0,'1':-1&#125;
+print(content[0])#输出1
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-dataload-类"><a class="anchor" href="#2-dataload类">#</a> 2.  <code>.Dataload</code>  类</h2>
+<blockquote>
+<p><strong>class</strong> <strong>torch</strong>.<strong>utils</strong>.<strong>data</strong>.<strong>DataLoader</strong>(dataset, batch_size=1, shuffle=False, sampler=None, num_workers=0, collate_fn=&lt;function default_collate&gt;, pin_memory=False, drop_last=False)</p>
+</blockquote>
+<p>数据加载器。组合数据集和采样器，并在数据集上提供单进程或多进程迭代器。</p>
+<p><code>DataLoader</code>  类来定义一个新的迭代器，用来将自定义的数据读取接口的输出或者 <code>PyTorch</code>  已有的数据读取接口的输入按照 batch size 封装成 Tensor。</p>
+<p>后续只需要再包装成 <code>Variable</code>  即可作为模型的输入</p>
+<p>实现取 <code>batch</code> ， <code>shuffle</code>  或者<strong>多线程</strong>读取数据</p>
+<p>总之，通过 <code>torch.utils.data.Dataset</code>  和 <code>torch.utils.data.DataLoader</code>  这两个类，使数据的读取变得非常简单，快捷。</p>
+<p><strong>参数：</strong></p>
+<ul>
+<li><strong>dataset</strong> (<em>Dataset</em>) – 加载数据的数据集。</li>
+<li><strong>batch_size</strong> (<em>int</em>, optional) – 每个 batch 加载多少个样本 (默认: 1)。</li>
+<li><strong>shuffle</strong> (<em>bool</em>, optional) – 设置为 <code>True</code>  时会在每个 epoch 重新打乱数据 (默认: False).</li>
+<li><strong>sampler</strong> (<em>Sampler</em>, optional) – 定义从数据集中提取样本的策略。如果指定，则忽略 <code>shuffle</code>  参数。</li>
+<li><strong>num_workers</strong> (<em>int</em>, optional) – 用多少个子进程加载数据。0 表示数据将在主进程中加载 (默认: 0)</li>
+<li><strong>collate_fn</strong> (<em>callable</em>, optional) –是用来处理不同情况下的输入 dataset 的封装，一般采用默认即可，除非你自定义的数据读取输出非常少见</li>
+<li><strong>pin_memory</strong> (<em>bool</em>, optional) –</li>
+<li><strong>drop_last</strong> (<em>bool</em>, optional) – 如果数据集大小不能被 batch size 整除，则设置为 True 后可删除最后一个不完整的 batch。如果设为 False 并且数据集的大小不能被 batch size 整除，则最后一个 batch 将更小。(默认: False)</li>
+</ul>
 <h1 id="三-torchnnfunctional"><a class="anchor" href="#三-torchnnfunctional">#</a> 三、  <code>torch.nn.functional</code></h1>
 <blockquote>
 <p>这是 pytorch 的主要库，里边包含了绝大部分的深度学习函数</p>
@@ -362,7 +994,7 @@ W.data.uniform_(-stdv, stdv)#初始化
 #weight: 权重a
 #bias: 偏置b
 </code></pre>
-<h2 id="3-损失函数"><a class="anchor" href="#3-损失函数">#</a> 3. 损失函数</h2>
+<h2 id="3-损失函数"><a class="anchor" href="#3-损失函数-2">#</a> 3. 损失函数</h2>
 <h3 id="31-交叉熵误差-cross_entropy"><a class="anchor" href="#31-交叉熵误差cross_entropy">#</a> 3.1 交叉熵误差 <code>cross_entropy()</code></h3>
 <p><img data-src="/2021/07/27/note/Python/pytorch/image-20210622160932219.png" alt="image-20210622160932219"></p>
 <ol>
@@ -438,63 +1070,6 @@ W.data.uniform_(-stdv, stdv)#初始化
 </code></pre>
 </li>
 </ol>
-<h1 id="四-torchtensor"><a class="anchor" href="#四-torchtensor">#</a> 四、  <code>torch.Tensor</code></h1>
-<p>Tensor：张量，也就是向量。相当于 numpy 的 array</p>
-<blockquote>
-<p><code>torch.Tensor(2,3)</code> ：随机生成 2X3 的矩阵，float 类型</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>Data tyoe</th>
-<th>CPU tensor</th>
-<th>GPU tensor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>32-bit floating point</td>
-<td><code>torch.FloatTensor</code></td>
-<td><code>torch.cuda.FloatTensor</code></td>
-</tr>
-<tr>
-<td>64-bit floating point</td>
-<td><code>torch.DoubleTensor</code></td>
-<td><code>torch.cuda.DoubleTensor</code></td>
-</tr>
-<tr>
-<td>16-bit floating point</td>
-<td>N/A</td>
-<td><code>torch.cuda.HalfTensor</code></td>
-</tr>
-<tr>
-<td>8-bit integer (unsigned)</td>
-<td><code>torch.ByteTensor</code></td>
-<td><code>torch.cuda.ByteTensor</code></td>
-</tr>
-<tr>
-<td>8-bit integer (signed)</td>
-<td><code>torch.CharTensor</code></td>
-<td><code>torch.cuda.CharTensor</code></td>
-</tr>
-<tr>
-<td>16-bit integer (signed)</td>
-<td><code>torch.ShortTensor</code></td>
-<td><code>torch.cuda.ShortTensor</code></td>
-</tr>
-<tr>
-<td>32-bit integer (signed)</td>
-<td><code>torch.IntTensor</code></td>
-<td><code>torch.cuda.IntTensor</code></td>
-</tr>
-<tr>
-<td>64-bit integer (signed)</td>
-<td><code>torch.LongTensor</code></td>
-<td><code>torch.cuda.LongTensor</code></td>
-</tr>
-</tbody>
-</table>
-<p><code>torch.Tensor</code>  是默认的 tensor 类型（ <code>torch.FlaotTensor</code> ）的简称。</p>
 
   </div>
 
@@ -506,7 +1081,7 @@ W.data.uniform_(-stdv, stdv)#初始化
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2021-08-09 21:13:06" itemprop="dateModified" datetime="2021-08-09T21:13:06+08:00">2021-08-09</time>
+    <time title="修改时间：2021-08-24 19:31:06" itemprop="dateModified" datetime="2021-08-24T19:31:06+08:00">2021-08-24</time>
   </span>
 </div>
 
@@ -561,7 +1136,7 @@ W.data.uniform_(-stdv, stdv)#初始化
     <div class="item left">
       
 
-  <a href="../../../../../06/25/note/Python/numpy/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexj2jgzj20zk0m8b09.jpg" title="numpy常用函数">
+  <a href="../../../../../06/25/note/Python/numpy/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexw3o58j20zk0m8e81.jpg" title="numpy常用函数">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>numpy常用函数</h3>
@@ -571,7 +1146,7 @@ W.data.uniform_(-stdv, stdv)#初始化
     <div class="item right">
       
 
-  <a href="../python%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giph47e9vtj20zk0m8x6l.jpg" title="python使用技巧">
+  <a href="../python%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclffsa1cj20zk0m811l.jpg" title="python使用技巧">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>python使用技巧</h3>
@@ -593,7 +1168,7 @@ W.data.uniform_(-stdv, stdv)#初始化
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text"> 一、 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-cuda-%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F%E4%BD%86-torchcudais_available-%E8%BE%93%E5%87%BA-false"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. cuda 安装成功，但 torch.cuda.is_available () 输出 False</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-torch-%E6%97%B6%E6%8A%A5%E9%94%99-torch-1x0-cp3x-cp3xm-win_amd64whl-is-not-a-supported-wheel-on-this-platform"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. 安装 torch 时报错 torch-1.X.0-cp3X-cp3Xm-win_amd64.whl is not a supported wheel on this platform.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-torch-%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E-import-torch-%E6%8A%A5%E9%94%99-runtimeerror-module-compiled-against-api-version-0xc-but-this-version-of-numpy-is-0xb"><span class="toc-number">1.3.</span> <span class="toc-text"> 3. torch 安装完成后 import torch 报错 RuntimeError: module compiled against API version 0xc but this version of numpy is 0xb</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pytorch-%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text"> pytorch 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text"> 1. 基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">2.2.</span> <span class="toc-text"> 2. 基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%BC%A0%E9%87%8F"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 2.1 初始化张量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E8%8E%B7%E5%8F%96%E5%BC%A0%E9%87%8F%E4%BF%A1%E6%81%AF"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 2.2 获取张量信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-%E5%BC%A0%E9%87%8F%E8%BF%90%E7%AE%97"><span class="toc-number">2.2.3.</span> <span class="toc-text"> 2.3 张量运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-%E5%AF%B9%E6%8E%A5-numpy"><span class="toc-number">2.2.4.</span> <span class="toc-text"> 2.4 对接 numpy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-%E5%B0%86%E5%BC%A0%E9%87%8F%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E8%AE%BE%E5%A4%87cpugpu"><span class="toc-number">2.2.5.</span> <span class="toc-text"> 2.5 将张量移动到指定设备（CPU&#x2F;GPU）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-torchnn"><span class="toc-number">3.</span> <span class="toc-text"> 二、   torch.nn</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-torchnnparameter"><span class="toc-number">3.1.</span> <span class="toc-text"> 1.  torch.nn.Parameter()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-torchnnfunctional"><span class="toc-number">4.</span> <span class="toc-text"> 三、  torch.nn.functional</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">4.1.</span> <span class="toc-text"> 1. 激活函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-relu"><span class="toc-number">4.1.1.</span> <span class="toc-text"> 1.1  relu()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BA%BF%E6%80%A7%E5%87%BD%E6%95%B0"><span class="toc-number">4.2.</span> <span class="toc-text"> 2. 线性函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-linear"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 2.1  linear()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">4.3.</span> <span class="toc-text"> 3. 损失函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E4%BA%A4%E5%8F%89%E7%86%B5%E8%AF%AF%E5%B7%AE-cross_entropy"><span class="toc-number">4.3.1.</span> <span class="toc-text"> 3.1 交叉熵误差 cross_entropy()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-%E4%BA%8C%E5%85%83%E4%BA%A4%E5%8F%89%E7%86%B5-binary_cross_entropy"><span class="toc-number">4.3.2.</span> <span class="toc-text"> 3.2 二元交叉熵 binary_cross_entropy()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#33-%E4%BA%8C%E5%85%83%E9%80%BB%E8%BE%91%E4%BA%A4%E5%8F%89%E7%86%B5-binary_cross_entropy_with_logits"><span class="toc-number">4.3.3.</span> <span class="toc-text"> 3.3 二元逻辑交叉熵 binary_cross_entropy_with_logits()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-torchtensor"><span class="toc-number">5.</span> <span class="toc-text"> 四、  torch.Tensor</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text"> 一、 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-cuda-%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F%E4%BD%86-torchcudais_available-%E8%BE%93%E5%87%BA-false"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. cuda 安装成功，但 torch.cuda.is_available () 输出 False</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-torch-%E6%97%B6%E6%8A%A5%E9%94%99-torch-1x0-cp3x-cp3xm-win_amd64whl-is-not-a-supported-wheel-on-this-platform"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. 安装 torch 时报错 torch-1.X.0-cp3X-cp3Xm-win_amd64.whl is not a supported wheel on this platform.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-torch-%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E-import-torch-%E6%8A%A5%E9%94%99-runtimeerror-module-compiled-against-api-version-0xc-but-this-version-of-numpy-is-0xb"><span class="toc-number">1.3.</span> <span class="toc-text"> 3. torch 安装完成后 import torch 报错 RuntimeError: module compiled against API version 0xc but this version of numpy is 0xb</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pytorch-%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text"> pytorch 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text"> 1. 基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text"> 1.5 基本类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%BC%A0%E9%87%8F-tensor"><span class="toc-number">2.3.</span> <span class="toc-text"> 2. 张量 Tensor</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%BC%A0%E9%87%8F"><span class="toc-number">2.3.1.</span> <span class="toc-text"> 2.1 初始化张量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E8%8E%B7%E5%8F%96%E5%BC%A0%E9%87%8F%E4%BF%A1%E6%81%AF"><span class="toc-number">2.3.2.</span> <span class="toc-text"> 2.2 获取张量信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-%E5%BC%A0%E9%87%8F%E8%BF%90%E7%AE%97"><span class="toc-number">2.3.3.</span> <span class="toc-text"> 2.3 张量运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-%E5%AF%B9%E6%8E%A5-numpy"><span class="toc-number">2.3.4.</span> <span class="toc-text"> 2.4 对接 numpy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-%E5%B0%86%E5%BC%A0%E9%87%8F%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E8%AE%BE%E5%A4%87cpugpu"><span class="toc-number">2.3.5.</span> <span class="toc-text"> 2.5 将张量移动到指定设备（CPU&#x2F;GPU）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#26-%E5%BC%A0%E9%87%8F%E7%9A%84%E5%85%B6%E4%BB%96%E5%87%BD%E6%95%B0"><span class="toc-number">2.3.6.</span> <span class="toc-text"> 2.6 张量的其他函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">2.4.</span> <span class="toc-text"> 3. 损失函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E5%9D%87%E6%96%B9%E8%AF%AF%E5%B7%AE"><span class="toc-number">2.4.1.</span> <span class="toc-text"> 3.1 均方误差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-%E4%BA%A4%E5%8F%89%E7%86%B5%E8%AF%AF%E5%B7%AE"><span class="toc-number">2.4.2.</span> <span class="toc-text"> 3.2 交叉熵误差</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#321-%E4%BA%A4%E5%8F%89%E7%86%B5%E8%AF%AF%E5%B7%AE-cross_entropy"><span class="toc-number">2.4.2.1.</span> <span class="toc-text"> 3.2.1 交叉熵误差 cross_entropy()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#322-%E4%BA%8C%E5%85%83%E4%BA%A4%E5%8F%89%E7%86%B5-binary_cross_entropy"><span class="toc-number">2.4.2.2.</span> <span class="toc-text"> 3.2.2 二元交叉熵 binary_cross_entropy()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#323-%E4%BA%8C%E5%85%83%E9%80%BB%E8%BE%91%E4%BA%A4%E5%8F%89%E7%86%B5-binary_cross_entropy_with_logits"><span class="toc-number">2.4.2.3.</span> <span class="toc-text"> 3.2.3 二元逻辑交叉熵 binary_cross_entropy_with_logits()</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E4%BD%BF%E7%94%A8-pytorch-%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">3.</span> <span class="toc-text"> 二、 使用 pytorch 训练神经网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%B1%BB-forward"><span class="toc-number">3.1.</span> <span class="toc-text"> 1. 创建神经网络类 forward</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA%E4%BC%98%E5%8C%96%E5%99%A8-optim"><span class="toc-number">3.2.</span> <span class="toc-text"> 2. 创建优化器 optim</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%AE%A1%E7%AE%97%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0-loss"><span class="toc-number">3.3.</span> <span class="toc-text"> 3. 计算损失函数 loss</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E6%B1%82%E6%A2%AF%E5%BA%A6-backward-%E4%BC%98%E5%8C%96%E5%99%A8%E6%9B%B4%E6%96%B0%E5%8F%82%E6%95%B0-step"><span class="toc-number">3.4.</span> <span class="toc-text"> 4. 反向传播求梯度 backward + 优化器更新参数 step</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E4%B8%BB%E5%87%BD%E6%95%B0%E8%AE%AD%E7%BB%83%E6%B5%8B%E8%AF%95"><span class="toc-number">3.5.</span> <span class="toc-text"> 5. 主函数训练测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E5%90%84%E4%B8%AA%E5%B1%82%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text"> 三、 各个层的模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-linear-layers"><span class="toc-number">4.1.</span> <span class="toc-text"> 1. Linear layers</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-torchnnlinear"><span class="toc-number">4.1.1.</span> <span class="toc-text"> 1.1  torch.nn.Linear()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-torchnnfunctionallinear"><span class="toc-number">4.1.2.</span> <span class="toc-text"> 1.2  torch.nn.functional.Linear()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-lstmcell-layers"><span class="toc-number">4.2.</span> <span class="toc-text"> 2. LSTMCell layers</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%B1%BB-torchnn"><span class="toc-number">5.</span> <span class="toc-text"> 二、  神经网络类 torch.nn</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-nnmodel"><span class="toc-number">5.1.</span> <span class="toc-text"> 1.  nn.Model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-torchnnparameter"><span class="toc-number">5.2.</span> <span class="toc-text"> 2.  torch.nn.Parameter()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-nndropoutpinplacefalse"><span class="toc-number">5.3.</span> <span class="toc-text"> 3.  nn.Dropout(p,inplace&#x3D;False)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-torchtensor"><span class="toc-number">6.</span> <span class="toc-text"> 三、  torch.Tensor</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-torchtensor"><span class="toc-number">6.1.</span> <span class="toc-text"> 0.  torch.Tensor()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-backward"><span class="toc-number">6.2.</span> <span class="toc-text"> 1.  .backward()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-torchoptim-%E4%BC%98%E5%8C%96%E5%99%A8"><span class="toc-number">7.</span> <span class="toc-text"> 四、  torch.optim  优化器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#torchautograd"><span class="toc-number">8.</span> <span class="toc-text">  torch.autograd</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-variable"><span class="toc-number">8.1.</span> <span class="toc-text"> 1.  .Variable</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#torch-%E5%85%A8%E5%B1%80%E5%87%BD%E6%95%B0tensor-%E5%AF%B9%E8%B1%A1%E4%B9%9F%E5%8F%AF%E8%B0%83%E7%94%A8"><span class="toc-number">9.</span> <span class="toc-text">  torch  全局函数（Tensor 对象也可调用）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7%E7%B1%BB-torchutilsdata"><span class="toc-number">10.</span> <span class="toc-text"> 工具类  torch.utils.data</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-dataset-%E7%B1%BB"><span class="toc-number">10.1.</span> <span class="toc-text"> 1.  .Dataset  类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-dataload-%E7%B1%BB"><span class="toc-number">10.2.</span> <span class="toc-text"> 2.  .Dataload  类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-torchnnfunctional"><span class="toc-number">11.</span> <span class="toc-text"> 三、  torch.nn.functional</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">11.1.</span> <span class="toc-text"> 1. 激活函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-relu"><span class="toc-number">11.1.1.</span> <span class="toc-text"> 1.1  relu()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BA%BF%E6%80%A7%E5%87%BD%E6%95%B0"><span class="toc-number">11.2.</span> <span class="toc-text"> 2. 线性函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-linear"><span class="toc-number">11.2.1.</span> <span class="toc-text"> 2.1  linear()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">11.3.</span> <span class="toc-text"> 3. 损失函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E4%BA%A4%E5%8F%89%E7%86%B5%E8%AF%AF%E5%B7%AE-cross_entropy"><span class="toc-number">11.3.1.</span> <span class="toc-text"> 3.1 交叉熵误差 cross_entropy()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-%E4%BA%8C%E5%85%83%E4%BA%A4%E5%8F%89%E7%86%B5-binary_cross_entropy"><span class="toc-number">11.3.2.</span> <span class="toc-text"> 3.2 二元交叉熵 binary_cross_entropy()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#33-%E4%BA%8C%E5%85%83%E9%80%BB%E8%BE%91%E4%BA%A4%E5%8F%89%E7%86%B5-binary_cross_entropy_with_logits"><span class="toc-number">11.3.3.</span> <span class="toc-text"> 3.3 二元逻辑交叉熵 binary_cross_entropy_with_logits()</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
       </div>
@@ -608,7 +1183,7 @@ W.data.uniform_(-stdv, stdv)#初始化
 <nav class="state">
     <div class="item posts">
       <a href="">
-        <span class="count">28</span>
+        <span class="count">140</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -698,24 +1273,45 @@ W.data.uniform_(-stdv, stdv)#初始化
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
 </div>
 
-    <span><a href="../../../../../04/23/note/%E5%89%8D%E7%AB%AF/echarts/" title="echarts用法简单记录">echarts用法简单记录</a></span>
+    <span><a href="../../../../../../2022/03/16/note/%E5%89%8D%E7%AB%AF/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9/" title="未命名">未命名</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/software/" title="分类于 software">software</a>
 </div>
 
-    <span><a href="../../../../../05/10/note/software/maven%E5%A4%8D%E4%B9%A0/" title="maven复习">maven复习</a></span>
+    <span><a href="../../../../../../2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/746.%20%E4%BD%BF%E7%94%A8%E6%9C%80%E5%B0%8F%E8%8A%B1%E8%B4%B9%E7%88%AC%E6%A5%BC%E6%A2%AF/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2022/08/08/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%9B%9E%E6%BA%AF/17.%20%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../11/10/note/%E5%89%8D%E7%AB%AF/HTML+CSS/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../05/08/my-hexo/" title="my hexo">my hexo</a></span>
   </li>
 
       
@@ -733,25 +1329,7 @@ W.data.uniform_(-stdv, stdv)#初始化
 <div class="breadcrumb">
 </div>
 
-    <span><a href="" title="pytorch">pytorch</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="../../../../../05/14/%E9%99%88%E5%BA%B7%E4%B8%9C%E5%92%8C%E7%8E%8B%E5%86%B0%E5%86%B0%E7%9A%84%E5%BF%AB%E4%B9%90%E5%B0%8F%E5%B1%8B/" title="陈康东和王冰冰的快乐小屋">陈康东和王冰冰的快乐小屋</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="../python%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" title="python使用技巧">python使用技巧</a></span>
+    <span><a href="../../../../../../2022/08/04/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%AD%97%E7%AC%A6%E4%B8%B2/459.%20%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="未命名">未命名</a></span>
   </li>
 
       
@@ -774,36 +1352,18 @@ W.data.uniform_(-stdv, stdv)#初始化
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/Linux/" title="分类于 Linux">Linux</a>
 </div>
 
-    <span><a href="../../../../../05/12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" title="VMware安装中标麒麟">VMware安装中标麒麟</a></span>
+    <span><a href="../../../../../../2022/08/25/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/websocket%E7%BB%83%E4%B9%A0/server/" title="未命名">未命名</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
 </div>
 
-    <span><a href="../../../../../05/27/note/%E5%89%8D%E7%AB%AF/JavaScript/" title="JavaScript基础语法">JavaScript基础语法</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
-</div>
-
-    <span><a href="../../../../../05/27/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E8%B0%83%E5%8F%96Python%E6%95%B0%E6%8D%AE/" title="前端调用Python数据">前端调用Python数据</a></span>
+    <span><a href="../../../../../12/24/note/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" title="未命名">未命名</a></span>
   </li>
 
   </ul>
@@ -818,7 +1378,7 @@ W.data.uniform_(-stdv, stdv)#初始化
   <div class="copyright">
     
     &copy; 2010 – 
-    <span itemprop="copyrightYear">2021</span>
+    <span itemprop="copyrightYear">2022</span>
     <span class="with-love">
       <i class="ic i-sakura rotate"></i>
     </span>
@@ -828,13 +1388,13 @@ W.data.uniform_(-stdv, stdv)#初始化
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">195k 字</span>
+    <span title="站点总字数">537k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:57</span>
+    <span title="站点阅读时长">8:09</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

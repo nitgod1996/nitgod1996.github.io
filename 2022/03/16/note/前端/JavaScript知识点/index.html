@@ -1,0 +1,747 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="../images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="宁理大神1996" href="https://nitgod1996.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="宁理大神1996" href="https://nitgod1996.com/atom.xml" />
+<link rel="alternate" type="application/json" title="宁理大神1996" href="https://nitgod1996.com/feed.json" />
+
+
+
+<link rel="stylesheet" href="../css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="https://nitgod1996.com/2022/03/16/note/%E5%89%8D%E7%AB%AF/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9/">
+
+
+
+  <title>
+ |
+nitgod1996 = 宁理大神 1996</title>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-03-16 19:35:26">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-03-16T19:35:26+08:00">2022-03-16</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>5.9k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>5 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">nitgod1996</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclimtf7dj20zk0m8qav.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipev1x5e4j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclhfehz7j20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipetlbztpj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicitcxhpij20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclga70tsj20zk0m84mr.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="../../../../../../index.html">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://nitgod1996.com/2022/03/16/note/%E5%89%8D%E7%AB%AF/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="../../../../../../images/avatar.jpg">
+    <meta itemprop="name" content="宁理大神1996">
+    <meta itemprop="description" content=", 宁理大神的个人博客">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="宁理大神 1996">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="一-常见的"><a class="anchor" href="#一-常见的">#</a> 一、 常见的</h1>
+<h2 id="1-typeof-instanceof-constructor-newtarget-的区别"><a class="anchor" href="#1-typeof-instanceof-constructor-newtarget的区别">#</a> 1. typeof、instanceof、constructor、new.target 的区别</h2>
+<p>这些函数、关键字都可以判断数据类型，总结一下他们的区别</p>
+<hr>
+<p><strong>typeof</strong>： <code>typeof</code>  主要用于<strong>基本数据类型</strong>以及<strong>函数</strong>的判别，对引用数据类型<strong> object</strong> 就无法细分其类别了。其以<strong>字符串</strong>形式返回结果</p>
+<blockquote>
+<p>语法：</p>
+<ol>
+<li><code>typeof+空格+变量/常量</code></li>
+<li><code>typeof(变量/常量)</code></li>
+</ol>
+</blockquote>
+<ul>
+<li><code>undefined</code> ：表示值未定义</li>
+<li><code>boolean</code> ：布尔值</li>
+<li><code>string</code> ：字符串</li>
+<li><code>number</code> ：数值</li>
+<li><code>object</code> ：对象或 null</li>
+<li><code>function</code> ：函数和 class</li>
+<li><code>symbol</code> ：符号</li>
+</ul>
+<hr>
+<p><strong>instanceof</strong>： <code>instanceof</code>  主要是判断后者是否处于前者的<strong>原型链</strong>上游。</p>
+<p>可以用来判断：</p>
+<ol>
+<li>对象实例是否属于该对象（伪类）</li>
+<li>对象（伪类）是否继承于另一个对象（伪类）</li>
+</ol>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">let</span> <span class="token function-variable function">Person</span><span class="token operator">=</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">let</span> p<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p <span class="token keyword">instanceof</span> <span class="token class-name">Person</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span></pre></td></tr><tr><td data-num="5"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span></pre></td></tr><tr><td data-num="6"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Person <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span></pre></td></tr></table></figure><p>&lt;font color=red&gt; <code>instanceof</code>  不适用于原始值（简单类型）&lt;/font&gt;</p>
+<hr>
+<p><strong>constructor</strong>： <code>constructor</code> ：对象的属性，是一个<strong>指针</strong>，指向创建该对象的<strong>构造函数</strong>。</p>
+<p>不过在 JavaScript 中构造函数也相当于对象（伪类）了，相当于就是返回<strong>对象实例属于哪个对象（伪类）</strong></p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">let</span> <span class="token function-variable function">Person</span><span class="token operator">=</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">let</span> p<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">let</span> obj<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>constructor<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//[Function: Person]</span></pre></td></tr><tr><td data-num="7"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>constructor<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//[Function: Object]</span></pre></td></tr></table></figure><p><code>constructor</code>  是属于<strong>对象实例</strong>的属性</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Person</span><span class="token punctuation">.</span>constructor<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//[Function: Function]</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment">// 这里就把 Person 看成是个函数实例了，而不是类</span></pre></td></tr></table></figure><p>但可以通过原型 <code>prototype.constructor</code>  获取构造函数（因为每个类的原型就是一个原型实例对象）</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//[Function: Person]</span></pre></td></tr></table></figure><p>严格说， <code>constructor</code>  就是属于 <code>prototype</code>  的属性，可以通过 <code>prototype</code>  修改 <code>constructor</code> ，本来是不可枚举，修改后不指定枚举状态的话是默认可枚举</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor<span class="token operator">=</span>Object<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>constructor<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//[Function: Object]</span></pre></td></tr></table></figure><hr>
+<p><strong>new.target</strong>：独属于<strong>函数</strong>的属性，返回对象实例的构造函数。</p>
+<ul>
+<li>如果函数正常调用（没有用 <code>new</code>  实例化）： <code>new.target</code>  返回 <code>undefined</code></li>
+<li>如果 <code>new</code>  实例化了对象： <code>new.target</code>  返回该构造函数</li>
+</ul>
+<p>因为 <code>new.target</code>  是函数的装有属性，和 <code>arguments</code>  一样，因此 &lt;font color=red&gt; 只能在函数体内调用 &lt;/font&gt;</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">function</span> <span class="token function">King</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span><span class="token punctuation">.</span>target<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">new</span> <span class="token class-name">King</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//[Function: King]</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token function">King</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//undefined</span></pre></td></tr></table></figure><h2 id="2-上下文-作用域及垃圾回收"><a class="anchor" href="#2-上下文-作用域及垃圾回收">#</a> 2. 上下文、作用域及垃圾回收</h2>
+<h3 id="21-上下文"><a class="anchor" href="#21-上下文">#</a> 2.1 上下文</h3>
+<blockquote>
+<p>我的理解是代码执行环境，以函数作用域为单位，包括该执行环境的变量、函数声明、参数等信息</p>
+</blockquote>
+<p>执行上下文主要有<strong>全局上下文</strong>（window）和<strong>函数上下文</strong></p>
+<ul>
+<li><strong>函数上下文</strong>在所有代码执行完毕会被销毁。</li>
+<li><strong>全局上下文</strong>在程序关闭时（网页关闭）销毁</li>
+<li>全局执行上下文只有一个，函数执行上下文在每次调用函数时候会创建一个新的函数执行上下文。</li>
+</ul>
+<p><strong>生命周期</strong></p>
+<p>函数调用，当<strong>代码执行流</strong>进入函数时，该函数调用的上下文（保存该层）压入<strong>上下文栈</strong>，调用结束弹出上下文（继续该层的执行）。</p>
+<p>解释一下：就是在一行行代码中，调用了一个函数，那么把执行到调用函数为止的参数等信息（<strong>上下文</strong>）先保存到栈里，进入函数进行编译，函数执行完后，再把栈里的这些参数等拿出来继续执行。</p>
+<hr>
+<h3 id="22-垃圾回收"><a class="anchor" href="#22-垃圾回收">#</a> 2.2 垃圾回收</h3>
+<blockquote>
+<p>JavaScript 会自动释放内存，只要变量不再被引用，便会被回收</p>
+</blockquote>
+<p><strong>标记清理（最常用）</strong></p>
+<p>当变量进入上下文（在该作用域被声明）时，该变量会被加上 “存在于该上下文” 的标记（标记 called 存在于上下文），然后离开时也会被加上 “离开上下文” 的标记。</p>
+<p><strong>垃圾回收</strong>程序运行时：</p>
+<ol>
+<li>先标记内存中所有变量（认为所有变量都是待删除的）</li>
+<li>遍历所有变量</li>
+<li>找出在上下文中的变量（集合<strong> A</strong>）（正在使用的变量）</li>
+<li>找出所有被<strong> A</strong> 引用的变量（集合<strong> B</strong>）</li>
+<li>去除<strong> A</strong> 和<strong> B</strong> 的标记</li>
+<li>剩下的带标记的都清理了</li>
+</ol>
+<p>几乎所有主流浏览器都使用这种方法清理内存。</p>
+<p><strong>标记方法</strong>有多种：</p>
+<ul>
+<li>当变量进入上下文时，反转某一位</li>
+<li>维护 “在上下文中” 和 “不在上下文中” 2 个变量列表</li>
+<li>等</li>
+</ul>
+<p><strong>引用计数</strong></p>
+<blockquote>
+<p>思路：对每个值记录它被引用的次数</p>
+</blockquote>
+<ol>
+<li>该值每被一个新的变量引用，引用值 + 1</li>
+<li>引用该值的变量被覆盖 / 删除，引用值 - 1</li>
+<li>内存回收时， <code>if</code>  该变量引用值 ===0，则回收该值</li>
+</ol>
+<p>引用计数看上去很简单，但同样问题也很多，比如：</p>
+<ol>
+<li>a 和 b 互相引用，则 a 和 b 永远不会被删除，但实际上 a 和 b 可能都要被删除</li>
+</ol>
+<p><strong>回收周期</strong></p>
+<p>垃圾回收程序周期运行，当垃圾累积到一定数量会影响性能，因此回收周期（时间调度）很重要。</p>
+<p>回收频率太低会导致<strong>垃圾积压</strong>，频率太高会到处<strong>小内存片泛滥</strong>。</p>
+<p>IE7 后，JavaScript 引擎的垃圾回收程序为<strong>动态</strong>改变分配变量、字面量或数组槽位等阈值。</p>
+<ul>
+<li>
+<p>设一个初始阈值。</p>
+</li>
+<li>
+<p>如果有一次回收内存不到已分配的 15%，则阈值会翻倍。</p>
+</li>
+<li>
+<p>如果有一次回收内存达到 85%，则阈值重置为默认值。</p>
+</li>
+</ul>
+<p>（有点像网络拥塞控制的慢开始和快重传）</p>
+<h3 id="23-内存泄露"><a class="anchor" href="#23-内存泄露">#</a> 2.3 内存泄露</h3>
+<p>上面说了，被引用的变量不会被回收内存，而我们有时候可能因为一些失误导致一些不必要的变量一直被引用着。</p>
+<ul>
+<li>
+<p>通过 <code>const</code>  和 <code>let</code>  提升性能： <code>const</code>  和 <code>let</code>  都以<strong>块</strong>为作用域，比 <code>var</code>  能更早被垃圾回收。</p>
+</li>
+<li>
+<p>尽可能少地制造<strong>隐藏类</strong>：即对象实例不要添加新的属性。</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">function</span> <span class="token function">Article</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">this</span><span class="token punctuation">.</span>title<span class="token operator">=</span><span class="token string">"title"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">let</span> a1<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Article</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token keyword">let</span> a2<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Article</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>这时候 <code>a1</code>  和 <code>a2</code>  同属于一个类（ <code>Article</code> ）</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>a2<span class="token punctuation">.</span>author<span class="token operator">=</span><span class="token string">'jake'</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>这时候 <code>a1</code>  和 <code>a2</code>  还是同属于一个类（ <code>Article</code> ），但他们不属于同一个<strong>隐藏类</strong>。其中， <code>a2</code>  的隐藏类比 <code>a1</code>  多了一个 <code>author</code>  属性。</p>
+<p>&lt;font color=red&gt; 能够共享隐藏类的对象<strong>性能更好</strong>，即尽可能少的制造隐藏类 &lt;/font&gt;</p>
+</li>
+<li>
+<p>闭包可能会引起内存泄露：不要在闭包写长期占用的变量引用</p>
+</li>
+</ul>
+<h2 id="3-rem-自适应"><a class="anchor" href="#3-rem自适应">#</a> 3. rem 自适应</h2>
+<p>摘要：rem 是相对于根元素 &lt;html&gt;，这样就意味着，我们只需要在根元素确定一个 px 字号，则可以来算出元素的宽高。</p>
+<p>flexible.js 是如何通过 rem 实现自适应的呢？ 通过 rem 与 px 的换算，你可以把设计稿从 px 转到 rem。</p>
+<p>简单的理解， <code>rem</code>  就是相对于根元素 <code>&lt;html&gt;</code>  的 <code>font-size</code>  来做计算。而我们的方案中使用 <code>rem</code>  单位，是能轻易的根据 <code>&lt;html&gt;</code>  的 <code>font-size</code>  计算出元素的盒模型大小。而这个特色对我们来说是特别的有益处。</p>
+<hr>
+<p>简言之：rem 即是 <code>html</code>  标签的 <code>font-size</code>  的倍数，如下</p>
+<figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token selector">html</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token property">font-size</span><span class="token punctuation">:</span>20px<span class="token punctuation">;</span><span class="token comment">/* 这个默认是 16px*/</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token selector">.btn</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token property">width</span><span class="token punctuation">:</span> 6rem<span class="token punctuation">;</span>  </pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>width 即是 120px。1rem=20px</p>
+<p>通过 flexible.js 根据屏幕分辨率自动计算合适的 <code>html</code>  的 <code>font-size</code> ，rem 的大小也就能随着屏幕（窗口）大小随动了。</p>
+<h1 id="二-面向对象"><a class="anchor" href="#二-面向对象">#</a> 二、 面向对象</h1>
+<h2 id="1-原型链"><a class="anchor" href="#1-原型链">#</a> 1. 原型链</h2>
+<h3 id="11-原型-prototype"><a class="anchor" href="#11-原型prototype">#</a> 1.1 原型 prototype</h3>
+<ul>
+<li>
+<p>prototype 是对象（伪类）的一个属性，继承于 object 对象</p>
+</li>
+<li>
+<p>prototype 是所属对象的一个<strong>对象实例</strong>，即原型对象</p>
+<p>因此 prototype 都是以 <code>&#123;&#125;</code>  的形式定义的， <code>&#123;&#125;</code>  就是一个对象实例，其默认 <code>constructor</code>  属性指向其对象（伪类），而我们自己创建的 <code>&#123;&#125;</code>  的 <code>constructor</code>  指向 <code>object</code></p>
+</li>
+<li>
+<p>构造函数初始化的属性不在 prototype 内</p>
+</li>
+<li>
+<p>prototype 有个 <code>constructor</code>  属性指向构造函数</p>
+</li>
+</ul>
+<h3 id="12-原型层级原型链"><a class="anchor" href="#12-原型层级原型链">#</a> 1.2 原型层级（原型链）</h3>
+<p>可以简单的理解为继承关系，因为 js 的继承是通过原型实现的。关键代码 <code>Child.prototype=new Father();</code> ，子类的原型是父类的实例</p>
+<p>对象实例→对象原型（父类 1 实例 /new 构造函数）→父类 1 原型（父类 2 实例 /new 构造函数）→...→object，这就是一条原型链。</p>
+<ol>
+<li>
+<p>对象创建了一个实例，当该实例访问一个属性时，</p>
+</li>
+<li>
+<p>首先看这个属性是该<strong>实例</strong>新增的还是在该实力上修改过；</p>
+</li>
+<li>
+<p>如果没有，那么看看<strong>构造函数</strong>有没有初始化这个属性（这层也是<strong>相当于实例上</strong>的，因为构造函数只有在 new 的时候才会初始化实例和属性）；</p>
+</li>
+<li>
+<p>如果还是没有，那么看看<strong>对象的原型</strong>上有没有这个属性；</p>
+</li>
+<li>
+<p>还是没有 ，再看原型对象的原型（<strong>父类的原型</strong>）有没有初始化这个属性；</p>
+</li>
+<li>
+<p>还是没有，再往原型链上游一步步找，直到<strong> object</strong> 为止。</p>
+</li>
+</ol>
+<h3 id="13-原型的-2-大属性constructor-和_proto_"><a class="anchor" href="#13-原型的2大属性constructor和_proto_">#</a> 1.3 原型的 2 大属性：constructor 和_<em>proto</em>_</h3>
+<ul>
+<li><code>prototype.constructor</code> ：隶属于 <code>prototype</code>  的属性，指向<strong>构造函数</strong>。</li>
+<li><code>prototype.__proto__</code> ：隶属于 <code>prototype</code>  的属性，指向构造函数的<strong>原型对象</strong>。即<strong>对象的原型</strong></li>
+</ul>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">let</span> <span class="token function-variable function">Person</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">let</span> person<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>constructor<span class="token operator">===</span>Person<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span></pre></td></tr><tr><td data-num="4"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor<span class="token operator">===</span>Person<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span></pre></td></tr><tr><td data-num="5"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor<span class="token operator">===</span>Object<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//false</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>__proto__<span class="token operator">===</span><span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span></pre></td></tr><tr><td data-num="8"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>__proto__<span class="token operator">===</span><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token comment">//prototype 是 Object 的对象实例</span></pre></td></tr></table></figure><p>&lt;font color=red&gt; <code>__proto__</code> 也可以说是指向<strong>原型链中的上一级原型</strong>。因此__proto__是原型链上至关重要的属性，原型链的往上遍历就是通过 <code>__proto__</code> 实现的。&lt;/font&gt;</p>
+<h2 id="2-prototype-__proto__和-constructor-的区别"><a class="anchor" href="#2-prototype-__proto__和constructor的区别">#</a> 2. prototype、__proto__和 constructor 的区别</h2>
+<ul>
+<li><code>prototype</code> ：原型，无需多言，函数做对象类使用时涉及的属性，保存该类的部分（还有部分是保存在构造函数中的）成员函数、成员变量和一些对象类的属性（如 <code>constructor</code>  和 <code>__proto__</code> 均是 <code>prototype</code>  的属性）</li>
+<li><code>prototype.constructor</code> ：隶属于 <code>prototype</code>  的属性，指向构造函数。详见第一章的 1</li>
+<li><code>prototype.__proto__</code> ：隶属于 <code>prototype</code>  的属性，指向构造函数的<strong>原型对象</strong>。</li>
+</ul>
+<p>下面着重讲一下 <code>__proto__</code> 的性质，及一些相关的对象：</p>
+<p>在 JavaScript 原型链中，最底层的是<strong>对象实例</strong>，其次是对应构造函数的<strong>原型对象</strong>，再次是<strong>父类</strong>的原型，一直到<strong> Object</strong>，如下所示：</p>
+<p>对象实例→对象类。原型→对象类父类。原型→...→Object. 原型→null</p>
+<p>因此 <code>__proto__</code> 也可以说是指向<strong>原型链中的上一级原型</strong>。</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">let</span> <span class="token function-variable function">Person</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">let</span> person<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>constructor<span class="token operator">===</span>Person<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span></pre></td></tr><tr><td data-num="4"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor<span class="token operator">===</span>Person<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span></pre></td></tr><tr><td data-num="5"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor<span class="token operator">===</span>Object<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//false</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>__proto__<span class="token operator">===</span><span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span></pre></td></tr><tr><td data-num="8"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>__proto__<span class="token operator">===</span><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token comment">//prototype 是 Object 的对象实例</span></pre></td></tr></table></figure><p><strong>如何分别解释 2 中说法呢：</strong></p>
+<ol>
+<li>指向<strong>构造函数的原型对象</strong></li>
+<li>指向<strong>原型链中的上一级原型</strong>。</li>
+</ol>
+<p>看下面例子</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">function</span> <span class="token function">Father</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">this</span><span class="token punctuation">.</span>property<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token class-name">Father</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>name<span class="token operator">=</span><span class="token string">"ha"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token keyword">function</span> <span class="token function">Child</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token keyword">this</span><span class="token punctuation">.</span>cpro<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token class-name">Child</span><span class="token punctuation">.</span>prototype<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Father</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Child</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>__proto__<span class="token operator">===</span><span class="token class-name">Father</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span></pre></td></tr></table></figure><p>JavaScript 中的继承是通过原型链实现的，子类（Child）的原型就是父类（Father）的对象实例，因此以上 2 种说法在逻辑上等价</p>
+<p>当访问一个对象的属性时：</p>
+<ul>
+<li>
+<p>如果该对象内部不存在这个属性，那么就会去它的 <code>__proto__</code> 属性所指向的对象原型里找；</p>
+</li>
+<li>
+<p>如果还是不存在，则继续往父对象的 <code>__proto__</code> 属性所指向的那个原型（可以理解为爷爷对象的原型）里找；</p>
+</li>
+<li>
+<p>直到原型链顶端 null，null 为<strong>原型链</strong>的终点</p>
+</li>
+</ul>
+<p>所以<strong>顺着原型链</strong>找就是通过 <code>__proto__</code> 实现的</p>
+<h2 id="3-属性取值优先级"><a class="anchor" href="#3-属性取值优先级">#</a> 3. 属性取值优先级</h2>
+<p>优先级：实例赋值 &gt; 构造函数赋值 &gt; 原型赋值</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">let</span> <span class="token function-variable function">Person</span><span class="token operator">=</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">this</span><span class="token punctuation">.</span>attribute<span class="token operator">=</span><span class="token string">'构造函数'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>attribute<span class="token operator">=</span><span class="token string">'原型'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token keyword">let</span> test<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>test<span class="token punctuation">.</span>attribute<span class="token operator">=</span><span class="token string">'实例'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>test<span class="token punctuation">.</span>attribute<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 优先输出 ' 实例 ',' 实例 ' 删掉输出 ' 构造函数'</span></pre></td></tr></table></figure>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-03-16 21:40:26" itemprop="dateModified" datetime="2022-03-16T21:40:26+08:00">2022-03-16</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="../images/wechatpay.png" alt="宁理大神1996 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="../images/alipay.png" alt="宁理大神1996 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="../images/paypal.png" alt="宁理大神1996 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>宁理大神1996 <i class="ic i-at"><em>@</em></i>宁理大神 1996
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="../../../../../../https:/nitgod1996.com/2022/03/16/note/%E5%89%8D%E7%AB%AF/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9/" title="">https://nitgod1996.com/2022/03/16/note/前端/JavaScript知识点/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="../../../../../01/14/note/%E5%89%8D%E7%AB%AF/js%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicitht3xtj20zk0m8k5v.jpg" title="JavaScript高级程序设计">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>JavaScript高级程序设计</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="../../../../../04/02/note/%E5%89%8D%E7%AB%AF/promise%E6%80%BB%E7%BB%93/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexoj0moj20zk0m8kgu.jpg" title="快速了解promise">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>快速了解promise</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E5%B8%B8%E8%A7%81%E7%9A%84"><span class="toc-number">1.</span> <span class="toc-text"> 一、 常见的</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-typeof-instanceof-constructor-newtarget-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. typeof、instanceof、constructor、new.target 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B8%8A%E4%B8%8B%E6%96%87-%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%8F%8A%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. 上下文、作用域及垃圾回收</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 2.1 上下文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 2.2 垃圾回收</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 2.3 内存泄露</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-rem-%E8%87%AA%E9%80%82%E5%BA%94"><span class="toc-number">1.3.</span> <span class="toc-text"> 3. rem 自适应</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.</span> <span class="toc-text"> 二、 面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="toc-number">2.1.</span> <span class="toc-text"> 1. 原型链</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E5%8E%9F%E5%9E%8B-prototype"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 1.1 原型 prototype</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E5%8E%9F%E5%9E%8B%E5%B1%82%E7%BA%A7%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="toc-number">2.1.2.</span> <span class="toc-text"> 1.2 原型层级（原型链）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E5%8E%9F%E5%9E%8B%E7%9A%84-2-%E5%A4%A7%E5%B1%9E%E6%80%A7constructor-%E5%92%8C_proto_"><span class="toc-number">2.1.3.</span> <span class="toc-text"> 1.3 原型的 2 大属性：constructor 和_proto_</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-prototype-__proto__%E5%92%8C-constructor-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.2.</span> <span class="toc-text"> 2. prototype、__proto__和 constructor 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%B1%9E%E6%80%A7%E5%8F%96%E5%80%BC%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">2.3.</span> <span class="toc-text"> 3. 属性取值优先级</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="宁理大神1996"
+      data-src="../images/avatar.jpg">
+  <p class="name" itemprop="name">宁理大神1996</p>
+  <div class="description" itemprop="description">宁理大神的个人博客</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="">
+        <span class="count">140</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="../categories/">
+        <span class="count">14</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="../tags/">
+        <span class="count">22</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3lvdXJuYW1l" title="https:&#x2F;&#x2F;github.com&#x2F;yourname"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPXlvdXJpZA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;yourid"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="../index.html" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../archives/" rel="section"><i class="ic i-archive"></i>归档</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="../tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="../../../../../01/14/note/%E5%89%8D%E7%AB%AF/js%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="../../../../../04/02/note/%E5%89%8D%E7%AB%AF/promise%E6%80%BB%E7%BB%93/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/62.%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../07/31/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/demo/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../08/25/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/websocket%E7%BB%83%E4%B9%A0/server/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../08/05/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/225.%20%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="../../../../../../2021/05/27/note/%E5%89%8D%E7%AB%AF/JavaScript/" title="JavaScript基础语法">JavaScript基础语法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../08/02/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E9%93%BE%E8%A1%A8/203.%20%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../../../categories/note/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="../../../../../../2021/05/18/note/Java/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%8F%8A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="java基础语法及特性">java基础语法及特性</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/63.%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84%20II/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../07/28/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%BB%83%E4%B9%A0/%E5%93%88%E5%B8%8C%E8%A1%A8%E5%AE%9E%E7%8E%B0%EF%BC%8C%E5%BC%80%E6%94%BE%E5%AE%9A%E5%9D%80%E6%B3%95/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../08/10/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E8%B4%AA%E5%BF%83/122.%20%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%20II/" title="未命名">未命名</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">宁理大神1996 @ nitgod1996</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">537k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">8:09</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/03/16/note/前端/JavaScript知识点/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="../../../../../../js/app.js?v=0.2.5"></script>
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

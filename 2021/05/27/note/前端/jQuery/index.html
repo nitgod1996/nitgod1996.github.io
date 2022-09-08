@@ -76,7 +76,7 @@ nitgod1996 = 宁理大神 1996</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>12k</span>
+    <span>21k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -84,7 +84,7 @@ nitgod1996 = 宁理大神 1996</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">阅读时长</span>
-    <span>11 分钟</span>
+    <span>19 分钟</span>
   </span>
 </div>
 
@@ -117,12 +117,12 @@ nitgod1996 = 宁理大神 1996</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclxxcb6rj20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciryrr3rj20zk0m8nhk.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipexj2jgzj20zk0m8b09.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipewf5l51j20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipex2cdtbj20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclhfehz7j20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclwrdwyaj20zk0m8are.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclip4jbpj20zk0m87cv.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicivghyooj20zk0m8dir.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclh0m9pdj20zk0m8hdt.jpg"></li>
         </ul>
       </div>
     </header>
@@ -171,7 +171,9 @@ nitgod1996 = 宁理大神 1996</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="一-基本用法"><a class="anchor" href="#一-基本用法">#</a> 一、 基本用法</h1>
+    <p>jQuery 是针对元素标签的函数</p>
+<p>建议 jquery 的代码写在 <code>$(document).ready</code>  中，这是一个 jquery 的环境，也就是说在他中的代码可以被 jquery 识别，为了防止 jquery 库出现错误</p>
+<h1 id="一-基本用法"><a class="anchor" href="#一-基本用法">#</a> 一、 基本用法</h1>
 <h2 id="1-简介"><a class="anchor" href="#1-简介">#</a> 1. 简介</h2>
 <p>jQuery 是一个轻量级的 &quot;写的少，做的多&quot; 的 JavaScript 库。极大地简化了 JavaScript 编程。</p>
 <p>此外，jQuery 所有的功能函数均是针对<strong>元素</strong>的，也就是<strong>标签</strong></p>
@@ -219,7 +221,22 @@ nitgod1996 = 宁理大神 1996</title>
 <p>为了防止文档在完全加载（就绪）之前运行 jQuery 代码，即在 DOM 加载完成后才可以对 DOM 进行操作。如果在文档没有完全加载之前就运行函数，操作可能失败。</p>
 <p>所以<strong>所有 jQuery 函数需要用 document ready 函数包裹</strong></p>
 <figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre> </pre></td></tr><tr><td data-num="3"></td><td><pre>   <span class="token comment">// 开始写 jQuery 代码...</span></pre></td></tr><tr><td data-num="4"></td><td><pre> </pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>或者使用简介点的写法，如下</p>
-<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre> </pre></td></tr><tr><td data-num="3"></td><td><pre>   <span class="token comment">// 开始写 jQuery 代码...</span></pre></td></tr><tr><td data-num="4"></td><td><pre> </pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><h2 id="4-选择器"><a class="anchor" href="#4-选择器">#</a> 4. 选择器</h2>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre> </pre></td></tr><tr><td data-num="3"></td><td><pre>   <span class="token comment">// 开始写 jQuery 代码...</span></pre></td></tr><tr><td data-num="4"></td><td><pre> </pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><h3 id="32-返回类型"><a class="anchor" href="#32-返回类型">#</a> 3.2  <code>$()</code>  返回类型</h3>
+<ul>
+<li>
+<p>jQuery 获取的也是元素<strong>集合</strong>，集合中的元素可能是一个，也可能是多个。</p>
+</li>
+<li>
+<p>jQuery 的函数是针对元素集合的。（类似字符串，&quot;s&quot; 也算字符串）</p>
+</li>
+<li>
+<p>jQuery 获取的元素不能调用 JavaScript 的原生函数</p>
+</li>
+<li>
+<p>可以通过 <code>$()[i]</code>  获取 <code>element</code>  对象。可以调用 <code>JavaScript</code>  的 <code>element</code>  的函数，但可能就无法使用 jQuery 的函数了</p>
+</li>
+</ul>
+<h2 id="4-选择器"><a class="anchor" href="#4-选择器">#</a> 4. 选择器</h2>
 <p>规则和 CSS 选择器相同。除此之外，它还有一些自定义的选择器。</p>
 <p>例：</p>
 <blockquote>
@@ -235,7 +252,7 @@ nitgod1996 = 宁理大神 1996</title>
 <tbody>
 <tr>
 <td style="text-align:left">$(&quot;*&quot;)</td>
-<td style="text-align:left">选取所有元素</td>
+<td style="text-align:left">选取所有元素，返回<strong>队列</strong></td>
 </tr>
 <tr>
 <td style="text-align:left">$(this)</td>
@@ -328,7 +345,14 @@ nitgod1996 = 宁理大神 1996</title>
 </tr>
 </tbody>
 </table>
-<h1 id="二-jquery-函数"><a class="anchor" href="#二-jquery函数">#</a> 二、 jQuery 函数</h1>
+<h2 id="6-jquery-名称冲突"><a class="anchor" href="#6-jquery-名称冲突">#</a> 6. jQuery 名称冲突</h2>
+<p>jQuery 使用 $ 符号作为 jQuery 的简介方式。</p>
+<p>某些其他 JavaScript 库中的函数（比如 Prototype）同样使用 $ 符号。</p>
+<p>jQuery 使用名为 <code> noConflict()</code>  的方法来解决该问题。</p>
+<blockquote>
+<p>在最前面声明一下 <code>$.noConflict();</code> ，之后即可用 <code>JQuery</code>  代替 <code>$</code></p>
+</blockquote>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>$<span class="token punctuation">.</span><span class="token function">noConflict</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function">jQuery</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  <span class="token function">jQuery</span><span class="token punctuation">(</span><span class="token string">"button"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token function">jQuery</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">"jQuery 仍在运行！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><h1 id="二-jquery-函数"><a class="anchor" href="#二-jquery函数">#</a> 二、 jQuery 函数</h1>
 <p>jQuery 函数大多有以下<strong>参数</strong>，且含义接近：</p>
 <ul>
 <li>speed：一般为函数执行速度。可选项为
@@ -488,7 +512,7 @@ nitgod1996 = 宁理大神 1996</title>
 </li>
 </ol>
 <p>例：</p>
-<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".btn1"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token string">"slow"</span><span class="token punctuation">,</span><span class="token string">"swing"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment">// 等价于</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".btn1"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token string">"slow"</span><span class="token punctuation">,</span><span class="token string">"swing"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><h3 id="12-淡入-淡出"><a class="anchor" href="#12-淡入-淡出">#</a> 1.2 淡入、淡出</h3>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".btn1"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token string">"slow"</span><span class="token punctuation">,</span><span class="token string">"swing"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment">// 等价于</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".btn1"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token string">"slow"</span><span class="token punctuation">,</span><span class="token string">"swing"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//function 就是 callback 函数</span></pre></td></tr></table></figure><h3 id="12-淡入-淡出"><a class="anchor" href="#12-淡入-淡出">#</a> 1.2 淡入、淡出</h3>
 <table>
 <thead>
 <tr>
@@ -545,7 +569,7 @@ nitgod1996 = 宁理大神 1996</title>
 <tbody>
 <tr>
 <td><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvZWZmLXNsaWRlZG93bi5odG1s">slideDown()</span></td>
-<td>通过调整高度来滑动显示被选元素</td>
+<td><strong>下滑显示</strong>元素</td>
 </tr>
 <tr>
 <td><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvZWZmLXNsaWRldG9nZ2xlLmh0bWw=">slideToggle()</span></td>
@@ -553,7 +577,7 @@ nitgod1996 = 宁理大神 1996</title>
 </tr>
 <tr>
 <td><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvZWZmLXNsaWRldXAuaHRtbA==">slideUp()</span></td>
-<td>通过调整高度来滑动隐藏被选元素</td>
+<td><strong>上滑隐藏</strong>元素</td>
 </tr>
 </tbody>
 </table>
@@ -600,13 +624,14 @@ nitgod1996 = 宁理大神 1996</title>
 </table>
 <ol>
 <li>
-<p>**animate：** 通过设置 CSS 自定义动画</p>
+<p><strong>animate：<strong>通过设置</strong> CSS</strong> 自定义动画</p>
 <blockquote>
 <p>语法：(<em>selector</em>).animate(<em>{styles},{options}</em>)</p>
 </blockquote>
+<p>&lt;font color=red&gt; 只能动态改变<strong>数值型</strong>的参数，例如：top，left，width，height... 等等。不能改变<strong>颜色</strong> &lt;/font&gt;</p>
 <ul>
 <li>
-<p>styles：必需。规定产生动画效果的一个或多个 CSS 属性 / 值（同上）。</p>
+<p>styles：必需。元素新的样式</p>
 </li>
 <li>
 <p>options：可选</p>
@@ -639,7 +664,12 @@ nitgod1996 = 宁理大神 1996</title>
 </blockquote>
 </li>
 </ol>
-<h3 id="15-函数队列"><a class="anchor" href="#15-函数队列">#</a> 1.5 函数队列</h3>
+<h3 id="15-链-chaining"><a class="anchor" href="#15-链chaining">#</a> 1.5 链 (Chaining)</h3>
+<p>&lt;font color=red&gt; 简言之，即连续调用 jQuery 函数。如 <code>$(&quot;#p1&quot;).css(&quot;color&quot;,&quot;red&quot;).slideUp(2000).slideDown(2000);</code> &lt;/font&gt;</p>
+<p>但，本体还是最开始的 <code>$(&quot;#p1&quot;)</code> 。</p>
+<p>如 <code>$(&quot;#p1&quot;).after().text(&quot;hello&quot;)</code> ，改变的就是 <code>&quot;p1&quot;</code>  的内容，而非 <code>&quot;p1.after&quot;</code></p>
+<p>可以这样添加变量 <code>$(&quot;p&quot;).after(&quot;&lt;span&gt;&quot;+div.queue().length+&quot;&lt;/span&gt;&quot;)</code></p>
+<h3 id="16-函数队列"><a class="anchor" href="#16-函数队列">#</a> 1.6 函数队列</h3>
 <blockquote>
 <p>每个元素都有一个<strong>队列</strong>，用于存储该元素绑定的函数。</p>
 <p>可通过设置队列中函数的执行时间、延时、或者删除待执行函数等</p>
@@ -654,15 +684,15 @@ nitgod1996 = 宁理大神 1996</title>
 <tbody>
 <tr>
 <td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvZWZmLXF1ZXVlLmh0bWw=">queue()</span></td>
-<td style="text-align:left">显示被选元素的排队函数</td>
+<td style="text-align:left">返回元素<strong>待执行</strong>的<strong>效果</strong>函数。（像 <code>.css</code>  是瞬发的，就不会在队列中。但可以通过 <code>queue</code>  插入队列）</td>
 </tr>
 <tr>
 <td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvZWZmLWNsZWFycXVldWUuaHRtbA==">clearQueue()</span></td>
-<td style="text-align:left">对被选元素移除所有排队函数（仍未运行的）</td>
+<td style="text-align:left"><strong>移除</strong>元素所有排队函数（仍未运行的）</td>
 </tr>
 <tr>
 <td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvZWZmLWRlbGF5Lmh0bWw=">delay()</span></td>
-<td style="text-align:left">对被选元素的所有排队函数（仍未运行）设置延迟</td>
+<td style="text-align:left">对元素<strong>效果函数</strong>设置<strong>延时</strong></td>
 </tr>
 <tr>
 <td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvZWZmLWRlcXVldWUuaHRtbA==">dequeue()</span></td>
@@ -680,7 +710,12 @@ nitgod1996 = 宁理大神 1996</title>
 <blockquote>
 <p>语法：$(<em>selector</em>).queue(<em>queueName</em>)</p>
 </blockquote>
-<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"span"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">queue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"button"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">var</span> div <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    div<span class="token punctuation">.</span><span class="token function">animate</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>height<span class="token operator">:</span><span class="token number">300</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token string">"slow"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    div<span class="token punctuation">.</span><span class="token function">animate</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>width<span class="token operator">:</span><span class="token number">300</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token string">"slow"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    div<span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">"background"</span><span class="token punctuation">,</span><span class="token string">"yellow"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    div<span class="token punctuation">.</span><span class="token function">animate</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>height<span class="token operator">:</span><span class="token number">100</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token string">"slow"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    div<span class="token punctuation">.</span><span class="token function">animate</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>width<span class="token operator">:</span><span class="token number">100</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token string">"slow"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"span"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>div<span class="token punctuation">.</span><span class="token function">queue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>   </pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token operator">&lt;</span>button<span class="token operator">></span>开始演示动画<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token operator">&lt;</span>p<span class="token operator">></span>队列长度为<span class="token operator">:</span> <span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token operator">&lt;</span>div style<span class="token operator">=</span><span class="token string">"width:50px;height:50px;position:absolute;left:10px;top:100px;background-color:red;"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></pre></td></tr></table></figure><ul>
+<li>
+<p>通过 <code>queue(function()&#123;&#125;)</code>  添加<strong>非效果函数</strong>进队列</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">var</span> div <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  </pre></td></tr><tr><td data-num="2"></td><td><pre>div<span class="token punctuation">.</span><span class="token function">animate</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>height<span class="token operator">:</span><span class="token number">300</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token string">"slow"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>div<span class="token punctuation">.</span><span class="token function">animate</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>width<span class="token operator">:</span><span class="token number">300</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token string">"slow"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>div<span class="token punctuation">.</span><span class="token function">queue</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    div<span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">"background-color"</span><span class="token punctuation">,</span><span class="token string">"red"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  </pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token comment">//css 不是效果函数，不会用完消失，所以需要 dequeue 移除。否则 div.css 会一直滞留在 queue 中</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    div<span class="token punctuation">.</span><span class="token function">dequeue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>div<span class="token punctuation">.</span><span class="token function">animate</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>height<span class="token operator">:</span><span class="token number">100</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token string">"slow"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>div<span class="token punctuation">.</span><span class="token function">animate</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>width<span class="token operator">:</span><span class="token number">100</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token string">"slow"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
+</ul>
+</li>
 <li>
 <p>**clearQueue：** 移除队列中尚未运行的函数</p>
 <blockquote>
@@ -709,7 +744,7 @@ nitgod1996 = 宁理大神 1996</title>
 <blockquote>
 <p>语法：$(<em>selector</em>).dequeue(<em>queueName</em>)</p>
 </blockquote>
-</li>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">var</span> div <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  </pre></td></tr><tr><td data-num="2"></td><td><pre>div<span class="token punctuation">.</span><span class="token function">animate</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>height<span class="token operator">:</span><span class="token number">300</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token string">"slow"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>div<span class="token punctuation">.</span><span class="token function">animate</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>width<span class="token operator">:</span><span class="token number">300</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token string">"slow"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>div<span class="token punctuation">.</span><span class="token function">queue</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    div<span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">"background-color"</span><span class="token punctuation">,</span><span class="token string">"red"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  </pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token comment">//css 不是效果函数，不会用完消失，所以需要 dequeue 移除。否则 div.css 会一直滞留在 queue 中</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    div<span class="token punctuation">.</span><span class="token function">dequeue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>div<span class="token punctuation">.</span><span class="token function">animate</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>height<span class="token operator">:</span><span class="token number">100</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token string">"slow"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>div<span class="token punctuation">.</span><span class="token function">animate</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>width<span class="token operator">:</span><span class="token number">100</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token string">"slow"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
 <li>
 <p>**finish：** 停止当前运行的动画，移除所有排队的动画，并为被选元素完成所有动画。</p>
 <blockquote>
@@ -967,9 +1002,8 @@ nitgod1996 = 宁理大神 1996</title>
 </ol>
 <h3 id="23-操作元素节点树"><a class="anchor" href="#23-操作元素节点树">#</a> 2.3 操作元素节点树</h3>
 <p>这些方法以元素为最小单位，不对元素内容做修改。但也可实现添加 / 删除元素内容</p>
-<ul>
-<li><strong>添加元素节点</strong></li>
-</ul>
+<h4 id="231-元素前后插入内容"><a class="anchor" href="#231-元素前后插入内容">#</a> 2.3.1 元素前后插入内容</h4>
+<p>仅仅插入内容，而非插入一个元素</p>
 <table>
 <thead>
 <tr>
@@ -980,41 +1014,60 @@ nitgod1996 = 宁理大神 1996</title>
 <tbody>
 <tr>
 <td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvaHRtbC1hZnRlci5odG1s">after()</span></td>
-<td style="text-align:left">在被选元素后插入内容</td>
+<td style="text-align:left">在元素<strong>后</strong>插入内容</td>
 </tr>
 <tr>
 <td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvaHRtbC1iZWZvcmUuaHRtbA==">before()</span></td>
-<td style="text-align:left">在被选元素前插入内容</td>
+<td style="text-align:left">在元素<strong>前</strong>插入内容</td>
 </tr>
 <tr>
 <td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvaHRtbC1hcHBlbmQuaHRtbA==">append()</span></td>
-<td style="text-align:left">在被选元素的结尾插入内容</td>
+<td style="text-align:left">在元素的<strong>结尾</strong>插入内容</td>
 </tr>
 <tr>
 <td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvaHRtbC1wcmVwZW5kLmh0bWw=">prepend()</span></td>
-<td style="text-align:left">在被选元素的开头插入内容</td>
-</tr>
-<tr>
-<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvaHRtbC1pbnNlcnRhZnRlci5odG1s">insertAfter()</span></td>
-<td style="text-align:left">在被选元素后插入 HTML 元素</td>
-</tr>
-<tr>
-<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvaHRtbC1pbnNlcnRiZWZvcmUuaHRtbA==">insertBefore()</span></td>
-<td style="text-align:left">在被选元素前插入 HTML 元素</td>
-</tr>
-<tr>
-<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvaHRtbC1hcHBlbmR0by5odG1s">appendTo()</span></td>
-<td style="text-align:left">在被选元素的结尾插入 HTML 元素</td>
-</tr>
-<tr>
-<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvaHRtbC1wcmVwZW5kdG8uaHRtbA==">prependTo()</span></td>
-<td style="text-align:left">在被选元素的开头插入 HTML 元素</td>
+<td style="text-align:left">在元素的<strong>开头</strong>插入内容</td>
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p>语法：</p>
 <ul>
-<li><strong>移除元素节点</strong></li>
+<li>HTML 代码： <code>$(selector).after(content)</code></li>
+<li>函数返回值： <code>$(selector).after(function(index))</code></li>
 </ul>
+</blockquote>
+<p>如下：</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">after</span><span class="token punctuation">(</span><span class="token string">"&lt;p>Hello world!&lt;/p>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>或</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">after</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">return</span> <span class="token string">"&lt;p>The p element above has index "</span> <span class="token operator">+</span> n <span class="token operator">+</span> <span class="token string">"&lt;/p>"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p><strong>after 和 append 的区别</strong></p>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre>$("p").after()/append()</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>hello world!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>（这是append的插入位置）<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>（这是after的插入位置）</pre></td></tr></table></figure><h4 id="232-添加元素节点"><a class="anchor" href="#232-添加元素节点">#</a> 2.3.2 添加元素节点</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvaHRtbC1pbnNlcnRhZnRlci5odG1s">insertAfter()</span></td>
+<td style="text-align:left">将元素插入到指定元素<strong>后</strong>（会换行）</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvaHRtbC1pbnNlcnRiZWZvcmUuaHRtbA==">insertBefore()</span></td>
+<td style="text-align:left">将元素插入到指定元素<strong>前</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvaHRtbC1hcHBlbmR0by5odG1s">appendTo()</span></td>
+<td style="text-align:left">将元素插入到指定元素的<strong>结尾</strong>（不会换行）</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvaHRtbC1wcmVwZW5kdG8uaHRtbA==">prependTo()</span></td>
+<td style="text-align:left">将元素插入到指定元素的<strong>开头</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="233-移除元素节点"><a class="anchor" href="#233-移除元素节点">#</a> 2.3.3 移除元素节点</h4>
 <table>
 <thead>
 <tr>
@@ -1025,36 +1078,19 @@ nitgod1996 = 宁理大神 1996</title>
 <tbody>
 <tr>
 <td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvaHRtbC1yZW1vdmUuaHRtbA==">remove()</span></td>
-<td style="text-align:left">移除被选元素（包含数据和事件）</td>
+<td style="text-align:left">移除元素（<strong>删除</strong>数据和事件）</td>
 </tr>
 <tr>
 <td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvaHRtbC1kZXRhY2guaHRtbA==">detach()</span></td>
-<td style="text-align:left">移除被选元素（保留数据和事件）</td>
+<td style="text-align:left">移除元素（<strong>保留</strong>数据和事件，重新插入仍有效）</td>
 </tr>
 <tr>
 <td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvaHRtbC11bndyYXAuaHRtbA==">unwrap()</span></td>
-<td style="text-align:left">移除被选元素的父元素</td>
+<td style="text-align:left">移除元素的<strong>父元素</strong></td>
 </tr>
 <tr>
 <td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvaHRtbC1lbXB0eS5odG1s">empty()</span></td>
-<td style="text-align:left">移除被选元素所有子节点和内容</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>返回元素节点</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">方法</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvY3NzLW9mZnNldHBhcmVudC5odG1s">offsetParent()</span></td>
-<td style="text-align:left">返回第一个定位的祖先元素</td>
+<td style="text-align:left">移除元素内容（所有<strong>子节点</strong>和内容）</td>
 </tr>
 </tbody>
 </table>
@@ -1070,11 +1106,11 @@ nitgod1996 = 宁理大神 1996</title>
 <tbody>
 <tr>
 <td><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvaHRtbC1odG1sLmh0bWw=">html()</span></td>
-<td>标签体内容</td>
+<td>标签体内容，可以填所有 HTML 代码</td>
 </tr>
 <tr>
 <td><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvaHRtbC10ZXh0Lmh0bWw=">text()</span></td>
-<td>文本内容（仅返回文本）</td>
+<td><strong>文本</strong>内容（仅返回文本）</td>
 </tr>
 </tbody>
 </table>
@@ -1098,7 +1134,548 @@ nitgod1996 = 宁理大神 1996</title>
 </blockquote>
 </li>
 </ol>
-<h2 id="3-其他函数"><a class="anchor" href="#3-其他函数">#</a> 3. 其他函数</h2>
+<h3 id="25-元素集合遍历-增减"><a class="anchor" href="#25-元素集合遍历-增减">#</a> 2.5 元素集合（遍历、增减）</h3>
+<blockquote>
+<p>jQuery <code>$()</code>  获取元素和 JavaScript <code>.getElements</code>  一样，获取的都是一个元素集合</p>
+<p>对 $() 进行操作，实际上是对其所有子元素同时进行的操作</p>
+<p>如果直接对 <code>$()</code>  进行操作，实际上是对其<strong>所有子元素</strong>同时进行的操作</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">函数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX2FkZC5hc3A=">.add()</span></td>
+<td style="text-align:left">添加一个元素集合（也是捕获的 HTML 标签）</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX2FuZFNlbGYuYXNw">.andSelf()</span></td>
+<td style="text-align:left">把堆栈中之前的元素集添加到当前集合中。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX2NoaWxkcmVuLmFzcA==">.children()</span></td>
+<td style="text-align:left">获取指定子元素。和 find 差不多</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX2Nsb3Nlc3QuYXNw">.closest()</span></td>
+<td style="text-align:left">从元素本身开始，逐级向上级元素匹配，并返回最先匹配的祖先元素。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX2NvbnRlbnRzLmFzcA==">.contents()</span></td>
+<td style="text-align:left">获得匹配元素集合中每个元素的子元素，包括文本和注释节点。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX2VhY2guYXNw">.each()</span></td>
+<td style="text-align:left">对 jQuery 对象进行迭代，为每个匹配元素执行函数。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX2VuZC5hc3A=">.end()</span></td>
+<td style="text-align:left">结束当前链中最近的一次筛选操作，并将匹配元素集合返回到前一次的状态。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX2VxLmFzcA==">.eq()</span></td>
+<td style="text-align:left">将匹配元素集合缩减为位于指定索引的新元素。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX2ZpbHRlci5hc3A=">.filter()</span></td>
+<td style="text-align:left">将匹配元素集合缩减为匹配选择器或匹配函数返回值的新元素。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX2ZpbmQuYXNw">.find()</span></td>
+<td style="text-align:left">获取指定子元素</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX2ZpcnN0LmFzcA==">.first()</span></td>
+<td style="text-align:left">将匹配元素集合缩减为集合中的第一个元素。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX2hhcy5hc3A=">.has()</span></td>
+<td style="text-align:left">将匹配元素集合缩减为包含特定元素的后代的集合。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX2lzLmFzcA==">.is()</span></td>
+<td style="text-align:left">根据选择器检查当前匹配元素集合，如果存在至少一个匹配元素，则返回 true。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX2xhc3QuYXNw">.last()</span></td>
+<td style="text-align:left">获取集合中的最后一个元素（只有一个元素的集合）。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX21hcC5hc3A=">.map()</span></td>
+<td style="text-align:left">把当前匹配集合中的每个元素传递给函数，产生包含返回值的新 jQuery 对象。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX25leHQuYXNw">.next()</span></td>
+<td style="text-align:left">获得指定的邻居（同辈）元素。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX25leHRhbGwuYXNw">.nextAll()</span></td>
+<td style="text-align:left">获得所有指定同辈元素</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX25leHR1bnRpbC5hc3A=">.nextUntil()</span></td>
+<td style="text-align:left">获得每个元素之后所有的同辈元素，直到遇到匹配选择器的元素为止。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX25vdC5hc3A=">.not()</span></td>
+<td style="text-align:left">删除集合中的指定元素。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX29mZnNldHBhcmVudC5hc3A=">.offsetParent()</span></td>
+<td style="text-align:left">获得用于定位的第一个父元素。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX3BhcmVudC5hc3A=">.parent()</span></td>
+<td style="text-align:left">获得所有指定父元素</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX3BhcmVudHMuYXNw">.parents()</span></td>
+<td style="text-align:left">获得所有指定祖先元素</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX3BhcmVudHN1bnRpbC5hc3A=">.parentsUntil()</span></td>
+<td style="text-align:left">获得当前匹配元素集合中每个元素的祖先元素，直到遇到匹配选择器的元素为止。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX3ByZXYuYXNw">.prev()</span></td>
+<td style="text-align:left">获得匹配元素集合中每个元素紧邻的前一个同辈元素，由选择器筛选（可选）。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX3ByZXZhbGwuYXNw">.prevAll()</span></td>
+<td style="text-align:left">获得匹配元素集合中每个元素之前的所有同辈元素，由选择器进行筛选（可选）。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX3ByZXZ1bnRpbC5hc3A=">.prevUntil()</span></td>
+<td style="text-align:left">获得每个元素之前所有的同辈元素，直到遇到匹配选择器的元素为止。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX3NpYmxpbmdzLmFzcA==">.siblings()</span></td>
+<td style="text-align:left">获得匹配元素集合中所有元素的同辈元素，由选择器筛选（可选）。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS90cmF2ZXJzaW5nX3NsaWNlLmFzcA==">.slice()</span></td>
+<td style="text-align:left">将匹配元素集合缩减为指定范围的子集。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-事件函数"><a class="anchor" href="#3-事件函数">#</a> 3. 事件函数</h2>
+<ul>
+<li>
+<p>以元素 <code>$()</code>  调用的事件函数</p>
+</li>
+<li>
+<p>以 <code>function()&#123;&#125;</code>  描述事件执行函数</p>
+</li>
+<li>
+<p>一般 <code>function()&#123;&#125;</code>  默认有个参数 <code>event</code> ，也可以自己指定 <code>function(event)&#123;&#125;</code>  或 <code>function(e)&#123;&#125;</code></p>
+</li>
+<li>
+<p>事件函数一般搭配其他如效果函数使用（效果函数写在 <code>function()&#123;&#125;</code>  中）</p>
+</li>
+</ul>
+<p>例：</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"p, button, h1, h2"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token string">"点击事件由一个 "</span> <span class="token operator">+</span> event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>nodeName <span class="token operator">+</span> <span class="token string">" 元素触发"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><h3 id="31-鼠标事件"><a class="anchor" href="#31-鼠标事件">#</a> 3.1 鼠标事件</h3>
+<ul>
+<li>点击触发</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9jbGljay5hc3A=">click()</span></td>
+<td style="text-align:left">鼠标<strong>点击</strong>时触发</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9kYmxjbGljay5hc3A=">dblclick()</span></td>
+<td style="text-align:left">double click ，<strong>双击</strong>触发</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9tb3VzZWRvd24uYXNw">mousedown()</span></td>
+<td style="text-align:left"><strong>按下鼠标</strong>时触发</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9tb3VzZXVwLmFzcA==">mouseup()</span></td>
+<td style="text-align:left"><strong>松开鼠标</strong>时触发</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>移动触发</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9tb3VzZWVudGVyLmFzcA==">mouseenter()</span></td>
+<td style="text-align:left"><strong>鼠标移上</strong>时触发。（父元素→子元素<strong>不</strong>触发）</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9tb3VzZWxlYXZlLmFzcA==">mouseleave()</span></td>
+<td style="text-align:left"><strong>鼠标移开</strong>时触发。（子元素→父元素<strong>不</strong>触发）。<span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL3RpeS90LmFzcD9mPWpxdWVyeV9ldmVudF9tb3VzZWxlYXZlX21vdXNlb3V0">mouseleave 与 mouseout 的不同</span></td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9tb3VzZW92ZXIuYXNw">mouseover()</span></td>
+<td style="text-align:left"><strong>鼠标移上</strong>时触发。（父元素→子元素<strong>也</strong>触发）</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9tb3VzZW91dC5hc3A=">mouseout()</span></td>
+<td style="text-align:left"><strong>鼠标移开</strong>时触发。（子元素→父元素<strong>也</strong>触发）</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9tb3VzZW1vdmUuYXNw">mousemove()</span></td>
+<td style="text-align:left"><strong>鼠标移动</strong>时触发</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-键盘事件"><a class="anchor" href="#32-键盘事件">#</a> 3.2 键盘事件</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9rZXlkb3duLmFzcA==">keydown()</span></td>
+<td style="text-align:left">选中后，<strong>按下键盘</strong>时触发。（适用于 <code>input</code>  这里可选中的元素）</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9rZXl1cC5hc3A=">keyup()</span></td>
+<td style="text-align:left">选中后，<strong>松开键盘</strong>时触发</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9rZXlwcmVzcy5hc3A=">keypress()</span></td>
+<td style="text-align:left"><strong>键入字符</strong>时触发（↑↓←→这类是不会触发的）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-表单事件-form"><a class="anchor" href="#33-表单事件form">#</a> 3.3 表单事件 <code>form</code></h3>
+<ul>
+<li><code>input</code>  输入框</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9mb2N1cy5hc3A=">focus()</span></td>
+<td style="text-align:left"><code>input</code>  输入框<strong>获取焦点</strong>时触发</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9ibHVyLmFzcA==">blur()</span></td>
+<td style="text-align:left"><code>input</code>  输入框<strong>失去焦点</strong>时触发</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9zZWxlY3QuYXNw">select()</span></td>
+<td style="text-align:left"><code>input</code>  输入框内的<strong>文字被选中</strong>时触发</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>其他</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9zY3JvbGwuYXNw">scroll()</span></td>
+<td style="text-align:left"><strong>滚动条滚动</strong>时触发。（可通过设置 css， <code>overflow:scroll</code>  召唤滚动条）</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9zdWJtaXQuYXNw">submit()</span></td>
+<td style="text-align:left">表单信息被<strong>提交</strong>时触发</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9jaGFuZ2UuYXNw">change()</span></td>
+<td style="text-align:left"><code>select</code>  复选框 / 下拉框等<strong>改变选项</strong>时触发</td>
+</tr>
+</tbody>
+</table>
+<h3 id="34-浏览器事件"><a class="anchor" href="#34-浏览器事件">#</a> 3.4 浏览器事件</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9sb2FkLmFzcA==">load()</span></td>
+<td style="text-align:left">（如图像）<strong>加载完成</strong>后触发</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF91bmxvYWQuYXNw">unload()</span></td>
+<td style="text-align:left"><strong>离开 / 刷新</strong>页面后触发</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9lcnJvci5hc3A=">error()</span></td>
+<td style="text-align:left">程序<strong>出错</strong>（如图片加载失败 <code>$(&quot;img&quot;).error</code> ）时触发</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9yZWFkeS5hc3A=">ready()</span></td>
+<td style="text-align:left"><strong>文档就绪</strong>时触发。 <code>$(document).ready(function()&#123;&#125;)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9yZXNpemUuYXNw">resize()</span></td>
+<td style="text-align:left"><strong>浏览器窗口大小改变</strong>时触发。固定搭配 <code>$(window).resize()</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="35-添加-删除事件"><a class="anchor" href="#35-添加删除事件">#</a> 3.5 添加 / 删除事件</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9iaW5kLmFzcA==">bind()</span></td>
+<td style="text-align:left">为元素<strong>添加</strong>事件</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF91bmJpbmQuYXNw">unbind()</span></td>
+<td style="text-align:left"><strong>移除</strong>元素<strong>所有</strong>事件</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9kZWxlZ2F0ZS5hc3A=">delegate()</span></td>
+<td style="text-align:left">也是为元素<strong>添加</strong>事件</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF91bmRlbGVnYXRlLmFzcA==">undelegate()</span></td>
+<td style="text-align:left"><strong>移除</strong>所有通过 <code>delegate()</code>  方法添加的事件</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9saXZlLmFzcA==">live()</span></td>
+<td style="text-align:left">也是为元素<strong>添加</strong>事件</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9kaWUuYXNw">die()</span></td>
+<td style="text-align:left"><strong>移除</strong>所有通过 <code>live()</code>  函数添加的事件</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9vbmUuYXNw">one()</span></td>
+<td style="text-align:left">为元素添加<strong>只会触发一次</strong>的事件</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF90b2dnbGUuYXNw">toggle()</span></td>
+<td style="text-align:left">为元素添加 <code>click</code>  事件。（ <code>function</code>  有多个执行函数，<strong>click</strong> 时轮换执行）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="36-evevt-对象"><a class="anchor" href="#36-evevt对象">#</a> 3.6  <code>evevt</code>  对象</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9wYWdleC5hc3A=">event.pageX</span></td>
+<td style="text-align:left">返回鼠标 X 坐标</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9wYWdleS5hc3A=">event.pageY</span></td>
+<td style="text-align:left">返回鼠标 Y 坐标</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF90eXBlLmFzcA==">event.type</span></td>
+<td style="text-align:left">返回事件类型。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF93aGljaC5hc3A=">event.which</span></td>
+<td style="text-align:left">返回按了哪个键或按钮。（左键：1。键盘：ASCII 码）</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF90YXJnZXQuYXNw">event.target</span></td>
+<td style="text-align:left">触发该事件的 DOM 元素标签对象。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF90aW1lU3RhbXAuYXNw">event.timeStamp</span></td>
+<td style="text-align:left">返回触发时间。（从 1970 年 1 月 1 日到事件发生时的毫秒数）</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9yZXN1bHQuYXNw">event.result</span></td>
+<td style="text-align:left">返回上一个事件函数 <code>return</code>  的内容</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td style="text-align:left">方法</td>
+<td style="text-align:left">描述</td>
+</tr>
+<tr>
+<td style="text-align:left">:-----------------------------------------------------------</td>
+<td style="text-align:left">:--------------------------------------</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9wcmV2ZW50ZGVmYXVsdC5hc3A=">event.preventDefault()</span></td>
+<td style="text-align:left">阻止事件的默认动作。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF9pc2RlZmF1bHRwcmV2ZW50ZWQuYXNw">event.isDefaultPrevented()</span></td>
+<td style="text-align:left">返回是否调用了  <code>event.preventDefault()</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="37-执行指定事件"><a class="anchor" href="#37-执行指定事件">#</a> 3.7 执行指定事件</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF90cmlnZ2VyLmFzcA==">trigger()</span></td>
+<td style="text-align:left">执行指定<strong>事件</strong>，并执行<strong>事件函数</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9ldmVudF90cmlnZ2VyaGFuZGxlci5hc3A=">triggerHandler()</span></td>
+<td style="text-align:left">执行指定<strong>事件函数</strong>，不会引起事件行为</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/jquery/jquery.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"></span></span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">after</span><span class="token punctuation">(</span><span class="token string">"文本被选中！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"button"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">trigger</span><span class="token punctuation">(</span><span class="token string">"select"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>FirstName<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Hello World<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></pre></td></tr><tr><td data-num="17"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/></span></span></pre></td></tr><tr><td data-num="18"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>激活 input 域的 select 事件<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="20"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><h2 id="4-css-函数"><a class="anchor" href="#4-css函数">#</a> 4. CSS 函数</h2>
+<p>设置或返回元素的 CSS 相关属性。</p>
+<h3 id="41-万能-css-用法"><a class="anchor" href="#41-万能css用法">#</a> 4.1 万能 <code>.css()</code>  用法</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">CSS 属性</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9jc3NfY3NzLmFzcA==">css()</span></td>
+<td style="text-align:left">设置或返回元素的样式属性。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>语法：</p>
+<ul>
+<li>返回：$(selector).css (&quot;name&quot;)，</li>
+<li>设置：$(selector).css (&quot;name&quot;,&quot;value&quot;)</li>
+</ul>
+</blockquote>
+<p>如</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">"color"</span><span class="token punctuation">,</span><span class="token string">"red"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><h3 id="42-尺寸设置"><a class="anchor" href="#42-尺寸设置">#</a> 4.2 尺寸设置</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">CSS 属性</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9jc3NfaGVpZ2h0LmFzcA==">height()</span></td>
+<td style="text-align:left">设置或返回元素的高度。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9jc3Nfd2lkdGguYXNw">width()</span></td>
+<td style="text-align:left">设置或返回匹配元素的宽度。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>语法：</p>
+<ul>
+<li>返回： <code>$(selector).height()</code></li>
+<li>设置： <code>$(selector).height(length)</code></li>
+</ul>
+<p>length：number 类型</p>
+</blockquote>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">height</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 返回</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">height</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 设置</span></pre></td></tr></table></figure><h3 id="43-定位设置"><a class="anchor" href="#43-定位设置">#</a> 4.3 定位设置</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9jc3Nfb2Zmc2V0LmFzcA==">offset()</span></td>
+<td style="text-align:left">返回相对于文档的位置。（偏移，即 <code>[left,top]</code> ）</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9jc3Nfb2Zmc2V0cGFyZW50LmFzcA==">offsetParent()</span></td>
+<td style="text-align:left">返回 <code>offset</code>  定位的祖先元素。</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9jc3NfcG9zaXRpb24uYXNw">position()</span></td>
+<td style="text-align:left">返回相对于父元素的位置。（也是按 <code>[left,top]</code>  返回）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>offset()</code></li>
+</ul>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>x<span class="token operator">=</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">offset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment">// 此例 x.left 和 x.top 均为 8</span></pre></td></tr></table></figure><ul>
+<li><code>position()</code></li>
+</ul>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>x<span class="token operator">=</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">position</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment">// 此例 x.left 为 8x.top 为 - 8</span></pre></td></tr></table></figure><ul>
+<li>
+<p><code>srcollLeft()</code> / <code>srcollTop()</code></p>
+<blockquote>
+<p>语法：</p>
+<p>返回： <code>$(selector).scrollLeft()</code></p>
+<p>设置： <code>$(selector).scrollLeft(length)</code></p>
+</blockquote>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">scrollLeft</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="44-滚动条设置"><a class="anchor" href="#44-滚动条设置">#</a> 4.4 滚动条设置</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9jc3Nfc2Nyb2xsbGVmdC5hc3A=">scrollLeft()</span></td>
+<td style="text-align:left">设置 / 返回滚动条的<strong>水平</strong>位置</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9jc3Nfc2Nyb2xsdG9wLmFzcA==">scrollTop()</span></td>
+<td style="text-align:left">设置 / 返回滚动条的<strong>垂直</strong>位置</td>
+</tr>
+</tbody>
+</table>
+<h2 id="其他函数"><a class="anchor" href="#其他函数">#</a> 其他函数</h2>
 <ul>
 <li>
 <p>** <code>$.when():</code> 	** 提供一种方法来执行一个或多个对象的回调函数</p>
@@ -1113,10 +1690,21 @@ nitgod1996 = 宁理大神 1996</title>
 </li>
 </ul>
 <h1 id="三-ajax"><a class="anchor" href="#三-ajax">#</a> 三、 AJAX</h1>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9qcXVlcnlfcmVmX2FqYXguYXNw">https://www.w3school.com.cn/jquery/jquery_ref_ajax.asp</span></p>
 <p>AJAX 是与<strong>服务器交换数据</strong>的技术，它在不重载全部页面的情况下，实现了对部分网页的更新。</p>
 <blockquote>
 <p>通过 ajax 可以实现前端页面调用后端数据</p>
 </blockquote>
+<p><img data-src="/2021/05/27/note/%E5%89%8D%E7%AB%AF/jQuery/ajax.gif" alt="AJAX"></p>
+<ol>
+<li>网页中发生一个事件（页面加载、按钮点击）</li>
+<li>由 JavaScript 创建 XMLHttpRequest 对象</li>
+<li>XMLHttpRequest 对象向 web 服务器发送请求</li>
+<li>服务器处理该请求</li>
+<li>服务器将响应发送回网页</li>
+<li>由 JavaScript 读取响应</li>
+<li>由 JavaScript 执行正确的动作（比如更新页面）</li>
+</ol>
 <h2 id="1-什么是-ajax"><a class="anchor" href="#1-什么是ajax">#</a> 1. 什么是 AJAX</h2>
 <p>AJAX = 异步 JavaScript 和 XML（Asynchronous JavaScript and XML）。</p>
 <p>简短地说，在不重载整个网页的情况下，AJAX 通过后台加载数据，并在网页上进行显示。</p>
@@ -1125,13 +1713,19 @@ nitgod1996 = 宁理大神 1996</title>
 <p>异步：不等任务执行完，直接执行下一个任务。（即两个不互相影响的任务并行）</p>
 </blockquote>
 <p>​		通过 jQuery AJAX 方法，您能够使用 HTTP Get 和 HTTP Post 从远程服务器上请求文本、HTML、XML 或 JSON - 同时您能够把这些外部数据直接载入网页的被选元素中。</p>
-<h2 id="2-语法"><a class="anchor" href="#2-语法">#</a> 2. 语法</h2>
+<h2 id="2-使用方法"><a class="anchor" href="#2-使用方法">#</a> 2. 使用方法</h2>
+<p>通过 <code>$.ajax&#123;&#125;</code>  获取服务器的数据</p>
+<h3 id="21-ajax-发送请求"><a class="anchor" href="#21-ajax发送请求">#</a> 2.1  <code>$.ajax()</code>  发送请求</h3>
+<p>ajax () 方法用于执行 AJAX（异步 HTTP）请求。&lt;font color=red&gt; 发送请求，不仅仅是获取数据 &lt;/font&gt;</p>
 <blockquote>
-<p>$.ajax(<em>{name:value, name:value, ... }</em>)</p>
+<p>语法： <code>$.ajax(&#123;name:value, name:value, ... &#125;)</code></p>
 </blockquote>
-<p>ajax () 方法用于执行 AJAX（异步 HTTP）请求。</p>
-<p>所有的 jQuery AJAX 方法都使用 ajax () 方法。该方法通常用于其他方法不能完成的请求。</p>
+<p>先看个例子</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>$<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>        type <span class="token operator">:</span> <span class="token string">"get"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        async <span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>     <span class="token comment">// 异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        url <span class="token operator">:</span> <span class="token string">"https://restapi.amap.com/v3/ip?ip=114.247.50.2&amp;output=json&amp;key=873b8484a133897729b7cf7f388a4acc"</span><span class="token punctuation">,</span>    </pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token comment">// 服务器端放出 api 的地址，一般是把数据以 json 格式放出</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token comment">// 以高德 api 为例</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        data <span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        dataType <span class="token operator">:</span> <span class="token string">"json"</span><span class="token punctuation">,</span>        <span class="token comment">// 返回数据形式为 json</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token function-variable function">success</span> <span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>            <span class="token comment">// 请求成功时执行该函数内容，result 即为服务器返回的 json 对象</span></pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre>        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        <span class="token function-variable function">error</span> <span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">// 请求失败时执行该函数</span></pre></td></tr><tr><td data-num="14"></td><td><pre>            <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"图表请求数据失败!status"</span><span class="token operator">+</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>            myChart<span class="token punctuation">.</span><span class="token function">hideLoading</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p><strong>返回类型：</strong></p>
+<p>object，可看做 <code>&#123;&#125;</code>  创建的 JavaScript 对象。可通过 <code>.key</code>  添加参数，如 <code>$.ajax().error(function()&#123;&#125;)</code>  补充 <code>error</code>  函数。</p>
+<p>同理， <code>$.get()</code>  也一样</p>
 <p><strong>常用参数如下：</strong></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2wuY29tLmNuL2pxdWVyeS9hamF4X2FqYXguYXNw">https://www.w3school.com.cn/jquery/ajax_ajax.asp</span></p>
 <table>
 <thead>
 <tr>
@@ -1191,46 +1785,71 @@ nitgod1996 = 宁理大神 1996</title>
 </ul>
 </li>
 </ul>
-<p>例：</p>
-<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>$<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>        type <span class="token operator">:</span> <span class="token string">"get"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        async <span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>     <span class="token comment">// 异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        url <span class="token operator">:</span> <span class="token string">"data/data1"</span><span class="token punctuation">,</span>    <span class="token comment">// 服务器端放出 api 的地址，一般是把数据以 json 格式放出</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        data <span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        dataType <span class="token operator">:</span> <span class="token string">"json"</span><span class="token punctuation">,</span>        <span class="token comment">// 返回数据形式为 json</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token function-variable function">success</span> <span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>            <span class="token comment">// 请求成功时执行该函数内容，result 即为服务器返回的 json 对象</span></pre></td></tr><tr><td data-num="9"></td><td><pre>            <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token function-variable function">error</span> <span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">// 请求失败时执行该函数</span></pre></td></tr><tr><td data-num="12"></td><td><pre>            <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"图表请求数据失败!status"</span><span class="token operator">+</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>            myChart<span class="token punctuation">.</span><span class="token function">hideLoading</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr></table></figure><h2 id="3-简介方法"><a class="anchor" href="#3-简介方法">#</a> 3. 简介方法</h2>
-<p>ajax 提供了一些简单的方法，直接获取指定类型的数据，不需要写参数居多的 <code>$.ajax</code></p>
-<p>如 <code>$.getJSON()</code></p>
-<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>$<span class="token punctuation">.</span><span class="token function">getJSON</span><span class="token punctuation">(</span><span class="token string">"http://localhost:5000/data/data1"</span><span class="token punctuation">,</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>        document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token comment">//result 是获取到的 json 数据</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr></table></figure><table>
+<h3 id="22-ajaxsetup-设置请求属性"><a class="anchor" href="#22-ajaxsetup设置请求属性">#</a> 2.2  <code>$.ajaxSetup()</code>  设置请求属性</h3>
+<p>通过 <code>$.ajaxSetup() </code> 函数设置<strong>全局属性</strong>，即所有请求的属性。</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>$<span class="token punctuation">.</span><span class="token function">ajaxSetup</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  url<span class="token operator">:</span> <span class="token string">"/xmlhttp/"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  global<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="4"></td><td><pre>  type<span class="token operator">:</span> <span class="token string">"POST"</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><h3 id="23-param-序列化参数"><a class="anchor" href="#23-param序列化参数">#</a> 2.3  <code>$.param()</code>  序列化参数</h3>
+<p>即，把数组 / 对象 / 字典转换成序列化（<strong>写在 url 上的形式</strong>），如</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">var</span> params <span class="token operator">=</span> <span class="token punctuation">&#123;</span> width<span class="token operator">:</span><span class="token number">1900</span><span class="token punctuation">,</span> height<span class="token operator">:</span><span class="token number">1200</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">var</span> str <span class="token operator">=</span> $<span class="token punctuation">.</span><span class="token function">param</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//width=1680&amp;height=1050</span></pre></td></tr></table></figure><h3 id="24-其他获取数据的方法"><a class="anchor" href="#24-其他获取数据的方法">#</a> 2.4 其他获取数据的方法</h3>
+<p>均是 <code>$.ajax()</code>  的简写方法</p>
+<h4 id="241-get"><a class="anchor" href="#241-get">#</a> 2.4.1  <code>$.get()</code></h4>
+<blockquote>
+<p>语法： <code>$(selector).get(url,data,success(response,status,xhr),dataType)</code></p>
+</blockquote>
+<table>
 <thead>
 <tr>
-<th>方法</th>
-<th>描述</th>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvYWpheC1nZXQuaHRtbA==">$.get()</span></td>
-<td>使用 AJAX 的 HTTP GET 请求从服务器加载数据</td>
+<td style="text-align:left"><em>url</em></td>
+<td style="text-align:left">必需。规定将请求发送的哪个<strong> URL</strong>。</td>
 </tr>
 <tr>
-<td><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvYWpheC1nZXRqc29uLmh0bWw=">$.getJSON()</span></td>
-<td>使用 HTTP GET 请求从服务器加载 JSON 编码的数据</td>
+<td style="text-align:left"><em>data</em></td>
+<td style="text-align:left">可选。连同请求<strong>发送</strong>到服务器的<strong>数据</strong>。</td>
 </tr>
 <tr>
-<td><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qcXVlcnkvYWpheC1nZXRzY3JpcHQuaHRtbA==">$.getScript()</span></td>
-<td>使用 AJAX 的 HTTP GET 请求从服务器加载并执行 JavaScript</td>
+<td style="text-align:left"><em>success(response,status,xhr)</em></td>
+<td style="text-align:left">可选。请求成功时运行的<strong>函数</strong>。&lt;br&gt; 额外的参数：&lt;br/&gt;<em>response</em> - 包含来自请求的结果数据 &lt;br/&gt;<em>status</em> - 包含请求的状态 &lt;br/&gt;<em>xhr</em> - 包含 XMLHttpRequest 对象</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>dataType</em></td>
+<td style="text-align:left">可选。规定预计的服务器响应的数据类型。默认地，jQuery 将智能判断。可能的类型：&quot;xml&quot;&quot;html&quot;&quot;text&quot;&quot;script&quot;&quot;json&quot;&quot;jsonp&quot;</td>
 </tr>
 </tbody>
 </table>
-<p>以 <code>$.getJSON()</code>  为例，</p>
-<ul>
-<li>
-<p><strong>$.getJSON()：</strong></p>
+<p>等价于</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>$<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  url<span class="token operator">:</span> url<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  data<span class="token operator">:</span> data<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="4"></td><td><pre>  success<span class="token operator">:</span> success<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="5"></td><td><pre>  dataType<span class="token operator">:</span> dataType</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>例子：</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>$<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/example/jquery/demo_test.asp"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">data<span class="token punctuation">,</span>status</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"数据："</span> <span class="token operator">+</span> data <span class="token operator">+</span> <span class="token string">"\n状态："</span> <span class="token operator">+</span> status<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>如果请求<strong>失败</strong>，可通过以下回调函数处理错误</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>$<span class="token punctuation">.</span><span class="token function">getJSON</span><span class="token punctuation">(</span><span class="token string">"example.json"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"success"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"second success"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token comment">// 成功执行</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"error"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token comment">// 失败执行</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">.</span><span class="token function">complete</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"complete"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><h4 id="242-getjson"><a class="anchor" href="#242-getjson">#</a> 2.4.2  <code>$.getJSON()</code></h4>
 <blockquote>
-<p>语法：$(<em>selector</em>).getJSON(<em>url,data,success(result,status,xhr))</em></p>
+<p>语法： <code>$.getJSON(url,data,success(data,status,xhr))</code></p>
 </blockquote>
-<ul>
-<li>url：必需。规定将请求发送到哪个 URL。</li>
-<li>data： 可选。规定<strong>发送到服务器</strong>的数据。</li>
-<li><em>success(result,status,xhr)</em>：success 函数</li>
-</ul>
-</li>
-</ul>
+<p>参数作用和 <code>$.get()</code>  一样</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>$<span class="token punctuation">.</span><span class="token function">getJSON</span><span class="token punctuation">(</span><span class="token string">"http://localhost:5000/data/data1"</span><span class="token punctuation">,</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//result 是获取到的 json 数据</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>也可以获取<strong>本地</strong>的数据</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>$<span class="token punctuation">.</span><span class="token function">getJSON</span><span class="token punctuation">(</span><span class="token string">"demo_ajax_json.js"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//result 是获取到的 json 数据</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>如果请求<strong>失败</strong>，可通过以下回调函数处理错误</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>$<span class="token punctuation">.</span><span class="token function">getJSON</span><span class="token punctuation">(</span><span class="token string">"example.json"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"success"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"second success"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token comment">// 成功执行</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"error"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token comment">// 失败执行</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">.</span><span class="token function">complete</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"complete"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><h4 id="243-getscript"><a class="anchor" href="#243-getscript">#</a> 2.4.3  <code>$.getScript()</code></h4>
+<p>获取 <code>.js</code>  文件</p>
+<blockquote>
+<p>语法： <code>$.getScript(url,success(response,status))</code></p>
+</blockquote>
+<h4 id="244-post"><a class="anchor" href="#244-post">#</a> 2.4.4  <code>$.post()</code></h4>
+<p>和 <code>get()</code>  对应，以 <code>post()</code>  的形式发送请求，获取数据</p>
+<blockquote>
+<p>语法： <code>$.post(url,data,success(data, textStatus, jqXHR),dataType)</code></p>
+</blockquote>
+<p>等价于</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre>$<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  type<span class="token operator">:</span> <span class="token string">'POST'</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  url<span class="token operator">:</span> url<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="4"></td><td><pre>  data<span class="token operator">:</span> data<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="5"></td><td><pre>  success<span class="token operator">:</span> success<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="6"></td><td><pre>  dataType<span class="token operator">:</span> dataType</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><h2 id="3-jquery-javascript-与-ajax-的关系"><a class="anchor" href="#3-jquery-javascript与ajax的关系">#</a> 3. jQuery、JavaScript 与 ajax 的关系</h2>
+<p><strong>简单总结：</strong></p>
+<p>1、JS 是一门前端语言。</p>
+<p>2、Ajax 是一门技术，它提供了异步更新的机制，使用客户端与服务器间交换数据而非整个页面文档，实现页面的局部更新。</p>
+<p>3、jQuery 是一个框架，它对 JS 进行了封装，使其更方便使用。jQuery 使得 JS 与 Ajax 的使用更方便</p>
+<p><strong>关系比喻：</strong></p>
+<p>若把 js 比作木头，那么 jquery 就是木板（半成品）</p>
+<p>jQuery 与 ajax 都是 js 的一个框架，各有各的功能，若 js 是父亲的话，jquery 与 ajax 就是两个儿子</p>
 
       <div class="tags">
           <a href="../../../../../../tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="ic i-tag"></i> 前端</a>
@@ -1247,7 +1866,7 @@ nitgod1996 = 宁理大神 1996</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2021-06-03 16:27:46" itemprop="dateModified" datetime="2021-06-03T16:27:46+08:00">2021-06-03</time>
+    <time title="修改时间：2022-04-07 17:14:02" itemprop="dateModified" datetime="2022-04-07T17:14:02+08:00">2022-04-07</time>
   </span>
 </div>
 
@@ -1302,7 +1921,7 @@ nitgod1996 = 宁理大神 1996</title>
     <div class="item left">
       
 
-  <a href="../JavaScript/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclfb3vzhj20zk0m8wny.jpg" title="JavaScript基础语法">
+  <a href="../JavaScript/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipesrnqv3j20zk0m8ava.jpg" title="JavaScript基础语法">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> 前端</span>
   <h3>JavaScript基础语法</h3>
@@ -1312,7 +1931,7 @@ nitgod1996 = 宁理大神 1996</title>
     <div class="item right">
       
 
-  <a href="../../../../28/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciryrr3rj20zk0m8nhk.jpg" title="随笔-利用Python批量处理文件">
+  <a href="../../../../28/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicis3attqj20zk0m8k7l.jpg" title="随笔-利用Python批量处理文件">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> Python</span>
   <h3>随笔-利用Python批量处理文件</h3>
@@ -1334,11 +1953,11 @@ nitgod1996 = 宁理大神 1996</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text"> 一、 基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-%E5%AF%BC%E5%85%A5"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. 安装 &#x2F; 导入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E6%9C%AC%E5%9C%B0%E5%AF%BC%E5%85%A5"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 2.1 本地导入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E5%9C%A8%E7%BA%BF%E5%AF%BC%E5%85%A5"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 2.2 在线导入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%AF%AD%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text"> 3. 语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E6%96%87%E6%A1%A3%E5%B0%B1%E7%BB%AA-document-ready"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 3.1 文档就绪 document ready</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.4.</span> <span class="toc-text"> 4. 选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.5.</span> <span class="toc-text"> 5. 事件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-jquery-%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text"> 二、 jQuery 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%88%E6%9E%9C%E5%87%BD%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text"> 1. 效果函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E9%9A%90%E8%97%8F-%E6%98%BE%E7%A4%BA"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 1.1 隐藏、显示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E6%B7%A1%E5%85%A5-%E6%B7%A1%E5%87%BA"><span class="toc-number">2.1.2.</span> <span class="toc-text"> 1.2 淡入、淡出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E6%BB%91%E5%8A%A8"><span class="toc-number">2.1.3.</span> <span class="toc-text"> 1.3 滑动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-%E5%8A%A8%E7%94%BB"><span class="toc-number">2.1.4.</span> <span class="toc-text"> 1.4 动画</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-%E5%87%BD%E6%95%B0%E9%98%9F%E5%88%97"><span class="toc-number">2.1.5.</span> <span class="toc-text"> 1.5 函数队列</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-htmlcss-%E6%96%B9%E6%B3%95%E5%AF%B9%E5%BA%94-dom"><span class="toc-number">2.2.</span> <span class="toc-text"> 2. HTML&#x2F;CSS 方法（对应 DOM）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E8%8E%B7%E5%8F%96-%E8%AE%BE%E7%BD%AE%E5%85%83%E7%B4%A0-css-%E6%A0%B7%E5%BC%8F"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 2.1 获取 &#x2F; 设置元素 CSS 样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E8%8E%B7%E5%8F%96-%E8%AE%BE%E7%BD%AE%E5%B1%9E%E6%80%A7-attr"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 2.2 获取 &#x2F; 设置属性 attr</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0-%E5%88%A0%E9%99%A4-class-%E5%B1%9E%E6%80%A7"><span class="toc-number">2.2.2.1.</span> <span class="toc-text"> 添加 &#x2F; 删除 class 属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9%E6%A0%91"><span class="toc-number">2.2.3.</span> <span class="toc-text"> 2.3 操作元素节点树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-%E8%8E%B7%E5%8F%96-%E8%AE%BE%E7%BD%AE%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9"><span class="toc-number">2.2.4.</span> <span class="toc-text"> 2.4 获取 &#x2F; 设置元素内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%85%B6%E4%BB%96%E5%87%BD%E6%95%B0"><span class="toc-number">2.3.</span> <span class="toc-text"> 3. 其他函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-ajax"><span class="toc-number">3.</span> <span class="toc-text"> 三、 AJAX</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF-ajax"><span class="toc-number">3.1.</span> <span class="toc-text"> 1. 什么是 AJAX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%AF%AD%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text"> 2. 语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%AE%80%E4%BB%8B%E6%96%B9%E6%B3%95"><span class="toc-number">3.3.</span> <span class="toc-text"> 3. 简介方法</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text"> 一、 基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-%E5%AF%BC%E5%85%A5"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. 安装 &#x2F; 导入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E6%9C%AC%E5%9C%B0%E5%AF%BC%E5%85%A5"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 2.1 本地导入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E5%9C%A8%E7%BA%BF%E5%AF%BC%E5%85%A5"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 2.2 在线导入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%AF%AD%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text"> 3. 语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E6%96%87%E6%A1%A3%E5%B0%B1%E7%BB%AA-document-ready"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 3.1 文档就绪 document ready</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 3.2  $()  返回类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.4.</span> <span class="toc-text"> 4. 选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.5.</span> <span class="toc-text"> 5. 事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-jquery-%E5%90%8D%E7%A7%B0%E5%86%B2%E7%AA%81"><span class="toc-number">1.6.</span> <span class="toc-text"> 6. jQuery 名称冲突</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-jquery-%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text"> 二、 jQuery 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%88%E6%9E%9C%E5%87%BD%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text"> 1. 效果函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E9%9A%90%E8%97%8F-%E6%98%BE%E7%A4%BA"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 1.1 隐藏、显示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E6%B7%A1%E5%85%A5-%E6%B7%A1%E5%87%BA"><span class="toc-number">2.1.2.</span> <span class="toc-text"> 1.2 淡入、淡出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E6%BB%91%E5%8A%A8"><span class="toc-number">2.1.3.</span> <span class="toc-text"> 1.3 滑动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-%E5%8A%A8%E7%94%BB"><span class="toc-number">2.1.4.</span> <span class="toc-text"> 1.4 动画</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-%E9%93%BE-chaining"><span class="toc-number">2.1.5.</span> <span class="toc-text"> 1.5 链 (Chaining)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-%E5%87%BD%E6%95%B0%E9%98%9F%E5%88%97"><span class="toc-number">2.1.6.</span> <span class="toc-text"> 1.6 函数队列</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-htmlcss-%E6%96%B9%E6%B3%95%E5%AF%B9%E5%BA%94-dom"><span class="toc-number">2.2.</span> <span class="toc-text"> 2. HTML&#x2F;CSS 方法（对应 DOM）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E8%8E%B7%E5%8F%96-%E8%AE%BE%E7%BD%AE%E5%85%83%E7%B4%A0-css-%E6%A0%B7%E5%BC%8F"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 2.1 获取 &#x2F; 设置元素 CSS 样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E8%8E%B7%E5%8F%96-%E8%AE%BE%E7%BD%AE%E5%B1%9E%E6%80%A7-attr"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 2.2 获取 &#x2F; 设置属性 attr</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0-%E5%88%A0%E9%99%A4-class-%E5%B1%9E%E6%80%A7"><span class="toc-number">2.2.2.1.</span> <span class="toc-text"> 添加 &#x2F; 删除 class 属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9%E6%A0%91"><span class="toc-number">2.2.3.</span> <span class="toc-text"> 2.3 操作元素节点树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#231-%E5%85%83%E7%B4%A0%E5%89%8D%E5%90%8E%E6%8F%92%E5%85%A5%E5%86%85%E5%AE%B9"><span class="toc-number">2.2.3.1.</span> <span class="toc-text"> 2.3.1 元素前后插入内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#232-%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9"><span class="toc-number">2.2.3.2.</span> <span class="toc-text"> 2.3.2 添加元素节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#233-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9"><span class="toc-number">2.2.3.3.</span> <span class="toc-text"> 2.3.3 移除元素节点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-%E8%8E%B7%E5%8F%96-%E8%AE%BE%E7%BD%AE%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9"><span class="toc-number">2.2.4.</span> <span class="toc-text"> 2.4 获取 &#x2F; 设置元素内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-%E5%85%83%E7%B4%A0%E9%9B%86%E5%90%88%E9%81%8D%E5%8E%86-%E5%A2%9E%E5%87%8F"><span class="toc-number">2.2.5.</span> <span class="toc-text"> 2.5 元素集合（遍历、增减）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BA%8B%E4%BB%B6%E5%87%BD%E6%95%B0"><span class="toc-number">2.3.</span> <span class="toc-text"> 3. 事件函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6"><span class="toc-number">2.3.1.</span> <span class="toc-text"> 3.1 鼠标事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6"><span class="toc-number">2.3.2.</span> <span class="toc-text"> 3.2 键盘事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#33-%E8%A1%A8%E5%8D%95%E4%BA%8B%E4%BB%B6-form"><span class="toc-number">2.3.3.</span> <span class="toc-text"> 3.3 表单事件 form</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#34-%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BA%8B%E4%BB%B6"><span class="toc-number">2.3.4.</span> <span class="toc-text"> 3.4 浏览器事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#35-%E6%B7%BB%E5%8A%A0-%E5%88%A0%E9%99%A4%E4%BA%8B%E4%BB%B6"><span class="toc-number">2.3.5.</span> <span class="toc-text"> 3.5 添加 &#x2F; 删除事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#36-evevt-%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.3.6.</span> <span class="toc-text"> 3.6  evevt  对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#37-%E6%89%A7%E8%A1%8C%E6%8C%87%E5%AE%9A%E4%BA%8B%E4%BB%B6"><span class="toc-number">2.3.7.</span> <span class="toc-text"> 3.7 执行指定事件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-css-%E5%87%BD%E6%95%B0"><span class="toc-number">2.4.</span> <span class="toc-text"> 4. CSS 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#41-%E4%B8%87%E8%83%BD-css-%E7%94%A8%E6%B3%95"><span class="toc-number">2.4.1.</span> <span class="toc-text"> 4.1 万能 .css()  用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42-%E5%B0%BA%E5%AF%B8%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.4.2.</span> <span class="toc-text"> 4.2 尺寸设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#43-%E5%AE%9A%E4%BD%8D%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.4.3.</span> <span class="toc-text"> 4.3 定位设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#44-%E6%BB%9A%E5%8A%A8%E6%9D%A1%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.4.4.</span> <span class="toc-text"> 4.4 滚动条设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%87%BD%E6%95%B0"><span class="toc-number">2.5.</span> <span class="toc-text"> 其他函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-ajax"><span class="toc-number">3.</span> <span class="toc-text"> 三、 AJAX</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF-ajax"><span class="toc-number">3.1.</span> <span class="toc-text"> 1. 什么是 AJAX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text"> 2. 使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-ajax-%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82"><span class="toc-number">3.2.1.</span> <span class="toc-text"> 2.1  $.ajax()  发送请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-ajaxsetup-%E8%AE%BE%E7%BD%AE%E8%AF%B7%E6%B1%82%E5%B1%9E%E6%80%A7"><span class="toc-number">3.2.2.</span> <span class="toc-text"> 2.2  $.ajaxSetup()  设置请求属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-param-%E5%BA%8F%E5%88%97%E5%8C%96%E5%8F%82%E6%95%B0"><span class="toc-number">3.2.3.</span> <span class="toc-text"> 2.3  $.param()  序列化参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-%E5%85%B6%E4%BB%96%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.4.</span> <span class="toc-text"> 2.4 其他获取数据的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#241-get"><span class="toc-number">3.2.4.1.</span> <span class="toc-text"> 2.4.1  $.get()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#242-getjson"><span class="toc-number">3.2.4.2.</span> <span class="toc-text"> 2.4.2  $.getJSON()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#243-getscript"><span class="toc-number">3.2.4.3.</span> <span class="toc-text"> 2.4.3  $.getScript()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#244-post"><span class="toc-number">3.2.4.4.</span> <span class="toc-text"> 2.4.4  $.post()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-jquery-javascript-%E4%B8%8E-ajax-%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">3.3.</span> <span class="toc-text"> 3. jQuery、JavaScript 与 ajax 的关系</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="../../../../../04/23/note/%E5%89%8D%E7%AB%AF/echarts/" rel="bookmark" title="echarts用法简单记录">echarts用法简单记录</a></li><li><a href="../../../../23/note/%E5%89%8D%E7%AB%AF/CSS/" rel="bookmark" title="CSS笔记及参考手册">CSS笔记及参考手册</a></li><li><a href="../../../../26/note/%E5%89%8D%E7%AB%AF/html/" rel="bookmark" title="html常用功能手册">html常用功能手册</a></li><li><a href="../JavaScript/" rel="bookmark" title="JavaScript基础语法">JavaScript基础语法</a></li><li class="active"><a href="" rel="bookmark" title="jQuery笔记">jQuery笔记</a></li>
+          <li><a href="../../../../../04/23/note/%E5%89%8D%E7%AB%AF/echarts/" rel="bookmark" title="echarts用法简单记录">echarts用法简单记录</a></li><li><a href="../../../../23/note/%E5%89%8D%E7%AB%AF/CSS%EF%BC%88%E5%BC%83%E7%94%A8%EF%BC%89/" rel="bookmark" title="CSS笔记及参考手册">CSS笔记及参考手册</a></li><li><a href="../../../../26/note/%E5%89%8D%E7%AB%AF/html%EF%BC%88%E5%BC%83%E7%94%A8%EF%BC%89/" rel="bookmark" title="html常用功能手册">html常用功能手册</a></li><li><a href="../JavaScript/" rel="bookmark" title="JavaScript基础语法">JavaScript基础语法</a></li><li class="active"><a href="" rel="bookmark" title="jQuery笔记">jQuery笔记</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -1352,7 +1971,7 @@ nitgod1996 = 宁理大神 1996</title>
 <nav class="state">
     <div class="item posts">
       <a href="">
-        <span class="count">28</span>
+        <span class="count">140</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -1444,77 +2063,10 @@ nitgod1996 = 宁理大神 1996</title>
 <div class="breadcrumb">
 <a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
 <i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/Python/" title="分类于 Python">Python</a>
-</div>
-
-    <span><a href="../../../../../06/04/note/Python/Python%E8%AF%AD%E6%B3%95%E5%A4%8D%E4%B9%A0/" title="Python语法复习">Python语法复习</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="../../../../../07/27/note/Python/python%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" title="python使用技巧">python使用技巧</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
 <a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
 </div>
 
-    <span><a href="../../%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E8%B0%83%E5%8F%96Python%E6%95%B0%E6%8D%AE/" title="前端调用Python数据">前端调用Python数据</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" title="分类于 经验总结">经验总结</a>
-</div>
-
-    <span><a href="../../../../../06/04/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%8F%E4%B9%A6/" title="算法公式书">算法公式书</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
-</div>
-
-    <span><a href="../../../../26/note/%E5%89%8D%E7%AB%AF/html/" title="html常用功能手册">html常用功能手册</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/Python/" title="分类于 Python">Python</a>
-</div>
-
-    <span><a href="../../../../28/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/" title="随笔-利用Python批量处理文件">随笔-利用Python批量处理文件</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-</div>
-
-    <span><a href="../../../../10/note/hexo/Hexo%E6%90%AD%E5%BB%BAGitHub%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" title="Hexo搭建GitHub静态博客">Hexo搭建GitHub静态博客</a></span>
+    <span><a href="../../../../20/note/%E9%9A%8F%E7%AC%94/%E5%87%86%E5%A4%87%E5%AD%A6%E4%B9%A0docker/" title="docker随手记">docker随手记</a></span>
   </li>
 
       
@@ -1523,35 +2075,79 @@ nitgod1996 = 宁理大神 1996</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="../../../../08/my-hexo/" title="my hexo">my hexo</a></span>
+    <span><a href="../../../../../11/10/note/%E5%89%8D%E7%AB%AF/HTML+CSS/" title="未命名">未命名</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/Linux/" title="分类于 Linux">Linux</a>
 </div>
 
-    <span><a href="../../../../12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" title="VMware安装中标麒麟">VMware安装中标麒麟</a></span>
+    <span><a href="../../../../../../2022/08/10/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E8%B4%AA%E5%BF%83/53.%20%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/" title="未命名">未命名</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../../../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/Python/" title="分类于 Python">Python</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../../../categories/note/%E9%9A%8F%E7%AC%94/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="../../../../17/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-Java%E8%B0%83%E7%94%A8Python%E8%84%9A%E6%9C%AC/" title="随笔-Java调用Python脚本">随笔-Java调用Python脚本</a></span>
+    <span><a href="../../../../../../2022/04/11/markdown%E8%AF%AD%E6%B3%95/" title="markdown语法">markdown语法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2022/07/31/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E6%95%B0%E7%BB%84/%E7%A7%BB%E5%8A%A8%E5%85%83%E7%B4%A0/283.%20%E7%A7%BB%E5%8A%A8%E9%9B%B6/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2022/08/08/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%9B%9E%E6%BA%AF/77.%20%E7%BB%84%E5%90%88/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2022/08/01/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E6%95%B0%E7%BB%84/%E7%A7%BB%E5%8A%A8%E5%85%83%E7%B4%A0/844.%20%E6%AF%94%E8%BE%83%E5%90%AB%E9%80%80%E6%A0%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2022/07/28/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%BB%83%E4%B9%A0/dist/demo01.dev/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2022/08/01/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E6%95%B0%E7%BB%84/%E7%A7%BB%E5%8A%A8%E5%85%83%E7%B4%A0/977.%20%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../../../2022/08/29/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/70.%20%E7%88%AC%E6%A5%BC%E6%A2%AF/" title="未命名">未命名</a></span>
   </li>
 
   </ul>
@@ -1566,7 +2162,7 @@ nitgod1996 = 宁理大神 1996</title>
   <div class="copyright">
     
     &copy; 2010 – 
-    <span itemprop="copyrightYear">2021</span>
+    <span itemprop="copyrightYear">2022</span>
     <span class="with-love">
       <i class="ic i-sakura rotate"></i>
     </span>
@@ -1576,13 +2172,13 @@ nitgod1996 = 宁理大神 1996</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">195k 字</span>
+    <span title="站点总字数">537k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:57</span>
+    <span title="站点阅读时长">8:09</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

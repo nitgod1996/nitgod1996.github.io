@@ -76,7 +76,7 @@ nitgod1996 = 宁理大神 1996</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>32k</span>
+    <span>33k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -84,7 +84,7 @@ nitgod1996 = 宁理大神 1996</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">阅读时长</span>
-    <span>29 分钟</span>
+    <span>30 分钟</span>
   </span>
 </div>
 
@@ -117,12 +117,12 @@ nitgod1996 = 宁理大神 1996</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicli3sbvtj20zk0m8x6p.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipet4bz0yj20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclfdu6exj20zk0m87hw.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeyhsblkj20zk0m81kx.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclh0m9pdj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclh3brzpj20zk0m8ann.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciusoyjnj219g0u0x56.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclhtuo6nj20zk0m8ttm.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclimtf7dj20zk0m8qav.jpg"></li>
         </ul>
       </div>
     </header>
@@ -620,7 +620,7 @@ log_model = LogisticRegression()#直接这样就行
 <p>抽取 mini-batch</p>
 </li>
 <li>
-<p>计算梯度（权重的梯度）</p>
+<p>计算梯度（权重的梯度）。梯度可以说是参数的参数，用于更新参数的参数</p>
 </li>
 <li>
 <p>更新参数（权重，沿梯度反方向更新）</p>
@@ -1494,7 +1494,7 @@ plt.show()
 </ol>
 </li>
 <li>
-<p><strong>更新权重：<strong>向损失函数</strong>梯度反方向</strong>更新参数。(参数包括各层<strong>权重</strong>、<strong>偏置</strong>、<strong>梯度</strong>等)</p>
+<p><strong>更新权重：<strong>向损失函数</strong>梯度反方向</strong>更新参数。(参数包括各层<strong>权重</strong>、<strong>偏置</strong>等，梯度不需要更新，因为梯度是每次都重新求的)</p>
 <ol>
 <li>
 <p><code>params -= learning_rate * grad</code> ：根据<strong>学习率</strong>和<strong>梯度</strong>反向更新即可，这是常规写法</p>
@@ -1512,6 +1512,11 @@ optim = torch.optim.Adam(model.parameters(), lr = 1e-3)#Adam优化器
 <p>通过优化器更新参数</p>
 <pre class=" language-language-python"><code class="language-language-python">optim.step() #gradient descent
 </code></pre>
+<p>&lt;font color=red&gt; 注：用 torch 求梯度时，要先清零，再求梯度，然后下降。如下 &lt;/font&gt;</p>
+<pre class=" language-language-python"><code class="language-language-python">optim.zero_grad()#梯度清零，否则会梯度叠加
+loss.backward()
+optim.step() #gradient descent
+</code></pre>
 </li>
 </ol>
 </li>
@@ -1521,6 +1526,20 @@ optim = torch.optim.Adam(model.parameters(), lr = 1e-3)#Adam优化器
 <p>** 预测：** 是否满足要求？是→结束；否→继续 3,4,5</p>
 </li>
 </ol>
+<h1 id="五-rnn-循环神经网络"><a class="anchor" href="#五-rnn循环神经网络">#</a> 五 +、 RNN 循环神经网络</h1>
+<h2 id="解决梯度爆炸和梯度消失"><a class="anchor" href="#解决梯度爆炸和梯度消失">#</a> 解决梯度爆炸和梯度消失</h2>
+<p>LSTM 和 GRU 是用于解决梯度爆炸和梯度消失的变体 RNN，主要思想是增加门控系统，决定哪些太旧影响力太小的参数是否要删除 3</p>
+<ul>
+<li>梯度消失：太前面的权重经过太久的传播后梯度很难反馈回去，导致靠后的输出基本不受靠前序列的影响。而有时候很久之前的样本数据却刚好非常的重要。</li>
+<li>梯度爆炸：梯度变得太大，参数指数级上升导致溢出或模型崩溃，比较容易发现。一般解决方法是梯度修剪</li>
+</ul>
+<h2 id="2-lstm-长短时记忆"><a class="anchor" href="#2-lstm长短时记忆">#</a> 2. LSTM 长短时记忆</h2>
+<blockquote>
+<p>LSTM 是为了解决 RNN<strong> 梯度消失</strong>和<strong>梯度爆炸</strong>提出的，可以说是 RNN 的进阶</p>
+</blockquote>
+<p>简单来说，LSTM 就是通过 <code>cell</code>  在每次迭代中<strong>记住</strong>重要的，<strong>忘记</strong>不重要的，再进入下一次迭代。</p>
+<p>相比于 <code>h</code> ， <code>cell</code>  变化幅度更小</p>
+<p><img data-src="/2021/06/10/%E8%A5%BF%E7%93%9C%E4%B9%A6%E5%A4%8D%E4%B9%A0%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/v2-a022384bc222397009cedd3ce858c8fb_720w.jpg" alt="img"></p>
 <h1 id="六-支持向量机"><a class="anchor" href="#六-支持向量机">#</a> 六、 支持向量机</h1>
 <p>什么是支持向量机 (SVM)：<span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3F1ZXN0aW9uLzIxMDk0NDg5JUUzJTgwJTgyJUU1JThGJUFGJUU0JUJCJUE1JUU3JTlDJThCJUU3JTlDJThCJUU4JUJGJTk5JUU0JUI4JUFBJUVGJUJDJThDJUU4JUFFJUIyJUU1JUJFJTk3JUU5JTlEJTlFJUU1JUI4JUI4JUU5JTgwJTlBJUU0JUJGJTk3JUU2JTk4JTkzJUU2JTg3JTgy">https://www.zhihu.com/question/21094489。可以看看这个，讲得非常通俗易懂</span></p>
 <blockquote>
@@ -1793,7 +1812,7 @@ imputer.fit_transform(X)
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2021-08-12 15:52:20" itemprop="dateModified" datetime="2021-08-12T15:52:20+08:00">2021-08-12</time>
+    <time title="修改时间：2021-08-31 19:37:46" itemprop="dateModified" datetime="2021-08-31T19:37:46+08:00">2021-08-31</time>
   </span>
 </div>
 
@@ -1848,7 +1867,7 @@ imputer.fit_transform(X)
     <div class="item left">
       
 
-  <a href="../../07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giph4lm9i7j20zk0m84qp.jpg" title="降低数据稀疏度的算法研究">
+  <a href="../../07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipew8gmvyj20zk0m87wh.jpg" title="降低数据稀疏度的算法研究">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>降低数据稀疏度的算法研究</h3>
@@ -1858,7 +1877,7 @@ imputer.fit_transform(X)
     <div class="item right">
       
 
-  <a href="../../21/note/Python/jupyter/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeuv80yoj20zk0m8kjl.jpg" title="jupty使用方法">
+  <a href="../../21/note/Python/jupyter/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclhnx9glj20zk0m8npd.jpg" title="jupty使用方法">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>jupty使用方法</h3>
@@ -1880,11 +1899,11 @@ imputer.fit_transform(X)
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.</span> <span class="toc-text"> 数学符号</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E7%BB%AA%E8%AE%BA"><span class="toc-number">2.</span> <span class="toc-text"> 一、 绪论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD%E5%8F%8A%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text"> 1. 基本术语及概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text"> 2. 激活函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E9%98%B6%E8%B7%83%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 2.1 阶跃函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-sigmoid-%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 2.2 sigmoid 函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-relu-%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.3.</span> <span class="toc-text"> 2.3 ReLU 函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-softmax-%E5%87%BD%E6%95%B0%E6%9C%80%E5%90%8E%E4%B8%80%E5%B1%82%E8%BE%93%E5%87%BA%E5%B1%82%E7%9A%84%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.4.</span> <span class="toc-text"> 2.4 softmax 函数（最后一层输出层的激活函数）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-%E5%87%BD%E6%95%B0%E5%9B%BE"><span class="toc-number">2.2.5.</span> <span class="toc-text"> 2.5 函数图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95"><span class="toc-number">2.3.</span> <span class="toc-text"> 3. 梯度下降法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6"><span class="toc-number">2.4.</span> <span class="toc-text"> 梯度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-number">2.5.</span> <span class="toc-text"> 缺点：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.6.</span> <span class="toc-text"> 代码实现：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%AE%9A%E4%B9%89%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0"><span class="toc-number">2.6.0.1.</span> <span class="toc-text"> 1. 定义目标函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%B1%82%E5%87%BA%E6%A2%AF%E5%BA%A6%E5%87%BD%E6%95%B0"><span class="toc-number">2.6.0.2.</span> <span class="toc-text"> 2. 求出梯度函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AE%9E%E7%8E%B0%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95"><span class="toc-number">2.6.0.3.</span> <span class="toc-text"> 3. 实现梯度下降法</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9"><span class="toc-number">3.</span> <span class="toc-text"> 二、 模型评估与选择</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%AF%AF%E5%B7%AE%E4%B8%8E%E8%BF%87%E6%8B%9F%E5%90%88"><span class="toc-number">3.1.</span> <span class="toc-text"> 1. 误差与过拟合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text"> 2. 评估方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text"> 三、 线性模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92linear-regression"><span class="toc-number">4.1.</span> <span class="toc-text"> 1. 线性回归（linear regression）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86"><span class="toc-number">4.1.1.</span> <span class="toc-text"> 1.1 算法原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#111-%E5%8D%95%E5%B1%9E%E6%80%A7%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-number">4.1.1.1.</span> <span class="toc-text"> 1.1.1 单属性线性回归</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#112-%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-number">4.1.1.2.</span> <span class="toc-text"> 1.1.2 多元线性回归</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-python-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.1.2.</span> <span class="toc-text"> 1.2 Python 代码实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AF%B9%E6%95%B0%E5%87%A0%E7%8E%87%E5%9B%9E%E5%BD%92%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92"><span class="toc-number">4.2.</span> <span class="toc-text"> 2. 对数几率回归（逻辑回归）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 2.1 与线性回归的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-sigmod-%E5%87%BD%E6%95%B0"><span class="toc-number">4.2.2.</span> <span class="toc-text"> 2.2 sigmod 函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86"><span class="toc-number">4.2.3.</span> <span class="toc-text"> 2.3 算法原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-%E4%BB%A3%E7%A0%81"><span class="toc-number">4.2.4.</span> <span class="toc-text"> 2.4 代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-%E5%86%B3%E7%AD%96%E6%A0%91"><span class="toc-number">5.</span> <span class="toc-text"> 四、 决策树</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E9%98%B6"><span class="toc-number">6.</span> <span class="toc-text"> 五、 神经网络初阶</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.</span> <span class="toc-text"> 1. 激活函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E9%98%B6%E8%B7%83%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.1.</span> <span class="toc-text"> 1.1 阶跃函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-sigmoid-%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.2.</span> <span class="toc-text"> 1.2 sigmoid 函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-relu-%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.3.</span> <span class="toc-text"> 1.3 ReLU 函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-softmax-%E5%87%BD%E6%95%B0%E6%9C%80%E5%90%8E%E4%B8%80%E5%B1%82%E8%BE%93%E5%87%BA%E5%B1%82%E7%9A%84%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.4.</span> <span class="toc-text"> 1.4 softmax 函数（最后一层输出层的激活函数）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-%E5%87%BD%E6%95%B0%E5%9B%BE"><span class="toc-number">6.1.5.</span> <span class="toc-text"> 1.5 函数图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%B1%82%E6%AC%A1%E9%80%92%E8%BF%9B"><span class="toc-number">6.2.</span> <span class="toc-text"> 2. 神经网络的层次递进</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%AD%A6%E4%B9%A0"><span class="toc-number">6.3.</span> <span class="toc-text"> 3. 神经网络的学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1"><span class="toc-number">6.3.1.</span> <span class="toc-text"> 3.1 特征提取与算法设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">6.3.2.</span> <span class="toc-text"> 3.2 损失函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#321-%E5%9D%87%E6%96%B9%E8%AF%AF%E5%B7%AE"><span class="toc-number">6.3.2.1.</span> <span class="toc-text"> 3.2.1 均方误差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#322-%E4%BA%A4%E5%8F%89%E7%86%B5%E8%AF%AF%E5%B7%AE"><span class="toc-number">6.3.2.2.</span> <span class="toc-text"> 3.2.2 交叉熵误差</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#33-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0"><span class="toc-number">6.3.3.</span> <span class="toc-text"> 3.3 神经网络学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#34-%E8%AF%AF%E5%B7%AE%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E6%B1%82%E6%A2%AF%E5%BA%A6"><span class="toc-number">6.3.4.</span> <span class="toc-text"> 3.4 误差反向传播求梯度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#341-%E5%85%B3%E4%BA%8E-affine-%E5%B1%82%E7%9A%84%E7%9F%A9%E9%98%B5%E5%8F%8D%E5%90%91%E6%B1%82%E5%AF%BC"><span class="toc-number">6.3.4.1.</span> <span class="toc-text"> 3.4.1 关于 Affine 层的矩阵反向求导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#342-%E6%9C%80%E4%B8%8A%E6%B8%B8%E5%AF%BC%E6%95%B0%E7%94%9F%E6%88%90softmax_with_loss%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E7%9B%B8%E5%AF%B9%E4%BA%8E-softmax-%E7%9A%84%E8%BE%93%E5%87%BA-y-%E7%9A%84%E4%BC%AA%E6%A2%AF%E5%BA%A6%E7%9F%A9%E9%98%B5"><span class="toc-number">6.3.4.2.</span> <span class="toc-text"> 3.4.2 最上游导数生成，softmax_with_loss，损失函数相对于 softmax 的输出 y 的伪梯度矩阵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#343-%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E6%B1%82%E6%A2%AF%E5%BA%A6%E4%BB%A3%E7%A0%81%E5%85%A8%E8%B2%8C"><span class="toc-number">6.3.4.3.</span> <span class="toc-text"> 3.4.3 反向传播求梯度代码全貌</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1"><span class="toc-number">6.4.</span> <span class="toc-text"> 4. 神经网络的代码设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#41-functionpy"><span class="toc-number">6.4.1.</span> <span class="toc-text"> 4.1 function.py</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#411-%E6%AD%A3%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-number">6.4.1.1.</span> <span class="toc-text"> 4.1.1 正向传播</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#412-%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-number">6.4.1.2.</span> <span class="toc-text"> 4.1.2 反向传播</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#413-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">6.4.1.3.</span> <span class="toc-text"> 4.1.3 损失函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42-layerpy-%E5%90%84%E5%B1%82%E7%9A%84%E7%B1%BB"><span class="toc-number">6.4.2.</span> <span class="toc-text"> 4.2 layer.py 各层的类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#421-relu-%E5%B1%82"><span class="toc-number">6.4.2.1.</span> <span class="toc-text"> 4.2.1 ReLU 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#422-sigmoid-%E5%B1%82"><span class="toc-number">6.4.2.2.</span> <span class="toc-text"> 4.2.2 sigmoid 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#423-affine-%E5%B1%82%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82%E4%B9%9F%E5%B0%B1%E6%98%AF-awxb-%E9%82%A3%E5%B1%82"><span class="toc-number">6.4.2.3.</span> <span class="toc-text"> 4.2.3 Affine 层（全连接层，也就是 a&#x3D;wx+b 那层）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#424-%E5%8D%B7%E7%A7%AF%E5%B1%82"><span class="toc-number">6.4.2.4.</span> <span class="toc-text"> 4.2.4 卷积层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#425-%E6%B1%A0%E5%8C%96%E5%B1%82"><span class="toc-number">6.4.2.5.</span> <span class="toc-text"> 4.2.5 池化层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#426-softmax-%E8%87%B3%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E5%B1%82"><span class="toc-number">6.4.2.6.</span> <span class="toc-text"> 4.2.6 softmax 至损失函数层</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#43-neuralnet-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%B1%BB"><span class="toc-number">6.4.3.</span> <span class="toc-text"> 4.3 Neuralnet 神经网络类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#431-%E7%B1%BB%E5%8F%98%E9%87%8F"><span class="toc-number">6.4.3.1.</span> <span class="toc-text"> 4.3.1 类变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#432-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%87%BD%E6%95%B0%E4%B8%BB%E8%A6%81%E7%94%A8%E4%BA%8E%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%8F%98%E9%87%8F"><span class="toc-number">6.4.3.2.</span> <span class="toc-text"> 4.3.2 初始化函数（主要用于定义类变量）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#433-%E9%A2%84%E6%B5%8B%E5%87%BD%E6%95%B0"><span class="toc-number">6.4.3.3.</span> <span class="toc-text"> 4.3.3 预测函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#434-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">6.4.3.4.</span> <span class="toc-text"> 4.3.4 损失函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#435-%E8%AE%A1%E7%AE%97%E7%B2%BE%E5%BA%A6"><span class="toc-number">6.4.3.5.</span> <span class="toc-text"> 4.3.5 计算精度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#436-%E6%B1%82%E6%A2%AF%E5%BA%A6"><span class="toc-number">6.4.3.6.</span> <span class="toc-text"> 4.3.6 求梯度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#437-%E4%BF%9D%E5%AD%98%E5%8F%82%E6%95%B0%E5%AD%A6%E4%B9%A0%E5%AE%8C%E5%90%8E%E4%BF%9D%E5%AD%98%E4%B8%8B%E6%9C%80%E7%BB%88%E6%9D%83%E9%87%8D%E7%AD%89%E5%8F%82%E6%95%B0"><span class="toc-number">6.4.3.7.</span> <span class="toc-text"> 4.3.7 保存参数（学习完后保存下最终权重等参数）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#438-%E5%8A%A0%E8%BD%BD%E5%8F%82%E6%95%B0%E9%A2%84%E6%B5%8B%E6%97%B6%E5%8A%A0%E8%BD%BD%E4%B9%8B%E5%89%8D%E5%AD%A6%E4%B9%A0%E5%88%B0%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-number">6.4.3.8.</span> <span class="toc-text"> 4.3.8 加载参数（预测时加载之前学习到的参数）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#44-trainer-%E8%AE%AD%E7%BB%83%E7%B1%BB%E5%AD%A6%E4%B9%A0%E7%B1%BB"><span class="toc-number">6.4.4.</span> <span class="toc-text"> 4.4 Trainer 训练类（学习类）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#441-%E7%B1%BB%E5%8F%98%E9%87%8F%E5%8F%8A%E5%88%9D%E5%A7%8B%E5%8C%96%E5%87%BD%E6%95%B0"><span class="toc-number">6.4.4.1.</span> <span class="toc-text"> 4.4.1 类变量及初始化函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#442-%E8%AE%AD%E7%BB%83%E5%87%BD%E6%95%B0"><span class="toc-number">6.4.4.2.</span> <span class="toc-text"> 4.4.2 训练函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#443-%E6%9C%80%E7%BB%88%E8%AE%AD%E7%BB%83%E5%87%BD%E6%95%B0%E6%8F%90%E4%BE%9B%E7%BB%99%E5%A4%96%E7%95%8C%E7%9A%84-api"><span class="toc-number">6.4.4.3.</span> <span class="toc-text"> 4.4.3 最终训练函数（提供给外界的 API）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#45-%E6%95%B0%E6%8D%AE%E9%9B%86%E5%8A%A0%E8%BD%BD-mnistpy"><span class="toc-number">6.4.5.</span> <span class="toc-text"> 4.5 数据集加载 mnist.py</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#451-%E5%88%9D%E5%A7%8B%E5%8C%96%E6%89%80%E9%9C%80%E5%8F%82%E6%95%B0"><span class="toc-number">6.4.5.1.</span> <span class="toc-text"> 4.5.1 初始化所需参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#452-%E4%B8%8B%E8%BD%BD%E6%89%80%E9%9C%80%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-number">6.4.5.2.</span> <span class="toc-text"> 4.5.2 下载所需数据集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#453-%E8%A7%A3%E5%8E%8B%E6%89%93%E5%BC%80-gzip-%E6%96%87%E4%BB%B6"><span class="toc-number">6.4.5.3.</span> <span class="toc-text"> 4.5.3 解压打开 gzip 文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#454-%E5%B0%86%E6%95%B0%E6%8D%AE%E9%9B%86%E4%BF%A1%E6%81%AF%E4%BF%9D%E5%AD%98%E5%9C%A8-dict-%E4%B8%AD"><span class="toc-number">6.4.5.4.</span> <span class="toc-text"> 4.5.4 将数据集信息保存在 dict 中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#455-%E5%B0%86%E8%A7%A3%E5%8E%8B%E5%90%8E%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E4%BF%9D%E5%AD%98%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="toc-number">6.4.5.5.</span> <span class="toc-text"> 4.5.5 将解压后的数据集保存到本地</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#456-%E7%9B%91%E7%9D%A3%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2"><span class="toc-number">6.4.5.6.</span> <span class="toc-text"> 4.5.6 监督数据格式转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#457-%E5%AF%B9%E5%A4%96%E6%8E%A5%E5%8F%A3-api"><span class="toc-number">6.4.5.7.</span> <span class="toc-text"> 4.5.7 对外接口 api</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#46-%E6%89%A7%E8%A1%8C%E4%B8%BB%E5%87%BD%E6%95%B0%E5%8C%85%E6%8B%AC%E5%9B%BE%E5%83%8F%E6%98%BE%E7%A4%BA"><span class="toc-number">6.4.6.</span> <span class="toc-text"> 4.6 执行主函数（包括图像显示）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#461-%E8%AF%BB%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">6.4.6.1.</span> <span class="toc-text"> 4.6.1 读入数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#462-%E5%88%9B%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AF%B9%E8%B1%A1"><span class="toc-number">6.4.6.2.</span> <span class="toc-text"> 4.6.2 创建神经网络对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#463-%E5%88%9B%E5%BB%BA%E8%AE%AD%E7%BB%83%E5%AF%B9%E8%B1%A1"><span class="toc-number">6.4.6.3.</span> <span class="toc-text"> 4.6.3 创建训练对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#464-%E8%AE%AD%E7%BB%83%E5%B9%B6%E4%BF%9D%E5%AD%98%E5%8F%82%E6%95%B0"><span class="toc-number">6.4.6.4.</span> <span class="toc-text"> 4.6.4 训练并保存参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#465-%E7%BB%98%E5%9B%BE"><span class="toc-number">6.4.6.5.</span> <span class="toc-text"> 4.6.5 绘图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%80%BB%E7%BB%93"><span class="toc-number">6.5.</span> <span class="toc-text"> 5. 总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA"><span class="toc-number">7.</span> <span class="toc-text"> 六、 支持向量机</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96"><span class="toc-number">7.1.</span> <span class="toc-text"> 正则化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81-knn-%E7%AE%97%E6%B3%95"><span class="toc-number">8.</span> <span class="toc-text"> 十、 KNN 算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-knn-%E7%AE%97%E6%B3%95"><span class="toc-number">8.1.</span> <span class="toc-text"> 1. KNN 算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E6%AD%A5%E9%AA%A4"><span class="toc-number">8.1.1.</span> <span class="toc-text"> 1.1 步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">8.1.2.</span> <span class="toc-text"> 1.2 代码实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E6%80%BB%E7%BB%93"><span class="toc-number">8.1.3.</span> <span class="toc-text"> 1.3 总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-knn-%E5%A1%AB%E5%85%85%E6%95%B0%E6%8D%AE"><span class="toc-number">8.2.</span> <span class="toc-text"> 2. KNN 填充数据</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.</span> <span class="toc-text"> 数学符号</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E7%BB%AA%E8%AE%BA"><span class="toc-number">2.</span> <span class="toc-text"> 一、 绪论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD%E5%8F%8A%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text"> 1. 基本术语及概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text"> 2. 激活函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E9%98%B6%E8%B7%83%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 2.1 阶跃函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-sigmoid-%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 2.2 sigmoid 函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-relu-%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.3.</span> <span class="toc-text"> 2.3 ReLU 函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-softmax-%E5%87%BD%E6%95%B0%E6%9C%80%E5%90%8E%E4%B8%80%E5%B1%82%E8%BE%93%E5%87%BA%E5%B1%82%E7%9A%84%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.4.</span> <span class="toc-text"> 2.4 softmax 函数（最后一层输出层的激活函数）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-%E5%87%BD%E6%95%B0%E5%9B%BE"><span class="toc-number">2.2.5.</span> <span class="toc-text"> 2.5 函数图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95"><span class="toc-number">2.3.</span> <span class="toc-text"> 3. 梯度下降法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6"><span class="toc-number">2.4.</span> <span class="toc-text"> 梯度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-number">2.5.</span> <span class="toc-text"> 缺点：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.6.</span> <span class="toc-text"> 代码实现：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%AE%9A%E4%B9%89%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0"><span class="toc-number">2.6.0.1.</span> <span class="toc-text"> 1. 定义目标函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%B1%82%E5%87%BA%E6%A2%AF%E5%BA%A6%E5%87%BD%E6%95%B0"><span class="toc-number">2.6.0.2.</span> <span class="toc-text"> 2. 求出梯度函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AE%9E%E7%8E%B0%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95"><span class="toc-number">2.6.0.3.</span> <span class="toc-text"> 3. 实现梯度下降法</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9"><span class="toc-number">3.</span> <span class="toc-text"> 二、 模型评估与选择</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%AF%AF%E5%B7%AE%E4%B8%8E%E8%BF%87%E6%8B%9F%E5%90%88"><span class="toc-number">3.1.</span> <span class="toc-text"> 1. 误差与过拟合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text"> 2. 评估方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text"> 三、 线性模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92linear-regression"><span class="toc-number">4.1.</span> <span class="toc-text"> 1. 线性回归（linear regression）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86"><span class="toc-number">4.1.1.</span> <span class="toc-text"> 1.1 算法原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#111-%E5%8D%95%E5%B1%9E%E6%80%A7%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-number">4.1.1.1.</span> <span class="toc-text"> 1.1.1 单属性线性回归</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#112-%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-number">4.1.1.2.</span> <span class="toc-text"> 1.1.2 多元线性回归</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-python-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.1.2.</span> <span class="toc-text"> 1.2 Python 代码实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AF%B9%E6%95%B0%E5%87%A0%E7%8E%87%E5%9B%9E%E5%BD%92%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92"><span class="toc-number">4.2.</span> <span class="toc-text"> 2. 对数几率回归（逻辑回归）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 2.1 与线性回归的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-sigmod-%E5%87%BD%E6%95%B0"><span class="toc-number">4.2.2.</span> <span class="toc-text"> 2.2 sigmod 函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86"><span class="toc-number">4.2.3.</span> <span class="toc-text"> 2.3 算法原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-%E4%BB%A3%E7%A0%81"><span class="toc-number">4.2.4.</span> <span class="toc-text"> 2.4 代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-%E5%86%B3%E7%AD%96%E6%A0%91"><span class="toc-number">5.</span> <span class="toc-text"> 四、 决策树</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E9%98%B6"><span class="toc-number">6.</span> <span class="toc-text"> 五、 神经网络初阶</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.</span> <span class="toc-text"> 1. 激活函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E9%98%B6%E8%B7%83%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.1.</span> <span class="toc-text"> 1.1 阶跃函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-sigmoid-%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.2.</span> <span class="toc-text"> 1.2 sigmoid 函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-relu-%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.3.</span> <span class="toc-text"> 1.3 ReLU 函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-softmax-%E5%87%BD%E6%95%B0%E6%9C%80%E5%90%8E%E4%B8%80%E5%B1%82%E8%BE%93%E5%87%BA%E5%B1%82%E7%9A%84%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.4.</span> <span class="toc-text"> 1.4 softmax 函数（最后一层输出层的激活函数）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-%E5%87%BD%E6%95%B0%E5%9B%BE"><span class="toc-number">6.1.5.</span> <span class="toc-text"> 1.5 函数图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%B1%82%E6%AC%A1%E9%80%92%E8%BF%9B"><span class="toc-number">6.2.</span> <span class="toc-text"> 2. 神经网络的层次递进</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%AD%A6%E4%B9%A0"><span class="toc-number">6.3.</span> <span class="toc-text"> 3. 神经网络的学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1"><span class="toc-number">6.3.1.</span> <span class="toc-text"> 3.1 特征提取与算法设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">6.3.2.</span> <span class="toc-text"> 3.2 损失函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#321-%E5%9D%87%E6%96%B9%E8%AF%AF%E5%B7%AE"><span class="toc-number">6.3.2.1.</span> <span class="toc-text"> 3.2.1 均方误差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#322-%E4%BA%A4%E5%8F%89%E7%86%B5%E8%AF%AF%E5%B7%AE"><span class="toc-number">6.3.2.2.</span> <span class="toc-text"> 3.2.2 交叉熵误差</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#33-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0"><span class="toc-number">6.3.3.</span> <span class="toc-text"> 3.3 神经网络学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#34-%E8%AF%AF%E5%B7%AE%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E6%B1%82%E6%A2%AF%E5%BA%A6"><span class="toc-number">6.3.4.</span> <span class="toc-text"> 3.4 误差反向传播求梯度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#341-%E5%85%B3%E4%BA%8E-affine-%E5%B1%82%E7%9A%84%E7%9F%A9%E9%98%B5%E5%8F%8D%E5%90%91%E6%B1%82%E5%AF%BC"><span class="toc-number">6.3.4.1.</span> <span class="toc-text"> 3.4.1 关于 Affine 层的矩阵反向求导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#342-%E6%9C%80%E4%B8%8A%E6%B8%B8%E5%AF%BC%E6%95%B0%E7%94%9F%E6%88%90softmax_with_loss%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E7%9B%B8%E5%AF%B9%E4%BA%8E-softmax-%E7%9A%84%E8%BE%93%E5%87%BA-y-%E7%9A%84%E4%BC%AA%E6%A2%AF%E5%BA%A6%E7%9F%A9%E9%98%B5"><span class="toc-number">6.3.4.2.</span> <span class="toc-text"> 3.4.2 最上游导数生成，softmax_with_loss，损失函数相对于 softmax 的输出 y 的伪梯度矩阵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#343-%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E6%B1%82%E6%A2%AF%E5%BA%A6%E4%BB%A3%E7%A0%81%E5%85%A8%E8%B2%8C"><span class="toc-number">6.3.4.3.</span> <span class="toc-text"> 3.4.3 反向传播求梯度代码全貌</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1"><span class="toc-number">6.4.</span> <span class="toc-text"> 4. 神经网络的代码设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#41-functionpy"><span class="toc-number">6.4.1.</span> <span class="toc-text"> 4.1 function.py</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#411-%E6%AD%A3%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-number">6.4.1.1.</span> <span class="toc-text"> 4.1.1 正向传播</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#412-%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-number">6.4.1.2.</span> <span class="toc-text"> 4.1.2 反向传播</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#413-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">6.4.1.3.</span> <span class="toc-text"> 4.1.3 损失函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42-layerpy-%E5%90%84%E5%B1%82%E7%9A%84%E7%B1%BB"><span class="toc-number">6.4.2.</span> <span class="toc-text"> 4.2 layer.py 各层的类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#421-relu-%E5%B1%82"><span class="toc-number">6.4.2.1.</span> <span class="toc-text"> 4.2.1 ReLU 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#422-sigmoid-%E5%B1%82"><span class="toc-number">6.4.2.2.</span> <span class="toc-text"> 4.2.2 sigmoid 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#423-affine-%E5%B1%82%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82%E4%B9%9F%E5%B0%B1%E6%98%AF-awxb-%E9%82%A3%E5%B1%82"><span class="toc-number">6.4.2.3.</span> <span class="toc-text"> 4.2.3 Affine 层（全连接层，也就是 a&#x3D;wx+b 那层）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#424-%E5%8D%B7%E7%A7%AF%E5%B1%82"><span class="toc-number">6.4.2.4.</span> <span class="toc-text"> 4.2.4 卷积层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#425-%E6%B1%A0%E5%8C%96%E5%B1%82"><span class="toc-number">6.4.2.5.</span> <span class="toc-text"> 4.2.5 池化层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#426-softmax-%E8%87%B3%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E5%B1%82"><span class="toc-number">6.4.2.6.</span> <span class="toc-text"> 4.2.6 softmax 至损失函数层</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#43-neuralnet-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%B1%BB"><span class="toc-number">6.4.3.</span> <span class="toc-text"> 4.3 Neuralnet 神经网络类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#431-%E7%B1%BB%E5%8F%98%E9%87%8F"><span class="toc-number">6.4.3.1.</span> <span class="toc-text"> 4.3.1 类变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#432-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%87%BD%E6%95%B0%E4%B8%BB%E8%A6%81%E7%94%A8%E4%BA%8E%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%8F%98%E9%87%8F"><span class="toc-number">6.4.3.2.</span> <span class="toc-text"> 4.3.2 初始化函数（主要用于定义类变量）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#433-%E9%A2%84%E6%B5%8B%E5%87%BD%E6%95%B0"><span class="toc-number">6.4.3.3.</span> <span class="toc-text"> 4.3.3 预测函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#434-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">6.4.3.4.</span> <span class="toc-text"> 4.3.4 损失函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#435-%E8%AE%A1%E7%AE%97%E7%B2%BE%E5%BA%A6"><span class="toc-number">6.4.3.5.</span> <span class="toc-text"> 4.3.5 计算精度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#436-%E6%B1%82%E6%A2%AF%E5%BA%A6"><span class="toc-number">6.4.3.6.</span> <span class="toc-text"> 4.3.6 求梯度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#437-%E4%BF%9D%E5%AD%98%E5%8F%82%E6%95%B0%E5%AD%A6%E4%B9%A0%E5%AE%8C%E5%90%8E%E4%BF%9D%E5%AD%98%E4%B8%8B%E6%9C%80%E7%BB%88%E6%9D%83%E9%87%8D%E7%AD%89%E5%8F%82%E6%95%B0"><span class="toc-number">6.4.3.7.</span> <span class="toc-text"> 4.3.7 保存参数（学习完后保存下最终权重等参数）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#438-%E5%8A%A0%E8%BD%BD%E5%8F%82%E6%95%B0%E9%A2%84%E6%B5%8B%E6%97%B6%E5%8A%A0%E8%BD%BD%E4%B9%8B%E5%89%8D%E5%AD%A6%E4%B9%A0%E5%88%B0%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-number">6.4.3.8.</span> <span class="toc-text"> 4.3.8 加载参数（预测时加载之前学习到的参数）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#44-trainer-%E8%AE%AD%E7%BB%83%E7%B1%BB%E5%AD%A6%E4%B9%A0%E7%B1%BB"><span class="toc-number">6.4.4.</span> <span class="toc-text"> 4.4 Trainer 训练类（学习类）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#441-%E7%B1%BB%E5%8F%98%E9%87%8F%E5%8F%8A%E5%88%9D%E5%A7%8B%E5%8C%96%E5%87%BD%E6%95%B0"><span class="toc-number">6.4.4.1.</span> <span class="toc-text"> 4.4.1 类变量及初始化函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#442-%E8%AE%AD%E7%BB%83%E5%87%BD%E6%95%B0"><span class="toc-number">6.4.4.2.</span> <span class="toc-text"> 4.4.2 训练函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#443-%E6%9C%80%E7%BB%88%E8%AE%AD%E7%BB%83%E5%87%BD%E6%95%B0%E6%8F%90%E4%BE%9B%E7%BB%99%E5%A4%96%E7%95%8C%E7%9A%84-api"><span class="toc-number">6.4.4.3.</span> <span class="toc-text"> 4.4.3 最终训练函数（提供给外界的 API）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#45-%E6%95%B0%E6%8D%AE%E9%9B%86%E5%8A%A0%E8%BD%BD-mnistpy"><span class="toc-number">6.4.5.</span> <span class="toc-text"> 4.5 数据集加载 mnist.py</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#451-%E5%88%9D%E5%A7%8B%E5%8C%96%E6%89%80%E9%9C%80%E5%8F%82%E6%95%B0"><span class="toc-number">6.4.5.1.</span> <span class="toc-text"> 4.5.1 初始化所需参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#452-%E4%B8%8B%E8%BD%BD%E6%89%80%E9%9C%80%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-number">6.4.5.2.</span> <span class="toc-text"> 4.5.2 下载所需数据集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#453-%E8%A7%A3%E5%8E%8B%E6%89%93%E5%BC%80-gzip-%E6%96%87%E4%BB%B6"><span class="toc-number">6.4.5.3.</span> <span class="toc-text"> 4.5.3 解压打开 gzip 文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#454-%E5%B0%86%E6%95%B0%E6%8D%AE%E9%9B%86%E4%BF%A1%E6%81%AF%E4%BF%9D%E5%AD%98%E5%9C%A8-dict-%E4%B8%AD"><span class="toc-number">6.4.5.4.</span> <span class="toc-text"> 4.5.4 将数据集信息保存在 dict 中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#455-%E5%B0%86%E8%A7%A3%E5%8E%8B%E5%90%8E%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E4%BF%9D%E5%AD%98%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="toc-number">6.4.5.5.</span> <span class="toc-text"> 4.5.5 将解压后的数据集保存到本地</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#456-%E7%9B%91%E7%9D%A3%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2"><span class="toc-number">6.4.5.6.</span> <span class="toc-text"> 4.5.6 监督数据格式转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#457-%E5%AF%B9%E5%A4%96%E6%8E%A5%E5%8F%A3-api"><span class="toc-number">6.4.5.7.</span> <span class="toc-text"> 4.5.7 对外接口 api</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#46-%E6%89%A7%E8%A1%8C%E4%B8%BB%E5%87%BD%E6%95%B0%E5%8C%85%E6%8B%AC%E5%9B%BE%E5%83%8F%E6%98%BE%E7%A4%BA"><span class="toc-number">6.4.6.</span> <span class="toc-text"> 4.6 执行主函数（包括图像显示）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#461-%E8%AF%BB%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">6.4.6.1.</span> <span class="toc-text"> 4.6.1 读入数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#462-%E5%88%9B%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AF%B9%E8%B1%A1"><span class="toc-number">6.4.6.2.</span> <span class="toc-text"> 4.6.2 创建神经网络对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#463-%E5%88%9B%E5%BB%BA%E8%AE%AD%E7%BB%83%E5%AF%B9%E8%B1%A1"><span class="toc-number">6.4.6.3.</span> <span class="toc-text"> 4.6.3 创建训练对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#464-%E8%AE%AD%E7%BB%83%E5%B9%B6%E4%BF%9D%E5%AD%98%E5%8F%82%E6%95%B0"><span class="toc-number">6.4.6.4.</span> <span class="toc-text"> 4.6.4 训练并保存参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#465-%E7%BB%98%E5%9B%BE"><span class="toc-number">6.4.6.5.</span> <span class="toc-text"> 4.6.5 绘图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%80%BB%E7%BB%93"><span class="toc-number">6.5.</span> <span class="toc-text"> 5. 总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94-rnn-%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">7.</span> <span class="toc-text"> 五 +、 RNN 循环神经网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%A2%AF%E5%BA%A6%E7%88%86%E7%82%B8%E5%92%8C%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1"><span class="toc-number">7.1.</span> <span class="toc-text"> 解决梯度爆炸和梯度消失</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-lstm-%E9%95%BF%E7%9F%AD%E6%97%B6%E8%AE%B0%E5%BF%86"><span class="toc-number">7.2.</span> <span class="toc-text"> 2. LSTM 长短时记忆</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA"><span class="toc-number">8.</span> <span class="toc-text"> 六、 支持向量机</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96"><span class="toc-number">8.1.</span> <span class="toc-text"> 正则化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81-knn-%E7%AE%97%E6%B3%95"><span class="toc-number">9.</span> <span class="toc-text"> 十、 KNN 算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-knn-%E7%AE%97%E6%B3%95"><span class="toc-number">9.1.</span> <span class="toc-text"> 1. KNN 算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E6%AD%A5%E9%AA%A4"><span class="toc-number">9.1.1.</span> <span class="toc-text"> 1.1 步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">9.1.2.</span> <span class="toc-text"> 1.2 代码实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E6%80%BB%E7%BB%93"><span class="toc-number">9.1.3.</span> <span class="toc-text"> 1.3 总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-knn-%E5%A1%AB%E5%85%85%E6%95%B0%E6%8D%AE"><span class="toc-number">9.2.</span> <span class="toc-text"> 2. KNN 填充数据</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="../../../04/23/note/%E5%89%8D%E7%AB%AF/echarts/" rel="bookmark" title="echarts用法简单记录">echarts用法简单记录</a></li><li><a href="../../../05/10/note/software/maven%E5%A4%8D%E4%B9%A0/" rel="bookmark" title="maven复习">maven复习</a></li><li><a href="../../../05/10/note/hexo/Hexo%E6%90%AD%E5%BB%BAGitHub%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" rel="bookmark" title="Hexo搭建GitHub静态博客">Hexo搭建GitHub静态博客</a></li><li><a href="../../../05/12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" rel="bookmark" title="VMware安装中标麒麟">VMware安装中标麒麟</a></li><li><a href="../../../05/13/note/Python/pandas/" rel="bookmark" title="Python机器学习库">Python机器学习库</a></li><li><a href="../../../05/17/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-Java%E8%B0%83%E7%94%A8Python%E8%84%9A%E6%9C%AC/" rel="bookmark" title="随笔-Java调用Python脚本">随笔-Java调用Python脚本</a></li><li><a href="../../../05/18/note/Java/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%8F%8A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="bookmark" title="java基础语法及特性">java基础语法及特性</a></li><li><a href="../../../05/20/note/%E9%9A%8F%E7%AC%94/%E5%87%86%E5%A4%87%E5%AD%A6%E4%B9%A0docker/" rel="bookmark" title="docker随手记">docker随手记</a></li><li><a href="../../../05/23/note/%E5%89%8D%E7%AB%AF/CSS/" rel="bookmark" title="CSS笔记及参考手册">CSS笔记及参考手册</a></li><li><a href="../../../05/26/note/%E5%89%8D%E7%AB%AF/html/" rel="bookmark" title="html常用功能手册">html常用功能手册</a></li><li><a href="../../../05/27/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E8%B0%83%E5%8F%96Python%E6%95%B0%E6%8D%AE/" rel="bookmark" title="前端调用Python数据">前端调用Python数据</a></li><li><a href="../../../05/27/note/%E5%89%8D%E7%AB%AF/JavaScript/" rel="bookmark" title="JavaScript基础语法">JavaScript基础语法</a></li><li><a href="../../../05/27/note/%E5%89%8D%E7%AB%AF/jQuery/" rel="bookmark" title="jQuery笔记">jQuery笔记</a></li><li><a href="../../../05/28/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/" rel="bookmark" title="随笔-利用Python批量处理文件">随笔-利用Python批量处理文件</a></li><li><a href="../../../05/29/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E5%A4%84%E7%90%86json/" rel="bookmark" title="随笔-利用Python处理json">随笔-利用Python处理json</a></li><li><a href="../../02/note/%E9%9A%8F%E7%AC%94/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%AC%94/%E5%9F%BA%E4%BA%8EPython%E5%92%8Cecharts%E7%9A%84%E5%8A%A8%E6%80%81%E5%9B%BE/" rel="bookmark" title="每日一笔-基于Python和echarts的动态图">每日一笔-基于Python和echarts的动态图</a></li><li><a href="../../04/note/Python/Python%E8%AF%AD%E6%B3%95%E5%A4%8D%E4%B9%A0/" rel="bookmark" title="Python语法复习">Python语法复习</a></li><li class="active"><a href="" rel="bookmark" title="西瓜书复习及其部分代码实现">西瓜书复习及其部分代码实现</a></li>
+          <li><a href="../../../04/23/note/%E5%89%8D%E7%AB%AF/echarts/" rel="bookmark" title="echarts用法简单记录">echarts用法简单记录</a></li><li><a href="../../../05/10/note/software/maven%E5%A4%8D%E4%B9%A0/" rel="bookmark" title="maven复习">maven复习</a></li><li><a href="../../../05/10/note/hexo/Hexo%E6%90%AD%E5%BB%BAGitHub%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" rel="bookmark" title="Hexo搭建GitHub静态博客">Hexo搭建GitHub静态博客</a></li><li><a href="../../../05/12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" rel="bookmark" title="VMware安装中标麒麟">VMware安装中标麒麟</a></li><li><a href="../../../05/13/note/Python/pandas/" rel="bookmark" title="Python机器学习库">Python机器学习库</a></li><li><a href="../../../05/17/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-Java%E8%B0%83%E7%94%A8Python%E8%84%9A%E6%9C%AC/" rel="bookmark" title="随笔-Java调用Python脚本">随笔-Java调用Python脚本</a></li><li><a href="../../../05/18/note/Java/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%8F%8A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="bookmark" title="java基础语法及特性">java基础语法及特性</a></li><li><a href="../../../05/20/note/%E9%9A%8F%E7%AC%94/%E5%87%86%E5%A4%87%E5%AD%A6%E4%B9%A0docker/" rel="bookmark" title="docker随手记">docker随手记</a></li><li><a href="../../../05/23/note/%E5%89%8D%E7%AB%AF/CSS%EF%BC%88%E5%BC%83%E7%94%A8%EF%BC%89/" rel="bookmark" title="CSS笔记及参考手册">CSS笔记及参考手册</a></li><li><a href="../../../05/26/note/%E5%89%8D%E7%AB%AF/html%EF%BC%88%E5%BC%83%E7%94%A8%EF%BC%89/" rel="bookmark" title="html常用功能手册">html常用功能手册</a></li><li><a href="../../../05/27/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E8%B0%83%E5%8F%96Python%E6%95%B0%E6%8D%AE/" rel="bookmark" title="前端调用Python数据">前端调用Python数据</a></li><li><a href="../../../05/27/note/%E5%89%8D%E7%AB%AF/JavaScript/" rel="bookmark" title="JavaScript基础语法">JavaScript基础语法</a></li><li><a href="../../../05/27/note/%E5%89%8D%E7%AB%AF/jQuery/" rel="bookmark" title="jQuery笔记">jQuery笔记</a></li><li><a href="../../../05/28/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/" rel="bookmark" title="随笔-利用Python批量处理文件">随笔-利用Python批量处理文件</a></li><li><a href="../../../05/29/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E5%A4%84%E7%90%86json/" rel="bookmark" title="随笔-利用Python处理json">随笔-利用Python处理json</a></li><li><a href="../../02/note/%E9%9A%8F%E7%AC%94/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%AC%94/%E5%9F%BA%E4%BA%8EPython%E5%92%8Cecharts%E7%9A%84%E5%8A%A8%E6%80%81%E5%9B%BE/" rel="bookmark" title="每日一笔-基于Python和echarts的动态图">每日一笔-基于Python和echarts的动态图</a></li><li><a href="../../04/note/Python/Python%E8%AF%AD%E6%B3%95%E5%A4%8D%E4%B9%A0/" rel="bookmark" title="Python语法复习">Python语法复习</a></li><li class="active"><a href="" rel="bookmark" title="西瓜书复习及其部分代码实现">西瓜书复习及其部分代码实现</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -1898,7 +1917,7 @@ imputer.fit_transform(X)
 <nav class="state">
     <div class="item posts">
       <a href="">
-        <span class="count">28</span>
+        <span class="count">140</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -1988,81 +2007,66 @@ imputer.fit_transform(X)
   <li class="item">
     
 <div class="breadcrumb">
+<a href="../../../../categories/note/" title="分类于 笔记">笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="../../../../categories/note/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="../../../05/23/note/%E5%89%8D%E7%AB%AF/CSS%EF%BC%88%E5%BC%83%E7%94%A8%EF%BC%89/" title="CSS笔记及参考手册">CSS笔记及参考手册</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../2022/07/28/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%BB%83%E4%B9%A0/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%93%88%E5%B8%8C/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../25/note/Python/numpy/" title="numpy常用函数">numpy常用函数</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../05/14/%E9%99%88%E5%BA%B7%E4%B8%9C%E5%92%8C%E7%8E%8B%E5%86%B0%E5%86%B0%E7%9A%84%E5%BF%AB%E4%B9%90%E5%B0%8F%E5%B1%8B/" title="陈康东和王冰冰的快乐小屋">陈康东和王冰冰的快乐小屋</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../2022/08/05/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/225.%20%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="../../../../2022/07/31/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/demo/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 </div>
 
     <span><a href="../../../08/10/note/%E5%89%8D%E7%AB%AF/ps%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" title="ps学习之路">ps学习之路</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../categories/note/Python/" title="分类于 Python">Python</a>
-</div>
-
-    <span><a href="../../04/note/Python/Python%E8%AF%AD%E6%B3%95%E5%A4%8D%E4%B9%A0/" title="Python语法复习">Python语法复习</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../categories/note/java/" title="分类于 Java">Java</a>
-</div>
-
-    <span><a href="../../../05/18/note/Java/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%8F%8A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="java基础语法及特性">java基础语法及特性</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../categories/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" title="分类于 经验总结">经验总结</a>
-</div>
-
-    <span><a href="../../04/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%8F%E4%B9%A6/" title="算法公式书">算法公式书</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../categories/note/%E9%9A%8F%E7%AC%94/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%AC%94/" title="分类于 每日一笔">每日一笔</a>
-</div>
-
-    <span><a href="../../02/note/%E9%9A%8F%E7%AC%94/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%AC%94/%E5%9F%BA%E4%BA%8EPython%E5%92%8Cecharts%E7%9A%84%E5%8A%A8%E6%80%81%E5%9B%BE/" title="每日一笔-基于Python和echarts的动态图">每日一笔-基于Python和echarts的动态图</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../categories/note/Linux/" title="分类于 Linux">Linux</a>
-</div>
-
-    <span><a href="../../../05/12/note/Linux/VMware%E5%AE%89%E8%A3%85%E4%B8%AD%E6%A0%87%E9%BA%92%E9%BA%9F/" title="VMware安装中标麒麟">VMware安装中标麒麟</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
-</div>
-
-    <span><a href="../../../05/27/note/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E7%AC%94-%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E8%B0%83%E5%8F%96Python%E6%95%B0%E6%8D%AE/" title="前端调用Python数据">前端调用Python数据</a></span>
   </li>
 
       
@@ -2076,7 +2080,7 @@ imputer.fit_transform(X)
 <a href="../../../../categories/note/%E9%9A%8F%E7%AC%94/Python/" title="分类于 Python">Python</a>
 </div>
 
-    <span><a href="../../../05/29/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E5%A4%84%E7%90%86json/" title="随笔-利用Python处理json">随笔-利用Python处理json</a></span>
+    <span><a href="../../../05/28/note/%E9%9A%8F%E7%AC%94/Python/%E9%9A%8F%E7%AC%94-%E5%88%A9%E7%94%A8Python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/" title="随笔-利用Python批量处理文件">随笔-利用Python批量处理文件</a></span>
   </li>
 
       
@@ -2085,19 +2089,16 @@ imputer.fit_transform(X)
 <div class="breadcrumb">
 </div>
 
-    <span><a href="../../../07/27/note/Python/python%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" title="python使用技巧">python使用技巧</a></span>
+    <span><a href="../../07/%E7%A8%80%E7%96%8F%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/" title="降低数据稀疏度的算法研究">降低数据稀疏度的算法研究</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../../../../categories/note/" title="分类于 笔记">笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="../../../../categories/note/%E9%9A%8F%E7%AC%94/" title="分类于 随笔">随笔</a>
 </div>
 
-    <span><a href="../../../05/20/note/%E9%9A%8F%E7%AC%94/%E5%87%86%E5%A4%87%E5%AD%A6%E4%B9%A0docker/" title="docker随手记">docker随手记</a></span>
+    <span><a href="../../../../2022/07/31/note/%E5%89%8D%E7%AB%AF/%E7%BB%83%E4%B9%A0%E4%BB%A3%E7%A0%81/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/%E6%95%B0%E7%BB%84/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/34.%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/" title="未命名">未命名</a></span>
   </li>
 
   </ul>
@@ -2112,7 +2113,7 @@ imputer.fit_transform(X)
   <div class="copyright">
     
     &copy; 2010 – 
-    <span itemprop="copyrightYear">2021</span>
+    <span itemprop="copyrightYear">2022</span>
     <span class="with-love">
       <i class="ic i-sakura rotate"></i>
     </span>
@@ -2122,13 +2123,13 @@ imputer.fit_transform(X)
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">195k 字</span>
+    <span title="站点总字数">537k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:57</span>
+    <span title="站点阅读时长">8:09</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
